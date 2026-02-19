@@ -27,8 +27,8 @@ export default function Home({
       <Welcome showForm={showForm} setShowForm={setShowForm} />
       {!showForm && (
         <>
-          <NetworkInfo />
           <CersCards showFlow={showFlow} setShowFlow={setShowFlow} />
+          <NetworkInfo />
         </>
       )}
     </div>
