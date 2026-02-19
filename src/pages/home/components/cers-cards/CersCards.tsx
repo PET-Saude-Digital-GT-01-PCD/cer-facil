@@ -60,7 +60,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
       <div key={cer.id} className="group relative bg-white p-5 rounded-2xl shadow-xl border border-blue-50 
       flex flex-col transition-all hover:shadow-2xl hover:-translate-y-1 w-full min-h-[240px]">
 
-        <h3 className="text-sm font-extrabold text-gray-900 leading-tight uppercase min-h-[60px] flex items-start">
+        <h3 className="text-sm text-gray-900 leading-tight uppercase min-h-[60px] flex items-start">
           {toTitleCase(cer.nome)}
         </h3>
 
@@ -136,7 +136,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
         {restantes.length > 0 && (
           <Accordion type="single" collapsible className="w-full mt-6">
             <AccordionItem value="grid-restante" className="border-none">
-              <AccordionContent className="overflow-visible pt-6">
+              <AccordionContent className="overflow-visible">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {restantes.map((cer) => renderCersRow(cer))}
                 </div>

@@ -1,14 +1,9 @@
 [
   {
     "id": 1,
-    "nome": "FUNAD - FUNDAÇÃO CENTRO INTEGRADO DE APOIO AO PORTADOR DE DEFICIÊNCIA",
+    "nome": "FUNDAÇÃO CENTRO INTEGRADO DE APOIO AO PORTADOR DE DEFICIÊNCIA",
     "image": "src/assets/images/funad.jpeg",
-    "especialidades": [
-      "Auditiva",
-      "Física",
-      "Intelectual",
-      "Visual"
-    ],
+    "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
     "endereco": {
       "rua": "Orestes Lisboa",
       "numero": "S/N",
@@ -29,10 +24,7 @@
     "id": 2,
     "nome": "INSTITUTO DOS CEGOS DA PARAÍBA ADALGISA CUNHA",
     "image": "src/assets/images/institutoDosCegos.jpeg",
-    "especialidades": [
-      "Intelectual",
-      "Visual"
-    ],
+    "especialidades": ["Intelectual", "Visual"],
     "endereco": {
       "rua": "Avenida Santa Catarina",
       "numero": "396",
@@ -51,104 +43,50 @@
   },
   {
     "id": 3,
-    "nome": "OFICINA ORTOPÉDICA - FUNAD",
-    "especialidades": [
-      "Física"
-    ],
+    "nome": "CENTRO DE REABILITAÇÃO ANTÔNIO DE SOUZA MARANHÃO",
+    "image": "src/assets/images/centroDeReabilitacaoAntonioDeSouza.jpeg",
+    "especialidades": ["Física", "Intelectual"],
     "endereco": {
-      "rua": "Rua João Teixeira de Carvalho",
+      "rua": "Rua Zilda Arns Neuman",
       "numero": "S/N",
-      "bairro": "Pedro Gondim",
-      "cep": "58031-220"
+      "bairro": "Loteamento Nossa Senhora",
+      "cep": "58322-000"
     },
-    "cidade": "João Pessoa",
-    "email": "funad@funad.pb.gov.br",
-    "telefone": "(83) 3243-7368",
+    "cidade": "Conde",
+    "email": "cer2conde.pb@gmail.com",
+    "telefone": "(83) 3298-1130",
     "localizacao": {
-      "latitude": -7.115885053215442,
-      "longitude": -34.84567292230965,
-      "googleMapsUrl": "https://maps.app.goo.gl/vevWZY9XiMmV1Y3T8",
-      "cnes": 2343479
+      "latitude": -7.260855669128239,
+      "longitude": -34.910269040774466,
+      "googleMapsUrl": "https://maps.app.goo.gl/uCvLQtoaX6Ay9Wak6",
+      "cnes": 5925207
     }
   },
   {
     "id": 4,
-    "nome": "CENTRO DE REABILITAÇÃO E CUIDADO DA PESSOA COM DEFICIÊNCIA",
-    "especialidades": [
-      "Física",
-      "Intelectual"
-    ],
+    "nome": "COMPLEXO NEUROFUNCIONAL MARIA MOURA DE AQUINO",
+    "image": "src/assets/images/complexoNeurofuncionalMariaMoura.jpeg",
+    "especialidades": ["Física", "Visual", "Intelectual"],
     "endereco": {
-      "rua": "Rua Alberto Brito",
-      "numero": "S/N",
-      "bairro": "Jaguaribe",
-      "cep": "58031-220"
+      "rua": "Rua Prefeito Manoel Lordão",
+      "numero": "199",
+      "bairro": "Esplanada",
+      "cep": "58200-028"
     },
-    "cidade": "João Pessoa",
-    "email": "funad@funad.pb.gov.br",
-    "telefone": null,
+    "cidade": "Guarabira",
+    "email": "mmcer@gmail.com",
+    "telefone": "(83) 99967-8987",
     "localizacao": {
-      "latitude": -7.114701031390794,
-      "longitude": -34.86303895711899,
-      "googleMapsUrl": "https://maps.app.goo.gl/KBe5M3QArFx7d7n78",
-      "cnes": 3871002
+      "latitude": -6.856553668322056,
+      "longitude": -35.48676177667847,
+      "googleMapsUrl": "https://maps.app.goo.gl/cqGs52MrNk3KpcBW9",
+      "cnes": 3360415
     }
   },
   {
     "id": 5,
-    "nome": "CER IV CENTRO ESPECIALIZADO EM REABILITAÇÃO DE CAMPINA GRANDE",
-    "especialidades": [
-      "Auditiva",
-      "Física",
-      "Intelectual",
-      "Visual"
-    ],
-    "endereco": {
-      "rua": "Luiz Mota",
-      "numero": "S/N",
-      "bairro": "Bodocongó",
-      "cep": "58430-710"
-    },
-    "cidade": "Campina Grande",
-    "email": "centrodereabilitacaocg@gmail.com",
-    "telefone": "(83) 3077-1060",
-    "localizacao": {
-      "latitude": -7.220769214036645,
-      "longitude": -35.923900619771736,
-      "googleMapsUrl": "https://maps.app.goo.gl/N4DNf6CeewoC5ZUV7",
-      "cnes": 2362619
-    }
-  },
-  {
-    "id": 6,
-    "nome": "ASSOCIAÇÃO DE PAIS E AMIGOS DOS EXCEPCIONAIS – APAE DE CAMPINA GRANDE",
-    "especialidades": [
-      "Física",
-      "Intelectual"
-    ],
-    "endereco": {
-      "rua": "Rua Prof. Eutecia Vital Ribeiro",
-      "numero": "525",
-      "bairro": "Catolé",
-      "cep": "58410-205"
-    },
-    "cidade": "Campina Grande",
-    "email": null,
-    "telefone": "(83) 3337-2454",
-    "localizacao": {
-      "latitude": -7.237977146540875,
-      "longitude": -35.87361327550724,
-      "googleMapsUrl": "https://maps.app.goo.gl/va4PL6z5Tdu8m67y8",
-      "cnes": 2612747
-    }
-  },
-  {
-    "id": 7,
     "nome": "CENTRO DE REABILITAÇÃO DR JOSÉ DÁCIO",
-    "especialidades": [
-      "Auditiva",
-      "Física"
-    ],
+    "especialidades": ["Auditiva", "Física"],
     "endereco": {
       "rua": "Conjunto Helder Targino Maranhão",
       "numero": "S/N",
@@ -166,12 +104,49 @@
     }
   },
   {
+    "id": 6,
+    "nome": "CER IV CENTRO ESPECIALIZADO EM REABILITAÇÃO DE CAMPINA GRANDE",
+    "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
+    "endereco": {
+      "rua": "Luiz Mota",
+      "numero": "S/N",
+      "bairro": "Bodocongó",
+      "cep": "58430-710"
+    },
+    "cidade": "Campina Grande",
+    "email": "centrodereabilitacaocg@gmail.com",
+    "telefone": "(83) 3077-1060",
+    "localizacao": {
+      "latitude": -7.220769214036645,
+      "longitude": -35.923900619771736,
+      "googleMapsUrl": "https://maps.app.goo.gl/N4DNf6CeewoC5ZUV7",
+      "cnes": 2362619
+    }
+  },
+  {
+    "id": 7,
+    "nome": "ASSOCIAÇÃO DE PAIS E AMIGOS DOS EXCEPCIONAIS – APAE DE CAMPINA GRANDE",
+    "especialidades": ["Física", "Intelectual"],
+    "endereco": {
+      "rua": "Rua Prof. Eutecia Vital Ribeiro",
+      "numero": "525",
+      "bairro": "Catolé",
+      "cep": "58410-205"
+    },
+    "cidade": "Campina Grande",
+    "email": null,
+    "telefone": "(83) 3337-2454",
+    "localizacao": {
+      "latitude": -7.237977146540875,
+      "longitude": -35.87361327550724,
+      "googleMapsUrl": "https://maps.app.goo.gl/va4PL6z5Tdu8m67y8",
+      "cnes": 2612747
+    }
+  },
+  {
     "id": 8,
     "nome": "CER/CERPPOD",
-    "especialidades": [
-      "Física",
-      "Intelectual"
-    ],
+    "especialidades": ["Física", "Intelectual"],
     "endereco": {
       "rua": "Rua João Soares",
       "numero": "426",
@@ -191,10 +166,7 @@
   {
     "id": 9,
     "nome": "CENTRO DE REABILITAÇÃO MOTORA",
-    "especialidades": [
-      "Física",
-      "Intelectual"
-    ],
+    "especialidades": ["Física", "Intelectual"],
     "endereco": {
       "rua": "Rua Dr. Gilverson de Araujo Cordeiro",
       "numero": "164",
@@ -214,11 +186,7 @@
   {
     "id": 10,
     "nome": "CENTRO ESPECIALIZADO EM REABILITAÇÃO DOUTOR ALOYSIO PEREIRA LIMA",
-    "especialidades": [
-      "Física",
-      "Intelectual",
-      "Visual"
-    ],
+    "especialidades": ["Física", "Intelectual", "Visual"],
     "endereco": {
       "rua": "Rua Projetada",
       "numero": "S/N",
@@ -238,12 +206,7 @@
   {
     "id": 11,
     "nome": "REABILITA CENTRO ESPECIALIZADO EM REABILITAÇÃO DE SOUSA",
-    "especialidades": [
-      "Auditiva",
-      "Física",
-      "Intelectual",
-      "Visual"
-    ],
+    "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
     "endereco": {
       "rua": "Rua Adelino Josefa Rita de Cássia",
       "numero": "S/N",
@@ -263,10 +226,7 @@
   {
     "id": 12,
     "nome": "POLICLÍNICA DR. ANTÔNIO QUINHO",
-    "especialidades": [
-      "Física",
-      "Intelectual"
-    ],
+    "especialidades": ["Física", "Intelectual"],
     "endereco": {
       "rua": "Rua Antônio Lopes da Silva",
       "numero": "S/N",
@@ -286,10 +246,7 @@
   {
     "id": 13,
     "nome": "CENTRO DE REABILITAÇÃO FÍSICA",
-    "especialidades": [
-      "Física",
-      "Intelectual"
-    ],
+    "especialidades": ["Física", "Intelectual"],
     "endereco": {
       "rua": "Rua Estevan Diniz",
       "numero": "S/N",
@@ -307,51 +264,42 @@
   },
   {
     "id": 14,
-    "nome": "CENTRO DE REABILITAÇÃO ANTÔNIO DE SOUZA MARANHÃO",
-    "image": "src/assets/images/centroDeReabilitacaoAntonioDeSouza.jpeg",
-    "especialidades": [
-      "Física",
-      "Intelectual"
-    ],
+    "nome": "OFICINA ORTOPÉDICA - FUNAD",
+    "especialidades": ["Ortopédica"],
     "endereco": {
-      "rua": "Rua Zilda Arns Neuman",
+      "rua": "Rua João Teixeira de Carvalho",
       "numero": "S/N",
-      "bairro": "Loteamento Nossa Senhora",
-      "cep": "58322-000"
+      "bairro": "Pedro Gondim",
+      "cep": "58031-220"
     },
-    "cidade": "Conde",
-    "email": "cer2conde.pb@gmail.com",
-    "telefone": "(83) 3298-1130",
+    "cidade": "João Pessoa",
+    "email": "funad@funad.pb.gov.br",
+    "telefone": "(83) 3243-7368",
     "localizacao": {
-      "latitude": -7.260855669128239,
-      "longitude": -34.910269040774466,
-      "googleMapsUrl": "https://maps.app.goo.gl/uCvLQtoaX6Ay9Wak6",
-      "cnes": 5925207
+      "latitude": -7.115885053215442,
+      "longitude": -34.84567292230965,
+      "googleMapsUrl": "https://maps.app.goo.gl/vevWZY9XiMmV1Y3T8",
+      "cnes": 2343479
     }
   },
   {
     "id": 15,
-    "nome": "COMPLEXO NEUROFUNCIONAL MARIA MOURA DE AQUINO",
-    "image": "src/assets/images/complexoNeurofuncionalMariaMoura.jpeg",
-    "especialidades": [
-      "Física",
-      "Visual",
-      "Intelectual"
-    ],
+    "nome": "CENTRO DE REABILITAÇÃO E CUIDADO DA PESSOA COM DEFICIÊNCIA",
+    "especialidades": ["Física", "Intelectual"],
     "endereco": {
-      "rua": "Rua Prefeito Manoel Lordão",
-      "numero": "199",
-      "bairro": "Esplanada",
-      "cep": "58200-028"
+      "rua": "Rua Alberto Brito",
+      "numero": "S/N",
+      "bairro": "Jaguaribe",
+      "cep": "58031-220"
     },
-    "cidade": "Guarabira",
-    "email": "mmcer@gmail.com",
-    "telefone": "(83) 99967-8987",
+    "cidade": "João Pessoa",
+    "email": "funad@funad.pb.gov.br",
+    "telefone": null,
     "localizacao": {
-      "latitude": -6.856553668322056,
-      "longitude": -35.48676177667847,
-      "googleMapsUrl": "https://maps.app.goo.gl/cqGs52MrNk3KpcBW9",
-      "cnes": 3360415
+      "latitude": -7.114701031390794,
+      "longitude": -34.86303895711899,
+      "googleMapsUrl": "https://maps.app.goo.gl/KBe5M3QArFx7d7n78",
+      "cnes": 3871002
     }
   }
 ]
