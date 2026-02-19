@@ -1,11 +1,17 @@
 [
   {
     "id": 1,
-    "nome": "FUNDAÇÃO CENTRO INTEGRADO DE APOIO AO PORTADOR DE DEFICIÊNCIA",
-    "image": "src/assets/images/funad.jpeg",
+    "nome": "FUNAD - FUNDAÇÃO CENTRO INTEGRADO DE APOIO AO PORTADOR DE DEFICIÊNCIA",
+    "info": "A FUNAD é referência em reabilitação integral, atendendo de forma especializada as deficiências auditiva, física, intelectual e visual, promovendo a inclusão social e a autonomia dos usuários.",
     "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
-      "rua": "Orestes Lisboa",
+      "rua": "Rua Orestes Lisboa",
       "numero": "S/N",
       "bairro": "Pedro Gondim",
       "cep": "58031-090"
@@ -23,8 +29,14 @@
   {
     "id": 2,
     "nome": "INSTITUTO DOS CEGOS DA PARAÍBA ADALGISA CUNHA",
-    "image": "src/assets/images/institutoDosCegos.jpeg",
+    "info": "O Instituto dos Cegos da Paraíba Adalgisa Cunha é uma instituição filantrópica pioneira, dedicada exclusivamente à habilitação e reabilitação de pessoas com cegueira ou baixa visão. Seu trabalho é focado no desenvolvimento da autonomia plena por meio do ensino do sistema Braille, treinamentos de orientação e mobilidade com uso de bengala, atividades da vida diária e inclusão tecnológica através de ferramentas de acessibilidade, promovendo a dignidade e a integração social do cidadão com deficiência visual.",
     "especialidades": ["Intelectual", "Visual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Avenida Santa Catarina",
       "numero": "396",
@@ -44,8 +56,14 @@
   {
     "id": 3,
     "nome": "CENTRO DE REABILITAÇÃO ANTÔNIO DE SOUZA MARANHÃO",
-    "image": "src/assets/images/centroDeReabilitacaoAntonioDeSouza.jpeg",
+    "info": "Informação do Cer",
     "especialidades": ["Física", "Intelectual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua Zilda Arns Neuman",
       "numero": "S/N",
@@ -65,8 +83,14 @@
   {
     "id": 4,
     "nome": "COMPLEXO NEUROFUNCIONAL MARIA MOURA DE AQUINO",
-    "image": "src/assets/images/complexoNeurofuncionalMariaMoura.jpeg",
+    "info": "Informação do Cer",
     "especialidades": ["Física", "Visual", "Intelectual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua Prefeito Manoel Lordão",
       "numero": "199",
@@ -86,9 +110,16 @@
   {
     "id": 5,
     "nome": "CENTRO DE REABILITAÇÃO DR JOSÉ DÁCIO",
+    "info": "Informação do Cer",
     "especialidades": ["Auditiva", "Física"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
-      "rua": "Conjunto Helder Targino Maranhão",
+      "rua": "Rua Conjunto Helder Targino Maranhão",
       "numero": "S/N",
       "bairro": "Centro",
       "cep": "58233-000"
@@ -106,9 +137,16 @@
   {
     "id": 6,
     "nome": "CER IV CENTRO ESPECIALIZADO EM REABILITAÇÃO DE CAMPINA GRANDE",
+    "info": "Informação do Cer",
     "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
-      "rua": "Luiz Mota",
+      "rua": "Rua Luiz Mota",
       "numero": "S/N",
       "bairro": "Bodocongó",
       "cep": "58430-710"
@@ -126,7 +164,14 @@
   {
     "id": 7,
     "nome": "ASSOCIAÇÃO DE PAIS E AMIGOS DOS EXCEPCIONAIS – APAE DE CAMPINA GRANDE",
+    "info": "Informação do Cer",
     "especialidades": ["Física", "Intelectual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua Prof. Eutecia Vital Ribeiro",
       "numero": "525",
@@ -146,7 +191,14 @@
   {
     "id": 8,
     "nome": "CER/CERPPOD",
+    "info": "Informação do Cer",
     "especialidades": ["Física", "Intelectual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua João Soares",
       "numero": "426",
@@ -166,7 +218,14 @@
   {
     "id": 9,
     "nome": "CENTRO DE REABILITAÇÃO MOTORA",
+    "info": "Informação do Cer",
     "especialidades": ["Física", "Intelectual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua Dr. Gilverson de Araujo Cordeiro",
       "numero": "164",
@@ -186,7 +245,14 @@
   {
     "id": 10,
     "nome": "CENTRO ESPECIALIZADO EM REABILITAÇÃO DOUTOR ALOYSIO PEREIRA LIMA",
+    "info": "Informação do Cer",
     "especialidades": ["Física", "Intelectual", "Visual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua Projetada",
       "numero": "S/N",
@@ -206,7 +272,14 @@
   {
     "id": 11,
     "nome": "REABILITA CENTRO ESPECIALIZADO EM REABILITAÇÃO DE SOUSA",
+    "info": "Informação do Cer",
     "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua Adelino Josefa Rita de Cássia",
       "numero": "S/N",
@@ -226,7 +299,14 @@
   {
     "id": 12,
     "nome": "POLICLÍNICA DR. ANTÔNIO QUINHO",
+    "info": "Informação do Cer",
     "especialidades": ["Física", "Intelectual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua Antônio Lopes da Silva",
       "numero": "S/N",
@@ -246,7 +326,14 @@
   {
     "id": 13,
     "nome": "CENTRO DE REABILITAÇÃO FÍSICA",
+    "info": "Informação do Cer",
     "especialidades": ["Física", "Intelectual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua Estevan Diniz",
       "numero": "S/N",
@@ -265,7 +352,14 @@
   {
     "id": 14,
     "nome": "OFICINA ORTOPÉDICA - FUNAD",
+    "info": "Informação do Cer",
     "especialidades": ["Ortopédica"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua João Teixeira de Carvalho",
       "numero": "S/N",
@@ -285,7 +379,14 @@
   {
     "id": 15,
     "nome": "CENTRO DE REABILITAÇÃO E CUIDADO DA PESSOA COM DEFICIÊNCIA",
+    "info": "Informação do Cer",
     "especialidades": ["Física", "Intelectual"],
+    "horario": {
+    "dias": "Segunda a Sexta",
+    "abertura": "08:00",
+    "fechamento": "17:00",
+    "texto": "Segunda a Sexta, das 08:00 às 17:00"
+  },
     "endereco": {
       "rua": "Rua Alberto Brito",
       "numero": "S/N",
