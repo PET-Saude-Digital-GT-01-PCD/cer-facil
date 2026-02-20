@@ -1,7 +1,6 @@
 import CersCards from "./cers-cards/CersCards";
 import NetworkInfo from "./network-info/NetworkInfo";
 import Welcome from "./welcome-page/Welcome";
-import Footnote from "./footnote/Footnote";
 
 interface HomeProps {
   showForm: boolean;
@@ -30,7 +29,6 @@ export default function Home({
         <>
           <CersCards showFlow={showFlow} setShowFlow={setShowFlow} />
           <NetworkInfo />
-          <Footnote />
         </>
       )}
     </div>

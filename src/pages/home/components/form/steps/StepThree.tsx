@@ -117,11 +117,11 @@ export default function StepThree({
   };
 
   return (
-    <div>
-      <Card>
+    <div className="w-full">
+      <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle>Localização</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-xl text-[var(--cor-5)] font-bold">Localização</CardTitle>
+          <CardDescription className="text-base">
             Precisamos da sua localização para encontrar o CER mais apropriado
             para você.
           </CardDescription>
@@ -133,11 +133,11 @@ export default function StepThree({
           )}
         </CardHeader>
 
-        <CardContent className="space-y-6">
-          <div className="flex flex-col items-center gap-4">
+        <CardContent className="space-y-4">
+          <div className="flex flex-col items-center gap-3">
             <Button
               onClick={handleGeolocation}
-              className="w-full max-w-sm"
+              className="w-full max-w-sm bg-blue-600 hover:bg-blue-700"
               disabled={loading}
             >
               {loading ? (
@@ -183,7 +183,7 @@ export default function StepThree({
                 ✓ Localização definida
               </div>
 
-              <div className="w-full h-[300px] rounded-lg overflow-hidden border">
+              <div className="w-full h-[250px] rounded-lg overflow-hidden border">
                 <MapContainer
                   center={
                     location ? [location.lat, location.lng] : [51.505, -0.09]
@@ -207,8 +207,13 @@ export default function StepThree({
           )}
         </CardContent>
 
-        <CardContent className="flex justify-between">
-          <Button variant="outline" onClick={onBack}>
+        <CardContent className="flex justify-between p-4">
+          <Button
+            variant="outline"
+            onClick={onBack}
+            size="lg"
+            className="px-8 py-5 text-base border-2 border-[var(--cor-1)] hover:bg-[var(--cor-1)] hover:text-white"
+          >
             Voltar
           </Button>
           <Button
@@ -218,6 +223,8 @@ export default function StepThree({
               }
             }}
             disabled={!location}
+            size="lg"
+            className="px-8 py-5 text-base min-w-[160px] border-2 border-[var(--cor-3)] hover:bg-[var(--cor-5)]"
           >
             Próximo
           </Button>

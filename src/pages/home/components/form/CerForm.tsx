@@ -70,13 +70,27 @@ export default function CerForm({ setShowForm }: CerFormProps) {
     setShowForm(false);
   };
 
+  const handleStepClick = (step: number) => {
+    // Não permite avançar para steps futuros sem completar os anteriores
+    if (step === 2 && formData.deficiencies.length === 0) return;
+    if (step === 3 && (formData.deficiencies.length === 0 || !formData.ageGroup)) return;
+    if (step === 4 && (formData.deficiencies.length === 0 || !formData.ageGroup || !formData.coordinates)) return;
+    
+    // Permite voltar para steps anteriores
+    if (step < currentStep) {
+      setCurrentStep(step);
+    }
+  };
+
   return (
-    <div id="cer-form" className="container mx-auto p-8">
-      <StepIndicator
-        currentStep={currentStep}
-        totalSteps={4}
-        onStepClick={setCurrentStep}
-      />
+    <div id="cer-form" className="w-full py-8">
+      <div className="max-w-4xl mx-auto px-4 mb-8">
+        <StepIndicator
+          currentStep={currentStep}
+          totalSteps={4}
+          onStepClick={handleStepClick}
+        />
+      </div>
 
       {currentStep === 1 && (
         <StepOne setShowForm={setShowForm} onNext={handleStepOneNext} />
@@ -106,7 +120,7 @@ export default function CerForm({ setShowForm }: CerFormProps) {
           location={formData.location}
           userCoordinates={formData.coordinates}
           onBack={() => setCurrentStep(3)}
-          onFinish={handleFinish} // Usa a função que faz scroll + fecha
+          onFinish={handleFinish}
         />
       )}
     </div>
