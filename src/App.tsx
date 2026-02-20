@@ -9,7 +9,7 @@ export function App() {
 
   return (
     <>
-      {!showForm && !showFlow[0] && <Navbar />}
+      {!showForm && <Navbar />}
       <Home
         showForm={showForm}
         setShowForm={setShowForm}

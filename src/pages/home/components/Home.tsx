@@ -1,6 +1,5 @@
 import CersCards from "./cers-cards/CersCards";
 import NetworkInfo from "./network-info/NetworkInfo";
-import Rodape from "./site-map/rodape";
 import Welcome from "./welcome-page/Welcome";
 
 interface HomeProps {
@@ -23,15 +22,13 @@ export default function Home({
       </div>
     );
   }
-
   return (
     <div>
       <Welcome showForm={showForm} setShowForm={setShowForm} />
       {!showForm && (
         <>
-          <NetworkInfo />
           <CersCards showFlow={showFlow} setShowFlow={setShowFlow} />
-          <Rodape />
+          <NetworkInfo />
         </>
       )}
     </div>
