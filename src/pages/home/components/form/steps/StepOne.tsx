@@ -20,7 +20,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
 
   const toggleSelection = (id: string) => {
     setSelected((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
   };
 
@@ -31,93 +31,183 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
   };
 
   return (
-    <div>
-      <Card>
+    <div className="w-full">
+      <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-5xl mx-auto">
         <CardHeader>
-          <CardTitle>Qual deficiência(s) deseja buscar atendimento?</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-3xl text-[var(--cor-5)] font-bold">
+            Qual deficiência(s) deseja buscar atendimento?
+          </CardTitle>
+          <CardDescription className="text-xl">
             Você pode selecionar mais de uma opção
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="space-y-3">
-          <Card
-            onClick={() => toggleSelection("fisica")}
-            className={`cursor-pointer transition-all ${
-              selected.includes("fisica")
-                ? "border-primary border-2 bg-primary/5"
-                : "hover:border-primary/50"
-            }`}
-          >
-            <CardHeader className="flex flex-row items-center gap-4">
-              <Accessibility className="h-8 w-8 text-primary" />
-              <CardTitle>Deficiência física</CardTitle>
-            </CardHeader>
-          </Card>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <Card
+              onClick={() => toggleSelection("fisica")}
+              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+                selected.includes("fisica")
+                  ? "border-[var(--cor-1)] border-4 bg-[var(--cor-2)]/15 shadow-xl"
+                  : "border-[var(--cor-2)]/40 hover:border-[var(--cor-1)]"
+              }`}
+            >
+              <CardHeader className="flex flex-row items-center gap-6 ">
+                <div
+                  className={`p-5 rounded-full border-2 ${
+                    selected.includes("fisica")
+                      ? "bg-[var(--cor-1)] border-[var(--cor-5)]"
+                      : "bg-[var(--cor-2)]/20 border-[var(--cor-2)]"
+                  }`}
+                >
+                  <Accessibility
+                    className={`h-10 w-10 ${
+                      selected.includes("fisica")
+                        ? "text-white"
+                        : "text-[var(--cor-1)]"
+                    }`}
+                  />
+                </div>
+                <CardTitle className="text-2xl">Deficiência física</CardTitle>
+              </CardHeader>
+            </Card>
 
-          <Card
-            onClick={() => toggleSelection("auditiva")}
-            className={`cursor-pointer transition-all ${
-              selected.includes("auditiva")
-                ? "border-primary border-2 bg-primary/5"
-                : "hover:border-primary/50"
-            }`}
-          >
-            <CardHeader className="flex flex-row items-center gap-4">
-              <Ear className="h-8 w-8 text-primary" />
-              <CardTitle>Deficiência Auditiva</CardTitle>
-            </CardHeader>
-          </Card>
+            <Card
+              onClick={() => toggleSelection("auditiva")}
+              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+                selected.includes("auditiva")
+                  ? "border-[var(--cor-1)] border-4 bg-[var(--cor-2)]/15 shadow-xl scale-[1.02]"
+                  : "border-[var(--cor-2)]/40 hover:border-[var(--cor-1)]"
+              }`}
+            >
+              <CardHeader className="flex flex-row items-center gap-6 p-8">
+                <div
+                  className={`p-5 rounded-full border-2 ${
+                    selected.includes("auditiva")
+                      ? "bg-[var(--cor-1)] border-[var(--cor-5)]"
+                      : "bg-[var(--cor-2)]/20 border-[var(--cor-2)]"
+                  }`}
+                >
+                  <Ear
+                    className={`h-10 w-10 ${
+                      selected.includes("auditiva")
+                        ? "text-white"
+                        : "text-[var(--cor-1)]"
+                    }`}
+                  />
+                </div>
+                <CardTitle className="text-2xl">Deficiência Auditiva</CardTitle>
+              </CardHeader>
+            </Card>
 
-          <Card
-            onClick={() => toggleSelection("visual")}
-            className={`cursor-pointer transition-all ${
-              selected.includes("visual")
-                ? "border-primary border-2 bg-primary/5"
-                : "hover:border-primary/50"
-            }`}
-          >
-            <CardHeader className="flex flex-row items-center gap-4">
-              <Eye className="h-8 w-8 text-primary" />
-              <CardTitle>Deficiência Visual</CardTitle>
-            </CardHeader>
-          </Card>
+            <Card
+              onClick={() => toggleSelection("visual")}
+              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+                selected.includes("visual")
+                  ? "border-[var(--cor-1)] border-4 bg-[var(--cor-2)]/15 shadow-xl scale-[1.02]"
+                  : "border-[var(--cor-2)]/40 hover:border-[var(--cor-1)]"
+              }`}
+            >
+              <CardHeader className="flex flex-row items-center gap-6 p-8">
+                <div
+                  className={`p-5 rounded-full border-2 ${
+                    selected.includes("visual")
+                      ? "bg-[var(--cor-1)] border-[var(--cor-5)]"
+                      : "bg-[var(--cor-2)]/20 border-[var(--cor-2)]"
+                  }`}
+                >
+                  <Eye
+                    className={`h-10 w-10 ${
+                      selected.includes("visual")
+                        ? "text-white"
+                        : "text-[var(--cor-1)]"
+                    }`}
+                  />
+                </div>
+                <CardTitle className="text-2xl">Deficiência Visual</CardTitle>
+              </CardHeader>
+            </Card>
 
-          <Card
-            onClick={() => toggleSelection("intelectual")}
-            className={`cursor-pointer transition-all ${
-              selected.includes("intelectual")
-                ? "border-primary border-2 bg-primary/5"
-                : "hover:border-primary/50"
-            }`}
-          >
-            <CardHeader className="flex flex-row items-center gap-4">
-              <Brain className="h-8 w-8 text-primary" />
-              <CardTitle>Deficiência Intelectual</CardTitle>
-            </CardHeader>
-          </Card>
+            <Card
+              onClick={() => toggleSelection("intelectual")}
+              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+                selected.includes("intelectual")
+                  ? "border-[var(--cor-1)] border-4 bg-[var(--cor-2)]/15 shadow-xl scale-[1.02]"
+                  : "border-[var(--cor-2)]/40 hover:border-[var(--cor-1)]"
+              }`}
+            >
+              <CardHeader className="flex flex-row items-center gap-6 p-8">
+                <div
+                  className={`p-5 rounded-full border-2 ${
+                    selected.includes("intelectual")
+                      ? "bg-[var(--cor-1)] border-[var(--cor-5)]"
+                      : "bg-[var(--cor-2)]/20 border-[var(--cor-2)]"
+                  }`}
+                >
+                  <Brain
+                    className={`h-10 w-10 ${
+                      selected.includes("intelectual")
+                        ? "text-white"
+                        : "text-[var(--cor-1)]"
+                    }`}
+                  />
+                </div>
+                <CardTitle className="text-2xl">
+                  Deficiência Intelectual
+                </CardTitle>
+              </CardHeader>
+            </Card>
+          </div>
 
-          <Card
-            onClick={() => toggleSelection("tea")}
-            className={`cursor-pointer transition-all ${
-              selected.includes("tea")
-                ? "border-primary border-2 bg-primary/5"
-                : "hover:border-primary/50"
-            }`}
-          >
-            <CardHeader className="flex flex-row items-center gap-4">
-              <Puzzle className="h-8 w-8 text-primary" />
-              <CardTitle>Transtorno espectro autista (TEA)</CardTitle>
-            </CardHeader>
-          </Card>
+          <div className="flex justify-center">
+            <Card
+              onClick={() => toggleSelection("tea")}
+              className={`cursor-pointer transition-all hover:shadow-2xl border-2 w-full md:w-1/2 ${
+                selected.includes("tea")
+                  ? "border-[var(--cor-1)] border-4 bg-[var(--cor-2)]/15 shadow-xl scale-[1.02]"
+                  : "border-[var(--cor-2)]/40 hover:border-[var(--cor-1)]"
+              }`}
+            >
+              <CardHeader className="flex flex-row items-center gap-6 p-8">
+                <div
+                  className={`p-5 rounded-full border-2 ${
+                    selected.includes("tea")
+                      ? "bg-[var(--cor-1)] border-[var(--cor-5)]"
+                      : "bg-[var(--cor-2)]/20 border-[var(--cor-2)]"
+                  }`}
+                >
+                  <Puzzle
+                    className={`h-10 w-10 ${
+                      selected.includes("tea")
+                        ? "text-white"
+                        : "text-[var(--cor-1)]"
+                    }`}
+                  />
+                </div>
+                <CardTitle className="text-2xl">
+                  Transtorno espectro autista (TEA)
+                </CardTitle>
+              </CardHeader>
+            </Card>
+          </div>
         </CardContent>
 
-        <CardContent className="flex justify-between">
-          <Button variant="outline" onClick={() => setShowForm(false)}>
+        <CardContent className="flex justify-between p-5">
+          <Button
+            variant="outline"
+            onClick={() => setShowForm(false)}
+            size="lg"
+            className="px-10 py-6 text-lg border-2 border-[var(--cor-1)] hover:bg-[var(--cor-1)] hover:text-white"
+          >
             Voltar
           </Button>
-          <Button onClick={handleNext} disabled={selected.length === 0}>
-            Próximo ({selected.length})
+          <Button
+            onClick={handleNext}
+            disabled={selected.length === 0}
+            size="lg"
+            className="px-10 py-6 text-lg min-w-[180px] border-2 border-[var(--cor-3)] hover:bg-[var(--cor-5)]"
+          >
+            Próximo {selected.length > 0 && `(${selected.length})`}
           </Button>
         </CardContent>
       </Card>

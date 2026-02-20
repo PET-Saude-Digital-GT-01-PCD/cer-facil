@@ -71,12 +71,14 @@ export default function CerForm({ setShowForm }: CerFormProps) {
   };
 
   return (
-    <div id="cer-form" className="container mx-auto p-8">
-      <StepIndicator
-        currentStep={currentStep}
-        totalSteps={4}
-        onStepClick={setCurrentStep}
-      />
+    <div id="cer-form" className="w-full py-8">
+      <div className="max-w-4xl mx-auto px-4 mb-8">
+        <StepIndicator
+          currentStep={currentStep}
+          totalSteps={4}
+          onStepClick={setCurrentStep}
+        />
+      </div>
 
       {currentStep === 1 && (
         <StepOne setShowForm={setShowForm} onNext={handleStepOneNext} />
@@ -106,7 +108,7 @@ export default function CerForm({ setShowForm }: CerFormProps) {
           location={formData.location}
           userCoordinates={formData.coordinates}
           onBack={() => setCurrentStep(3)}
-          onFinish={handleFinish} // Usa a função que faz scroll + fecha
+          onFinish={handleFinish}
         />
       )}
     </div>
