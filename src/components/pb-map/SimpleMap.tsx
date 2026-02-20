@@ -3,8 +3,9 @@ import { MapContainer, Marker, Popup, GeoJSON } from "react-leaflet";
 import MICROS_PB from "../../data/micro.json";
 import CORES_REGIOES from "../../data/colors.json";
 import CERS from "../../data/cers.json";
+import MapCaptions from "./MapCaptions";
 
-const SimpleMap = ({ interactive = true }: { interactive?: boolean }) => {
+const SimpleMap = () => {
   const position = [-7.2, -36.73];
   const zoomLevel = 7.5;
   const [geoData, setGeoData] = useState(null);
@@ -82,16 +83,12 @@ const SimpleMap = ({ interactive = true }: { interactive?: boolean }) => {
       <MapContainer
         center={position}
         zoom={zoomLevel}
-        minZoom={interactive ? 7 : zoomLevel}
-        maxZoom={interactive ? 10 : zoomLevel}
+        minZoom={7}
+        maxZoom={10}
         style={{ height: "100%", width: "100%", background: "transparent" }}
-        zoomControl={interactive}
-        scrollWheelZoom={interactive}
-        dragging={interactive}
-        doubleClickZoom={interactive}
-        touchZoom={interactive}
-        boxZoom={interactive}
-        keyboard={interactive}
+        zoomControl={true}
+        scrollWheelZoom={true}
+        dragging={true}
       >
         {geoData && (
           <GeoJSON

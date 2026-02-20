@@ -1,29 +1,26 @@
-# CER Fácil
+# CER Fácil: Uma aplicação para ajudar pessoas a encontrarem CERs e Oficinas Ortopédicas na Paraíba
 
-Esse projeto surgiu da necessidade de fornecer às pessoas com deficiência informações claras e com linguagem acessível sobre como acessar os serviços dos Centros Especializados em Reabilitação (CERs) e Oficinas Ortopédicas (OPMs) da Paraíba. O principal objetivo é fazer com que as pessoas que necessitam dos serviços tenham à sua disposição um site onde poderão consultar como fazer o primeiro acesso no seu CER de referência.
+## Tecnologias (Stack)
 
-## Tecnologias Utilizadas
+- **[Bun](https://bun.com)** - Runtime JavaScript ultrarrápido
+- **React 19** - Biblioteca para interfaces de usuário
+- **TypeScript** - Superset JavaScript com tipagem estática
+- **Tailwind CSS 4** - Framework CSS utility-first
+- **shadcn/ui** - Componentes de UI acessíveis e customizáveis
 
-* [Bun](https://bun.sh) - Runtime JavaScript ultrarrápido (v1.x)
-* [React](https://react.dev) - Biblioteca para interfaces de usuário (v19)
-* [TypeScript](https://www.typescriptlang.org/) - Superset JavaScript com tipagem estática
-* [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utility-first (v4)
-* [shadcn/ui](https://ui.shadcn.com/) - Componentes de UI acessíveis e customizáveis
-* [Leaflet](https://leafletjs.com/) & [React Leaflet](https://react-leaflet.js.org/) - Mapas interativos
-* [Lucide React](https://lucide.dev/) - Ícones
+## Pré-requisitos
 
-## Dependências e Versões Necessárias
+Certifique-se de ter o **Bun** instalado em sua máquina:
 
-* **Bun**: 1.3.6 (Instalar via `curl -fsSL https://bun.sh/install | bash`)
-* **React**: 19.2.1
-* **TypeScript**: 5.9.3
-* **Tailwind CSS**: 4.1.17
-* **shadcn/ui**: 0.10.10
-* **Leaflet**: 1.9.4
-* **React Leaflet**: 5.0.0
-* **Lucide React**: 0.562.0
+```bash
+# Verificar se o Bun está instalado 
+bun --version
 
-## Como Rodar o Projeto ✅
+# Se não tiver instalado, instale com:
+curl -fsSL https://bun.sh/install | bash
+```
+
+## Instalação
 
 1. Clone o repositório:
 
@@ -38,80 +35,77 @@ cd cer-facil
 bun install
 ```
 
-3. Inicie o servidor de desenvolvimento:
+## Executando o Projeto
+
+Inicia o servidor de desenvolvimento com Hot Module Reload (HMR):
 
 ```bash
 bun dev
 ```
 
-O servidor estará disponível em `http://localhost:3000`.
+O servidor estará disponível em `http://localhost:3000`
 
-## 📌 Funcionalidades Principais 📌
+## Estrutura do Projeto
 
-Informações importantes sobre a aplicação.
-
-* **Busca Personalizada**: Formulário interativo para encontrar o CER ideal.
-* **Mapa Interativo**: Visualização geográfica dos CERs e OPMs da Paraíba.
-* **Listagem Completa**: Detalhes de contato e especialidades de cada unidade.
-* **Informações da Rede**: Conteúdo educativo sobre a Rede de Cuidado à Pessoa com Deficiência.
-
-![formulário para preenchimento do tipo de deficiência](https://github.com/PET-Saude-Digital-GT-01-PCD/cer-facil/blob/b62762232283194f71f4fe0b1bde6014ac7524c6/src/assets/images/readme-images/Captura%20de%20tela%202026-02-16%20201237.png)
-![resultados da busca pelo cer de referência](https://github.com/PET-Saude-Digital-GT-01-PCD/cer-facil/blob/b62762232283194f71f4fe0b1bde6014ac7524c6/src/assets/images/readme-images/Captura%20de%20tela%202026-02-16%20201311.png)
-![mapa com as localizações dos cers](https://github.com/PET-Saude-Digital-GT-01-PCD/cer-facil/blob/b62762232283194f71f4fe0b1bde6014ac7524c6/src/assets/images/readme-images/Captura%20de%20tela%202026-02-16%20201417.png)
-![cards com informações sobre cada cer](https://github.com/PET-Saude-Digital-GT-01-PCD/cer-facil/blob/b62762232283194f71f4fe0b1bde6014ac7524c6/src/assets/images/readme-images/Captura%20de%20tela%202026-02-16%20201443.png)
-
-## ⚠️ Problemas enfrentados
-
-### Falha ao Carregar o Plugin Tailwind
-
-**Problema:** O Bun não consegue localizar o plugin do Tailwind CSS (`bun-plugin-tailwind`).
-Erro: `error: Cannot find package 'bun-plugin-tailwind'`
-
-**Como solucionar:**
-
-1. Instale o plugin manualmente:
-
-```bash
-bun install bun-plugin-tailwind
+```
+cer-facil/
+├── src/
+|   ├── assets/           # Assets
+|   |   └── images/       # Imagens do site
+│   ├── components/       # Componentes reutilizáveis
+|   |   ├── Navbar/       # Barra de navegação
+|   |   ├── pb-map/       # Componentes do mapa da Paraíba
+│   │   └── ui/           # Componentes shadcn/ui
+|   ├── data/             # Arquivos com informações do site
+│   ├── pages/            # Páginas da aplicação
+│   │   └── home/         # Página Home
+│   ├── lib/              # Utilitários e helpers
+│   ├── App.tsx           # Componente raiz
+│   ├── frontend.tsx      # Entry point React
+|   ├── index.css         # Estilos base da página
+│   ├── index.ts          # Servidor Bun
+│   └── index.html        # Template HTML
+├── styles/               # Estilos globais
+├── build.ts              # Build customizado para o Bun
+├── bun-env.d.ts          # Tipagem de variáveis de ambiente do Bun
+├── bun.lock              # Trava as versões das dependências
+├── bunfig.toml           # Configuração global do Bun
+├── package.json          # Dependências e scripts
+├── components.json       # Configuração do shadcn/ui
+└── tsconfig.json         # Configuração do TypeScript
 ```
 
-2. Se a porta 3000 estiver ocupada, encerre o processo:
+## Erros Conhecidos
 
-```bash
+❌ Falha ao Carregar o Plugin Tailwind
+Este erro impede que o servidor seja iniciado, pois o Bun não consegue localizar o plugin do Tailwind CSS.
+
+```
+Código do Erro
+error: Failed to load lugins for Bun.Server:
+error: Cannot find package 'bun-plugin-tailwind' from 'home/user/cer-facil'
+
+```
+
+Como Corrigir:
+
+1- Garanta a Instalação Correta do Plugin:
+
+```Bash
+bun install bun-plugin-tailwind
+```
+2- Libere a Porta 3000 (Se Necessário):
+
+```Bash
+# 1. Identifica qual processo está usando a porta 3000
 sudo lsof -i :3000
+
+# 2. Encerra o processo usando a porta 3000
 sudo fuser -k 3000/tcp
 ```
 
-3. Tente rodar novamente com `bun dev`.
+Tente executar novamente
 
-## ⏭️ Próximos passos
-
-* Implementação de testes com usuários.
-* Melhorias contínuas na acessibilidade e usabilidade.
-
-## Colaboradores(as) do Projeto
-
-### Tutores
-
-* **Geraldo Eduardo Guedes de Brito**
-* **Robson da Fonseca Neves**
-
-### Preceptores(as) e Orientadores(a) de Serviço
-
-* **Gustavo Alves de Lima Martiins**
-* **Hélio Soares da Silva**
-* **Mércia de Lourdes Ferreira**
-* **Weber Almeida Cavalcanti**
-
-### Monitores(as)
-
-* **Ana Claudia de Araújo Coutinho**
-* **Ana Rita de Oliveira Figueira**
-* **Artie Luiz Gomes da Silva**
-* **Beatriz Vitorio Melo Silva**
-* **Darlan Berg Marcos da Silva**
-* **Davi Berg Marcos da Silva**
-* **Gustavo Henrique Verçosa Dias**
-* **João Bosco Duarte Filho**
-* **Maria Amanda Santos da Silva**
-* **Stephanie Patriota dos Santos**
+```Bash
+bun dev
+```

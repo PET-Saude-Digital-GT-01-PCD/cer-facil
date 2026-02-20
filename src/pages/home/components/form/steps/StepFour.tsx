@@ -10,7 +10,6 @@ import {
 import cersData from "@/data/cers.json";
 import macrosData from "@/data/macro.json";
 import microsData from "@/data/micro.json";
-import { Bold } from "lucide-react";
 
 interface StepFourProps {
   deficiencies?: string[];
@@ -39,6 +38,7 @@ export default function StepFour({
 }: StepFourProps) {
   const [results, setResults] = useState<MatchingResult[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
 
   function calcularDistanciaReal(
     lat1: number,
@@ -173,6 +173,25 @@ export default function StepFour({
     setResults(matchedCERs);
     setLoading(false);
   }, [deficiencies, userCoordinates, location]);
+
+  useEffect(() => {
+    if (!isAboutModalOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsAboutModalOpen(false);
+      }
+    };
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isAboutModalOpen]);
 
   if (loading) {
     return (
@@ -311,7 +330,11 @@ export default function StepFour({
                       </div>
 
                       <div className="flex justify-center pt-2">
-                        <Button size="sm" variant="outline">
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => setIsAboutModalOpen(true)}
+                        >
                           Saiba mais
                         </Button>
                       </div>
@@ -332,6 +355,42 @@ export default function StepFour({
           </Button>
         </CardContent>
       </Card>
+
+      {isAboutModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
+          onClick={() => setIsAboutModalOpen(false)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="saiba-mais-title"
+            className="w-full max-w-xl rounded-2xl bg-white p-6 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mb-4 flex justify-end">
+              <button
+                type="button"
+                aria-label="Fechar modal"
+                className="rounded-md px-2 py-1 text-sm text-muted-foreground hover:bg-muted"
+                onClick={() => setIsAboutModalOpen(false)}
+              >
+                Fechar
+              </button>
+            </div>
+
+            <h2 id="saiba-mais-title" className="text-2xl font-semibold text-foreground">
+              O que é o pet
+            </h2>
+
+            <div className="h-8" />
+
+            <h3 className="text-2xl font-semibold text-foreground">
+              porque fizemos essa aplicação
+            </h3>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
