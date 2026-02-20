@@ -2,15 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import CERS from "@/data/cers.json";
 import Flow from "../user-flow/Flow";
-import {
-  ChevronRight,
-  Landmark,
-  Accessibility,
-  Ear,
-  Eye,
-  Brain,
-  Activity
-} from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -39,112 +31,97 @@ export function toTitleCase(text: string): string {
     .join(" ");
 }
 
-const especialidadeIconMap: { [key: string]: React.ElementType } = {
-  "Auditiva": Ear,
-  "Visual": Eye,
-  "Intelectual": Brain,
-  "Física": Accessibility,
-  "default": Landmark
-};
-
 export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
   if (showFlow[0]) {
     return <Flow setShowFlow={setShowFlow} cerId={showFlow[1]} />;
   }
 
-  const fixos = (CERS as DadosCers[]).slice(0, 4);
-  const restantes = (CERS as DadosCers[]).slice(4);
+  // Ajustado para 3 cards iniciais
+  const fixos = (CERS as DadosCers[]).slice(0, 3);
+  const restantes = (CERS as DadosCers[]).slice(3);
 
   const renderCersRow = (cer: DadosCers) => {
     return (
-      <div key={cer.id} className="group relative bg-white p-5 rounded-2xl shadow-xl border border-blue-50 
-      flex flex-col transition-all hover:shadow-2xl hover:-translate-y-1 w-full min-h-[240px]">
+      <div 
+        key={cer.id} 
+        className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 border-t-4 border-t-[var(--cor-1)] flex flex-col transition-all hover:shadow-xl hover:-translate-y-1 h-full min-h-[220px]"
+      >
+        {/* Container que cresce para empurrar o rodapé para baixo */}
+        <div className="flex-grow flex flex-col">
+          {/* Nome completo (sem line-clamp) */}
+          <h3 
+            className="font-bold text-lg text-black mb-4 leading-tight" 
+          >
+            {toTitleCase(cer.nome)}
+          </h3>
 
-        <h3 className="text-sm text-gray-900 leading-tight uppercase min-h-[60px] flex items-start">
-          {toTitleCase(cer.nome)}
-        </h3>
-
-        <div className="flex flex-row items-center gap-4 w-full mt-4">
-
-          <div className="grid grid-cols-2 gap-2 flex-shrink-0">
-            {cer.especialidades.map((especialidade, index) => {
-              const Icon = especialidadeIconMap[especialidade] || especialidadeIconMap["default"];
-              return (
-                <Icon
-                  key={index}
-                  className="h-6 w-6 text-[var(--cor-3)] opacity-90 group-hover:opacity-100 transition-opacity"
-                  strokeWidth={1.5}
-                />
-              );
-            })}
-          </div>
-
-          <div className="border-l-4 pl-3 border-[var(--cor-1)] space-y-2 w-full">
-            <div className="min-h-[40px]">
-              <p className="text-[10px] font-bold text-[var(--cor-1)] uppercase tracking-widest">
-                Especialidades
-              </p>
-              <p className="text-[11px] text-gray-600 line-clamp-2 leading-tight">
-                {cer.especialidades.join(", ")}
-              </p>
-            </div>
-            <div>
-              <p className="text-[10px] font-bold text-[var(--cor-1)] uppercase tracking-widest mb-1">
-                Cidade
-              </p>
-              <span className="inline-block bg-[var(--cor-1)] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
-                {cer.cidade}
-              </span>
-            </div>
+          {/* Cidade */}
+          <div className="flex items-center text-gray-500 mb-6 mt-auto">
+            <MapPin className="w-4 h-4 mr-1.5 flex-shrink-0 text-[var(--cor-3)]" />
+            <span className="text-sm font-medium">{cer.cidade}</span>
           </div>
         </div>
 
-        <Button
-          variant="ghost"
-          className="absolute bottom-3 right-2 p-2 h-auto bg-transparent hover:bg-gray-50 transition-all opacity-100 cursor-pointer"
-          onClick={() => setShowFlow([true, cer.id])}
-        >
-          <img
-            src="https://www.svgrepo.com/show/425982/right-arrow.svg"
-            alt="Seta"
-            className="w-5 h-5 block"
-            style={{ filter: 'grayscale(100%)' }}
-          />
-        </Button>
+        {/* Rodapé com as Tags de Deficiência e Botão de Ação */}
+        <div className="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+          
+          {/* Container flex-wrap para suportar até 4 tags sem quebrar o layout */}
+          <div className="flex flex-wrap gap-1.5 flex-1 pr-3">
+            {cer.especialidades.map((especialidade, index) => (
+              <span 
+                key={index} 
+                className="px-2 py-1 bg-blue-50 rounded-md text-[var(--cor-1)] text-[10px] sm:text-[11px] font-bold uppercase tracking-wider whitespace-nowrap"
+              >
+                {especialidade}
+              </span>
+            ))}
+          </div>
+
+          {/* Botão com flex-shrink-0 para não ser esmagado pelas tags */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-[var(--cor-3)] hover:text-white hover:bg-[var(--cor-3)] rounded-full transition-colors flex-shrink-0"
+            onClick={() => setShowFlow([true, cer.id])}
+          >
+            <ArrowRight className="w-5 h-5" />
+          </Button>
+        </div>
       </div>
     );
   };
 
   return (
-    <section id="cers-card" className="py-20 overflow-hidden bg-[var(--cor-1)] w-screen relative left-[calc(-50vw+50%)]">
-      <div className="container mx-auto px-6 max-w-[1400px]">
-
-        <div className="flex items-center w-full mb-16 gap-6">
-          <h2 className="text-2xl md:text-3xl font-black text-white uppercase whitespace-nowrap shrink-0">
+    <section id="cers-card" className="px-6 py-20 bg-white relative">
+      <div className="mx-auto max-w-6xl">
+        
+        {/* Cabeçalho */}
+        <div className="text-left mb-12">
+          <h2 className="font-bold text-4xl mb-4 text-black">
             Rede Estadual de Reabilitação
           </h2>
-          <div className="flex-1 h-[3px] bg-[var(--cor-4)]"></div>
+          <div className="w-24 h-1 bg-[var(--cor-3)] rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 
-                       md:grid-cols-2
-                       lg:grid-cols-4 
-                       gap-6">
+        {/* Grid Principal ajustado para lg:grid-cols-3 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {fixos.map((cer) => renderCersRow(cer))}
         </div>
 
+        {/* Accordion para os restantes */}
         {restantes.length > 0 && (
           <Accordion type="single" collapsible className="w-full mt-6">
             <AccordionItem value="grid-restante" className="border-none">
-              <AccordionContent className="overflow-visible">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <AccordionContent className="overflow-visible pt-4">
+                {/* Grid Restante ajustado para lg:grid-cols-3 */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {restantes.map((cer) => renderCersRow(cer))}
                 </div>
               </AccordionContent>
 
-              <div className="flex justify-center mt-12">
-                <AccordionTrigger className="flex gap-3 items-center bg-transparent text-white px-12 py-4 font-bold transition-all underline decoration-2 underline-offset-4 cursor-pointer hover:decoration-[var(--cor-4)]">
-                  VER TODAS AS UNIDADES
+              <div className="flex justify-center mt-8">
+                <AccordionTrigger className="flex gap-2 items-center text-black px-6 py-3 font-bold transition-all border border-gray-200 rounded-full hover:bg-gray-50 hover:text-[var(--cor-3)] data-[state=open]:hidden">
+                  Ver todas as unidades
                 </AccordionTrigger>
               </div>
             </AccordionItem>
