@@ -21,12 +21,12 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
   const Icone = especialidadeIconMap["Administrativo"] || especialidadeIconMap["default"];
 
   return (
-    <section className="px-6 py-8 min-h-[80vh] flex items-start justify-center bg-gradient-to-b from-white to-blue-50/30 relative">
+    <section className="px-6 py-8 pt-24 min-h-[80vh] flex items-start justify-center bg-gradient-to-b from-white to-blue-50/30 relative">
       {/* Container reduzido para max-w-3xl para melhor leitura em coluna única */}
       <div className="mx-auto max-w-3xl w-full">
         
         {/* CABEÇALHO DA SEÇÃO */}
-        <div className="text-left mb-6 flex justify-between items-end">
+        <div className="text-left mb-6 flex justify-between items-end pt-4">
           <div>
             <h2 className="font-bold text-2xl md:text-3xl mb-2 text-black leading-tight">
               Como conseguir seu atendimento
