@@ -5,6 +5,7 @@ import ministerioLogo from "@/assets/images/ministerioLogo.png";
 import ufpbLogo from "@/assets/images/UFPB.png";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
+import { href } from "react-router-dom";
 
 const socialButtons = [
   {
@@ -12,8 +13,14 @@ const socialButtons = [
     alt: "Instagram",
     href: "https://www.instagram.com/petsaude_pcd?igsh=N2d6czAyam0zNjRt",
   },
-  { Icon: MdAlternateEmail, alt: "Email" },
-  { Icon: FaGithub, alt: "GitHub" },
+  { Icon: MdAlternateEmail, 
+    alt: "Email", 
+    href: "mailto:pet.saude.pcd@gmail.com",
+  },
+  { Icon: FaGithub, 
+    alt: "GitHub",
+    href: "https://github.com/PET-Saude-Digital-GT-01-PCD",
+  },
 ];
 
 const realizationLogos = [
