@@ -1,196 +1,163 @@
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { Accessibility, Ear, Eye, Brain, Puzzle, Landmark, Building2 } from "lucide-react";
+import { Landmark, Building2, Calendar, MapPin, Phone, Mail, Clock } from "lucide-react";
 import FLUXOS from "../../../../data/fluxo.json";
-import { Accessibility, Ear, Eye, Brain, Landmark, Building2 } from "lucide-react";
 import CERS from "@/data/cers.json";
-import { Calendar } from "lucide-react";
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 interface FlowProps {
   setShowFlow: (show: [boolean, number]) => void;
   cerId: number;
 }
 
-const especialidadeIconMap: { [key: string]: React.ElementType } = {
-  "Administrativo": Building2,
-  "default": Landmark
-};
-
 export default function Flow({ setShowFlow, cerId }: FlowProps) {
-  const [selected, setSelected] = useState<string[]>([]); // Ajustado para array se for usar toggle
-
-  const toggleSelection = (id: string) => {
-    setSelected((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
-  };
+  // Pega as informações baseadas no ID passado
+  const fluxoInfo = FLUXOS[cerId - 1];
+  const cerInfo = CERS[cerId - 1];
 
   const especialidadeIconMap: { [key: string]: React.ElementType } = {
     "Administrativo": Building2,
     "default": Landmark
   };
 
+  const Icone = especialidadeIconMap["Administrativo"] || especialidadeIconMap["default"];
+
   return (
-    <div className="grid grid-cols-2 items-center">
-      {/* LADO ESQUERDO */}
-      <Card className="p-6 rounded-sm shadow-none border-0">
-        <CardHeader className="w-screen max-w-3xl justify-self-middle align-middle">
-          <CardContent className="overflow-y-auto p-4">
-            <div className="ml-2">
-
-              <div className="group relative bg-white p-5 rounded-2xl shadow-lg border border-blue-50 
-                              transition-all hover:shadow-xl w-full min-h-[240px] flex flex-col items-center justify-center font-bold text-[var(--cor-3)]">
-
-                <div className="flex flex-col items-center justify-center border-r border-gray-100 gap-4">
-                  {(() => {
-                    const Icone = especialidadeIconMap["Administrativo"] || especialidadeIconMap["default"];
-                    return <Icone className="w-20 h-20 text-[var(--cor-3)]" />;
-                  })()}
-                </div>
-
-                <div className="flex items-center justify-center p-4">
-                  <p className="text-[20px] font-bold text-gray-600 leading-tight text-center">
-                    {FLUXOS[cerId - 1].title}
-                  </p>
-                </div>
-              </div>
-              <div className="p-5 mt-6 text-justify">
-                {CERS[cerId - 1]?.info || "Informação detalhada sobre o CER selecionado."}
-              </div>
-            </div>
-            <div className="border bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all hover:shadow-xl mt-6">
-              {CERS[cerId - 1]?.endereco &&
-                <div>
-                  <p className="text-[12px] font-bold text-[var(--cor-3)] uppercase tracking-widest mb-3">
-                    Endereço
-                  </p>
-                  <div className="flex flex-col gap-2 pl-4 border-l-4 border-[var(--cor-3)] ml-1">
-                    <p className="text-[14px] text-gray-600 leading-snug flex items-start">
-                      <span className="mr-2 text-[var(--cor-3)] font-black">•</span>
-                      {CERS[cerId - 1]?.endereco.rua + ", " + CERS[cerId - 1]?.endereco.numero + " - " + CERS[cerId - 1]?.endereco.bairro}
-                    </p>
-                  </div>
-                </div>}
-
-              {CERS[cerId - 1]?.telefone &&
-                <div className="mt-6">
-                  <p className="text-[12px] font-bold text-[var(--cor-3)] uppercase tracking-widest mb-3">
-                    Telefone
-                  </p>
-                  <div className="flex flex-col gap-2 pl-4 border-l-4 border-[var(--cor-3)] ml-1">
-                    <p className="text-[14px] text-gray-600 leading-snug flex items-start">
-                      <span className="mr-2 text-[var(--cor-3)] font-black">•</span>
-                      {CERS[cerId - 1]?.telefone}
-                    </p>
-                  </div>
-                </div>}
-              {CERS[cerId - 1]?.email &&
-                <div className="mt-6">
-                  <p className="text-[12px] font-bold text-[var(--cor-3)] uppercase tracking-widest mb-3">
-                    Email
-                  </p>
-                  <div className="flex flex-col gap-2 pl-4 border-l-4 border-[var(--cor-3)] ml-1">
-                    <p className="text-[14px] text-gray-600 leading-snug flex items-start">
-                      <span className="mr-2 text-[var(--cor-3)] font-black">•</span>
-                      {CERS[cerId - 1]?.email}
-                    </p>
-                  </div>
-                </div>}
-
-              <div className="mt-6">
-                <p className="text-[12px] font-bold text-[var(--cor-3)] uppercase tracking-widest mb-3">
-                  Horário de Funcionamento
-                </p>
-                <div className="flex flex-col gap-2 pl-4 border-l-4 border-[var(--cor-3)] ml-1">
-                  <p className="text-[14px] text-gray-600 leading-snug flex items-start">
-                    <span className="mr-2 text-[var(--cor-3)] font-black">•</span>
-                    Segunda a Sexta, das 08:00 às 17:00
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </CardContent>
-        </CardHeader>
-      </Card>
-
-      {/* LADO DIREITO */}
-      <Card className="p-6 rounded-sm shadow-none border-0 bg-transparent">
-        <CardHeader className="w-full max-w-5xl mx-auto py-0">
-          <CardTitle className="text-center text-[var(--cor-3)] mb-6 uppercase tracking-tighter font-black text-xl">
-            COMO CONSEGUIR O SEU ATENDIMENTO
-          </CardTitle>
-
-          <CardContent className="p-0">
-            <div className="relative">
-
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[var(--cor-3)] z-0" />
-
-              <div className="space-y-0">
-                {FLUXOS[cerId - 1].steps.map((step, index) => {
-                  const isEven = index % 2 === 0;
-                  return (
-                    <div
-                      key={index}
-                      className={`relative flex items-center justify-between w-full ${isEven ? 'flex-row' : 'flex-row-reverse'}`}
-                    >
-                      <div className="w-[60%]">
-                        <div className="bg-white p-3 rounded-lg shadow-md border border-gray-100 transition-all hover:shadow-lg">
-                          <div className="flex items-center gap-2 mb-3">
-                            <Calendar className="w-5 h-5 text-gray-700" />
-                            <h3 className="font-bold text-sm text-gray-800 leading-tight">
-                              {step.title}
-                            </h3>
-                          </div>
-                          <p className="text-[12px] text-gray-500 leading-tight">
-                            {(step as any).description || "Siga as instruções desta etapa."}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-[var(--cor-3)] z-10 shadow-sm" />
-                      <div className="w-[80%]" />
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="mt-6 pl-4 border-l-2 border-[var(--cor-3)]">
-
-              <p className="text-[12px] font-bold text-[var(--cor-3)] uppercase tracking-widest mb-3">
-                Documentos Necessários
-              </p>
-
-              <div className="flex flex-col gap-2">
-                {FLUXOS[cerId - 1].documents.map((doc, i) => (
-                  <p key={i} className="text-[14px] text-gray-600 leading-snug flex items-start">
-                    <span className="mr-2 text-[var(--cor-3)] font-black">•</span>
-                    {doc}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </CardContent>
-          <div className="flex justify-end w-full mt-6">
-            <Button
-              variant="ghost"
-              className="justify-end cursor-pointer text-white bg-[var(--cor-3)] border-none hover:bg-[var(--cor-3)] shadow-none transition-all"
-              onClick={() => setShowFlow([false, cerId])}
-            >
-              Voltar
-            </Button>
+    <section className="px-6 py-8 min-h-[80vh] flex items-start justify-center bg-gradient-to-b from-white to-blue-50/30 relative">
+      {/* Container reduzido para max-w-3xl para melhor leitura em coluna única */}
+      <div className="mx-auto max-w-3xl w-full">
+        
+        {/* CABEÇALHO DA SEÇÃO */}
+        <div className="text-left mb-6 flex justify-between items-end">
+          <div>
+            <h2 className="font-bold text-2xl md:text-3xl mb-2 text-black leading-tight">
+              Como conseguir seu atendimento
+            </h2>
+            <div className="w-16 h-1 bg-[var(--cor-3)] rounded-full"></div>
           </div>
-        </CardHeader>
-      </Card>
-    </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="hidden md:flex text-[var(--cor-3)] border-[var(--cor-3)] hover:bg-[var(--cor-3)] hover:text-white transition-all"
+            onClick={() => setShowFlow([false, cerId])}
+          >
+            Voltar para a busca
+          </Button>
+        </div>
+
+        {/* ESTRUTURA DE COLUNA ÚNICA (Stack Vertical) */}
+        <div className="flex flex-col gap-5">
+          
+          {/* 1. Card Principal de Apresentação */}
+          <div className="bg-white p-5 rounded-xl shadow-md border border-blue-100 flex flex-col items-center text-center">
+            <Icone className="w-10 h-10 text-[var(--cor-3)] mb-3" />
+            <h3 className="font-bold text-lg mb-2">{fluxoInfo?.title}</h3>
+            <p className="text-sm leading-relaxed text-gray-700 text-justify">
+              {cerInfo?.info || "Informação detalhada sobre o CER selecionado."}
+            </p>
+          </div>
+
+          {/* 2. Card de Contato e Endereço */}
+          <div className="bg-white p-5 rounded-xl shadow-md border border-blue-100 space-y-4">
+            <h3 className="font-bold text-lg border-b border-gray-100 pb-2 mb-3">Contato e Localização</h3>
+
+            {cerInfo?.endereco && (
+              <div className="mb-2">
+                <p className="text-xs font-bold text-[var(--cor-3)] uppercase tracking-widest mb-1 flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5" /> Endereço
+                </p>
+                <p className="text-sm text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5">
+                  {cerInfo.endereco.rua}, {cerInfo.endereco.numero} - {cerInfo.endereco.bairro}
+                </p>
+              </div>
+            )}
+
+            {/* Telefones e Emails lado a lado para economizar espaço vertical */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {cerInfo?.telefone && (
+                <div>
+                  <p className="text-xs font-bold text-[var(--cor-3)] uppercase tracking-widest mb-1 flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5" /> Telefone
+                  </p>
+                  <p className="text-sm text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5">
+                    {cerInfo.telefone}
+                  </p>
+                </div>
+              )}
+
+              {cerInfo?.email && (
+                <div>
+                  <p className="text-xs font-bold text-[var(--cor-3)] uppercase tracking-widest mb-1 flex items-center gap-2">
+                    <Mail className="w-3.5 h-3.5" /> Email
+                  </p>
+                  <p className="text-sm text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5 truncate" title={cerInfo.email}>
+                    {cerInfo.email}
+                  </p>
+                </div>
+              )}
+            </div>
+
+            <div>
+              <p className="text-xs font-bold text-[var(--cor-3)] uppercase tracking-widest mb-1 flex items-center gap-2">
+                <Clock className="w-3.5 h-3.5" /> Horário
+              </p>
+              <p className="text-sm text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5">
+                Segunda a Sexta, das 08:00 às 17:00
+              </p>
+            </div>
+          </div>
+
+          {/* 3. Card do Passo a Passo (Timeline) */}
+          <div className="bg-white p-5 rounded-xl shadow-md border border-blue-100">
+            <h3 className="font-bold text-lg mb-4">Passo a Passo</h3>
+            
+            <div className="relative border-l-2 border-blue-100 ml-3 space-y-4">
+              {fluxoInfo?.steps.map((step: any, index: number) => (
+                <div key={index} className="relative pl-6">
+                  {/* Indicador circular da timeline */}
+                  <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white border-[3px] border-[var(--cor-3)] shadow-sm" />
+                  
+                  <div className="bg-gray-50/50 p-3 rounded-lg border border-gray-100 transition-all hover:shadow-sm hover:border-blue-100">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Calendar className="w-4 h-4 text-[var(--cor-3)]" />
+                      <h4 className="font-bold text-base text-gray-800 leading-tight">
+                        {step.title}
+                      </h4>
+                    </div>
+                    <p className="text-sm text-gray-600 leading-snug">
+                      {step.description || "Siga as instruções desta etapa."}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 4. Card de Documentos Necessários */}
+          <div className="bg-white p-5 rounded-xl shadow-md border border-blue-100">
+            <h3 className="font-bold text-lg mb-3">Documentos Necessários</h3>
+            <ul className="space-y-2">
+              {fluxoInfo?.documents.map((doc: string, i: number) => (
+                <li key={i} className="flex items-start text-sm text-gray-700 leading-snug">
+                  <span className="mr-2 text-[var(--cor-3)] font-black text-lg leading-none">•</span>
+                  {doc}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Botão Voltar Mobile */}
+        <div className="mt-6 flex justify-center md:hidden">
+          <Button
+            size="sm"
+            className="w-full text-white bg-[var(--cor-3)] hover:bg-orange-600 transition-all text-sm py-5 rounded-xl"
+            onClick={() => setShowFlow([false, cerId])}
+          >
+            Voltar para a busca
+          </Button>
+        </div>
+
+      </div>
+    </section>
   );
 }
