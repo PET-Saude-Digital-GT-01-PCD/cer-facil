@@ -19,7 +19,6 @@ export function App() {
         showFlow={showFlow}
         setShowFlow={setShowFlow}
       />
-      <Footnote />
     </>
   );
 }
