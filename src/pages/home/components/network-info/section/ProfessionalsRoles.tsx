@@ -38,18 +38,18 @@ export default function ProfessionalsRoles() {
     };
 
     return (
-        <section className="px-6 py-24 pt-0 bg-white font-sans">
+        <section className="px-6 py-24 font-sans">
             <div className="mx-auto max-w-6xl">
                 
                 {/* Cabeçalho */}
                 <div className="text-left mb-12">
-                    <h2 className="text-4xl font-bold mb-4 text-slate-900 leading-tight">
+                    <h2 className="text-4xl text-white font-bold mb-4 text-slate-900 leading-tight">
                         Equipe Multiprofissional
                     </h2>
-                    <div className="w-20 h-1.5 bg-orange-500 rounded-full mb-6"></div>
+                    <div className="w-20 h-1.5 bg-[var(--cor-1)] rounded-full mb-6"></div>
                     
                     {/* Área de Filtro Intuitiva */}
-                    <div className="bg-blue-50/50 border border-blue-100 p-6 rounded-2xl">
+                    <div className="bg-white border border-blue-100 p-6 rounded-2xl">
                         <div className="flex items-center gap-2 mb-4 text-blue-800 font-semibold uppercase text-sm tracking-wider">
                             <Filter size={18} />
                             <span>Filtrar por Especialidade:</span>
@@ -65,7 +65,7 @@ export default function ProfessionalsRoles() {
                                         className={`
                                             px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-200 border-2
                                             ${isActive 
-                                                ? "bg-orange-500 border-orange-500 text-white shadow-md shadow-orange-200" 
+                                                ? "bg-[var(--cor-1)] border-[var(--cor-2)] text-white shadow-md shadow-orange-200" 
                                                 : "bg-white border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600"}
                                         `}
                                     >
@@ -78,7 +78,7 @@ export default function ProfessionalsRoles() {
                             {activeFilters.length > 0 && (
                                 <button
                                     onClick={clearFilters}
-                                    className="ml-2 text-slate-400 hover:text-red-500 text-sm font-medium transition-colors"
+                                    className="ml-2 text-slate-400 hover:text-[var(--cor-1)] text-sm font-medium transition-colors"
                                 >
                                     Limpar tudo
                                 </button>
@@ -107,14 +107,14 @@ export default function ProfessionalsRoles() {
                                 >
                                     <button
                                         onClick={() => setOpenProf(isOpen ? null : prof.professional)}
-                                        className="w-full text-left px-6 py-5 flex items-center justify-between select-none"
+                                        className="w-full bg-white rounded-lg rounded-b-none text-left px-6 py-5 flex items-center justify-between select-none"
                                     >
-                                        <span className={`font-bold transition-colors ${isOpen ? "text-orange-600" : "text-slate-800"}`}>
-                                            <span className={`inline-block w-2 h-2 rounded-full mr-3 ${isOpen ? "bg-orange-500" : "bg-blue-400"}`} />
+                                        <span className={`font-bold transition-colors rounded-full ${isOpen ? "" : "text-slate-800"}`}>
+                                            <span className={`inline-block w-2 h-2 rounded-full mr-3 ${isOpen ? "bg-[var(--cor-1)]" : "bg-blue-400"}`} />
                                             {prof.professional}
                                         </span>
                                         <ChevronDown
-                                            className={`transition-transform duration-300 ${isOpen ? "rotate-180 text-orange-500" : "text-slate-400"}`}
+                                            className={`transition-transform duration-300 ${isOpen ? "rotate-180 text-[var(--cor-1)]" : "text-slate-400"}`}
                                             size={20}
                                         />
                                     </button>

@@ -41,15 +41,15 @@ export default function AttentionLevel() {
   return (
     <section
       id="attention-level"
-      className="px-6 py-20 bg-gradient-to-b from-white to-blue-50/30"
+      className="px-6 py-20 from-white to-blue-50/30"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-black">
+          <h2 className="text-4xl font-bold mb-4 text-white">
             Níveis de Atenção
           </h2>
           <div className="w-24 h-1 bg-[var(--cor-1)] rounded-full"></div>
-          <p className="text-gray-600 mt-4 max-w-2xl">
+          <p className="text-white mt-4 max-w-2xl">
             Estrutura integrada de cuidado em diferentes níveis de complexidade
           </p>
         </div>

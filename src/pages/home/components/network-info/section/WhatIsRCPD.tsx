@@ -22,14 +22,14 @@ export default function WhatIsRCPD() {
   return (
     <section
       id="what-is-rcpd"
-      className="px-6 py-20 bg-gradient-to-b from-white to-blue-50/30 relative"
+      className="px-6 py-20 from-white to-blue-50/30 relative"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-12">
-          <h2 className="font-bold text-4xl mb-4 text-black">
+          <h2 className="font-bold text-4xl mb-4 text-white">
             O que é a Rede de Cuidado à Pessoa com Deficiência?
           </h2>
-          <div className="w-24 h-1 bg-[var(--cor-3)] rounded-full"></div>
+          <div className="w-24 h-1 bg-[var(--cor-1)] rounded-full"></div>
         </div>
 
         <div className="space-y-12">
@@ -40,12 +40,12 @@ export default function WhatIsRCPD() {
             >
               <div className={`${idx % 2 === 1 ? 'md:order-2' : ''}`}>
                 <div className="bg-white p-8 rounded-xl shadow-lg border border-blue-100 flex flex-col items-center text-center">
-                  <feature.icon className="w-16 h-16 text-[var(--cor-3)] mb-4" />
+                  <feature.icon className="w-16 h-16 text-[var(--cor-1)] mb-4" />
                   <h3 className="font-bold text-2xl">{feature.title}</h3>
                 </div>
               </div>
               <div className={`${idx % 2 === 1 ? 'md:order-1' : ''}`}>
-                <p className="text-lg leading-relaxed text-gray-700">{feature.desc}</p>
+                <p className="text-lg leading-relaxed text-white">{feature.desc}</p>
               </div>
             </div>
           ))}

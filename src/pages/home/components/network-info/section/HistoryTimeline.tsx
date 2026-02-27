@@ -24,7 +24,7 @@ export default function HistoryTimeline() {
   return (
     <section
       id="history-rcpd"
-      className="px-6 py-20 bg-gradient-to-b from-blue-50/30 to-white relative"
+      className="px-6 py-20 from-blue-50/30 to-white relative"
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-left mb-16">

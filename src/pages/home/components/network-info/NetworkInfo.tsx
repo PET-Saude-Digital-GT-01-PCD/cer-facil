@@ -6,12 +6,22 @@ import AttentionLevel from "./section/AttentionLevel";
 
 export default function NetworkInfo() {
   return (
-    <div id="network-info" className="container mx-auto p-8">
-      <WhatIsRCPD />
-      <HistoryTimeline />
-      <AttentionLevel />
-      <TypesOfCersAndDeficiencies />
-      <ProfessionalsRoles />
+    <div id="network-info" className="mx-auto">
+      <div className="bg-[var(--cor-2)]">
+        <WhatIsRCPD />
+      </div>
+      <div className="bg-[var(--cor-7)]">
+        <HistoryTimeline />
+      </div>
+      <div className="bg-[var(--cor-2)]">
+        <AttentionLevel />
+      </div>
+      <div className="bg-[var(--cor-7)]">
+        <TypesOfCersAndDeficiencies />
+      </div>
+      <div className="bg-[var(--cor-2)]">
+        <ProfessionalsRoles />
+      </div>
     </div>
   );
 }

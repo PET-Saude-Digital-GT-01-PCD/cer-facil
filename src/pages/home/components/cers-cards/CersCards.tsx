@@ -36,8 +36,8 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
     return <Flow setShowFlow={setShowFlow} cerId={showFlow[1]} />;
   }
 
-  const fixos = (CERS as DadosCers[]).slice(0, 3);
-  const restantes = (CERS as DadosCers[]).slice(3);
+  const fixos = (CERS as DadosCers[]).slice(0, 6);
+  const restantes = (CERS as DadosCers[]).slice(6);
 
   const renderCersRow = (cer: DadosCers) => {
     return (
@@ -85,14 +85,14 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
   };
 
   return (
-    <section id="cers-card" className="px-6 py-20 bg-white relative">
+    <section id="cers-card" className="my-auto min-h-screen px-6 py-20 bg-[var(--cor-7)] relative">
       <div className="mx-auto max-w-6xl">
         
         <div className="text-left mb-12">
           <h2 className="font-bold text-4xl mb-4 text-black">
             Rede Estadual de Reabilitação
           </h2>
-          <div className="w-24 h-1 bg-[var(--cor-3)] rounded-full"></div>
+          <div className="w-24 h-1 bg-[var(--cor-1)] rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

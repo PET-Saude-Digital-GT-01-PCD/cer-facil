@@ -54,11 +54,11 @@ export default function TypesOfCersAndDeficiencies() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
-                        { title: "Deficiência Física", icon: <Accessibility className="w-10 h-10" />, text: "Alteração completa ou parcial de um ou mais segmentos do corpo humano." },
-                        { title: "Deficiência Auditiva", icon: <Ear className="w-10 h-10" />, text: "Perda bilateral, parcial ou total, de quarenta e um decibéis (dB) ou mais." },
-                        { title: "Deficiência Visual", icon: <Eye className="w-10 h-10" />, text: "Cegueira ou baixa visão, afetando o desempenho visual de forma significativa." },
-                        { title: "Deficiência Intelectual", icon: <Brain className="w-10 h-10" />, text: "Funcionamento intelectual inferior à média, com limitações associadas." },
-                        { title: "TEA (Autismo)", icon: <Puzzle className="w-10 h-10" />, text: "Deficiências persistentes na comunicação e na interação social." },
+                        { title: "Deficiência Física", icon: <Accessibility className="w-10 h-10 text-[var(--cor-1)]" />, text: "Alteração completa ou parcial de um ou mais segmentos do corpo humano." },
+                        { title: "Deficiência Auditiva", icon: <Ear className="w-10 h-10 text-[var(--cor-1)]" />, text: "Perda bilateral, parcial ou total, de quarenta e um decibéis (dB) ou mais." },
+                        { title: "Deficiência Visual", icon: <Eye className="w-10 h-10 text-[var(--cor-1)]" />, text: "Cegueira ou baixa visão, afetando o desempenho visual de forma significativa." },
+                        { title: "Deficiência Intelectual", icon: <Brain className="w-10 h-10 text-[var(--cor-1)]" />, text: "Funcionamento intelectual inferior à média, com limitações associadas." },
+                        { title: "TEA (Autismo)", icon: <Puzzle className="w-10 h-10 text-[var(--cor-1)]" />, text: "Deficiências persistentes na comunicação e na interação social." },
                     ].map((item, idx) => (
                         <div key={idx} className={`bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:border-orange-200 transition-all ${idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                             <div className="text-orange-500 mb-6 flex justify-center">{item.icon}</div>

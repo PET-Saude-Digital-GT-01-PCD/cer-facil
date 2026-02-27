@@ -49,6 +49,9 @@
   --cor-3: #e64f22; /* Laranja */
   --cor-4: #dbddde; /*cinza*/
   --cor-5: #022d77; /* Azul Profundo */
+  --cor-7: #e0e3e6;
+  --cor-8: #afdcea;
+  --cor-9: #DEEBEF;
 }
 
 :root {
