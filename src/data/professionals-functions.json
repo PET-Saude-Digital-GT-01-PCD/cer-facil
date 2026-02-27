@@ -1,121 +1,121 @@
 [
     {
         "professional": "Médico",
-        "description": "Realiza consultas, diagnósticos, exames, prescrições e laudos; avalia periodicamente o usuário; participa de discussões de caso e atividades multiprofissionais; registra informações em prontuário e atua na promoção, prevenção e reabilitação da saúde.",
+        "description": "Realiza consultas, descobre diagnósticos, pede exames e prescreve receitas e laudos. Ele acompanha o paciente ao longo do tempo, trabalha junto com outros profissionais e foca em prevenir doenças e recuperar a saúde.",
         "service": [1, 2, 3, 4, 5]
     },
 
     {
         "professional": "Fisioterapeuta",
-        "description": "Avalia funcionalmente, realiza tratamentos e estimulação precoce; aplica escalas e testes; prescreve e adapta OPM e tecnologias assistivas; conduz atendimentos individuais ou em grupo; determina alta; registra evolução; orienta famílias e planeja adaptações de acessibilidade.",
+        "description": "Avalia como o corpo está se movimentando e faz tratamentos para melhorar os movimentos e a força. Ele também indica e ajusta equipamentos como cadeiras de rodas ou próteses, além de orientar a família sobre como ajudar no dia a dia.",
         "service": [1, 4, 5]
     },
 
     {
         "professional": "Terapeuta Ocupacional",
-        "description": "Avalia e intervém no desempenho ocupacional em todos os ciclos de vida; conduz atividades terapêuticas e oficinas; prescrever e adaptar tecnologias assistivas; avalia fatores pessoais, ambientais e ocupacionais; treina AVD/AIVD; orienta família; elabora registros e pareceres.",
+        "description": "Ajuda a pessoa a ter mais independência para realizar atividades do cotidiano, como se vestir, comer ou trabalhar. Ele cria oficinas, adapta o ambiente e treina o uso de aparelhos que facilitam a rotina do paciente.",
         "service": [1, 3, 4, 5]
     },
 
     {
         "professional": "Enfermeiro",
-        "description": "Realiza consultas, procedimentos, curativos e administração de medicamentos; monitora evolução clínica; prescreve cuidados; participa do PTS e de grupos terapêuticos; orienta famílias; registra em prontuário; coordena a equipe de enfermagem.",
+        "description": "Faz consultas, curativos e administra remédios, cuidando de perto da evolução do paciente. Ele organiza os cuidados diários, orienta a família e lidera a equipe de enfermagem para garantir um atendimento seguro.",
         "service": [1, 2, 3, 4, 5]
     },
 
     {
         "professional": "Técnico de Enfermagem",
-        "description": "desempenha um papel na recuperação, funcionalidade e qualidade de vida dos pacientes com deficiência ou doenças crônicas. A atuação é focada no cuidado direto, humanizado e na assistência à equipe multidisciplinar.",
+        "description": "Oferece cuidado direto no dia a dia, ajudando o paciente a se recuperar e ter mais qualidade de vida, sempre com um olhar humano e apoiando os outros profissionais de saúde.",
         "service": [1, 2, 3, 4, 5]
     },
 
     {
         "professional": "Psicólogo",
-        "description": "Realizar psicodiagnóstico, psicoterapia individual e em grupo; aplica testes e entrevistas; conduz dinâmicas; orienta usuários e famílias a partir da avaliação psicológica.",
+        "description": "Realiza avaliações e sessões de terapia para cuidar da saúde mental e emocional. Ele conversa com o paciente e a família, ajuda a entender os sentimentos e orienta sobre como lidar com os desafios.",
         "service": [1, 2, 3, 4, 5]
     },
 
     {
         "professional": "Assistente Social",
-        "description": "Atua desde a admissão até a alta; identifica demandas sociais; articula redes e serviços; desenvolve ações socioeducativas; cria grupos; sensibiliza usuários para o tratamento; fomenta inclusão social; promove debates e oficinas; registra evolução e orientações.",
+        "description": "Identifica as necessidades sociais do paciente e ajuda a garantir seus direitos, ligando-o a serviços como escola e auxílios do governo. Ele trabalha para que a pessoa seja incluída na sociedade e incentiva a participação no tratamento.",
         "service": [1, 2, 3, 4, 5]
     },
 
     {
         "professional": "Fonoaudiólogo",
-        "description": "Avalia e reabilita audição, linguagem, voz, fala, sistemas miofuncionais e deglutição; atua com alterações neurofuncionais; orienta famílias; emite laudos; participa de equipes multiprofissionais; realiza terapia e acompanha comunicação e funções associadas.",
+        "description": "Cuida de tudo que envolve a comunicação (fala, audição e voz) e também de problemas para mastigar ou engolir alimentos. Ele faz testes, emite laudos e realiza terapias para melhorar a forma como o paciente se comunica e se alimenta.",
         "service": [1, 2, 4, 5]
     },
 
     {
         "professional": "Nutricionista",
-        "description": "Avalia e acompanha o estado nutricional; prescreve dietas; registra evolução alimentar; executa protocolos; realiza educação nutricional; identifica necessidades específicas; supervisiona preparo e uso de alimentos em treinos funcionais; articula com a equipe multiprofissional.",
+        "description": "Acompanha o peso e a saúde alimentar, criando dietas personalizadas para as necessidades de cada um. Ele ensina sobre alimentação saudável e ajuda no treinamento de como comer melhor no dia a dia.",
         "service": [1, 2, 3, 4, 5]
     },
 
     {
         "professional": "Ortoptista",
-        "description": "é um profissional de saúde especializado em movimentos oculares e visão binocular, atuando na avaliação, diagnóstico e reabilitação de distúrbios como estrabismo, ambliopia (olho preguiçoso), visão dupla e problemas de coordenação, funcionando como uma \"fisioterapia\" para os olhos, em colaboração com oftalmologistas para melhorar o alinhamento e o conforto visual.",
+        "description": "Funciona como um \"fisioterapeuta para os olhos\", tratando problemas como o estrabismo (olhos desalinhados) ou a visão dupla para melhorar o conforto visual.",
         "service": [3]
     },
 
     {
         "professional": "Pedagogo",
-        "description": "é o profissional especialista em processos de ensino e aprendizagem, atuando como mediador para promover o desenvolvimento integral de crianças, jovens e adultos, através do planejamento, aplicação e avaliação de metodologias e materiais didáticos, visando a superação de desafios.",
+        "description": "Especialista em ensino que cria formas diferentes de ajudar crianças e adultos a aprenderem melhor, superando dificuldades com materiais e aulas adaptadas.",
         "service": [4, 5]
     },
 
     {
         "professional": "Psicopedagogo",
-        "description": "Um psicopedagogo é o profissional que estuda e atua nos processos de ensino-aprendizagem, identificando, prevenindo e intervindo na reabilitação cognitiva e na superação de dificuldades de aprendizagem, com foco em indivíduos com deficiência física, intelectual, visual ou auditiva, integrando conhecimentos da Psicologia e Pedagogia para criar estratégias personalizadas e facilitar a aquisição de conhecimento, seja na clínica, na escola ou em instituições.",
+        "description": "Une a psicologia e a educação para entender por que alguém tem dificuldade de aprender. Ele cria estratégias personalizadas para ajudar pessoas com deficiência a ganharem novos conhecimentos na escola ou no dia a dia.",
         "service": [4, 5]
     },
 
     {
         "professional": "Musicoterapeuta",
-        "description": "Um musicoterapeuta é um profissional de saúde de nível superior que usa a música e seus elementos (ritmo, melodia, harmonia) como ferramenta terapêutica para promover bem-estar físico, mental, emocional e social, ajudando pacientes a atingir objetivos de saúde, reabilitação e desenvolvimento, em áreas como autismo, depressão, ansiedade e reabilitação motora, por meio de técnicas como improvisação, canto e escuta.",
+        "description": "Usa a música, como o ritmo e o canto, para ajudar no bem-estar emocional e na recuperação física, sendo muito útil no cuidado do autismo e da coordenação motora.",
         "service": [1, 4, 5]
     },
 
     {
         "professional": "Arteterapeuta",
-        "description": "utiliza a expressão artística como um eixo principal do tratamento para promover a reabilitação física, mental e social dos pacientes. O foco é no processo criativo, e não na estética da obra final.",
+        "description": "Usa a arte (desenho, pintura, criação) para ajudar o paciente a se expressar e se recuperar. O importante aqui não é a beleza do desenho, mas como a arte ajuda a pessoa a se sentir melhor.",
         "service": [1, 4, 5]
     },
 
     {
         "professional": "Massoterapeuta",
-        "description": "Um massoterapeuta é um profissional especializado em aplicar diversas técnicas de massagem com fins terapêuticos, preventivos e relaxantes, visando aliviar dores, reduzir o estresse, melhorar a circulação e promover o bem-estar físico e mental, atuando com conhecimento de anatomia e fisiologia para tratar desde tensões musculares a condições mais sérias, e pode trabalhar em clínicas, spas ou como autônomo.",
+        "description": "Especialista em massagens que ajudam a aliviar dores, reduzir o estresse e melhorar a circulação do corpo, trazendo relaxamento e bem-estar.",
         "service": [1]
     },
 
     {
-        "professional": "Profissional de educação física",
-        "description": "atua de forma multiprofissional, complementando a fisioterapia na promoção da capacidade física, funcionalidade e qualidade de vida, focando na prevenção, recuperação pós-lesão/cirurgia e recondicionamento através de exercícios prescritos, visando o retorno seguro às atividades.",
+        "professional": "Profissional de Educação Física",
+        "description": "Ajuda na recuperação do corpo através de exercícios físicos planejados, complementando o trabalho da fisioterapia para que a pessoa ganhe mais fôlego e disposição.",
         "service": [1, 4, 5]
     },
 
     {
         "professional": "Psicomotricista",
-        "description": "Psicomotricidade é uma área interdisciplinar que estuda a relação entre corpo, mente, emoção e movimento, focando no desenvolvimento integral do ser humano, desde a infância até a terceira idade, por meio de atividades que integram aspectos cognitivos, afetivos e motores, promovendo autoconhecimento, autonomia e habilidades para a vida e aprendizagem.",
+        "description": "Estuda como o movimento do corpo está ligado às emoções e ao pensamento. Ele usa atividades motoras para ajudar a pessoa a ter mais autoconhecimento e autonomia.",
         "service": [1, 4, 5]
     },
 
     {
         "professional": "Protético Ocular",
-        "description": "Fundamental para restaurar a estética facial, a autoestima e a integração social de pacientes que perderam o olho, prevenindo deformidades das pálpebras, protegendo a cavidade ocular e ajudando na drenagem lacrimal, através de uma prótese personalizada (como \"olho de vidro\" ou lente escleral) que simula o olho natural, proporcionando conforto e funcionalidade para o dia a dia.",
+        "description": "Cria próteses personalizadas (como o \"olho de vidro\") para quem perdeu o globo ocular, devolvendo a estética do rosto e ajudando na autoestima e na proteção do olho.",
         "service": [3]
     },
 
     {
         "professional": "Técnico de Orientação e Mobilidade",
-        "description": "é um profissional especializado em ensinar pessoas com deficiência visual (cegas ou baixa visão) a se locomover com independência, segurança e confiança, utilizando técnicas adaptadas, o uso correto da bengala (longa), e o desenvolvimento dos sentidos (tato, audição, olfato) para se orientar no espaço, promovendo inclusão e qualidade de vida.",
+        "description": "Ensina pessoas cegas ou com baixa visão a andar sozinhas com segurança, usando a bengala e treinando os outros sentidos, como o tato e a audição.",
         "service": [3]
     },
 
     {
         "professional": "Técnico Oftálmico",
-        "description": "Está envolvido principalmente no suporte técnico, a interpretação de prescrições ópticas e o treinamento do paciente no uso de auxílios visuais, trabalhando sob a supervisão de um médico oftalmologista ou de uma equipe multidisciplinar.",
+        "description": "Dá suporte técnico no cuidado dos olhos, ajudando o paciente a entender como usar lentes e aparelhos visuais indicados pelo médico.",
         "service": [3]
     }
 ]

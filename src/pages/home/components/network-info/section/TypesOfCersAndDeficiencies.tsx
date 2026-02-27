@@ -11,8 +11,9 @@ export default function TypesOfCersAndDeficiencies() {
                         <div className="text-left mb-16">
                             <h2 className="text-4xl font-bold mb-4 text-black">Conheça os Diferentes <br /> Tipos de CERs</h2>
                             <div className="w-24 h-1 bg-[var(--cor-1)] rounded-full"></div>
-                            <p className="text-gray-600 mt-4 max-w-2xl">Os Centros Especializados em Reabilitação (CER) são pontos de atenção ambulatorial
-                                especializada que oferecem diagnóstico e tratamento qualificado, sendo referência para a Rede de Atenção à Saúde (RAS).</p>
+                            <p className="text-gray-600 mt-4 max-w-2xl">
+                                Os Centros Especializados em Reabilitação (CER) são unidades de saúde focadas em oferecer tratamentos especializados e diagnósticos precisos. Eles funcionam como centros de referência: quando um posto de saúde percebe que alguém precisa de um cuidado mais específico para sua deficiência, essa pessoa é encaminhada para um CER. Lá, o atendimento é feito por vários profissionais ao mesmo tempo, garantindo que o paciente receba todo o suporte necessário em um só lugar.
+                            </p>
                         </div>
 
                         {/* Cards dos CERs com Layout mais Clean */}
@@ -54,11 +55,11 @@ export default function TypesOfCersAndDeficiencies() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
-                        { title: "Deficiência Física", icon: <Accessibility className="w-10 h-10" />, text: "Alteração completa ou parcial de um ou mais segmentos do corpo humano." },
-                        { title: "Deficiência Auditiva", icon: <Ear className="w-10 h-10" />, text: "Perda bilateral, parcial ou total, de quarenta e um decibéis (dB) ou mais." },
-                        { title: "Deficiência Visual", icon: <Eye className="w-10 h-10" />, text: "Cegueira ou baixa visão, afetando o desempenho visual de forma significativa." },
-                        { title: "Deficiência Intelectual", icon: <Brain className="w-10 h-10" />, text: "Funcionamento intelectual inferior à média, com limitações associadas." },
-                        { title: "TEA (Autismo)", icon: <Puzzle className="w-10 h-10" />, text: "Deficiências persistentes na comunicação e na interação social." },
+                        { title: "Deficiência Física", icon: <Accessibility className="w-10 h-10" />, text: "É quando uma pessoa possui alterações no corpo que podem comprometer a mobilidade, a força ou a coordenação dos movimentos. Isso pode ser de nascimento ou causado por acidentes e doenças." },
+                        { title: "Deficiência Auditiva", icon: <Ear className="w-10 h-10" />, text: "É a perda parcial ou total da audição. Nessas situações, algumas pessoas precisam usar aparelhos auditivos para ouvir melhor." },
+                        { title: "Deficiência Visual", icon: <Eye className="w-10 h-10" />, text: "Vai desde a \"baixa visão\" (quando a pessoa enxerga com muita dificuldade, mesmo usando óculos) até a cegueira total. O apoio pode envolver o uso de Braille, bengalas ou tecnologias de voz." },
+                        { title: "Deficiência Intelectual", icon: <Brain className="w-10 h-10" />, text: "Tem a ver com dificuldades no aprendizado e na compreensão de tarefas do dia a dia. Algumas pessoas podem precisar de mais tempo ou de formas diferentes para aprender a se comunicar, estudar e interagir com os outros." },
+                        { title: "TEA (Autismo)", icon: <Puzzle className="w-10 h-10" />, text: "Não é uma doença, mas uma forma diferente de o cérebro lidar com as informações. Isso pode afetar a maneira como a pessoa interage socialmente, como ela se comunica e como ela percebe estímulos sensoriais (como sons e luzes). Cada pessoa com TEA é única e tem suas próprias habilidades e desafios." },
                     ].map((item, idx) => (
                         <div key={idx} className={`bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:border-orange-200 transition-all ${idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                             <div className="text-orange-500 mb-6 flex justify-center">{item.icon}</div>

@@ -60,9 +60,6 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
           <div className="bg-white p-5 rounded-xl shadow-md border border-blue-100 flex flex-col items-center text-center">
             <Icone className="w-10 h-10 text-[var(--cor-3)] mb-3" />
             <h3 className="font-bold text-lg mb-2">{fluxoInfo?.title}</h3>
-            <p className="text-sm leading-relaxed text-gray-700 text-justify">
-              {cerInfo?.info || "Informação detalhada sobre o CER selecionado."}
-            </p>
           </div>
 
           {/* 2. Card de Contato e Endereço */}

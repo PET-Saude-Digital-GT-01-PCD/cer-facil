@@ -23,10 +23,18 @@ interface CersCardsProps {
 
 export function toTitleCase(text: string): string {
   if (!text) return "";
+  
+  const romanNumerals = ['II', 'III', 'IV'];
+  
   return text
     .toLowerCase()
     .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => {
+      if (romanNumerals.includes(word.toUpperCase())) {
+        return word.toUpperCase();
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
     .join(" ");
 }
 

@@ -4,18 +4,18 @@ export default function WhatIsRCPD() {
   const features = [
     {
       icon: Heart,
-      title: "Cuidado Integral",
-      desc: "A Rede de Cuidados à Pessoa com Deficiência tem como objetivo ampliar o acesso e qualificar o atendimento no Sistema Único de Saúde (SUS), oferecendo cuidado integral às pessoas com deficiência ao longo de todas as fases da vida.",
+      title: "Cuidado Para Todas as Idades",
+      desc: "A Rede existe para garantir que as pessoas com deficiência tenham um atendimento melhor e mais fácil no SUS. O objetivo é oferecer um cuidado completo e de qualidade em todas as etapas da vida, desde a infância até a velhice.",
     },
     {
       icon: Shield,
       title: "Prevenção",
-      desc: "A atuação da rede envolve ações de prevenção, identificação precoce e reabilitação, considerando diferentes tipos de deficiência e necessidades de cuidado.",
+      desc: "O trabalho da Rede foca em três frentes: evitar doenças (prevenção), descobrir deficiências o quanto antes para começar o tratamento cedo (identificação precoce) e ajudar na recuperação da autonomia (reabilitação). Tudo isso é feito respeitando as necessidades específicas de cada tipo de deficiência.",
     },
     {
       icon: Users,
-      title: "Acesso Universal",
-      desc: "Garantia de atendimento equitativo e acessível a todas as pessoas com deficiência, promovendo a inclusão e a igualdade de oportunidades no acesso aos serviços de saúde.",
+      title: "Disponível Para Todas as Pessoas com Deficiência",
+      desc: "A Rede garante que o atendimento seja justo e acessível para todos. O foco é eliminar barreiras e promover a inclusão, para que todas as pessoas com deficiência tenham as mesmas oportunidades de cuidar da sua saúde com dignidade.",
     },
   ];
 
@@ -27,7 +27,7 @@ export default function WhatIsRCPD() {
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-12">
           <h2 className="font-bold text-4xl mb-4 text-black">
-            O que é a Rede de Cuidado à Pessoa com Deficiência?
+            O que é a Rede de Cuidado à Pessoa com Deficiência (RCPD)?
           </h2>
           <div className="w-24 h-1 bg-[var(--cor-3)] rounded-full"></div>
         </div>
