@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import CERS from "@/data/cers.json";
-import Flow from "../user-flow/Flow";
+import Flow from "../../user-flow/Flow";
 import { MapPin, ArrowRight } from "lucide-react";
 import {
   Accordion,
