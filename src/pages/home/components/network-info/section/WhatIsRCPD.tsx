@@ -22,7 +22,7 @@ export default function WhatIsRCPD() {
   return (
     <section
       id="what-is-rcpd"
-      className="px-6 py-20 from-white to-blue-50/30 relative"
+      className="h-screen px-6 py-20 from-white to-blue-50/30 relative flex justify-center items-center"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-12">

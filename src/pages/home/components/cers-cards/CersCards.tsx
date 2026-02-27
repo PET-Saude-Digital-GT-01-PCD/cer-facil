@@ -85,7 +85,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
   };
 
   return (
-    <section id="cers-card" className="my-auto min-h-screen px-6 py-20 bg-[var(--cor-7)] relative">
+    <section id="cers-card" className="my-auto min-h-screen px-6 py-20 bg-[var(--cor-7)] relative flex justify-center items-center">
       <div className="mx-auto max-w-6xl">
         
         <div className="text-left mb-12">

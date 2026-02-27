@@ -66,7 +66,7 @@ export default function ProfessionalsRoles() {
                                             px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-200 border-2
                                             ${isActive 
                                                 ? "bg-[var(--cor-1)] border-[var(--cor-2)] text-white shadow-md shadow-orange-200" 
-                                                : "bg-white border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600"}
+                                                : "bg-transparent border-slate-200 text-slate-600 hover:border-blue-400 hover:text-blue-600"}
                                         `}
                                     >
                                         {option.label}
@@ -107,7 +107,7 @@ export default function ProfessionalsRoles() {
                                 >
                                     <button
                                         onClick={() => setOpenProf(isOpen ? null : prof.professional)}
-                                        className="w-full bg-white rounded-lg rounded-b-none text-left px-6 py-5 flex items-center justify-between select-none"
+                                        className={`w-full bg-white text-left px-6 py-5 flex items-center justify-between select-none ${isOpen ? "rounded-b-none rounded-t-lg" : "rounded-lg"}`}
                                     >
                                         <span className={`font-bold transition-colors rounded-full ${isOpen ? "" : "text-slate-800"}`}>
                                             <span className={`inline-block w-2 h-2 rounded-full mr-3 ${isOpen ? "bg-[var(--cor-1)]" : "bg-blue-400"}`} />

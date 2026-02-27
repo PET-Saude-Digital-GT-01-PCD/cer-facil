@@ -41,7 +41,7 @@ export default function AttentionLevel() {
   return (
     <section
       id="attention-level"
-      className="px-6 py-20 from-white to-blue-50/30"
+      className="h-screen px-6 py-20 from-white to-blue-50/30 flex justify-center items-center"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-16">
