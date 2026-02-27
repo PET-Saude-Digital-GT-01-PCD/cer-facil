@@ -20,6 +20,8 @@ interface DadosCers {
 interface CersCardsProps {
   showFlow: [boolean, number | null];
   setShowFlow: (val: [boolean, number | null]) => void;
+  fromForm?: boolean;
+  onBackToForm?: () => void;
 }
 
 export function toTitleCase(text: string): string {
@@ -31,9 +33,9 @@ export function toTitleCase(text: string): string {
     .join(" ");
 }
 
-export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
+export default function CersCards({ showFlow, setShowFlow, fromForm, onBackToForm }: CersCardsProps) {
   if (showFlow[0]) {
-    return <Flow setShowFlow={setShowFlow} cerId={showFlow[1]} />;
+    return <Flow setShowFlow={setShowFlow} cerId={showFlow[1]} fromForm={fromForm} onBackToForm={onBackToForm} />;
   }
 
   const fixos = (CERS as DadosCers[]).slice(0, 3);

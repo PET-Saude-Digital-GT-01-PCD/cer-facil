@@ -8,6 +8,10 @@ interface HomeProps {
   setShowForm: (show: boolean) => void;
   showFlow: boolean;
   setShowFlow: (show: boolean) => void;
+  fromFormFlow?: boolean;
+  onBackToFormResults?: () => void;
+  formData: any;
+  setFormData: (data: any) => void;
 }
 
 export default function Home({
@@ -15,24 +19,33 @@ export default function Home({
   setShowForm,
   showFlow,
   setShowFlow,
+  fromFormFlow,
+  onBackToFormResults,
+  formData,
+  setFormData,
 }: HomeProps) {
   if (showFlow[0]) {
     return (
       <div>
-        <CersCards showFlow={showFlow} setShowFlow={setShowFlow} />
+        <CersCards showFlow={showFlow} setShowFlow={setShowFlow} fromForm={fromFormFlow} onBackToForm={onBackToFormResults} />
       </div>
     );
   }
+  
+  if (showForm) {
+    return (
+      <div>
+        <Welcome showForm={showForm} setShowForm={setShowForm} setShowFlow={setShowFlow} fromFormFlow={fromFormFlow} onBackToFormResults={onBackToFormResults} formData={formData} setFormData={setFormData} />
+      </div>
+    );
+  }
+  
   return (
     <div>
-      <Welcome showForm={showForm} setShowForm={setShowForm} setShowFlow={setShowFlow} />
-      {!showForm && (
-        <>
-          <CersCards showFlow={showFlow} setShowFlow={setShowFlow} />
-          <NetworkInfo />
-          <Footnote />
-        </>
-      )}
+      <Welcome showForm={showForm} setShowForm={setShowForm} setShowFlow={setShowFlow} fromFormFlow={fromFormFlow} onBackToFormResults={onBackToFormResults} formData={formData} setFormData={setFormData} />
+      <CersCards showFlow={showFlow} setShowFlow={setShowFlow} fromForm={fromFormFlow} onBackToForm={onBackToFormResults} />
+      <NetworkInfo />
+      <Footnote />
     </div>
   );
 }

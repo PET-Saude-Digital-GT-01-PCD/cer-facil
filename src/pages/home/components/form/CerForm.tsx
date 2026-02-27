@@ -8,33 +8,22 @@ import StepIndicator from "./step-indicator/StepIndicator";
 interface CerFormProps {
   setShowForm: (show: boolean) => void;
   setShowFlow: (show: [boolean, number]) => void;
+  fromFormFlow?: boolean;
+  onBackToFormResults?: () => void;
+  formData: any;
+  setFormData: (data: any) => void;
 }
 
-interface FormData {
-  deficiencies: string[];
-  ageGroup: string;
-  location: string;
-  coordinates: { lat: number; lng: number } | null;
-}
-
-export default function CerForm({ setShowForm, setShowFlow }: CerFormProps) {
-  const [currentStep, setCurrentStep] = useState(1);
-
-  const [formData, setFormData] = useState<FormData>({
-    deficiencies: [],
-    ageGroup: "",
-    location: "",
-    coordinates: null,
-  });
+export default function CerForm({ setShowForm, setShowFlow, fromFormFlow, onBackToFormResults, formData, setFormData }: CerFormProps) {
+  const currentStep = formData.currentStep;
+  const setCurrentStep = (step: number) => setFormData({ ...formData, currentStep: step });
 
   const handleStepOneNext = (selectedDeficiencies: string[]) => {
-    setFormData(prev => ({ ...prev, deficiencies: selectedDeficiencies }));
-    setCurrentStep(2);
+    setFormData({ ...formData, deficiencies: selectedDeficiencies, currentStep: 2 });
   };
 
   const handleStepTwoNext = (ageGroup: string) => {
-    setFormData(prev => ({ ...prev, ageGroup }));
-    setCurrentStep(3);
+    setFormData({ ...formData, ageGroup, currentStep: 3 });
   };
 
   const handleStepThreeNext = (location: string) => {
@@ -55,12 +44,12 @@ export default function CerForm({ setShowForm, setShowFlow }: CerFormProps) {
 
       const coordinates = { lat, lng };
       
-      setFormData(prev => ({ 
-        ...prev, 
+      setFormData({ 
+        ...formData, 
         location: `${lat.toFixed(4)}, ${lng.toFixed(4)}`,
-        coordinates 
-      }));
-      setCurrentStep(4);
+        coordinates,
+        currentStep: 4
+      });
     } catch (error) {
       console.error('Erro ao processar coordenadas:', error);
     }
@@ -69,6 +58,13 @@ export default function CerForm({ setShowForm, setShowFlow }: CerFormProps) {
   const handleFinish = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
     setShowForm(false);
+    setFormData({
+      deficiencies: [],
+      ageGroup: "",
+      location: "",
+      coordinates: null,
+      currentStep: 1,
+    });
   };
 
   const handleStepClick = (step: number) => {
@@ -79,13 +75,13 @@ export default function CerForm({ setShowForm, setShowFlow }: CerFormProps) {
     
     // Permite voltar para steps anteriores
     if (step < currentStep) {
-      setCurrentStep(step);
+      setFormData({ ...formData, currentStep: step });
     }
   };
 
   const handleShowFlow = (cerId: number) => {
     setShowFlow([true, cerId]);
-    setShowForm(false);
+    // Não fecha o formulário, apenas esconde
   };
 
   return (

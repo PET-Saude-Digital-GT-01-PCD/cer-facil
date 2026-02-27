@@ -6,9 +6,11 @@ import CERS from "@/data/cers.json";
 interface FlowProps {
   setShowFlow: (show: [boolean, number]) => void;
   cerId: number;
+  fromForm?: boolean;
+  onBackToForm?: () => void;
 }
 
-export default function Flow({ setShowFlow, cerId }: FlowProps) {
+export default function Flow({ setShowFlow, cerId, fromForm, onBackToForm }: FlowProps) {
   // Pega as informações baseadas no ID passado
   const fluxoInfo = FLUXOS[cerId - 1];
   const cerInfo = CERS[cerId - 1];
@@ -37,7 +39,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             variant="outline"
             size="sm"
             className="hidden md:flex text-[var(--cor-3)] border-[var(--cor-3)] hover:bg-[var(--cor-3)] hover:text-white transition-all"
-            onClick={() => setShowFlow([false, cerId])}
+            onClick={() => fromForm && onBackToForm ? onBackToForm() : setShowFlow([false, cerId])}
           >
             Voltar para a busca
           </Button>
@@ -151,7 +153,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
           <Button
             size="sm"
             className="w-full text-white bg-[var(--cor-3)] hover:bg-orange-600 transition-all text-sm py-5 rounded-xl"
-            onClick={() => setShowFlow([false, cerId])}
+            onClick={() => fromForm && onBackToForm ? onBackToForm() : setShowFlow([false, cerId])}
           >
             Voltar para a busca
           </Button>

@@ -6,15 +6,19 @@ interface WelcomeProps {
   showForm: boolean;
   setShowForm: (show: boolean) => void;
   setShowFlow: (show: [boolean, number]) => void;
+  fromFormFlow?: boolean;
+  onBackToFormResults?: () => void;
+  formData: any;
+  setFormData: (data: any) => void;
 }
 
-export default function Welcome({ showForm, setShowForm, setShowFlow }: WelcomeProps) {
+export default function Welcome({ showForm, setShowForm, setShowFlow, fromFormFlow, onBackToFormResults, formData, setFormData }: WelcomeProps) {
   const handleScrollDown = () => {
     window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
   };
 
   if (showForm) {
-    return <CerForm setShowForm={setShowForm} setShowFlow={setShowFlow} />;
+    return <CerForm setShowForm={setShowForm} setShowFlow={setShowFlow} fromFormFlow={fromFormFlow} onBackToFormResults={onBackToFormResults} formData={formData} setFormData={setFormData} />;
   }
 
   return (
