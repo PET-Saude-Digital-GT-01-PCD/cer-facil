@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "nome": "CER IV - FUNAD - FUNDAÇÃO CENTRO INTEGRADO DE APOIO AO PORTADOR DE DEFICIÊNCIA",
+    "nome": "CER IV - FUNAD - FUNDAÇÃO CENTRO INTEGRADO DE APOIO À PESSOA COM DEFICIÊNCIA",
     "info": "A FUNAD é referência em reabilitação integral, atendendo de forma especializada as deficiências auditiva, física, intelectual e visual, promovendo a inclusão social e a autonomia dos usuários.",
     "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
     "horario": {
