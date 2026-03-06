@@ -182,8 +182,8 @@ export default function Rodape() {
                   O GT-01 PCD concentra suas ações no fortalecimento da assistência digital voltada às pessoas com deficiência. A acessibilidade digital é tratada como um imperativo ético e legal, fundamentado 
                   na Lei Brasileira de Inclusão (LBI). Garantir que os sistemas de informação do SUS sejam plenamente
                   acessíveis não é apenas uma meta tecnológica, mas uma questão de direitos humanos que o GT-01 assume como missão institucional. Tem parceria com a Secretaria de Estado da Saúde da Paraíba e a FUNAD - Fundação Centro Integrado de Apoio à Pessoa com Deficiência.
-                  Os professores responsáveis por este grupo são o Prof. Dra. Eduardo e o Prof. Robson,
-                  do departamento de fisioterapia. Dentre os alunos estão integrantes do curso de Fisioterapia, Terapia Ocupacional, Ciência da Computação, Ciência de Dados e Engenharia da Computação.
+                  Os professores responsáveis por este grupo são o Prof. Eduardo e o Prof. Robson,
+                  do departamento de Fisioterapia. Dentre os alunos estão integrantes do curso de Fisioterapia, Terapia Ocupacional, Ciência da Computação, Ciência de Dados e Engenharia da Computação.
                 </p>
               </div>
 
@@ -218,3 +218,4 @@ export default function Rodape() {
   );
 
 }
+
