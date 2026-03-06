@@ -31,42 +31,42 @@ export default function MaterialEducational() {
       description:
         "Lei nº 13.146/2015 que assegura e promove condições de igualdade, exercício dos direitos e liberdades fundamentais para pessoas com deficiência.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/dez-anos-da-lei-brasileira-de-inclusao-lbi-texto-na-integra/lei_brasileira_de_inclusao_digital__1_.pdf",
-      image: lbiImg
+      image: lbiImg,
     },
     {
       title: "Cartilha Capacitismo",
       description:
         "Material educativo sobre capacitismo, suas formas de manifestação e como combater a discriminação contra pessoas com deficiência.",
       url: "https://www.confea.org.br/midias/uploads-imce/Cartilha%20combata%20o%20capacitismo.pdf",
-      image: capacitismoImg
+      image: capacitismoImg,
     },
     {
       title: "Guia de Acessibilidade Comunicacional",
       description:
         "Orientações práticas para garantir comunicação acessível, incluindo recursos como Libras, audiodescrição e linguagem simples.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/Guia_Acessibilidade_Comunicacional.PDF",
-      image: acessibilidadeImg
+      image: acessibilidadeImg,
     },
     {
       title: "Cuidado Menstrual de Pessoas com e sem Deficiência",
       description:
         "Guia sobre cuidados menstruais inclusivos, abordando necessidades específicas e promovendo autonomia e dignidade menstrual.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/Guia_Cuidado_Menstrual.pdf",
-      image: menstrualImg
+      image: menstrualImg,
     },
     {
       title: "Direitos e Saúde Sexual das Pessoas com Deficiência",
       description:
         "Material informativo sobre direitos sexuais e reprodutivos, desmistificando tabus e promovendo saúde sexual integral.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/Guia_Direitos_e_SadeSexual.pdf",
-      image: saudeSexualImg
+      image: saudeSexualImg,
     },
     {
       title: "Eu me Protejo",
       description:
         "Cartilha educativa sobre proteção e direitos das pessoas com deficiência, promovendo autonomia e segurança.",
       url: "https://www.eumeprotejo.com/_files/ugd/f04b3c_64c1d9d4a38f48a69ee10e12750e3505.pdf",
-      image: euMeProtejoImg
+      image: euMeProtejoImg,
     },
   ];
 
@@ -76,77 +76,77 @@ export default function MaterialEducational() {
       description:
         "Documento que estabelece diretrizes e ações para garantir os direitos das pessoas com deficiência no Brasil, promovendo inclusão e acessibilidade.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/Plano_Nacional_dos_Direitos_da_Pessoa_com_Deficiencia_Novo_Viver_Sem_Limite_DIGITAL.pdf",
-      image: planoNacionalImg
+      image: planoNacionalImg,
     },
     {
       title: "Lei Brasileira de Inclusão (LBI)",
       description:
         "Lei nº 13.146/2015 que assegura e promove condições de igualdade, exercício dos direitos e liberdades fundamentais para pessoas com deficiência.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/dez-anos-da-lei-brasileira-de-inclusao-lbi-texto-na-integra/lei_brasileira_de_inclusao_digital__1_.pdf",
-      image: lbiImg
+      image: lbiImg,
     },
     {
       title: "Diretrizes de Estimulação Precoce",
       description:
         "Orientações para estimulação de crianças de 0 a 3 anos com atraso no desenvolvimento neuropsicomotor, visando potencializar o desenvolvimento infantil.",
       url: "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-pessoa-com-deficiencia/publicacoes/diretrizes-de-estimulacao-precoce-criancas-de-zero-a-3-anos-com-atraso-no-desenvolvimento-neuropsicomotorpdf",
-      image: diretrizesImg
+      image: diretrizesImg,
     },
     {
       title: "Cartilha Capacitismo",
       description:
         "Material educativo sobre capacitismo, suas formas de manifestação e como combater a discriminação contra pessoas com deficiência.",
       url: "https://www.confea.org.br/midias/uploads-imce/Cartilha%20combata%20o%20capacitismo.pdf",
-      image: capacitismoImg
+      image: capacitismoImg,
     },
     {
       title: "Diagnóstico: Pessoas com Deficiência no Brasil",
       description:
         "Relatório com dados e informações sobre pessoas com deficiência baseado em registros administrativos, pesquisas e sistemas do Governo Federal.",
       url: "https://www.gov.br/mdh/pt-br/assuntos/noticias/2023/novembro/copy_of_Relatorio_CGIE_PCD_23.10.2023_FINAL1.pdf",
-      image: diagnosticoImg
+      image: diagnosticoImg,
     },
     {
       title: "Guia de Acessibilidade Comunicacional",
       description:
         "Orientações práticas para garantir comunicação acessível, incluindo recursos como Libras, audiodescrição e linguagem simples.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/Guia_Acessibilidade_Comunicacional.PDF",
-      image: acessibilidadeImg
+      image: acessibilidadeImg,
     },
     {
       title: "Atenção Primária à Saúde das Pessoas com Deficiência",
       description:
         "Guia em formato de cordel sobre o atendimento na atenção básica para pessoas com deficiência, com linguagem acessível e ilustrações.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/Guia_Ateno_Primria_em_cordel.pdf",
-      image: atencaoPrimariaImg
+      image: atencaoPrimariaImg,
     },
     {
       title: "Cuidado Menstrual de Pessoas com e sem Deficiência",
       description:
         "Guia sobre cuidados menstruais inclusivos, abordando necessidades específicas e promovendo autonomia e dignidade menstrual.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/Guia_Cuidado_Menstrual.pdf",
-      image: menstrualImg
+      image: menstrualImg,
     },
     {
       title: "Direitos e Saúde Sexual das Pessoas com Deficiência",
       description:
         "Material informativo sobre direitos sexuais e reprodutivos, desmistificando tabus e promovendo saúde sexual integral.",
       url: "https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes/Guia_Direitos_e_SadeSexual.pdf",
-      image: saudeSexualImg
+      image: saudeSexualImg,
     },
     {
       title: "Agente Comunitário de Saúde",
       description:
         "Guia para agentes comunitários de saúde sobre o atendimento e acompanhamento de pessoas com deficiência na comunidade.",
       url: "https://api.arca.fiocruz.br/api/core/bitstreams/81c04b44-e676-48ca-a08b-507933532e49/content",
-      image: agenteComunitarioImg
+      image: agenteComunitarioImg,
     },
     {
       title: "Guia de Boas Práticas para Acessibilidade Digital",
       description:
         "Recomendações técnicas e práticas para desenvolvimento de sites, aplicativos e conteúdos digitais acessíveis a todas as pessoas.",
       url: "https://www.nic.br/media/docs/publicacoes/13/20230920121455/guia_boas_praticas_acessibilidade_digital.pdf",
-      image: boasPraticasImg
+      image: boasPraticasImg,
     },
   ];
 
@@ -170,11 +170,11 @@ export default function MaterialEducational() {
     <section className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-8">
-          <h2 className="text-4xl font-bold mb-4 text-white">
+          <h2 className="text-4xl font-bold mb-4 text-slate-900">
             Material Educativo
           </h2>
-          <div className="w-24 h-1 bg-white rounded-full"></div>
-          <p className=" text-white mt-4 max-w-4xl text-lg leading-relaxed opacity-90">
+          <div className="w-24 h-1 bg-[var(--cor-bg-3)] rounded-full"></div>
+          <p className="text-slate-600 mt-4 max-w-4xl text-lg leading-relaxed">
             Acesse publicações, guias e cartilhas sobre direitos, saúde e
             inclusão das pessoas com deficiência.
           </p>
@@ -185,8 +185,8 @@ export default function MaterialEducational() {
             onClick={() => handleTabChange("user")}
             className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
               activeTab === "user"
-                ? "bg-white text-[var(--cor-bg-3)] shadow-lg"
-                : "bg-white/20 text-white hover:bg-white/30"
+                ? "bg-[var(--cor-bg-3)] text-white shadow-lg"
+                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
             }`}
           >
             <Users className="w-5 h-5" />
@@ -196,8 +196,8 @@ export default function MaterialEducational() {
             onClick={() => handleTabChange("professional")}
             className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
               activeTab === "professional"
-                ? "bg-white text-[var(--cor-bg-3)] shadow-lg"
-                : "bg-white/20 text-white hover:bg-white/30"
+                ? "bg-[var(--cor-bg-3)] text-white shadow-lg"
+                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
             }`}
           >
             <Briefcase className="w-5 h-5" />
@@ -264,8 +264,8 @@ export default function MaterialEducational() {
               onClick={() => setCurrentIndex(idx)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 idx === currentIndex
-                  ? "bg-white w-8"
-                  : "bg-white/40 hover:bg-white/60"
+                  ? "bg-[var(--cor-bg-3)] w-8"
+                  : "bg-slate-300 hover:bg-slate-400"
               }`}
               aria-label={`Ir para material ${idx + 1}`}
             />
