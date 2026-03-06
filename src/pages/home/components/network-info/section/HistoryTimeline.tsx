@@ -11,39 +11,35 @@ const detailedMessages = [
 ];
 
 const circleColors = [
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),black_60%)]",
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),black_60%)]",
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),black_60%)]",
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),black_60%)]",
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),black_60%)]",
+  "bg-[var(--cor-bg-3)]",
+  "bg-[var(--cor-bg-3)]",
+  "bg-[var(--cor-bg-3)]",
+  "bg-[var(--cor-bg-3)]",
+  "bg-[var(--cor-bg-3)]",
 ];
 
 export default function HistoryTimeline() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
-    <section
-      id="history-rcpd"
-      className="px-6 py-20 relative"
-    >
+    <section id="history-rcpd" className="px-6 py-20 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-left mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">
+          <h2 className="text-4xl font-bold mb-4 text-slate-900">
             História da Rede de Cuidado à Pessoa com Deficiência
           </h2>
-          <div className="w-24 h-2 bg-white rounded-full"></div>
-          <p className="text-white/90 mt-4 max-w-2xl">
+          <div className="w-24 h-2 bg-[var(--cor-bg-3)] rounded-full"></div>
+          <p className=" text-slate-600 mt-4 max-w-2xl text-lg">
             Uma jornada de evolução e compromisso com os direitos das pessoas
             com deficiência
           </p>
         </div>
 
         <div className="relative">
-          <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-white/40" />
+          <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-slate-200" />
 
           {timelineData.map((item, index) => (
             <div key={item.id} className="relative flex items-center mb-10">
-
               <div className="md:hidden flex items-start gap-4 w-full">
                 <div className="relative flex-shrink-0">
                   <div
@@ -57,26 +53,26 @@ export default function HistoryTimeline() {
                 </div>
                 <div className="flex-1">
                   <div
-                    className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-100 hover:border-[color-mix(in_srgb,var(--cor-bg-2),black_60%)] transition-all cursor-pointer hover:shadow-xl group"
+                    className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 hover:border-[var(--cor-bg-3)] transition-all cursor-pointer hover:shadow-xl group"
                     onClick={() =>
                       setExpandedId(expandedId === item.id ? null : item.id)
                     }
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <Calendar className="w-5 h-5 text-[color-mix(in_srgb,var(--cor-bg-2),black_40%)]" />
-                      <h3 className="text-xl font-bold text-[color-mix(in_srgb,var(--cor-bg-2),black_40%)]">
+                      <Calendar className="w-5 h-5 text-[var(--cor-bg-3)]" />
+                      <h3 className="text-xl font-bold text-[var(--cor-bg-3)]">
                         {item.title}
                       </h3>
                     </div>
-                    <p className="text-gray-700 font-medium mb-2">
+                    <p className="text-slate-700 font-medium mb-2">
                       {item.description}
                     </p>
                     {expandedId === item.id && (
-                      <p className="text-gray-600 text-sm mt-4 leading-relaxed border-t pt-4 animate-in fade-in duration-300">
+                      <p className="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4 animate-in fade-in duration-300">
                         {detailedMessages[index]}
                       </p>
                     )}
-                    <span className="text-xs text-[color-mix(in_srgb,var(--cor-bg-2),black_40%)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block">
+                    <span className="text-xs text-[var(--cor-bg-3)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block">
                       {expandedId === item.id ? "Ver menos" : "Saiba mais"}
                     </span>
                   </div>
@@ -91,26 +87,26 @@ export default function HistoryTimeline() {
                   <>
                     <div className="w-5/12 pr-8">
                       <div
-                        className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-100 hover:border-[color-mix(in_srgb,var(--cor-bg-2),black_60%)] transition-all cursor-pointer hover:shadow-xl group"
+                        className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 hover:border-[var(--cor-bg-3)] transition-all cursor-pointer hover:shadow-xl group"
                         onClick={() =>
                           setExpandedId(expandedId === item.id ? null : item.id)
                         }
                       >
                         <div className="flex items-center gap-3 mb-3">
-                          <Calendar className="w-5 h-5 text-[color-mix(in_srgb,var(--cor-bg-2),black_40%)]" />
-                          <h3 className="text-xl font-bold text-[color-mix(in_srgb,var(--cor-bg-2),black_40%)]">
+                          <Calendar className="w-5 h-5 text-[var(--cor-bg-3)]" />
+                          <h3 className="text-xl font-bold text-[var(--cor-bg-3)]">
                             {item.title}
                           </h3>
                         </div>
-                        <p className="text-gray-700 font-medium mb-2">
+                        <p className="text-slate-700 font-medium mb-2">
                           {item.description}
                         </p>
                         {expandedId === item.id && (
-                          <p className="text-gray-600 text-sm mt-4 leading-relaxed border-t pt-4 animate-in fade-in duration-300">
+                          <p className="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4 animate-in fade-in duration-300">
                             {detailedMessages[index]}
                           </p>
                         )}
-                        <span className="text-xs text-[color-mix(in_srgb,var(--cor-bg-2),black_40%)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block">
+                        <span className="text-xs text-[var(--cor-bg-3)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block">
                           {expandedId === item.id ? "Ver menos" : "Saiba mais"}
                         </span>
                       </div>
@@ -148,26 +144,26 @@ export default function HistoryTimeline() {
 
                     <div className="w-5/12 pl-8">
                       <div
-                        className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-100 hover:border-[color-mix(in_srgb,var(--cor-bg-2),black_60%)] transition-all cursor-pointer hover:shadow-xl group"
+                        className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 hover:border-[var(--cor-bg-3)] transition-all cursor-pointer hover:shadow-xl group"
                         onClick={() =>
                           setExpandedId(expandedId === item.id ? null : item.id)
                         }
                       >
                         <div className="flex items-center gap-3 mb-3">
-                          <Calendar className="w-5 h-5 text-[color-mix(in_srgb,var(--cor-bg-2),black_40%)]" />
-                          <h3 className="text-xl font-bold text-[color-mix(in_srgb,var(--cor-bg-2),black_40%)]">
+                          <Calendar className="w-5 h-5 text-[var(--cor-bg-3)]" />
+                          <h3 className="text-xl font-bold text-[var(--cor-bg-3)]">
                             {item.title}
                           </h3>
                         </div>
-                        <p className="text-gray-700 font-medium mb-2">
+                        <p className="text-slate-700 font-medium mb-2">
                           {item.description}
                         </p>
                         {expandedId === item.id && (
-                          <p className="text-gray-600 text-sm mt-4 leading-relaxed border-t pt-4 animate-in fade-in duration-300">
+                          <p className="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4 animate-in fade-in duration-300">
                             {detailedMessages[index]}
                           </p>
                         )}
-                        <span className="text-xs text-[color-mix(in_srgb,var(--cor-bg-2),black_40%)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block">
+                        <span className="text-xs text-[var(--cor-bg-3)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block">
                           {expandedId === item.id ? "Ver menos" : "Saiba mais"}
                         </span>
                       </div>

@@ -19,23 +19,22 @@ import {
 
 const levelIcons = [Activity, Building2, Hospital];
 
-
 const levelColors = [
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),white_20%)]",   
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),white_0%)]",  
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),black_20%)]", 
+  "bg-[color-mix(in_srgb,var(--cor-bg-2),white_20%)]",
+  "bg-[color-mix(in_srgb,var(--cor-bg-2),white_0%)]",
+  "bg-[color-mix(in_srgb,var(--cor-bg-2),black_20%)]",
 ];
 
 const levelBorders = [
-  "border-[color-mix(in_srgb,var(--cor-bg-2),white_50%)]",   
-  "border-[color-mix(in_srgb,var(--cor-bg-2),white_30%)]",  
-  "border-[color-mix(in_srgb,var(--cor-bg-2),white_10%)]", 
+  "border-[color-mix(in_srgb,var(--cor-bg-2),white_50%)]",
+  "border-[color-mix(in_srgb,var(--cor-bg-2),white_30%)]",
+  "border-[color-mix(in_srgb,var(--cor-bg-2),white_10%)]",
 ];
 
 const levelHovers = [
   "hover:border-[color-mix(in_srgb,var(--cor-bg-2),white_20%)]",
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-2),white_0%)]",  
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-2),black_20%)]", 
+  "hover:border-[color-mix(in_srgb,var(--cor-bg-2),white_0%)]",
+  "hover:border-[color-mix(in_srgb,var(--cor-bg-2),black_20%)]",
 ];
 
 export default function AttentionLevel() {
@@ -43,17 +42,12 @@ export default function AttentionLevel() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
-    <section
-      id="attention-level"
-      className="px-6 py-20 relative" 
-    >
+    <section id="attention-level" className="px-6 py-20 relative">
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">
-            Níveis de Atenção
-          </h2>
+          <h2 className="text-4xl font-bold mb-4">Níveis de Atenção</h2>
           <div className="w-24 h-1 bg-white rounded-full"></div>
-          <p className="text-orange-50 mt-4 max-w-2xl text-lg opacity-90">
+          <p className="text-50 mt-4 max-w-2xl text-lg opacity-90">
             Estrutura integrada de cuidado em diferentes níveis de complexidade
           </p>
         </div>
@@ -98,7 +92,9 @@ export default function AttentionLevel() {
                       >
                         <AccordionTrigger className="text-sm font-bold text-gray-700 hover:text-[var(--cor-bg-2)] transition-colors py-4 no-underline hover:no-underline">
                           <span className="flex items-center gap-3">
-                            <ChevronDown className={`w-4 h-4 transition-colors ${hoveredCard === level.id ? 'text-[var(--cor-bg-2)]' : 'text-gray-400'}`} />
+                            <ChevronDown
+                              className={`w-4 h-4 transition-colors ${hoveredCard === level.id ? "text-[var(--cor-bg-2)]" : "text-gray-400"}`}
+                            />
                             {component.title}
                           </span>
                         </AccordionTrigger>

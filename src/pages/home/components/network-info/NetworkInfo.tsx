@@ -1,10 +1,12 @@
 import WhatIsRCPD from "./section/WhatIsRCPD";
-import TypesOfCersAndDeficiencies from "./section/TypesOfCersAndDeficiencies";
+import TypesOfDeficiencies from "./section/TypesOfDeficiencies";
 import ProfessionalsRoles from "./section/ProfessionalsRoles";
 import HistoryTimeline from "./section/HistoryTimeline";
 import AttentionLevel from "./section/AttentionLevel";
 import CersCards from "./section/CersCards";
-import WaveDivider from "../../../../components/WaveDivider";
+import { WaveBottom, WaveTop } from "@/components/wave-divider";
+import TypesOfCers from "./section/TypesOfCers";
+import EducationalMaterial from "./section/EducationalMaterial";
 
 interface NetworkInfoProps {
   showFlow: [boolean, number | null];
@@ -17,28 +19,50 @@ export default function NetworkInfo({
 }: NetworkInfoProps) {
   return (
     <div id="network-info">
-      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
+      {/* Azul Petróleo */}
+      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
         <WhatIsRCPD />
-        <WaveDivider primaryColor="var(--cor-bg-1)" secondaryColor="var(--cor-bg-2)" />
+        <WaveBottom color="white" />
       </div>
-      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+
+      {/* Branco */}
+      <div className="bg-white pt-16">
         <AttentionLevel />
-        <WaveDivider primaryColor="var(--cor-bg-2)" secondaryColor="var(--cor-bg-3)" />
+        <WaveBottom color="var(--cor-bg-2)" />
       </div>
-      <div className="bg-[var(--cor-bg-3)] text-white pt-16">
-        <TypesOfCersAndDeficiencies />
-        <WaveDivider primaryColor="var(--cor-bg-3)" secondaryColor="var(--cor-bg-1)" />
-      </div>
-      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
-        <CersCards showFlow={showFlow} setShowFlow={setShowFlow} />
-        <WaveDivider primaryColor="var(--cor-bg-1)" secondaryColor="var(--cor-bg-2)" />
-      </div>
+
+      {/* Azul Petróleo */}
       <div className="bg-[var(--cor-bg-2)] text-white pt-16">
-        <HistoryTimeline />
-        <WaveDivider primaryColor="var(--cor-bg-2)" secondaryColor="var(--cor-bg-3)" />
+        <TypesOfCers />
+        <WaveBottom color="white" />
       </div>
-      <div className="bg-[var(--cor-bg-3)] text-white pt-16">
+
+      {/* Branco */}
+      <div className="bg-white pt-16">
+        <TypesOfDeficiencies />
+        <WaveBottom color="var(--cor-bg-2)" />
+      </div>
+
+      {/* Azul Petróleo */}
+      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+        <CersCards showFlow={showFlow} setShowFlow={setShowFlow} />
+        <WaveBottom color="white" />
+      </div>
+
+      {/* Branco */}
+      <div className="bg-white pt-16">
+        <HistoryTimeline />
+        <WaveBottom color="var(--cor-bg-2)" />
+      </div>
+
+      {/* Azul Petróleo */}
+      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
         <ProfessionalsRoles />
+        <WaveBottom color="white" />
+      </div>
+
+      <div className="bg-white text-white pt-16">
+        <EducationalMaterial />
       </div>
     </div>
   );
