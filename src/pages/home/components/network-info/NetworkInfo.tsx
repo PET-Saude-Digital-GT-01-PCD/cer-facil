@@ -6,6 +6,7 @@ import AttentionLevel from "./section/AttentionLevel";
 import CersCards from "./section/CersCards";
 import { WaveBottom, WaveTop } from "@/components/wave-divider";
 import TypesOfCers from "./section/TypesOfCers";
+import EducationalMaterial from "./section/EducationalMaterial";
 
 interface NetworkInfoProps {
   showFlow: [boolean, number | null];
@@ -57,6 +58,10 @@ export default function NetworkInfo({
       {/* Azul Petróleo */}
       <div className="bg-[var(--cor-bg-2)] text-white pt-16">
         <ProfessionalsRoles />
+      </div>
+
+      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+        <EducationalMaterial />
       </div>
     </div>
   );
