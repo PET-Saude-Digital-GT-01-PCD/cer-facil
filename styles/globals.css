@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -40,27 +42,39 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
+:root {
+  /* Identidade visual PET */
+  --cor-1: #106894; /* Petróleo */
+  --cor-2: #3da6de; /* Azul Claro */
+  --cor-3: #e64f22; /* Laranja */
+  --cor-4: #dbddde; /*cinza*/
+  --cor-5: #022d77; /* Azul Profundo */
+  --cor-bg-1: #3B82F6;
+  --cor-bg-2: #379fb9;
+  --cor-bg-3: #10B981;
+}
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  /* OK rgb(219, 227, 227);  */
+  --radius: 0.625rem; /* OK */
+  --background: rgb(255, 255, 255); /* OK */
+  --foreground: rgb(0 0 0); /* OK */
+  --card: rgb(255, 255, 255); /* OK */
+  --card-foreground: rgb(0 0 0); /* OK */
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: rgb(230, 79, 34); /* OK - Laranja PET */
+  --primary-foreground: rgb(219, 227, 227); /* OK */
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: rgb(252, 105, 75); /* OK */
+  --accent-foreground: oklch(100% 0.00011 271.152);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(100% 0.00011 271.152);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -73,7 +87,7 @@
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: oklch(100% 0.00011 271.152);
 }
 
 .dark {
@@ -116,5 +130,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family:
+      "Outfit",
+      system-ui,
+      -apple-system,
+      sans-serif;
   }
 }

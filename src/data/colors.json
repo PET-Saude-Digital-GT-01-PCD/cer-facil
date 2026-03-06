@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Azul marinho profundo",
+    "hex": "#1E3A8A",
+    "slug": "azul-marinho-profundo"
+  },
+  {
+    "name": "Vermelho vivo",
+    "hex": "#DC2626",
+    "slug": "vermelho-vivo"
+  },
+  {
+    "name": "Verde esmeralda",
+    "hex": "#059669",
+    "slug": "verde-esmeralda"
+  },
+  {
+    "name": "Âmbar quente",
+    "hex": "#D97706",
+    "slug": "ambar-quente"
+  },
+  {
+    "name": "Violeta vibrante",
+    "hex": "#580073",
+    "slug": "violeta-vibrante"
+  },
+  {
+    "name": "Laranja forte",
+    "hex": "#EA580C",
+    "slug": "laranja-forte"
+  },
+  {
+    "name": "Ciano brilhante",
+    "hex": "#0891B2",
+    "slug": "ciano-brilhante"
+  },
+  {
+    "name": "Marrom",
+    "hex": "#573E3E",
+    "slug": "marrom"
+  },
+  {
+    "name": "Verde lima",
+    "hex": "#10B981",
+    "slug": "verde-lima"
+  },
+  {
+    "name": "Amarelo mostarda",
+    "hex": "#F59E0B",
+    "slug": "amarelo-mostarda"
+  },
+  {
+    "name": "Roxo lilás",
+    "hex": "#8B5CF6",
+    "slug": "roxo-lilas"
+  },
+  {
+    "name": "Laranja queimado",
+    "hex": "#F97316",
+    "slug": "laranja-queimado"
+  },
+  {
+    "name": "Azul céu claro",
+    "hex": "#0EA5E9",
+    "slug": "azul-ceu-claro"
+  },
+  {
+    "name": "Rosa magenta",
+    "hex": "#BE123C",
+    "slug": "rosa-magenta"
+  },
+  {
+    "name": "Turquesa teal",
+    "hex": "#14B8A6",
+    "slug": "turquesa-teal"
+  },
+  {
+    "name": "Amarelo ouro",
+    "hex": "#FBBF24",
+    "slug": "amarelo-ouro"
+  }
+]

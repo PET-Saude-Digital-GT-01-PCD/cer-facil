@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "nome": "1ª MACRO - Sede: João Pessoa",
+        "regiao": [
+            "1ª Região - Mata Atlântica",
+            "2ª Região - Piemonte da Borborema",
+            "12ª Região - Vale do Paraíba",
+            "14ª Região - Vale do Mamanguape"
+        ]
+    },
+    {
+        "id": 2,
+        "nome": "2ª MACRO - Sede: Campina Grande",
+        "regiao": [
+            "3ª Região - Borborema",
+            "4ª Região - Curimataú e Seridó Paraibano",
+            "5ª Região - Cariri Ocidental",
+            "15ª Região - Cariri Oriental",
+            "16ª Região - Renascer do Brejo"
+        ]
+    },
+    {
+        "id": 3,
+        "nome": "3ª MACRO - Sede: Patos",
+        "regiao": [
+            "6ª Região - Sertão Patos",
+            "7ª Região - Sertão Vale do Piancó",
+            "8ª Região - Alto Sertão",
+            "9ª Região - Sertão Univale",
+            "10ª Região - Vale dos Dinossauros",
+            "11ª Região - Sertão da Princesa Isabel",
+            "13ª Região - Terra de Maringá"
+        ]
+    }
+]
