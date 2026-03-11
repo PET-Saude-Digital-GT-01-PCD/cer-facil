@@ -20,7 +20,7 @@ export default function NetworkInfo({
   return (
     <div id="network-info">
       {/* Azul Petróleo */}
-      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
         <WhatIsRCPD />
         <WaveBottom color="white" />
       </div>
@@ -32,7 +32,7 @@ export default function NetworkInfo({
       </div>
 
       {/* Azul Petróleo */}
-      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
         <TypesOfCers />
         <WaveBottom color="white" />
       </div>
@@ -44,7 +44,7 @@ export default function NetworkInfo({
       </div>
 
       {/* Azul Petróleo */}
-      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
         <CersCards showFlow={showFlow} setShowFlow={setShowFlow} />
         <WaveBottom color="white" />
       </div>
@@ -56,7 +56,7 @@ export default function NetworkInfo({
       </div>
 
       {/* Azul Petróleo */}
-      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
         <ProfessionalsRoles />
         <WaveBottom color="white" />
       </div>
