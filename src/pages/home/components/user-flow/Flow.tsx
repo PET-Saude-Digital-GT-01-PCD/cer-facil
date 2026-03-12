@@ -42,12 +42,12 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             <h2 className="font-bold text-2xl md:text-3xl mb-2 text-black leading-tight">
               Como conseguir seu atendimento
             </h2>
-            <div className="w-16 h-1 bg-[var(--cor-3)] rounded-full"></div>
+            <div className="w-16 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
           </div>
           <Button
             variant="outline"
             size="sm"
-            className="hidden md:flex text-[var(--cor-3)] border-[var(--cor-3)] hover:bg-[var(--cor-3)] hover:text-white transition-all"
+            className="hidden md:flex text-[var(--cor-bg-1)] border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white transition-all"
             onClick={() => setShowFlow([false, cerId])}
           >
             Voltar para a busca
@@ -58,7 +58,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
         <div className="flex flex-col gap-5">
           {/* 1. Card Principal de Apresentação */}
           <div className="bg-white p-5 rounded-xl shadow-md border border-blue-100 flex flex-col items-center text-center">
-            <Icone className="w-10 h-10 text-[var(--cor-3)] mb-3" />
+            <Icone className="w-10 h-10 text-[var(--cor-bg-1)] mb-3" />
             <h3 className="font-bold text-lg mb-2">{fluxoInfo?.title}</h3>
           </div>
 
@@ -70,7 +70,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
 
             {cerInfo?.endereco && (
               <div className="mb-2">
-                <p className="text-xs font-bold text-[var(--cor-3)] uppercase tracking-widest mb-1 flex items-center gap-2">
+                <p className="text-xs font-bold text-[var(--cor-bg-1)] uppercase tracking-widest mb-1 flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5" /> Endereço
                 </p>
                 <p className="text-sm text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5">
@@ -84,7 +84,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {cerInfo?.telefone && (
                 <div>
-                  <p className="text-xs font-bold text-[var(--cor-3)] uppercase tracking-widest mb-1 flex items-center gap-2">
+                  <p className="text-xs font-bold text-[var(--cor-bg-1)] uppercase tracking-widest mb-1 flex items-center gap-2">
                     <Phone className="w-3.5 h-3.5" /> Telefone
                   </p>
                   <p className="text-sm text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5">
@@ -95,7 +95,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
 
               {cerInfo?.email && (
                 <div>
-                  <p className="text-xs font-bold text-[var(--cor-3)] uppercase tracking-widest mb-1 flex items-center gap-2">
+                  <p className="text-xs font-bold text-[var(--cor-bg-1)] uppercase tracking-widest mb-1 flex items-center gap-2">
                     <Mail className="w-3.5 h-3.5" /> Email
                   </p>
                   <p
@@ -109,7 +109,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             </div>
 
             <div>
-              <p className="text-xs font-bold text-[var(--cor-3)] uppercase tracking-widest mb-1 flex items-center gap-2">
+              <p className="text-xs font-bold text-[var(--cor-bg-1)] uppercase tracking-widest mb-1 flex items-center gap-2">
                 <Clock className="w-3.5 h-3.5" /> Horário
               </p>
               <p className="text-sm text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5">
@@ -126,11 +126,11 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
               {fluxoInfo?.steps.map((step: any, index: number) => (
                 <div key={index} className="relative pl-6">
                   {/* Indicador circular da timeline */}
-                  <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white border-[3px] border-[var(--cor-3)] shadow-sm" />
+                  <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white border-[3px] border-[var(--cor-bg-1)] shadow-sm" />
 
                   <div className="bg-gray-50/50 p-3 rounded-lg border border-gray-100 transition-all hover:shadow-sm hover:border-blue-100">
                     <div className="flex items-center gap-2 mb-1">
-                      <Calendar className="w-4 h-4 text-[var(--cor-3)]" />
+                      <Calendar className="w-4 h-4 text-[var(--cor-bg-1)]" />
                       <h4 className="font-bold text-base text-gray-800 leading-tight">
                         {step.title}
                       </h4>
@@ -153,7 +153,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
                   key={i}
                   className="flex items-start text-sm text-gray-700 leading-snug"
                 >
-                  <span className="mr-2 text-[var(--cor-3)] font-black text-lg leading-none">
+                  <span className="mr-2 text-[var(--cor-bg-1)] font-black text-lg leading-none">
                     •
                   </span>
                   {doc}
@@ -163,11 +163,10 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
           </div>
         </div>
 
-        {/* Botão Voltar Mobile */}
         <div className="mt-6 flex justify-center md:hidden">
           <Button
             size="sm"
-            className="w-full text-white bg-[var(--cor-3)] hover:bg-orange-600 transition-all text-sm py-5 rounded-xl"
+            className="w-full text-white bg-[var(--cor-bg-1)] hover:bg-orange-600 transition-all text-sm py-5 rounded-xl"
             onClick={() => setShowFlow([false, cerId])}
           >
             Voltar para a busca

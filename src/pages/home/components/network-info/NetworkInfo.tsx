@@ -20,7 +20,7 @@ export default function NetworkInfo({
   return (
     <div id="network-info">
       {/* Azul Petróleo */}
-      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
         <WhatIsRCPD />
         <WaveBottom color="white" />
       </div>
@@ -28,11 +28,11 @@ export default function NetworkInfo({
       {/* Branco */}
       <div className="bg-white pt-16">
         <AttentionLevel />
-        <WaveBottom color="var(--cor-bg-2)" />
+        <WaveBottom color="var(--cor-bg-1)" />
       </div>
 
       {/* Azul Petróleo */}
-      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
         <TypesOfCers />
         <WaveBottom color="white" />
       </div>
@@ -40,11 +40,11 @@ export default function NetworkInfo({
       {/* Branco */}
       <div className="bg-white pt-16">
         <TypesOfDeficiencies />
-        <WaveBottom color="var(--cor-bg-2)" />
+        <WaveBottom color="var(--cor-bg-1)" />
       </div>
 
       {/* Azul Petróleo */}
-      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
         <CersCards showFlow={showFlow} setShowFlow={setShowFlow} />
         <WaveBottom color="white" />
       </div>
@@ -52,11 +52,11 @@ export default function NetworkInfo({
       {/* Branco */}
       <div className="bg-white pt-16">
         <HistoryTimeline />
-        <WaveBottom color="var(--cor-bg-2)" />
+        <WaveBottom color="var(--cor-bg-1)" />
       </div>
 
       {/* Azul Petróleo */}
-      <div className="bg-[var(--cor-bg-2)] text-white pt-16">
+      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
         <ProfessionalsRoles />
         <WaveBottom color="white" />
       </div>

@@ -31,7 +31,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight">
           Aproximamos as pessoas com deficiência, seus familiares e
           profissionais de saúde aos{" "}
-          <span className="text-[var(--cor-3)]">Centros De Reabilitação</span>
+          <span className="text-[var(--cor-bg-1)]">Centros De Reabilitação</span>
           <br />
           <span className="block mt-6 text-3xl md:text-4xl font-semibold text-gray-800">
             Seja bem-vindo ao Seu CER.
@@ -42,13 +42,14 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
       <div className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div
           onClick={() => setShowForm(true)}
-          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-3)] transition-all cursor-pointer group text-center"
+          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
         >
-          <div className="p-4 bg-orange-50 rounded-full mb-4 group-hover:bg-[var(--cor-3)] transition-colors">
-            <MapPin className="w-8 h-8 text-[var(--cor-3)] group-hover:text-white" />
+
+          <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
+            <MapPin className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
           </div>
           <h3 className="text-xl font-bold text-gray-900">
-            Encontrar CER Mais Próximo
+            Busque o CER Mais Próximo
           </h3>
         </div>
 
@@ -56,8 +57,8 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           onClick={handleScrollToSection}
           className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-500 transition-all cursor-pointer group text-center"
         >
-          <div className="p-4 bg-blue-50 rounded-full mb-4 group-hover:bg-blue-500 transition-colors">
-            <Network className="w-8 h-8 text-blue-500 group-hover:text-white" />
+          <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
+            <Network className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
           </div>
           <h3 className="text-xl font-bold text-gray-900">
             Conheça a Rede CER de Cuidado à Pessoa Com Deficiência
@@ -68,11 +69,11 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           onClick={handleScrollToEducationalMaterial}
           className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-emerald-500 transition-all cursor-pointer group text-center"
         >
-          <div className="p-4 bg-emerald-50 rounded-full mb-4 group-hover:bg-emerald-500 transition-colors">
-            <BookOpen className="w-8 h-8 text-emerald-500 group-hover:text-white" />
+          <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
+            <BookOpen className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
           </div>
           <h3 className="text-xl font-bold text-gray-900">
-            Tenha Acesso ao Nosso Material Educativo
+            Acesse ao Material Educativo
           </h3>
         </div>
       </div>
@@ -82,10 +83,10 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
         onClick={handleScrollToSection}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer group"
       >
-        <p className="text-sm font-medium animate-bounce text-gray-400 group-hover:text-[var(--cor-3)] mb-1">
+        <p className="text-sm font-medium animate-bounce text-gray-400 group-hover:text-[var(--cor-bg-1)] mb-1">
           Deslize para saber mais
         </p>
-        <ChevronDown className="w-6 h-6 animate-bounce text-gray-400 group-hover:text-[var(--cor-3)]" />
+        <ChevronDown className="w-6 h-6 animate-bounce text-gray-400 group-hover:text-[var(--cor-bg-1)]" />
       </div>
     </main>
   );
