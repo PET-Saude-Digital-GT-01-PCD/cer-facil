@@ -42,7 +42,7 @@ export default function AttentionLevel() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
-    <section id="attention-level" className="px-6 py-20 relative">
+    <section aria-label="níveis de atenção" id="attention-level" className="px-6 py-20 relative">
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-16">
           <h2 className="text-4xl font-bold mb-4">Níveis de Atenção</h2>
@@ -57,6 +57,7 @@ export default function AttentionLevel() {
             const Icon = levelIcons[idx];
             return (
               <Card
+                aria-label={`tópico ${idx + 1} ${level.title}`}
                 tabIndex={0}
                 key={level.id}
                 className={`flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 border-2 bg-white ${levelBorders[idx]} ${levelHovers[idx]} focus-within:border-[var(--cor-bg-1)] focus-within:border-5 relative overflow-hidden group rounded-2xl`}
@@ -75,7 +76,7 @@ export default function AttentionLevel() {
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-gray-900 mb-2 focus-within:border-[var(--cor-bg-1)] focus-within:border-5" tabIndex={0}>
+                  <CardTitle className="text-2xl font-bold text-gray-900 mb-2 focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
                     {level.title}
                   </CardTitle>
                   <CardDescription className="text-gray-500 text-sm leading-relaxed px-4 focus-within:border-[var(--cor-bg-1)] focus-within:border-5" tabIndex={0}>
@@ -83,7 +84,7 @@ export default function AttentionLevel() {
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="flex-1 px-6 pb-10">
+                <CardContent aria-label={`Componentes da ${level.title}`} className="flex-1 px-6 pb-10" tabIndex={0}>
                   <Accordion type="single" collapsible className="w-full">
                     {level.components.map((component) => (
                       <AccordionItem
@@ -91,7 +92,7 @@ export default function AttentionLevel() {
                         value={component.id}
                         className="border-gray-100 focus-within:border-[var(--cor-bg-1)] focus-within:border-5"
                       >
-                        <AccordionTrigger className="text-sm font-bold text-gray-700 hover:text-[var(--cor-bg-2)] transition-colors py-4 no-underline hover:no-underline">
+                        <AccordionTrigger aria-expanded="false" className="text-sm font-bold text-gray-700 hover:text-[var(--cor-bg-2)] transition-colors py-4 no-underline hover:no-underline">
                           <span className="flex items-center gap-3">
                             <ChevronDown
                               className={`w-4 h-4 transition-colors ${hoveredCard === level.id ? "text-[var(--cor-bg-2)]" : "text-gray-400"}`}
@@ -99,7 +100,7 @@ export default function AttentionLevel() {
                             {component.title}
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="text-sm text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30 text-justify focus-within:border-[var(--cor-bg-1)] focus-within:border-5" tabIndex={0}>
+                        <AccordionContent className="text-sm text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30 text-justify focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
                           {component.content}
                         </AccordionContent>
                       </AccordionItem>

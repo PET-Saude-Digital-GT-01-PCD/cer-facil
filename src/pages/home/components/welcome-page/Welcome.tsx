@@ -27,8 +27,8 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center pt-16 pb-32 relative bg-white">
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight">
+      <section aria-label="cabeçalho" className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight" tabIndex={0}>
           Aproximamos as pessoas com deficiência, seus familiares e
           profissionais de saúde aos{" "}
           <span className="text-[var(--cor-3)]">Centros De Reabilitação</span>
@@ -37,9 +37,9 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
             Seja bem-vindo ao Seu CER.
           </span>
         </h1>
-      </div>
+      </section>
 
-      <div className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section aria-label="opções" className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         <button
           tabIndex={0}
           onClick={() => setShowForm(true)}
@@ -78,7 +78,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
             Tenha Acesso ao Nosso Material Educativo
           </h3>
         </button>
-      </div>
+      </section>
     </main>
   );
 }

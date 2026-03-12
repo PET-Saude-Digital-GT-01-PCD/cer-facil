@@ -2,14 +2,14 @@
 
 export default function TypesOfCers() {
   return (
-    <section id="types-of-cer-deficiencies" className="px-6 py-24">
+    <section aria-label="conheça os diferentes tipos de CER" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         {/* Cabeçalho da Seção */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
           <div>
             <div className="text-left mb-16">
               {/* Texto principal agora em Branco para contraste no Verde */}
-              <h2 className="text-4xl font-bold mb-4 text-white" tabIndex={0}>
+              <h2 className="text-4xl font-bold mb-4 text-white">
                 Conheça os Diferentes <br /> Tipos de CERs
               </h2>
               <div className="w-24 h-1 bg-white rounded-full"></div>
@@ -44,10 +44,10 @@ export default function TypesOfCers() {
                     <Building2 size={24} />
                   </div>
                   <div>
-                    <p className="inline font-bold text-black text-lg focus-within:border-[var(--cor-bg-1)] focus-within:border-5" tabIndex={0}>
+                    <p className="inline font-bold text-black text-lg focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
                       CER {cer.id}
                     </p> <br />
-                    <p className="inline text-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] text-sm font-medium focus-within:border-[var(--cor-bg-1)] focus-within:border-5" tabIndex={0}>
+                    <p className="inline text-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] text-sm font-medium focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
                       {cer.desc}
                     </p>
                   </div>
