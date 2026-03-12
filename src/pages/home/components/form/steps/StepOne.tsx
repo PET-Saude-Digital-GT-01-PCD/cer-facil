@@ -34,7 +34,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-xl text-[var(--cor-5)] font-bold">
+          <CardTitle className="text-xl text-[var(--cor-5)] font-bold" tabIndex={0}>
             Qual deficiência(s) deseja buscar atendimento?
           </CardTitle>
           <CardDescription className="text-base">
@@ -45,6 +45,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
             <Card
+              tabIndex={0}
               onClick={() => toggleSelection("fisica")}
               className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
                 selected.includes("fisica")
@@ -73,6 +74,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             </Card>
 
             <Card
+              tabIndex={0}
               onClick={() => toggleSelection("auditiva")}
               className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
                 selected.includes("auditiva")
@@ -101,6 +103,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             </Card>
 
             <Card
+              tabIndex={0}
               onClick={() => toggleSelection("visual")}
               className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
                 selected.includes("visual")
@@ -129,6 +132,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             </Card>
 
             <Card
+              tabIndex={0}
               onClick={() => toggleSelection("intelectual")}
               className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
                 selected.includes("intelectual")
@@ -161,6 +165,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
 
           <div className="flex justify-center">
             <Card
+              tabIndex={0}
               onClick={() => toggleSelection("tea")}
               className={`cursor-pointer transition-all hover:shadow-2xl border-2 w-full md:w-1/2 ${
                 selected.includes("tea")

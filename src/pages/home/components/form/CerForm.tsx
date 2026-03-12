@@ -83,8 +83,8 @@ export default function CerForm({ setShowForm }: CerFormProps) {
   };
 
   return (
-    <div id="cer-form" className="w-full py-8">
-      <div className="max-w-4xl mx-auto px-4 mb-8">
+    <div id="cer-form" className="w-full py-8" tabIndex={0}>
+      <div className="max-w-4xl mx-auto px-4 mb-8" aria-hidden="true" >
         <StepIndicator
           currentStep={currentStep}
           totalSteps={4}

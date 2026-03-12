@@ -136,7 +136,8 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
           </div>
 
           <Button
-          tabIndex={0}
+            aria-label="Como conseguir  atendimento neste CER"
+            tabIndex={0}
             variant="ghost"
             size="icon"
             className="text-[var(--cor-bg-1)] hover:text-white hover:bg-[var(--cor-bg-1)] rounded-full transition-all duration-300 flex-shrink-0 bg-slate-50"

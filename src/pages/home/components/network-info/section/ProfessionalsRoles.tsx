@@ -109,7 +109,7 @@ export default function ProfessionalsRoles() {
                                     </button>
 
                                     <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>
-                                        <div className="px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-50 text-justify">
+                                        <div className="px-6 pb-6 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-50 text-justify" tabIndex={0}>
                                             {prof.description}
                                         </div>
                                     </div>

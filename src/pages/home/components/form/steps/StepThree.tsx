@@ -120,8 +120,8 @@ export default function StepThree({
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-xl text-[var(--cor-5)] font-bold">Localização</CardTitle>
-          <CardDescription className="text-base">
+          <CardTitle className="text-xl text-[var(--cor-5)] font-bold" tabIndex={0}>Localização</CardTitle>
+          <CardDescription className="text-base" tabIndex={0}>
             Precisamos da sua localização para encontrar o CER mais apropriado
             para você.
           </CardDescription>

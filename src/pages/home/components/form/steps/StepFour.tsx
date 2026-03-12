@@ -193,12 +193,12 @@ export default function StepFour({
 
   return (
     <div className="w-full">
-      <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-4xl mx-auto">
+      <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-4xl mx-auto" tabIndex={0}>
         <CardHeader>
-          <CardTitle className="text-xl text-[var(--cor-5)] font-bold">
+          <CardTitle className="text-xl text-[var(--cor-5)] font-bold" tabIndex={0}>
             Resultados da Busca
           </CardTitle>
-          <CardDescription className="text-base">
+          <CardDescription className="text-base" tabIndex={0}>
             CERs ordenados por compatibilidade e proximidade
           </CardDescription>
           
@@ -227,7 +227,7 @@ export default function StepFour({
                 {results.slice(0, 5).map((result, index) => (
                   <Card
                     key={result.cer.id}
-                    className="border-2 border-[var(--cor-2)]/40 hover:border-[var(--cor-1)] hover:shadow-lg transition-all"
+                    className="border-2 border-[var(--cor-2)]/40 hover:border-[var(--cor-1)] hover:shadow-lg transition-all" tabIndex={0}
                   >
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between mb-3">
