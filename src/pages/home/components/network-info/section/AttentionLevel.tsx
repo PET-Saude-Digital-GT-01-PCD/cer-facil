@@ -20,21 +20,21 @@ import {
 const levelIcons = [Activity, Building2, Hospital];
 
 const levelColors = [
-  "bg-[color-mix(in_srgb,var(--cor-bg-1),white_20%)]",
   "bg-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
-  "bg-[color-mix(in_srgb,var(--cor-bg-1),black_20%)]",
+  "bg-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "bg-[color-mix(in_srgb,var(--cor-bg-1),black_0%)]",
 ];
 
 const levelBorders = [
-  "border-[color-mix(in_srgb,var(--cor-bg-1),white_50%)]",
-  "border-[color-mix(in_srgb,var(--cor-bg-1),white_30%)]",
-  "border-[color-mix(in_srgb,var(--cor-bg-1),white_10%)]",
+  "border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
 ];
 
 const levelHovers = [
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),white_20%)]",
   "hover:border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),black_20%)]",
+  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),black_0%)]",
 ];
 
 export default function AttentionLevel() {

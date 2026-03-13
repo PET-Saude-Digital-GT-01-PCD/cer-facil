@@ -17,9 +17,9 @@ interface FlowProps {
 }
 
 export default function Flow({ setShowFlow, cerId }: FlowProps) {
-  
-  const fluxoInfo = FLUXOS.find((f: any) => String(f.id).trim() === String(cerId).trim());
-  const cerInfo = CERS.find((c: any) => String(c.id).trim() === String(cerId).trim());
+
+  const fluxoInfo = FLUXOS[cerId - 1];
+  const cerInfo = CERS[cerId - 1];
 
   const especialidadeIconMap: { [key: string]: React.ElementType } = {
     Administrativo: Building2,
@@ -52,7 +52,10 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
   }
 
   return (
-    <section id="flow" className="px-6 py-8 min-h-[80vh] flex items-start justify-center bg-gradient-to-b from-white to-blue-50/30 relative">
+    <section
+      id="flow"
+      className="px-6 py-8 min-h-[80vh] flex items-start justify-center bg-gradient-to-b from-white to-blue-50/30 relative"
+    >
       <div className="mx-auto max-w-3xl w-full">
         <div className="text-left mb-6 flex justify-between items-end">
           <div>
@@ -132,7 +135,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             <div className="relative border-l-2 border-blue-100 ml-3 space-y-4">
               {fluxoInfo.steps?.map((step: any, index: number) => (
                 <div key={index} className="relative pl-6">
-                  {/* Indicador circular da timeline */}
+
                   <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white border-[3px] border-[var(--cor-bg-1)] shadow-sm" />
 
                   <div className="bg-gray-50/50 p-3 rounded-lg border border-gray-100 transition-all hover:shadow-sm hover:border-blue-100">

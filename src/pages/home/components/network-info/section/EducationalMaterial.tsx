@@ -240,27 +240,21 @@ export default function MaterialEducational() {
             </div>
           </div>
 
-          <div className="flex justify-between items-center mt-6">
-            <button
-              onClick={prevSlide}
-              disabled={currentIndex === 0}
-              className="flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-full font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              aria-label="Material anterior"
-            >
-              <ChevronLeft className="w-5 h-5" />
-              Anterior
-            </button>
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white text-[var(--cor-bg-1)] p-3 rounded-full shadow-lg hover:bg-[var(--cor-bg-1)] hover:text-white transition-all duration-300"
+            aria-label="Material anterior"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
 
-            <button
-              onClick={nextSlide}
-              disabled={currentIndex === materials.length - 1}
-              className="flex items-center gap-2 px-6 py-3 bg-[var(--cor-bg-1)] text-white-700 rounded-full font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              aria-label="Próximo material"
-            >
-              Próximo
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white text-[var(--cor-bg-1)] p-3 rounded-full shadow-lg hover:bg-[var(--cor-bg-1)] hover:text-white transition-all duration-300"
+            aria-label="Próximo material"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
         </div>
 
         <div className="flex justify-center gap-2 mt-8">
