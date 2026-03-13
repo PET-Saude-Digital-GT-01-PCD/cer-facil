@@ -118,15 +118,15 @@ export default function StepThree({
 
   return (
     <div className="w-full">
-      <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-4xl mx-auto">
+      <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-xl text-[var(--cor-5)] font-bold">Localização</CardTitle>
-          <CardDescription className="text-base">
+          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">Localização</CardTitle>
+          <CardDescription className="text-2xl">
             Precisamos da sua localização para encontrar o CER mais apropriado
             para você.
           </CardDescription>
           {selectedDeficiencies.length > 0 && (
-            <CardDescription className="text-xs">
+            <CardDescription className="text-xl">
               Deficiências: {selectedDeficiencies.join(", ")} | Idade:{" "}
               {ageGroup}
             </CardDescription>
@@ -137,21 +137,21 @@ export default function StepThree({
           <div className="flex flex-col items-center gap-3">
             <Button
               onClick={handleGeolocation}
-              className="w-full max-w-sm bg-blue-600 hover:bg-blue-700"
+              className="w-full max-w-sm bg-[var(--cor-bg-1)] hover:brightness-110 transition-all text-2xl py-8"
               disabled={loading}
             >
               {loading ? (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader2 className="mr-2 h-12 w-12 animate-spin" />
               ) : (
-                <MapPin className="mr-2 h-4 w-4" />
+                <MapPin className="mr-2 h-16 w-16" />
               )}
               Permitir Localização
             </Button>
 
-            <div className="text-muted-foreground text-sm">Ou</div>
+            <div className="text-muted-foreground text-2xl">Ou</div>
 
             <div className="w-full max-w-sm space-y-2">
-              <Label htmlFor="cep">Digite seu CEP:</Label>
+              <Label htmlFor="cep" className="text-2xl font-semibold">Digite seu CEP:</Label>
               <div className="flex gap-2">
                 <Input
                   id="cep"
@@ -161,16 +161,18 @@ export default function StepThree({
                   value={formatCep(cep)}
                   onChange={(e) => setCep(e.target.value.replace(/\D/g, ""))}
                   onKeyPress={handleKeyPress}
+                  className="text-2xl h-16 placeholder:text-xl"
                 />
                 <Button
                   onClick={handleCepSearch}
                   variant="outline"
                   disabled={cep.length < 8 || loading}
+                  className="h-16 px-4"
                 >
                   {loading ? (
-                    <Loader2 className="h-4 w-4 animate-spin" />
+                    <Loader2 className="h-12 w-12 animate-spin" />
                   ) : (
-                    <Search className="h-4 w-4" />
+                    <Search className="h-12 w-12" />
                   )}
                 </Button>
               </div>
@@ -179,7 +181,7 @@ export default function StepThree({
 
           {showMap && (
             <div className="w-full space-y-2">
-              <div className="text-sm text-green-600 text-center">
+              <div className="text-xl text-green-600 text-center font-semibold">
                 ✓ Localização definida
               </div>
 
@@ -212,7 +214,7 @@ export default function StepThree({
             variant="outline"
             onClick={onBack}
             size="lg"
-            className="px-8 py-5 text-base border-2 border-[var(--cor-1)] hover:bg-[var(--cor-1)] hover:text-white"
+            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white"
           >
             Voltar
           </Button>
@@ -224,7 +226,7 @@ export default function StepThree({
             }}
             disabled={!location}
             size="lg"
-            className="px-8 py-5 text-base min-w-[160px] border-2 border-[var(--cor-3)] hover:bg-[var(--cor-5)]"
+            className="px-8 py-5 text-2xl min-w-[160px] border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]"
           >
             Próximo
           </Button>

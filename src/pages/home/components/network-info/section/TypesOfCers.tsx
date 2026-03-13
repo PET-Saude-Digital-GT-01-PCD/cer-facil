@@ -1,4 +1,5 @@
 import { Building2 } from "lucide-react";
+import { Building2 } from "lucide-react";
 
 export default function TypesOfCers() {
   return (
@@ -13,15 +14,14 @@ export default function TypesOfCers() {
                 Conheça os Diferentes <br /> Tipos de CERs
               </h2>
               <div className="w-24 h-1 bg-white rounded-full"></div>
-              <p className="text-white mt-6 max-w-2xl text-lg leading-relaxed opacity-90">
+              <p className="text-white mt-6 max-w-2xl text-2xl leading-relaxed opacity-90">
                 Os Centros Especializados em Reabilitação (CER) são unidades de
                 saúde focadas em oferecer tratamentos especializados e
                 diagnósticos precisos.
               </p>
             </div>
 
-            {/* Cards dos CERs com Ícones em tons de Verde */}
-            <div className="space-y-4">
+            <div aria-label="lista de tipos de cer" className="space-y-4">
               {[
                 {
                   id: "II",
@@ -37,18 +37,21 @@ export default function TypesOfCers() {
                 },
               ].map((cer) => (
                 <div
+                  aria-label={`cer ${cer.id}, ${cer.desc}`}
                   key={cer.id}
                   className="group flex items-center p-5 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  {/* Ícone em Verde Esmeralda Escuro */}
-                  <div className="bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white transition-all duration-300">
-                    <Building2 size={24} />
+                  <div
+                    aria-hidden="true"
+                    className="bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white transition-all duration-300"
+                  >
+                    <Building2 size={48} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-black text-lg">
+                    <h3 className="font-bold text-black text-2xl">
                       CER {cer.id}
                     </h3>
-                    <p className="text-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] text-sm font-medium">
+                    <p className="inline text-black text-xl font-medium">
                       {cer.desc}
                     </p>
                   </div>

@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "title": "FUNAD - FUNDAÇÃO CENTRO INTEGRADO DE APOIO À PESSOA COM DEFICIÊNCIA",
+        "title": "CER IV - FUNAD - FUNDAÇÃO CENTRO INTEGRADO DE APOIO AO PORTADOR DE DEFICIÊNCIA",
         "steps": [
             {
                 "id": 1,
@@ -48,44 +48,43 @@
     },
     {
         "id": "2",
-        "title": "ICPAC - Instituto dos Cegos da Paraíba",
+        "title": "CER II - ICPAC - Instituto dos Cegos da Paraíba",
         "steps": [
             {
                 "id": 1,
+                "title": "Meios de Acesso e Regulação",
+                "description": "O acesso pode ser feito por demanda espontânea ou porta aberta, sendo o processo de regulação realizado obrigatoriamente através do SISREG."
+            },
+            {
+                "id": 2,
                 "title": "Agendamento da Pré-Triagem",
-                "description": "O primeiro passo é ligar para agendar a triagem. O agendamento é feito exclusivamente pelo telefone fixo (83) 3244-6220.",
+                "description": "O agendamento da triagem é feito exclusivamente pelo telefone fixo (83) 3244-6220.",
                 "action": {
                     "label": "Ligar Agora",
                     "url": "tel:+558332446220"
                 }
             },
             {
-                "id": 2,
-                "title": "Horário de Atendimento",
-                "description": "Ligue de segunda a sexta-feira. Pela manhã das 07:30 às 11:30 ou à tarde das 13:30 às 17:30."
-            },
-            {
                 "id": 3,
-                "title": "Compareça à Triagem",
-                "description": "No dia marcado, vá até a sede do ICPAC (Av. Santa Catarina, 396 - Estados, João Pessoa). É nesta etapa que a equipe avaliará a necessidade do tratamento."
+                "title": "Horário de Atendimento",
+                "description": "De segunda a sexta-feira, das 07:30 às 11:30 (manhã) ou das 13:30 às 17:30 (tarde)."
             },
             {
                 "id": 4,
-                "title": "Acompanhamento",
-                "description": "Após a avaliação, a equipe informará os próximos passos para iniciar as terapias de reabilitação visual ou intelectual, conforme a disponibilidade de vagas."
+                "title": "Compareça à Unidade",
+                "description": "Vá até a sede do ICPAC (Av. Santa Catarina, 396 - Estados, João Pessoa) com a documentação necessária para a avaliação da equipe multidisciplinar."
             }
         ],
         "documents": [
-            "RG e CPF (Paciente e Responsável)",
-            "Cartão do SUS",
-            "Comprovante de Residência",
-            "Encaminhamento ou Laudo Médico (Oftalmológico ou Neurológico)",
-            "Registro de Nascimento (para menores)"
+            "Carteira de Identificação",
+            "Certidão de Nascimento",
+            "Cartão SUS",
+            "Comprovante de Residência"
         ]
     },
     {
         "id": "3",
-        "title": "Centro de Reabilitação Antônio de Souza Maranhão",
+        "title": "CER II - Centro de Reabilitação Antônio de Souza Maranhão",
         "steps": [
             {
                 "id": 1,
@@ -119,70 +118,69 @@
     },
     {
         "id": "4",
-        "title": "Complexo Neurofuncional Maria Moura de Aquino",
+        "title": "CER III - Complexo Neurofuncional Maria Moura de Aquino",
         "steps": [
             {
                 "id": 1,
-                "title": "Compareça ao Complexo Neurofuncional",
-                "description": "Dirija-se ao CER III localizado na Rua Coronel João Leite, s/n - Centro, Guarabira - PB, para iniciar o processo de inscrição."
+                "title": "Fluxo de Acesso e Regulação",
+                "description": "O acesso ocorre via regulação interna. Para usuários de fora do município, o acolhimento é feito mediante encaminhamento acompanhado do GERA do município de origem."
             },
             {
                 "id": 2,
-                "title": "Apresente os Documentos Necessários",
-                "description": "Traga todos os documentos exigidos para a inscrição, incluindo RG, CPF, comprovante de residência, cartão do SUS, laudo médico e encaminhamento médico."
+                "title": "Compareça à Unidade",
+                "description": "Dirija-se ao Complexo localizado na Rua Coronel João Leite, s/n - Centro, Guarabira - PB, portando a documentação necessária."
             },
             {
                 "id": 3,
-                "title": "Preencha o Formulário de Inscrição",
-                "description": "No local, preencha o formulário de inscrição fornecido pela equipe do CER III. Eles irão auxiliá-lo durante o processo."
+                "title": "Apresentação de Documentos",
+                "description": "Entregue o encaminhamento e os documentos de identificação para dar início ao processo de inscrição e triagem."
             },
             {
                 "id": 4,
-                "title": "Aguarde a Avaliação",
-                "description": "Após a inscrição, aguarde a avaliação da equipe do CER III para determinar a elegibilidade para os serviços de reabilitação."
+                "title": "Avaliação de Elegibilidade",
+                "description": "Após a entrega da documentação e o registro no sistema, a equipe técnica realizará a avaliação para determinar o início do tratamento de reabilitação."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável, se for menor)",
-            "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado (de Guarabira ou município pactuado)",
-            "Encaminhamento da Unidade Básica de Saúde (UBS) ou Especialista",
-            "Laudo Médico ou Parecer de profissional de nível superior justificando a reabilitação",
-            "Registro de Nascimento (para menores)"
+            "Encaminhamento",
+            "RG",
+            "CPF",
+            "Cartão SUS",
+            "Comprovante de Residência"
         ]
     },
     {
         "id": "5",
-        "title": "Centro de Reabilitação Dr José Dácio",
+        "title": "CER II - Centro de Reabilitação Dr. José Dácio",
         "steps": [
             {
                 "id": 1,
-                "title": "Procure a Unidade Básica de Saúde",
-                "description": "Dirija-se à UBS ou USF mais próxima de sua residência para passar por consulta médica e solicitar o encaminhamento para reabilitação."
+                "title": "Porta de Entrada e Encaminhamento",
+                "description": "O acesso ocorre de forma regulada. Procure sua Unidade Básica de Saúde (UBS) ou outros pontos da rede (hospitais/policlínicas) para avaliação e emissão do encaminhamento formal."
             },
             {
                 "id": 2,
-                "title": "Reúna a Documentação Necessária",
-                "description": "Organize os documentos originais e cópias: RG, CPF, Cartão do SUS, comprovante de residência e o laudo/encaminhamento médico com CID."
+                "title": "Regulação via Sistema",
+                "description": "Após a consulta, o profissional de saúde deve inserir a solicitação no sistema de regulação (SISREG, e-SUS Regulação ou sistema municipal/estadual correspondente)."
             },
             {
                 "id": 3,
-                "title": "Entregue na Regulação Municipal",
-                "description": "Leve a documentação ao setor de Regulação da Secretaria de Saúde de Araruna (ou do seu município) para inserir o pedido no sistema de agendamento."
+                "title": "Reúna a Documentação",
+                "description": "Prepare os documentos de identificação, cartão do SUS, comprovante de residência e todos os laudos, exames ou relatórios clínicos disponíveis."
             },
             {
                 "id": 4,
-                "title": "Compareça à Triagem no CER II Araruna",
-                "description": "Após a confirmação do agendamento, compareça ao CER II (Dr. José Dacio), no Conjunto Helder Targino Maranhão, S/N, para a avaliação multiprofissional."
+                "title": "Avaliação no CER II",
+                "description": "Com a solicitação autorizada pelo sistema de regulação, o usuário será direcionado ao CER II Araruna para iniciar o acompanhamento especializado em reabilitação física ou auditiva."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável, se houver)",
-            "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado",
-            "Encaminhamento da Unidade Básica de Saúde (UBS)",
-            "Laudo Médico com CID (indicando reabilitação física ou intelectual)",
-            "Registro de Nascimento (para menores)"
+            "RG ou Certidão de Nascimento (para crianças)",
+            "CPF do usuário",
+            "Cartão do SUS",
+            "Comprovante de residência atualizado",
+            "Encaminhamento médico ou Multiprofissional",
+            "Laudos, Exames e Relatórios Clínicos (quando houver)"
         ]
     },
     {
@@ -221,244 +219,227 @@
     },
     {
         "id": "7",
-        "title": "Associação de Pais e Amigos dos Excepcionais ",
+        "title": "CER II - Associação de Pais e Amigos dos Excepcionais (APAE)",
         "steps": [
             {
                 "id": 1,
-                "title": "Atendimento na Rede Básica",
-                "description": "Dirija-se à sua Unidade Básica de Saúde (UBS) ou Unidade de Saúde da Família (USF). Consulte um médico para obter o laudo e o encaminhamento solicitando a reabilitação."
+                "title": "Encaminhamento Obrigatório",
+                "description": "O acesso ao serviço exige obrigatoriamente o encaminhamento pela rede SUS (UBS ou profissional de saúde da rede pública)."
             },
             {
                 "id": 2,
-                "title": "Documentação e Laudo",
-                "description": "Certifique-se de que o médico especifique o CID (Código Internacional de Doenças) no encaminhamento. Reúna os documentos pessoais do paciente e do responsável."
+                "title": "Regulação via Sistema",
+                "description": "A solicitação deve ser inserida no sistema de regulação (SISREG ou e-SUS Regulação) pela unidade de origem para viabilizar a vaga."
             },
             {
                 "id": 3,
-                "title": "Regulação via SISREG",
-                "description": "O acesso à parte clínica da APAE é regulado. A UBS deve inserir sua solicitação no sistema (SISREG) ou você deve levar a guia para a Central de Regulação de Campina Grande."
+                "title": "Triagem e Cadastro",
+                "description": "Apresente-se com a documentação completa (originais e cópias). A ausência de documentos clínicos específicos não impede a triagem inicial, mas os documentos de identificação são essenciais."
             },
             {
                 "id": 4,
-                "title": "Triagem e Admissão",
-                "description": "Após a liberação da vaga pela Secretaria de Saúde, a APAE entrará em contato para agendar a Triagem (Avaliação Inicial) com a equipe multiprofissional (Serviço Social, Psicologia, etc.)."
+                "title": "Avaliação Multiprofissional",
+                "description": "Após o contato da APAE baseado na liberação do sistema, o usuário passará por avaliação clínica e funcional para efetivação do acompanhamento."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável)",
-            "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado",
-            "Encaminhamento Médico da rede SUS (com justificativa clínica)",
-            "Laudo Médico com CID",
-            "Registro de Nascimento (para menores)",
-            "Foto 3x4 (geralmente solicitada na abertura do prontuário)"
+            "RG ou Certidão de Nascimento",
+            "CPF (quando houver)",
+            "Cartão Nacional do SUS",
+            "Comprovante de residência atualizado",
+            "Encaminhamento médico ou de profissional da rede de saúde",
+            "Relatório clínico ou funcional (quando houver)",
+            "Laudos médicos com CID (se disponíveis)"
         ]
     },
     {
         "id": "8",
-        "title": "Centro de Reabilitação Dr. José Evandro de Lima",
+        "title": "CER II - Centro de Reabilitação Dr. José Evandro de Lima",
         "steps": [
             {
                 "id": 1,
-                "title": "Atendimento na Atenção Básica",
-                "description": "O primeiro passo é dirigir-se à sua Unidade Básica de Saúde (UBS) de referência. Consulte um médico da família para obter o Laudo e o Encaminhamento para reabilitação."
+                "title": "Meios de Acesso",
+                "description": "O acesso pode ser feito via Regulação pelo Sistema (SISREG ou e-SUS Regulação), por demanda espontânea ou mediante encaminhamento da Atenção Básica (AB)."
             },
             {
                 "id": 2,
                 "title": "Preparação da Documentação",
-                "description": "Reúna todos os documentos obrigatórios (originais e cópias), incluindo documentos pessoais, cartão do SUS e o laudo médico detalhado com o CID."
+                "description": "Reúna seus documentos pessoais, relatórios clínicos e exames (caso possua ou sejam necessários para o caso)."
             },
             {
                 "id": 3,
-                "title": "Regulação do Município",
-                "description": "O agendamento é realizado via Sistema de Regulação (SISREG). A solicitação pode ser inserida pela própria UBS ou entregue pessoalmente na Central de Marcação da Secretaria de Saúde de Patos."
+                "title": "Triagem e Avaliação",
+                "description": "O usuário passará por uma triagem inicial e avaliação técnica para identificação da necessidade terapêutica."
             },
             {
                 "id": 4,
-                "title": "Triagem e Avaliação",
-                "description": "Após a aprovação na regulação, você será contatado para a Triagem no CER II. Compareça no dia agendado para a avaliação multiprofissional que definirá seu plano terapêutico."
+                "title": "Enquadramento no Serviço",
+                "description": "Após a avaliação, ocorre o enquadramento no programa de reabilitação específico, conforme o perfil clínico apresentado."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável, se aplicável)",
-            "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado (de Patos ou município pactuado)",
-            "Encaminhamento Médico da UBS (Solicitação de Parecer Especializado)",
-            "Laudo Médico com CID (Código Internacional de Doenças)",
-            "Registro de Nascimento (para menores sem RG)"
+            "Documentos pessoais (RG/CPF)",
+            "Relatório clínico",
+            "Exames (caso necessite)"
         ]
     },
     {
         "id": "9",
-        "title": "Centro de Reabilitação Motora",
+        "title": "CER II - Centro de Reabilitação Motora",
         "steps": [
             {
                 "id": 1,
-                "title": "Consulta na Atenção Básica",
-                "description": "Dirija-se à sua Unidade Básica de Saúde (UBS) ou PSF. É obrigatório passar por uma avaliação médica inicial para obter o Encaminhamento (Laudo) solicitando a reabilitação."
+                "title": "Encaminhamento pela Atenção Básica",
+                "description": "O usuário deve ser encaminhado via Unidade Básica de Saúde (UBS). A solicitação é processada através do sistema de regulação (SISREG ou e-SUS regulação)."
             },
             {
                 "id": 2,
-                "title": "Documentação Exigida",
-                "description": "Reúna os originais e cópias dos documentos pessoais (RG, CPF, Cartão SUS), comprovante de residência e o laudo médico contendo o CID da condição de saúde."
+                "title": "Apresentação no Serviço",
+                "description": "Ao chegar ao centro com o encaminhamento e documentos em mãos, o usuário inicia o processo de acolhimento."
             },
             {
                 "id": 3,
-                "title": "Regulação do Acesso",
-                "description": "Com o encaminhamento em mãos, a marcação é feita via Secretaria Municipal de Saúde (Central de Marcação). A equipe de regulação agendará a triagem de acordo com a disponibilidade de vagas."
+                "title": "Triagem Inicial",
+                "description": "É realizada uma triagem para avaliar se o quadro clínico do paciente se enquadra no perfil de atendimento do serviço."
             },
             {
                 "id": 4,
-                "title": "Triagem e Avaliação",
-                "description": "No dia agendado, compareça ao CER II para a avaliação multiprofissional. Esta etapa define quais terapias (Fisioterapia, Fonoaudiologia, etc.) farão parte do tratamento."
+                "title": "Fluxo de Atendimento",
+                "description": "Sendo identificado o perfil adequado na triagem, o paciente segue para o fluxo de atendimento especializado e início das terapias."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável, se houver)",
-            "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado",
-            "Encaminhamento/Laudo Médico da UBS (com justificativa e CID)",
-            "Registro de Nascimento (para crianças sem RG)",
-            "Exames anteriores (se houver, para auxiliar na avaliação)"
+            "Cartão do SUS ou CPF",
+            "Comprovante de residência",
+            "Caderneta de vacina (para crianças)",
+            "Documento dos responsáveis (para crianças)",
+            "RG (para adultos)",
+            "Encaminhamento"
         ]
     },
     {
         "id": "10",
-        "title": "Centro Especializado em Reabilitação Doutor Aloysio Pereira Lima",
+        "title": "CER III - Centro Especializado em Reabilitação Doutor Aloysio Pereira Lima",
         "steps": [
             {
                 "id": 1,
-                "title": "Atendimento na UBS (Posto de Saúde)",
-                "description": "Dirija-se à sua Unidade Básica de Saúde (UBS). É obrigatório passar por uma consulta médica para obter o Encaminhamento (Laudo) solicitando a reabilitação."
+                "title": "Obtenção do Encaminhamento",
+                "description": "O primeiro passo é possuir o encaminhamento médico solicitando os serviços de reabilitação."
             },
             {
                 "id": 2,
-                "title": "Documentação e Laudo Médico",
-                "description": "O médico deve preencher o encaminhamento com o CID (Código Internacional de Doenças). Organize seus documentos pessoais, cartão do SUS e comprovante de residência."
+                "title": "Agendamento (Princesa Isabel)",
+                "description": "Para residentes de Princesa Isabel, o agendamento pode ser realizado de forma presencial na unidade ou através do WhatsApp institucional."
             },
             {
                 "id": 3,
-                "title": "Regulação (Marcação)",
-                "description": "Para moradores de Princesa Isabel: O agendamento é feito na Central de Marcação da Secretaria Municipal ou na própria UBS. Para moradores de outros municípios (ex: Tavares, Juru, Manaíra): Procure a Secretaria de Saúde da sua cidade para encaminhar o pedido via pactuação."
+                "title": "Agendamento (Outros Municípios)",
+                "description": "Para usuários de outros municípios pactuados, o agendamento deve ser solicitado diretamente através da Secretaria de Saúde da sua respectiva cidade."
             },
             {
                 "id": 4,
-                "title": "Triagem e Atendimento",
-                "description": "Após a confirmação da vaga, você será informado da data para comparecer ao CER III. Na primeira visita, será feita a triagem para definir o plano de tratamento."
+                "title": "Triagem e Avaliação",
+                "description": "No dia agendado, compareça à unidade com o encaminhamento e documentos pessoais para a triagem e definição do plano terapêutico."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável)",
-            "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado",
-            "Encaminhamento Médico da UBS (Solicitação de Reabilitação/Parecer)",
-            "Laudo Médico com CID e justificativa clínica",
-            "Registro de Nascimento (para menores)",
-            "Exames anteriores (se houver, especialmente para reabilitação Visual ou Neurológica)"
+            "RG",
+            "CPF",
+            "Cartão do SUS"
         ]
     },
     {
         "id": "11",
-        "title": "Centro de Reabilitação Dr. Luiz Gonzaga de Oliveira",
+        "title": "CER IV - REABILITA CENTRO ESPECIALIZADO EM REABILITAÇÃO DE SOUSA",
         "steps": [
             {
                 "id": 1,
-                "title": "Busque a Atenção Básica",
-                "description": "Procure a Unidade Básica de Saúde (UBS) do seu bairro ou cidade. É necessário passar por uma consulta médica para obter o encaminhamento (Laudo) solicitando a reabilitação."
+                "title": "Agendamento da Triagem",
+                "description": "O primeiro passo para o acesso ao serviço é agendar a triagem. Isso pode ser feito de forma presencial na unidade ou solicitando através do e-mail: cerivsousa@gmail.com."
             },
             {
                 "id": 2,
-                "title": "Organize a Documentação",
-                "description": "Reúna os documentos pessoais e o laudo médico. Para deficiências auditivas ou visuais, é recomendável anexar exames complementares (como audiometria ou laudo oftalmológico) se já possuir."
+                "title": "Cadastro do Usuário",
+                "description": "Para efetivar o agendamento, é necessário realizar um cadastro. Apresente presencialmente ou envie por e-mail seus documentos pessoais e um número de telefone para contato."
             },
             {
                 "id": 3,
-                "title": "Encaminhe para Regulação",
-                "description": "Entregue a documentação na Secretaria de Saúde do seu município (Setor de Regulação/Marcação). O pedido será inserido no sistema estadual ou pactuado para a vaga no CER IV."
+                "title": "Acolhimento e Triagem",
+                "description": "Na data e horário agendados, o paciente será acolhido no serviço e passará pela etapa de triagem. Esta avaliação é obrigatória para ser encaminhado às especialidades ofertadas pelo CER IV."
             },
             {
                 "id": 4,
-                "title": "Aguarde o Agendamento",
-                "description": "A equipe do CER IV entrará em contato (geralmente via Secretaria de Saúde do seu município) informando a data da Triagem/Avaliação Global para iniciar o tratamento."
+                "title": "Início das Terapias",
+                "description": "Após a conclusão da triagem, o usuário é direcionado para as terapias específicas de reabilitação conforme o seu quadro clínico."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável, se houver)",
+            "RG",
+            "CPF",
             "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado",
-            "Encaminhamento Médico da UBS (com CID e justificativa clínica)",
-            "Laudo Médico Específico (Oftalmológico ou Otorrinolaringológico, se aplicável)",
-            "Registro de Nascimento (para menores)",
-            "Exames complementares recentes (se houver)"
+            "Comprovante de Residência"
         ]
     },
     {
         "id": "12",
-        "title": "Policlínica Dr. Antônio Quinho",
+        "title": "CER II - Policlínica Dr. Antônio Quinho",
         "steps": [
             {
                 "id": 1,
-                "title": "Atendimento na Unidade Básica",
-                "description": "Dirija-se à sua Unidade Básica de Saúde (UBS) ou PSF em Piancó (ou na sua cidade de origem, caso seja de outro município da região). Consulte um médico para solicitar o laudo de reabilitação."
+                "title": "Fluxo e Meios de Acesso",
+                "description": "O acesso ao serviço ocorre tanto por Demanda Espontânea (porta aberta) quanto através de encaminhamento pelas Unidades Básicas de Saúde (UBS)."
             },
             {
                 "id": 2,
-                "title": "Documentação e Laudo Médico",
-                "description": "Certifique-se de que o médico descreva o diagnóstico e o CID (Código Internacional de Doenças) no encaminhamento. Reúna seus documentos pessoais e cartão do SUS."
+                "title": "Atendimento na UBS (Opcional)",
+                "description": "Caso o acesso seja via rede primária, dirija-se à sua UBS de referência para passar por consulta e obter o encaminhamento médico."
             },
             {
                 "id": 3,
-                "title": "Regulação via Secretaria de Saúde",
-                "description": "Entregue a documentação na Secretaria Municipal de Saúde de Piancó (Central de Marcação/Regulação). O pedido será inserido no sistema para agendamento da triagem."
+                "title": "Comparecimento ao CER II",
+                "description": "Vá até a unidade portando o encaminhamento e toda a documentação necessária para realizar o cadastro."
             },
             {
                 "id": 4,
-                "title": "Triagem Multiprofissional",
-                "description": "Após a confirmação da vaga pela regulação, você será informado da data para comparecer ao CER II. Nesta etapa, a equipe avaliará o paciente para definir as terapias necessárias."
+                "title": "Triagem e Avaliação",
+                "description": "Com os documentos entregues, o paciente passará pela triagem inicial com a equipe para iniciar o acompanhamento e as terapias."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável, se for menor ou dependente)",
-            "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado",
-            "Encaminhamento Médico da Atenção Básica (Solicitação de Reabilitação)",
-            "Laudo Médico com CID e justificativa clínica",
-            "Registro de Nascimento (para menores)",
-            "Exames complementares (Raio-X, Tomografia ou outros, se houver)"
+            "Documentos pessoais (RG e CPF)",
+            "Encaminhamento da UBS",
+            "Relatório da escola (obrigatório no caso de crianças em idade escolar)"
         ]
     },
     {
         "id": "13",
-        "title": "Centro de Reabilitação Física",
+        "title": "CER II - Vitória Pereira de Oliveira",
         "steps": [
             {
                 "id": 1,
-                "title": "Atendimento na Atenção Básica",
-                "description": "Dirija-se à sua Unidade Básica de Saúde (UBS) ou PSF. Você deve passar por uma consulta médica para obter o Encaminhamento (Laudo) solicitando a reabilitação."
+                "title": "Fluxo e Meios de Acesso",
+                "description": "O acesso ocorre por Demanda Espontânea (livre) para os pacientes residentes em Catolé do Rocha. Para usuários de outros municípios pactuados, o acesso é feito mediante encaminhamento."
             },
             {
                 "id": 2,
-                "title": "Documentação e Laudo Médico",
-                "description": "O médico deve especificar o diagnóstico e o CID (Código Internacional de Doenças) no encaminhamento. Organize os documentos pessoais do paciente e do responsável."
+                "title": "Moradores de Catolé do Rocha",
+                "description": "Dirija-se diretamente à unidade com sua documentação para solicitar o atendimento, sem necessidade de agendamento prévio na regulação."
             },
             {
                 "id": 3,
-                "title": "Regulação (Secretaria de Saúde)",
-                "description": "Leve a documentação à Secretaria Municipal de Saúde (na Rua Estevam Diniz, S/N) ou entregue na própria UBS para inserção no sistema de regulação (SISREG)."
+                "title": "Pacientes de Outros Municípios",
+                "description": "Procure a Secretaria de Saúde da sua cidade para obter o encaminhamento oficial antes de se deslocar ao CER II."
             },
             {
                 "id": 4,
-                "title": "Triagem e Início",
-                "description": "Após a liberação da vaga pela regulação, você será informado sobre o dia da avaliação multiprofissional. O CER II funciona integrado à rede municipal, muitas vezes anexo à Policlínica ou Centro de Saúde."
+                "title": "Acolhimento e Triagem",
+                "description": "Ao chegar à unidade com os documentos em mãos, o paciente passará por uma avaliação inicial para dar andamento às terapias necessárias."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável, se for menor ou dependente)",
-            "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado",
-            "Encaminhamento Médico da UBS (com solicitação de parecer especializado/reabilitação)",
-            "Laudo Médico com CID",
-            "Registro de Nascimento (para menores)"
+            "Documentos pessoais (RG e CPF)",
+            "CNS (Cartão Nacional de Saúde / Cartão SUS)",
+            "Laudos e exames (se existirem)"
         ]
     },
     {
@@ -502,36 +483,34 @@
     },
     {
         "id": "15",
-        "title": "Centro de Reabilitação Dr. Severino Lopes",
+        "title": "CER II - Centro de Reabilitação Dr. Severino Lopes",
         "steps": [
             {
                 "id": 1,
-                "title": "Providencie o Laudo Médico",
-                "description": "Antes de ir ao centro, passe por uma consulta na sua USF (Unidade de Saúde da Família) para obter um encaminhamento ou laudo médico indicando a necessidade de reabilitação."
+                "title": "Fluxo / Meios de Acesso",
+                "description": "A unidade funciona por Demanda Espontânea (Porta Aberta). Não é necessário agendamento prévio via regulação municipal para solicitar o atendimento inicial."
             },
             {
                 "id": 2,
-                "title": "Compareça ao Serviço",
-                "description": "Dirija-se diretamente à recepção do CER II em Jaguaribe (Rua Alberto de Brito, S/N) portando seus documentos pessoais e o laudo. A unidade realiza o cadastro e agendamento da triagem."
+                "title": "Compareça à Unidade",
+                "description": "Dirija-se diretamente à recepção do CER II em Jaguaribe (Rua Alberto de Brito, S/N) portando o encaminhamento médico e seus documentos pessoais para abertura de prontuário."
             },
             {
                 "id": 3,
                 "title": "Triagem Multiprofissional",
-                "description": "No dia agendado, o paciente passará por uma avaliação com a equipe (fisioterapeutas, terapeutas ocupacionais, etc.) para definir o plano de cuidados (PTS)."
+                "description": "Após a apresentação da documentação, o paciente passará por uma avaliação com a equipe técnica para definir a necessidade clínica e o plano de reabilitação."
             },
             {
                 "id": 4,
                 "title": "Início do Tratamento",
-                "description": "Após a triagem, o paciente é inserido na grade de horários para as terapias, que podem ser individuais ou coletivas, dependendo da necessidade clínica."
+                "description": "Com base na triagem, o paciente é inserido na grade de atendimento para as terapias indicadas (Fisioterapia, Fonoaudiologia, TO, etc.) conforme a disponibilidade."
             }
         ],
         "documents": [
-            "RG e CPF (do Paciente e do Responsável, se houver)",
-            "Cartão do SUS (Cartão Nacional de Saúde)",
-            "Comprovante de Residência atualizado (de João Pessoa)",
-            "Laudo ou Encaminhamento Médico (com CID e justificativa)",
-            "Exames complementares (caso possua, para auxiliar na avaliação)",
-            "Registro de Nascimento (para menores)"
+            "Cartão SUS",
+            "RG",
+            "Comprovante de residência",
+            "Encaminhamento médico"
         ]
     }
 ]
