@@ -42,7 +42,7 @@ export default function TypesOfDeficiencies() {
           </h1>
           <div className="w-24 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
           <p
-            className="mt-4 max-w-2xl text-2xl opacity-90 focus-within:border-[var(--cor-bg-1)] focus-within:border-5"
+            className="mt-4 max-w-6xl text-2xl opacity-90 focus-within:border-[var(--cor-bg-1)] focus-within:border-5"
             tabIndex={0}
           >
             Entenda as particularidades de cada modalidade atendida pela rede de
@@ -50,7 +50,6 @@ export default function TypesOfDeficiencies() {
           </p>
         </div>
 
-        {/* MUDANÇA AQUI: Trocamos Grid por Flex e justify-center */}
         <div className="flex flex-wrap justify-center gap-6">
           {items.map((item, idx) => (
             <div
@@ -63,8 +62,12 @@ export default function TypesOfDeficiencies() {
               <div className="text-center">
                 <p className="inline font-bold text-2xl text-black mb-3 text-center focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
                   {item.title}
-                </p> <br />
-                <p aria-hidden="true" className="inline text-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] text-sm text-center leading-relaxed font-medium focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
+                </p>{" "}
+                <br />
+                <p
+                  aria-hidden="true"
+                  className="inline text-black text-sm text-center leading-relaxed font-medium focus-within:border-[var(--cor-bg-1)] focus-within:border-5"
+                >
                   {item.text}
                 </p>
               </div>
