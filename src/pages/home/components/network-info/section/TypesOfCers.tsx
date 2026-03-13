@@ -41,14 +41,14 @@ export default function TypesOfCers() {
                   className="group flex items-center p-5 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   {/* Ícone em Verde Esmeralda Escuro */}
-                  <div className="bg-[color-mix(in_srgb,var(--cor-bg-3),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-3),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-3)] group-hover:text-white transition-all duration-300">
+                  <div className="bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white transition-all duration-300">
                     <Building2 size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold text-black text-lg">
                       CER {cer.id}
                     </h3>
-                    <p className="text-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] text-sm font-medium">
+                    <p className="text-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] text-sm font-medium">
                       {cer.desc}
                     </p>
                   </div>

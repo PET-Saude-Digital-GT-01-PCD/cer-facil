@@ -3,10 +3,11 @@ import brasaoDaParaibaLogo from "@/assets/images/brasao-da-paraiba.png";
 import funadLogo from "@/assets/images/funad.jpeg";
 import ministerioLogo from "@/assets/images/ministerioLogo.png";
 import ufpbLogo from "@/assets/images/UFPB.png";
+import susDigital from "@/assets/images/sus-digital.png";
 import { Instagram, AtSign, Github, Info, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Links atualizados com os ícones do Lucide para evitar erro de build
+
 const socialButtons = [
   {
     Icon: Instagram,
@@ -26,10 +27,11 @@ const socialButtons = [
 ];
 
 const realizationLogos = [
+  { src: susDigital, alt: "Logo SUS Digital" },
+  { src: brasaoDaParaibaLogo, alt: "Logo Brasão da Paraíba" },
+  { src: ufpbLogo, alt: "Logo da UFPB" },
   { src: funadLogo, alt: "Logo da FUNAD" },
   { src: ministerioLogo, alt: "Logo do Ministério da Saúde" },
-  { src: ufpbLogo, alt: "Logo da UFPB" },
-  { src: brasaoDaParaibaLogo, alt: "Brasão da Paraíba" },
 ];
 
 export default function Rodape() {
@@ -65,7 +67,7 @@ export default function Rodape() {
                 <h2 className="font-bold text-2xl text-slate-900 mb-1">
                   PET-Saúde Digital
                 </h2>
-                <div className="w-12 h-1 bg-[var(--cor-bg-3)] rounded-full mb-3"></div>
+                <div className="w-12 h-1 bg-[var(--cor-bg-1)] rounded-full mb-3"></div>
                 <p className="text-sm text-slate-600 leading-relaxed">
                   Acompanhe nossas ações e saiba mais sobre as iniciativas de
                   inclusão digital voltadas para Pessoas com Deficiência.
@@ -80,7 +82,7 @@ export default function Rodape() {
                       <Icon className="h-4 w-4" aria-hidden="true" />
                     );
                     const classes =
-                      "flex h-8 w-8 items-center justify-center rounded-full bg-[var(--cor-bg-3)]/10 text-[var(--cor-bg-3)] transition-colors hover:bg-[var(--cor-bg-3)] hover:text-white";
+                      "flex h-8 w-8 items-center justify-center rounded-full bg-[var(--cor-bg-1)]/10 text-[var(--cor-bg-1)] transition-colors hover:bg-[var(--cor-bg-1)] hover:text-white";
 
                     return button.href ? (
                       <a
@@ -108,7 +110,7 @@ export default function Rodape() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="text-[var(--cor-bg-3)] border-[var(--cor-bg-3)] hover:text-white hover:bg-[var(--cor-bg-3)] rounded-full font-bold transition-all h-8 text-xs"
+                  className="text-[var(--cor-bg-1)] border-[var(--cor-bg-1)] hover:text-white hover:bg-[var(--cor-bg-1)] rounded-full font-bold transition-all h-8 text-xs"
                   onClick={() => setIsAboutModalOpen(true)}
                 >
                   <Info className="w-3.5 h-3.5 mr-1.5" />
@@ -123,29 +125,27 @@ export default function Rodape() {
                 Realização & Colaboradores
               </h3>
 
-              <div className="flex flex-wrap items-center justify-start md:justify-end gap-4 sm:gap-6">
+              <div className="flex flex-wrap items-center justify-start md:justify-end gap-2">
                 {realizationLogos.map((logo) => (
                   <img
                     key={logo.alt}
                     src={logo.src}
                     alt={logo.alt}
-                    className="h-10 sm:h-12 object-contain grayscale hover:grayscale-0 transition-all opacity-80 hover:opacity-100"
+                    className="h-7 sm:h-9 object-contain grayscale hover:grayscale-0 transition-all opacity-80 hover:opacity-100"
                   />
                 ))}
               </div>
             </div>
           </div>
 
-          {/* LINHA DE COPYRIGHT */}
+  
           <div className="pt-6 border-t border-slate-200">
             <p className="text-center text-xs font-medium text-slate-500">
-              &copy; 2026 Copyright - Pet Saúde Digital
-            </p>
+              &copy; 2026 Copyright - PET-Saúde/Informação e Saúde Digital no SUS/PB.            </p>
           </div>
         </div>
       </footer>
 
-      {/* MODAL "SOBRE NÓS" */}
       {isAboutModalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4 transition-opacity"
@@ -155,7 +155,7 @@ export default function Rodape() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="sobre-nos-title"
-            className="w-full max-w-2xl rounded-2xl bg-white p-8 shadow-2xl border-t-4 border-t-[var(--cor-bg-3)] transform transition-all flex flex-col max-h-[90vh]"
+            className="w-full max-w-2xl rounded-2xl bg-white p-8 shadow-2xl border-t-4 border-t-[var(--cor-bg-1)] transform transition-all flex flex-col max-h-[90vh]"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100">
@@ -163,12 +163,12 @@ export default function Rodape() {
                 id="sobre-nos-title"
                 className="text-2xl font-bold text-slate-900 flex items-center gap-2"
               >
-                <Info className="text-[var(--cor-bg-3)] w-6 h-6" />O que é o
+                <Info className="text-[var(--cor-bg-1)] w-6 h-6" />O que é o
                 PET-Saúde Digital
               </h2>
               <button
                 type="button"
-                className="rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-[var(--cor-bg-3)] transition-colors"
+                className="rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-[var(--cor-bg-1)] transition-colors"
                 onClick={() => setIsAboutModalOpen(false)}
               >
                 <X className="w-5 h-5" />
