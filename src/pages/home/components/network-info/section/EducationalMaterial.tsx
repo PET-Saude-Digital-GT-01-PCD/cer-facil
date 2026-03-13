@@ -205,7 +205,7 @@ export default function MaterialEducational() {
           </button>
         </div>
 
-        <div className="relative">
+        <div>
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="flex-1 flex flex-col justify-between">
