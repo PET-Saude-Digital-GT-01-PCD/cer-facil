@@ -126,8 +126,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
           <div className="flex flex-wrap gap-2 flex-1 pr-3">
             {cer.especialidades.map((especialidade, index) => (
               <span
-                key={index}
-                className="px-2.5 py-1 bg-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] rounded-lg text-[16px] font-extrabold uppercase tracking-widest"
+                className="px-3 py-1 border-2 border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] rounded-full font-bold text-[16px] inline-block"
               >
                 {especialidade}
               </span>
@@ -178,10 +177,9 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
                   onClick={() => toggleFilter(option)}
                   className={`
                     px-6 py-2.5 rounded-full font-bold text-xl transition-all duration-200 border-2
-                    ${
-                      isActive
-                        ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)] text-white shadow-md shadow-blue-100"
-                        : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)] hover:text-[var(--cor-bg-1)]"
+                    ${isActive
+                      ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)] text-white shadow-md shadow-blue-100"
+                      : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)] hover:text-[var(--cor-bg-1)]"
                     }
                   `}
                 >

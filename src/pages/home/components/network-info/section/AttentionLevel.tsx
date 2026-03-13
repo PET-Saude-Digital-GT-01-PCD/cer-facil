@@ -20,21 +20,21 @@ import {
 const levelIcons = [Activity, Building2, Hospital];
 
 const levelColors = [
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),white_20%)]",
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),white_0%)]",
-  "bg-[color-mix(in_srgb,var(--cor-bg-2),black_20%)]",
+  "bg-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "bg-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "bg-[color-mix(in_srgb,var(--cor-bg-1),black_0%)]",
 ];
 
 const levelBorders = [
-  "border-[color-mix(in_srgb,var(--cor-bg-2),white_50%)]",
-  "border-[color-mix(in_srgb,var(--cor-bg-2),white_30%)]",
-  "border-[color-mix(in_srgb,var(--cor-bg-2),white_10%)]",
+  "border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
 ];
 
 const levelHovers = [
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-2),white_20%)]",
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-2),white_0%)]",
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-2),black_20%)]",
+  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
+  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),black_0%)]",
 ];
 
 export default function AttentionLevel() {
@@ -46,7 +46,7 @@ export default function AttentionLevel() {
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-16">
           <h2 className="text-4xl font-bold mb-4">Níveis de Atenção</h2>
-          <div className="w-24 h-1 bg-white rounded-full"></div>
+            <div className="w-20 h-1.5 bg-[var(--cor-bg-1)] rounded-full mb-6"></div>
           <p className="text-50 mt-4 max-w-2xl text-2xl opacity-90">
             Estrutura integrada de cuidado em diferentes níveis de complexidade
           </p>
@@ -77,7 +77,10 @@ export default function AttentionLevel() {
                   <CardTitle className="text-2xl font-bold text-gray-900 mb-2">
                     {level.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-500 text-xl leading-relaxed px-4">
+                  <CardDescription
+                    className="text-gray-500 text-xl leading-relaxed px-4  "
+                    tabIndex={0}
+                  >
                     {level.description}
                   </CardDescription>
                 </CardHeader>
@@ -90,16 +93,19 @@ export default function AttentionLevel() {
                         value={component.id}
                         className="border-gray-100"
                       >
-                        <AccordionTrigger className="text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-2)] transition-colors py-4 no-underline hover:no-underline">
+                        <AccordionTrigger className="text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4 no-underline hover:no-underline">
                           <span className="flex items-center gap-3">
                             <ChevronDown
-                              className={`w-4 h-4 transition-colors ${hoveredCard === level.id ? "text-[var(--cor-bg-2)]" : "text-gray-400"}`}
+                              className={`w-4 h-4 transition-colors ${hoveredCard === level.id ? "text-[var(--cor-bg-1)]" : "text-gray-400"}`}
                             />
                             {component.title}
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30 text-justify">
-                          {component.content}
+                        <AccordionContent
+                          role="none"
+                          className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30 text-justify"
+                        >
+                          <span>{component.content}</span>
                         </AccordionContent>
                       </AccordionItem>
                     ))}
