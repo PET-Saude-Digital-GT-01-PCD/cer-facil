@@ -12,7 +12,7 @@ export default function StepIndicator({
   onStepClick,
 }: StepIndicatorProps) {
   return (
-    <div className="w-full" aria-hidden="true" inert>
+    <div className="w-full">
       <div className="flex items-center justify-between">
         {Array.from({ length: totalSteps }, (_, i) => i + 1).map((step) => (
           <div key={step} className="flex flex-col items-center flex-1">
@@ -20,18 +20,17 @@ export default function StepIndicator({
               {step > 1 && (
                 <div
                   className={`flex-1 h-1 ${
-                    currentStep >= step ? "bg-[var(--cor-1)]" : "bg-gray-300"
+                    currentStep >= step ? "bg-[var(--cor-bg-1)]" : "bg-gray-300"
                   }`}
                 />
               )}
               <button
-                tabIndex={-1}
                 onClick={() => onStepClick(step)}
                 className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all ${
                   currentStep === step
-                    ? "bg-[var(--cor-1)] text-white scale-110"
+                    ? "bg-[var(--cor-bg-1)] text-white scale-110"
                     : currentStep > step
-                    ? "bg-[var(--cor-5)] text-white"
+                    ? "bg-[var(--cor-bg-1)] text-white"
                     : "bg-gray-200 text-gray-500 hover:bg-gray-300"
                 }`}
               >
@@ -40,13 +39,13 @@ export default function StepIndicator({
               {step < totalSteps && (
                 <div
                   className={`flex-1 h-1 ${
-                    currentStep > step ? "bg-[var(--cor-1)]" : "bg-gray-300"
+                    currentStep > step ? "bg-[var(--cor-bg-1)]" : "bg-gray-300"
                   }`}
                 />
               )}
             </div>
             <span className={`mt-3 text-sm font-medium ${
-              currentStep === step ? "text-[var(--cor-1)]" : currentStep > step ? "text-[var(--cor-5)]" : "text-gray-500"
+              currentStep === step ? "text-[var(--cor-bg-1)]" : currentStep > step ? "text-[var(--cor-bg-1)]" : "text-gray-500"
             }`}>
               {stepLabels[step - 1]}
             </span>

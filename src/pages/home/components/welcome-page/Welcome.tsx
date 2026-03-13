@@ -38,29 +38,25 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           </span>
           <span className="block mt-6 text-3xl md:text-4xl font-semibold text-gray-800">Boas-vindas ao Seu Cer.</span>
         </h1>
-      </section>
+      </div>
 
-      <section aria-label="seção opções" className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <button
-          aria-label="encontrar cer mais próximo"
-          tabIndex={0}
+      <div className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
           onClick={() => setShowForm(true)}
-          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-3)] focus-within:border-[var(--cor-3)] focus-within:border-5 transition-all cursor-pointer group text-center"
+          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
         >
 
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <MapPin className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
           </div>
-          <h2 aria-hidden="true" className="text-xl font-bold text-gray-900">
-            Encontrar CER Mais Próximo
-          </h2>
-        </button>
+          <h3 className="text-xl font-bold text-gray-900">
+            Busque o CER Mais Próximo
+          </h3>
+        </div>
 
-        <button
-          aria-label="conheça a rede cer de cuidado à pessoa com deficiência"
-          tabIndex={0}
+        <div
           onClick={handleScrollToSection}
-          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-500 focus-within:border-blue-500 focus-within:border-5 transition-all cursor-pointer group text-center"
+          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
         >
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <Network className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
@@ -70,11 +66,9 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           </h2>
         </button>
 
-        <button
-          aria-label="tenha acesso a materiais educativos"
-          tabIndex={0}
+        <div
           onClick={handleScrollToEducationalMaterial}
-          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-emerald-500 focus-within:border-emerald-500 focus-within:border-5 transition-all cursor-pointer group text-center"
+          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
         >
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <BookOpen className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />

@@ -21,15 +21,14 @@ export default function WhatIsRCPD() {
 
   return (
     <section
-      aria-label="seção de o que é a rede de cuidado à pessoa com deficiência"
       id="what-is-rcpd"
       className="px-6 py-20 relative"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-16">
-          <h1 className="font-bold text-4xl mb-4 text-white">
+          <h2 className="font-bold text-4xl mb-4 text-white">
             O que é a Rede de Cuidado à Pessoa com Deficiência (RCPD)?
-          </h1>
+          </h2>
           <div className="w-24 h-1 bg-white rounded-full"></div>
         </div>
 

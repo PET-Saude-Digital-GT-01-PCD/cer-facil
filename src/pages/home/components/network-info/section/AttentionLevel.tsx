@@ -42,16 +42,11 @@ export default function AttentionLevel() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
-    <section
-      aria-label="seção de níveis de atenção"
-      id="attention-level"
-      className="px-6 py-20 relative"
-    >
+    <section id="attention-level" className="px-6 py-20 relative">
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-16">
-          <h1 className="text-4xl font-bold mb-4">Níveis de Atenção</h1>
-          <div className="w-24 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
-          <div className="w-24 h-1 bg-white rounded-full"></div>
+          <h2 className="text-4xl font-bold mb-4">Níveis de Atenção</h2>
+            <div className="w-20 h-1.5 bg-[var(--cor-bg-1)] rounded-full mb-6"></div>
           <p className="text-50 mt-4 max-w-2xl text-lg opacity-90">
             Estrutura integrada de cuidado em diferentes níveis de complexidade
           </p>
@@ -62,9 +57,8 @@ export default function AttentionLevel() {
             const Icon = levelIcons[idx];
             return (
               <Card
-                tabIndex={0}
                 key={level.id}
-                className={`flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 border-2 bg-white ${levelBorders[idx]} ${levelHovers[idx]}   relative overflow-hidden group rounded-2xl`}
+                className={`flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 border-2 bg-white ${levelBorders[idx]} ${levelHovers[idx]} relative overflow-hidden group rounded-2xl`}
                 onMouseEnter={() => setHoveredCard(level.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
@@ -80,7 +74,7 @@ export default function AttentionLevel() {
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-gray-900 mb-2  ">
+                  <CardTitle className="text-2xl font-bold text-gray-900 mb-2">
                     {level.title}
                   </CardTitle>
                   <CardDescription
@@ -97,7 +91,7 @@ export default function AttentionLevel() {
                       <AccordionItem
                         key={component.id}
                         value={component.id}
-                        className="border-gray-100  "
+                        className="border-gray-100"
                       >
                         <AccordionTrigger className="text-sm font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4 no-underline hover:no-underline">
                           <span className="flex items-center gap-3">

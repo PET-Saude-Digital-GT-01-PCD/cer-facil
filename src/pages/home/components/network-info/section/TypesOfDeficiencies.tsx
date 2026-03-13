@@ -49,11 +49,11 @@ export default function TypesOfDeficiencies() {
             cuidados.
           </p>
         </div>
+
+        {/* MUDANÇA AQUI: Trocamos Grid por Flex e justify-center */}
         <div className="flex flex-wrap justify-center gap-6">
           {items.map((item, idx) => (
             <div
-              aria-label={`tópico ${idx + 1} ${item.title} ${item.text}`}
-              tabIndex={0}
               key={idx}
               className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 w-full sm:w-[350px] flex flex-col items-center"
             >
