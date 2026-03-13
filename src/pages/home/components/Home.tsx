@@ -31,7 +31,7 @@ export default function Home({
       <Welcome showForm={showForm} setShowForm={setShowForm} />
       {!showForm && (
         <>
-          <WaveBottom color="var(--cor-bg-1)" />
+          <WaveBottom color="var(--cor-bg-2)" />
           <NetworkInfo showFlow={showFlow} setShowFlow={setShowFlow} />
           <Footnote />
         </>
