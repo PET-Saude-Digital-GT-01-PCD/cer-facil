@@ -55,7 +55,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
 
         <div
           onClick={handleScrollToSection}
-          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-500 transition-all cursor-pointer group text-center"
+          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
         >
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <Network className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
@@ -67,7 +67,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
 
         <div
           onClick={handleScrollToEducationalMaterial}
-          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-emerald-500 transition-all cursor-pointer group text-center"
+          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
         >
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <BookOpen className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
@@ -78,7 +78,6 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
         </div>
       </div>
 
-      {/* DESLIZE PARA MAIS */}
       <div
         onClick={handleScrollToSection}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer group"
