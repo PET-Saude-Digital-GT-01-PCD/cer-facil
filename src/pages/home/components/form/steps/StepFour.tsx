@@ -195,15 +195,15 @@ export default function StepFour({
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-xl text-[var(--cor-5)] font-bold">
+          <CardTitle className="text-3xl text-[var(--cor-5)] font-bold">
             Resultados da Busca
           </CardTitle>
-          <CardDescription className="text-base">
+          <CardDescription className="text-2xl">
             CERs ordenados por compatibilidade e proximidade
           </CardDescription>
           
           <div className="mt-3 p-3 bg-[var(--cor-2)]/10 rounded-lg border border-[var(--cor-2)]/30">
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xl text-muted-foreground">
               <span className="font-semibold text-[var(--cor-5)]">Busca:</span> {deficiencies.join(", ")} | {ageGroup}
             </p>
           </div>
@@ -211,7 +211,7 @@ export default function StepFour({
 
         <CardContent className="space-y-4">
           <div>
-            <h3 className="font-semibold text-base mb-3 text-[var(--cor-5)]">
+            <h3 className="font-semibold text-2xl mb-3 text-[var(--cor-5)]">
               {results.length} CER{results.length !== 1 ? "s" : ""} Recomendado{results.length !== 1 ? "s" : ""}
             </h3>
 
@@ -232,19 +232,19 @@ export default function StepFour({
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center gap-3">
-                          <span className="bg-[var(--cor-1)] text-white px-3 py-1 rounded-full text-sm font-bold">
+                          <span className="bg-[var(--cor-1)] text-white px-3 py-1 rounded-full text-lg font-bold">
                             #{index + 1}
                           </span>
-                          <h4 className="font-bold text-base text-[var(--cor-5)]">
+                          <h4 className="font-bold text-2xl text-[var(--cor-5)]">
                             {result.cer.nome}
                           </h4>
                         </div>
-                        <span className="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800 font-medium">
+                        <span className="px-3 py-1 rounded-full text-lg bg-blue-100 text-blue-800 font-medium">
                           {result.distancia} km
                         </span>
                       </div>
 
-                      <p className="text-sm text-muted-foreground mb-3 pl-11">
+                      <p className="text-xl text-muted-foreground mb-3 pl-11">
                         {result.cer.endereco.rua}, {result.cer.endereco.numero} – {result.cer.endereco.bairro}, {result.cer.cidade}
                       </p>
 
@@ -253,7 +253,7 @@ export default function StepFour({
                           {result.cer.especialidades.map((esp, idx) => (
                             <span
                               key={idx}
-                              className="px-2.5 py-1 bg-[var(--cor-1)]/20 text-[var(--cor-5)] rounded-lg text-xs font-bold"
+                              className="px-2.5 py-1 bg-[var(--cor-1)]/20 text-[var(--cor-5)] rounded-lg text-lg font-bold"
                             >
                               {esp}
                             </span>
@@ -262,11 +262,11 @@ export default function StepFour({
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="text-[var(--cor-1)] hover:text-white hover:bg-[var(--cor-1)] transition-all"
+                          className="text-[var(--cor-1)] hover:text-white hover:bg-[var(--cor-1)] transition-all text-xl"
                           onClick={() => setShowFlow([true, result.cer.id])}
                         >
                           Saiba mais
-                          <ArrowRight className="w-4 h-4 ml-1" />
+                          <ArrowRight className="w-8 h-8 ml-1" />
                         </Button>
                       </div>
                     </CardContent>
@@ -282,14 +282,14 @@ export default function StepFour({
             variant="outline"
             onClick={onBack}
             size="lg"
-            className="px-8 py-5 text-base border-2 border-[var(--cor-1)] hover:bg-[var(--cor-1)] hover:text-white"
+            className="px-8 py-5 text-2xl border-2 border-[var(--cor-1)] hover:bg-[var(--cor-1)] hover:text-white"
           >
             Voltar
           </Button>
           <Button
             onClick={onFinish}
             size="lg"
-            className="px-8 py-5 text-base min-w-[160px] border-2 border-[var(--cor-3)] hover:bg-[var(--cor-5)]"
+            className="px-8 py-5 text-2xl min-w-[160px] border-2 border-[var(--cor-3)] hover:bg-[var(--cor-5)]"
           >
             Finalizar
           </Button>

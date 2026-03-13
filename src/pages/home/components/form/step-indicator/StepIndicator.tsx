@@ -26,7 +26,7 @@ export default function StepIndicator({
               )}
               <button
                 onClick={() => onStepClick(step)}
-                className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all ${
+                className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center font-bold text-lg transition-all ${
                   currentStep === step
                     ? "bg-[var(--cor-1)] text-white scale-110"
                     : currentStep > step
@@ -44,7 +44,7 @@ export default function StepIndicator({
                 />
               )}
             </div>
-            <span className={`mt-3 text-sm font-medium ${
+            <span className={`mt-3 text-base font-medium ${
               currentStep === step ? "text-[var(--cor-1)]" : currentStep > step ? "text-[var(--cor-5)]" : "text-gray-500"
             }`}>
               {stepLabels[step - 1]}

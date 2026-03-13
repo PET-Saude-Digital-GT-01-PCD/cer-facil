@@ -208,7 +208,7 @@ export default function MaterialEducational() {
         <div className="relative">
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="flex-1 flex flex-col justify-between">
+              <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-start gap-3 mb-4">
                     <BookOpen className="w-10 h-10 text-[var(--cor-bg-3)] flex-shrink-0 mt-1" />

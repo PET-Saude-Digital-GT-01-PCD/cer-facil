@@ -143,7 +143,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
               setTimeout(handleScrollToSection, 100);
             }}
           >
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-10 h-10" />
           </Button>
         </div>
       </div>
@@ -222,7 +222,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
               </AccordionContent>
 
               <div className="flex justify-center mt-12">
-                <AccordionTrigger className="text-xl flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-2 border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg">
+                <AccordionTrigger className="text-xl flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-2 border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
                   Ver todas as unidades
                 </AccordionTrigger>
               </div>
