@@ -30,13 +30,21 @@ export default function TypesOfDeficiencies() {
   ];
 
   return (
-    <section id="types-of-deficiencies" className="px-6 py-24">
+    <section
+      aria-label="seção de tipos de deficiências"
+      id="types-of-deficiencies"
+      className="px-6 py-24"
+    >
       <div className="mx-auto max-w-6xl">
         <div className="text-left mb-16">
-          <h2 className="text-4xl font-bold mb-4">Tipos de Deficiência</h2>
-            <div className="w-20 h-1.5 bg-[var(--cor-bg-1)] rounded-full mb-6"></div>
-          <div className="w-24 h-1 bg-white rounded-full"></div>
-          <p className="mt-4 max-w-2xl text-lg opacity-90">
+          <h1 className="text-4xl font-bold mb-4 focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
+            Tipos de Deficiência
+          </h1>
+          <div className="w-24 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
+          <p
+            className="mt-4 max-w-2xl text-lg opacity-90 focus-within:border-[var(--cor-bg-1)] focus-within:border-5"
+            tabIndex={0}
+          >
             Entenda as particularidades de cada modalidade atendida pela rede de
             cuidados.
           </p>
@@ -52,12 +60,18 @@ export default function TypesOfDeficiencies() {
               <div className="text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] mb-6 flex justify-center bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] w-20 h-20 items-center rounded-full transition-all duration-300">
                 {item.icon}
               </div>
-              <h3 className="font-bold text-xl text-black mb-3 text-center">
-                {item.title}
-              </h3>
-              <p className="text-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] text-sm text-center leading-relaxed font-medium">
-                {item.text}
-              </p>
+              <div className="text-center">
+                <p className="inline font-bold text-xl text-black mb-3 text-center focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
+                  {item.title}
+                </p>{" "}
+                <br />
+                <p
+                  aria-hidden="true"
+                  className="inline text-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] text-sm text-center leading-relaxed font-medium focus-within:border-[var(--cor-bg-1)] focus-within:border-5"
+                >
+                  {item.text}
+                </p>
+              </div>
             </div>
           ))}
         </div>

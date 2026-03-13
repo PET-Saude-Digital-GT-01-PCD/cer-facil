@@ -77,7 +77,10 @@ export default function AttentionLevel() {
                   <CardTitle className="text-2xl font-bold text-gray-900 mb-2">
                     {level.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-500 text-sm leading-relaxed px-4">
+                  <CardDescription
+                    className="text-gray-500 text-sm leading-relaxed px-4  "
+                    tabIndex={0}
+                  >
                     {level.description}
                   </CardDescription>
                 </CardHeader>
@@ -98,8 +101,11 @@ export default function AttentionLevel() {
                             {component.title}
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="text-sm text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-1),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30 text-justify">
-                          {component.content}
+                        <AccordionContent
+                          role="none"
+                          className="text-sm text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30 text-justify"
+                        >
+                          <span>{component.content}</span>
                         </AccordionContent>
                       </AccordionItem>
                     ))}

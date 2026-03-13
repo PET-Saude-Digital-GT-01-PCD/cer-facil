@@ -27,15 +27,16 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center pt-16 pb-32 relative bg-white">
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight">
-          Aproximamos as pessoas com deficiência, seus familiares e
-          profissionais de saúde aos{" "}
+      <section aria-label="cabeçalho" className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight" tabIndex={0}>
+          Aproximamos você aos {" "}
           <span className="text-[var(--cor-bg-1)]">Centros De Reabilitação</span>
+          <span> da Paraíba.</span>
           <br />
           <span className="block mt-6 text-3xl md:text-4xl font-semibold text-gray-800">
-            Seja bem-vindo ao Seu CER.
+            Profissionais da Saúde, Pessoas com Deficiência e Familiares.
           </span>
+          <span className="block mt-6 text-3xl md:text-4xl font-semibold text-gray-800">Boas-vindas ao Seu Cer.</span>
         </h1>
       </div>
 
@@ -60,10 +61,10 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <Network className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
           </div>
-          <h3 className="text-xl font-bold text-gray-900">
-            Conheça a Rede CER de Cuidado à Pessoa Com Deficiência
-          </h3>
-        </div>
+          <h2 aria-hidden="true" className="text-xl font-bold text-gray-900">
+            Conheça a Rede CER de Cuidado
+          </h2>
+        </button>
 
         <div
           onClick={handleScrollToEducationalMaterial}
@@ -72,21 +73,11 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <BookOpen className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
           </div>
-          <h3 className="text-xl font-bold text-gray-900">
-            Acesse ao Material Educativo
-          </h3>
-        </div>
-      </div>
-
-      <div
-        onClick={handleScrollToSection}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer group"
-      >
-        <p className="text-sm font-medium animate-bounce text-gray-400 group-hover:text-[var(--cor-bg-1)] mb-1">
-          Deslize para saber mais
-        </p>
-        <ChevronDown className="w-6 h-6 animate-bounce text-gray-400 group-hover:text-[var(--cor-bg-1)]" />
-      </div>
+          <h2 aria-hidden="true" className="text-xl font-bold text-gray-900">
+            Tenha Acesso a Materiais Educativos
+          </h2>
+        </button>
+      </section>
     </main>
   );
 }

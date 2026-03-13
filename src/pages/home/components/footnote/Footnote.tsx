@@ -7,7 +7,6 @@ import susDigital from "@/assets/images/sus-digital.png";
 import { Instagram, AtSign, Github, Info, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-
 const socialButtons = [
   {
     Icon: Instagram,
@@ -138,10 +137,11 @@ export default function Rodape() {
             </div>
           </div>
 
-  
           <div className="pt-6 border-t border-slate-200">
             <p className="text-center text-xs font-medium text-slate-500">
-              &copy; 2026 Copyright - PET-Saúde/Informação e Saúde Digital no SUS/PB.            </p>
+              &copy; 2026 Copyright - PET-Saúde/Informação e Saúde Digital no
+              SUS/PB.{" "}
+            </p>
           </div>
         </div>
       </footer>
