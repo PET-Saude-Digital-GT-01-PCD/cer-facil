@@ -212,7 +212,7 @@ export default function StepFour({
         <CardContent className="space-y-4">
           <div>
             <h3 className="font-semibold text-2xl mb-3 text-[var(--cor-bg-1)]">
-              {results.length} CER{results.length !== 1 ? "s" : ""} Recomendado{results.length !== 1 ? "s" : ""}
+              CER{results.length !== 1 ? "s" : ""} Recomendado{results.length !== 1 ? "s:" : ":"}
             </h3>
 
             {results.length === 0 ? (
