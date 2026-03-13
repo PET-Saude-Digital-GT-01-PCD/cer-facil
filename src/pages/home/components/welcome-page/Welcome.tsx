@@ -27,8 +27,8 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center pt-16 pb-32 relative bg-white">
-      <section aria-label="cabeçalho" className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight" tabIndex={0}>
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight">
           Aproximamos as pessoas com deficiência, seus familiares e
           profissionais de saúde aos{" "}
           <span className="text-[var(--cor-bg-1)]">Centros De Reabilitação</span>
@@ -37,52 +37,56 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
             Seja bem-vindo ao Seu CER.
           </span>
         </h1>
-      </section>
+      </div>
 
-      <section aria-label="seção opções" className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <button
-          aria-label="encontrar cer mais próximo"
-          tabIndex={0}
+      <div className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
           onClick={() => setShowForm(true)}
-          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-3)] focus-within:border-[var(--cor-3)] focus-within:border-5 transition-all cursor-pointer group text-center"
+          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
         >
 
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <MapPin className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
           </div>
-          <h2 aria-hidden="true" className="text-xl font-bold text-gray-900">
-            Encontrar CER Mais Próximo
-          </h2>
-        </button>
+          <h3 className="text-xl font-bold text-gray-900">
+            Busque o CER Mais Próximo
+          </h3>
+        </div>
 
-        <button
-          aria-label="conheça a rede cer de cuidado à pessoa com deficiência"
-          tabIndex={0}
+        <div
           onClick={handleScrollToSection}
-          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-500 focus-within:border-blue-500 focus-within:border-5 transition-all cursor-pointer group text-center"
+          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
         >
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <Network className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
           </div>
-          <h2 aria-hidden="true" className="text-xl font-bold text-gray-900">
+          <h3 className="text-xl font-bold text-gray-900">
             Conheça a Rede CER de Cuidado à Pessoa Com Deficiência
-          </h2>
-        </button>
+          </h3>
+        </div>
 
-        <button
-          aria-label="tenha acesso a materiais educativos"
-          tabIndex={0}
+        <div
           onClick={handleScrollToEducationalMaterial}
-          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-emerald-500 focus-within:border-emerald-500 focus-within:border-5 transition-all cursor-pointer group text-center"
+          className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
         >
           <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
             <BookOpen className="w-8 h-8 text-[var(--cor-bg-1)] group-hover:text-white" />
           </div>
-          <h2 aria-hidden="true" className="text-xl font-bold text-gray-900">
-            Tenha Acesso a Materiais Educativoa
-          </h2>
-        </button>
-      </section>
+          <h3 className="text-xl font-bold text-gray-900">
+            Acesse ao Material Educativo
+          </h3>
+        </div>
+      </div>
+
+      <div
+        onClick={handleScrollToSection}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer group"
+      >
+        <p className="text-sm font-medium animate-bounce text-gray-400 group-hover:text-[var(--cor-bg-1)] mb-1">
+          Deslize para saber mais
+        </p>
+        <ChevronDown className="w-6 h-6 animate-bounce text-gray-400 group-hover:text-[var(--cor-bg-1)]" />
+      </div>
     </main>
   );
 }

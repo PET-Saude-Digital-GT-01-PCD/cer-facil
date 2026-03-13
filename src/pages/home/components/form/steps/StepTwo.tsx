@@ -26,10 +26,10 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
   };
 
   return (
-    <div aria-label="formulário, página 2" className="w-full">
+    <div className="w-full">
       <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-xl text-[var(--cor-5)] font-bold" tabIndex={0}>
+          <CardTitle className="text-xl text-[var(--cor-5)] font-bold">
             Qual é a idade da pessoa que receberá o atendimento?
           </CardTitle>
           {selectedDeficiencies.length > 0 && (
@@ -41,7 +41,6 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
 
         <CardContent className="space-y-2">
           <Card
-            tabIndex={0}
             onClick={() => setSelected("crianca")}
             className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "crianca"
@@ -73,7 +72,6 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           </Card>
 
           <Card
-            tabIndex={0}
             onClick={() => setSelected("adolescente")}
             className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "adolescente"
@@ -105,7 +103,6 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           </Card>
 
           <Card
-            tabIndex={0}
             onClick={() => setSelected("adulto")}
             className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "adulto"
@@ -137,7 +134,6 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           </Card>
 
           <Card
-            tabIndex={0}
             onClick={() => setSelected("idoso")}
             className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "idoso"

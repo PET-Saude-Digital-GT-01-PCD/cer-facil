@@ -1,25 +1,26 @@
- import { Building2 } from "lucide-react";
+import { Building2 } from "lucide-react";
 
 export default function TypesOfCers() {
   return (
-    <section aria-label="seção de conheça os diferentes tipos de CER" className="px-6 py-24">
+    <section id="types-of-cer-deficiencies" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         {/* Cabeçalho da Seção */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
           <div>
             <div className="text-left mb-16">
               {/* Texto principal agora em Branco para contraste no Verde */}
-              <h1 className="text-4xl font-bold mb-4 text-white">
+              <h2 className="text-4xl font-bold mb-4 text-white">
                 Conheça os Diferentes <br /> Tipos de CERs
-              </h1>
+              </h2>
               <div className="w-24 h-1 bg-white rounded-full"></div>
-              <p className="text-white mt-6 max-w-2xl text-lg leading-relaxed opacity-90" tabIndex={0}>
+              <p className="text-white mt-6 max-w-2xl text-lg leading-relaxed opacity-90">
                 Os Centros Especializados em Reabilitação (CER) são unidades de
                 saúde focadas em oferecer tratamentos especializados e
                 diagnósticos precisos.
               </p>
             </div>
 
+            {/* Cards dos CERs com Ícones em tons de Verde */}
             <div className="space-y-4">
               {[
                 {
@@ -36,18 +37,18 @@ export default function TypesOfCers() {
                 },
               ].map((cer) => (
                 <div
-                  tabIndex={0}
                   key={cer.id}
                   className="group flex items-center p-5 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="bg-[color-mix(in_srgb,var(--cor-bg-3),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-3),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-3)] group-hover:text-white transition-all duration-300">
+                  {/* Ícone em Verde Esmeralda Escuro */}
+                  <div className="bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white transition-all duration-300">
                     <Building2 size={24} />
                   </div>
                   <div>
-                    <p className="inline font-bold text-black text-lg">
+                    <h3 className="font-bold text-black text-lg">
                       CER {cer.id}
-                    </p> <br />
-                    <p className="inline text-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] text-sm font-medium">
+                    </h3>
+                    <p className="text-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] text-sm font-medium">
                       {cer.desc}
                     </p>
                   </div>
@@ -61,7 +62,7 @@ export default function TypesOfCers() {
             <img
               className="rounded-3xl shadow-2xl border-[12px] border-white/30 backdrop-blur-md"
               src="https://conclinica.com.br/wp-content/uploads/2025/09/atendimento-humanizado-na-saude.png"
-              alt="imagem de um médico e uma enfermeira observando as informações de um tablet"
+              alt="Equipe médica"
             />
           </div>
         </div>

@@ -117,11 +117,11 @@ export default function StepThree({
   };
 
   return (
-    <div aria-label="formulário, página 3" className="w-full">
+    <div className="w-full">
       <Card className="border-2 border-[var(--cor-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-xl text-[var(--cor-5)] font-bold" tabIndex={0}>Localização</CardTitle>
-          <CardDescription className="text-base" tabIndex={0}>
+          <CardTitle className="text-xl text-[var(--cor-5)] font-bold">Localização</CardTitle>
+          <CardDescription className="text-base">
             Precisamos da sua localização para encontrar o CER mais apropriado
             para você.
           </CardDescription>
@@ -154,7 +154,6 @@ export default function StepThree({
               <Label htmlFor="cep">Digite seu CEP:</Label>
               <div className="flex gap-2">
                 <Input
-                  aria-label="digite o seu cep"
                   id="cep"
                   type="text"
                   placeholder="00000-000"
@@ -164,8 +163,6 @@ export default function StepThree({
                   onKeyPress={handleKeyPress}
                 />
                 <Button
-                  aria-label="Pesquisar"
-                  tabIndex={0}
                   onClick={handleCepSearch}
                   variant="outline"
                   disabled={cep.length < 8 || loading}
@@ -179,14 +176,14 @@ export default function StepThree({
               </div>
             </div>
           </div>
-                  
+
           {showMap && (
-            <div inert className="w-full space-y-2">
+            <div className="w-full space-y-2">
               <div className="text-sm text-green-600 text-center">
                 ✓ Localização definida
               </div>
 
-              <div className="w-full h-[250px] rounded-lg overflow-hidden border disabled">
+              <div className="w-full h-[250px] rounded-lg overflow-hidden border">
                 <MapContainer
                   center={
                     location ? [location.lat, location.lng] : [51.505, -0.09]

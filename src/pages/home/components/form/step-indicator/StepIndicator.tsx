@@ -12,7 +12,7 @@ export default function StepIndicator({
   onStepClick,
 }: StepIndicatorProps) {
   return (
-    <div className="w-full" aria-hidden="true" inert>
+    <div className="w-full">
       <div className="flex items-center justify-between">
         {Array.from({ length: totalSteps }, (_, i) => i + 1).map((step) => (
           <div key={step} className="flex flex-col items-center flex-1">
@@ -25,7 +25,6 @@ export default function StepIndicator({
                 />
               )}
               <button
-                tabIndex={-1}
                 onClick={() => onStepClick(step)}
                 className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all ${
                   currentStep === step

@@ -2,7 +2,7 @@ import React from "react";
 
 const WaveBottom = ({ color = "#4FACB4", className = "" }) => {
   return (
-    <div aria-hidden="true" className={`w-full h-24 md:h-32 lg:h-40 relative overflow-hidden ${className}`} role="separator" aria-label="Decorative wave divider">
+    <div className={`w-full h-24 md:h-32 lg:h-40 relative overflow-hidden ${className}`} role="separator" aria-label="Decorative wave divider">
       <svg
         className="absolute bottom-0 left-0 w-full h-full"
         xmlns="http://www.w3.org/2000/svg"
