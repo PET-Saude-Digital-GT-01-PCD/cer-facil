@@ -87,12 +87,13 @@ export default function AttentionLevel() {
                   <Accordion type="single" collapsible className="w-full">
                     {level.components.map((component) => (
                       <AccordionItem
+                        aria-label={component.title}
                         key={component.id}
                         value={component.id}
                         className="border-gray-100  "
                       >
                         <AccordionTrigger className="text-sm font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4 no-underline hover:no-underline">
-                          <span className="flex items-center gap-3">
+                          <span aria-hidden="true" className="flex items-center gap-3">
                             <ChevronDown
                               className={`w-4 h-4 transition-colors ${hoveredCard === level.id ? "text-[var(--cor-bg-1)]" : "text-gray-400"}`}
                             />

@@ -1,4 +1,4 @@
- import { Building2 } from "lucide-react";
+import { Building2 } from "lucide-react";
 
 export default function TypesOfCers() {
   return (
@@ -20,7 +20,7 @@ export default function TypesOfCers() {
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div aria-label="lista de tipos de cer" className="space-y-4">
               {[
                 {
                   id: "II",
@@ -36,18 +36,19 @@ export default function TypesOfCers() {
                 },
               ].map((cer) => (
                 <div
+                  aria-label={`cer ${cer.id}, ${cer.desc}`}
                   tabIndex={0}
                   key={cer.id}
                   className="group flex items-center p-5 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="bg-[color-mix(in_srgb,var(--cor-bg-3),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-3),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-3)] group-hover:text-white transition-all duration-300">
+                  <div aria-hidden="true" className="bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white transition-all duration-300">
                     <Building2 size={24} />
                   </div>
                   <div>
                     <p className="inline font-bold text-black text-lg">
                       CER {cer.id}
                     </p> <br />
-                    <p className="inline text-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] text-sm font-medium">
+                    <p className="inline text-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] text-sm font-medium">
                       {cer.desc}
                     </p>
                   </div>

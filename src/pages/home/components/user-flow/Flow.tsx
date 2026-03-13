@@ -53,6 +53,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
 
   return (
     <section
+      aria-label="seção de fluxo de atendimento do cer"
       id="flow"
       className="px-6 py-8 min-h-[80vh] flex items-start justify-center bg-gradient-to-b from-white to-blue-50/30 relative"
     >

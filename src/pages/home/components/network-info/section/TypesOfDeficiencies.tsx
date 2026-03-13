@@ -55,7 +55,7 @@ export default function TypesOfDeficiencies() {
                 <p className="inline font-bold text-xl text-black mb-3 text-center focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
                   {item.title}
                 </p> <br />
-                <p aria-hidden="true" className="inline text-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] text-sm text-center leading-relaxed font-medium focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
+                <p aria-hidden="true" className="inline text-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] text-sm text-center leading-relaxed font-medium focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
                   {item.text}
                 </p>
               </div>

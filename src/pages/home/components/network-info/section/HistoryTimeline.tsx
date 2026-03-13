@@ -35,7 +35,7 @@ export default function HistoryTimeline() {
           <h1 id="history-title" className="text-4xl font-bold mb-4 text-slate-900">
             História da Rede de Cuidado à Pessoa com Deficiência
           </h1>
-          <div className="w-24 h-2 bg-[var(--cor-bg-3)] rounded-full" aria-hidden="true"></div>
+          <div className="w-24 h-2 bg-[var(--cor-bg-1)] rounded-full" aria-hidden="true"></div>
           <p className="text-slate-600 mt-4 max-w-2xl text-lg" tabIndex={0}>
             Uma jornada de evolução e compromisso com os direitos das pessoas com deficiência
           </p>
@@ -57,15 +57,15 @@ export default function HistoryTimeline() {
                 </div>
                 <div className="flex-1">
                   <div
-                    className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 hover:border-[var(--cor-bg-3)] focus:ring-4 focus:ring-blue-200 outline-none transition-all cursor-pointer hover:shadow-xl group"
+                    className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 hover:border-[var(--cor-bg-1)] focus:ring-4 focus:ring-blue-200 outline-none transition-all cursor-pointer hover:shadow-xl group"
                     tabIndex={0}
                     aria-expanded={expandedId === item.id}
                     onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
                     onKeyDown={(e) => handleKeyDown(e, item.id)}
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <Calendar className="w-5 h-5 text-[var(--cor-bg-3)]" aria-hidden="true" />
-                      <h2 className="text-xl font-bold text-[var(--cor-bg-3)]">
+                      <Calendar className="w-5 h-5 text-[var(--cor-bg-1)]" aria-hidden="true" />
+                      <h2 className="text-xl font-bold text-[var(--cor-bg-1)]">
                         {item.title}
                       </h2>
                     </div>
@@ -77,7 +77,7 @@ export default function HistoryTimeline() {
                         {detailedMessages[index]}
                       </p>
                     )}
-                    <span className="text-xs text-[var(--cor-bg-3)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block" aria-hidden="true">
+                    <span className="text-xs text-[var(--cor-bg-1)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block" aria-hidden="true">
                       {expandedId === item.id ? "Ver menos" : "Saiba mais"}
                     </span>
                   </div>
@@ -88,7 +88,7 @@ export default function HistoryTimeline() {
                   <>
                     <div className="w-5/12 pr-8">
                       <div
-                        className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 hover:border-[var(--cor-bg-3)] focus:ring-4 focus:ring-blue-200 outline-none transition-all cursor-pointer hover:shadow-xl group"
+                        className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 hover:border-[var(--cor-bg-1)] focus:ring-4 focus:ring-blue-200 outline-none transition-all cursor-pointer hover:shadow-xl group"
                         tabIndex={0}
                         aria-expanded={expandedId === item.id}
                         aria-label={`${item.title}, ${item.description}`}
@@ -96,8 +96,8 @@ export default function HistoryTimeline() {
                         onKeyDown={(e) => handleKeyDown(e, item.id)}
                       >
                         <div className="flex items-center gap-3 mb-3">
-                          <Calendar className="w-5 h-5 text-[var(--cor-bg-3)]" aria-hidden="true" />
-                          <h2 className="text-xl font-bold text-[var(--cor-bg-3)]" aria-hidden="true">
+                          <Calendar className="w-5 h-5 text-[var(--cor-bg-1)]" aria-hidden="true" />
+                          <h2 className="text-xl font-bold text-[var(--cor-bg-1)]" aria-hidden="true">
                             {item.title}
                           </h2>
                         </div>
@@ -109,7 +109,7 @@ export default function HistoryTimeline() {
                             {detailedMessages[index]}
                           </p>
                         )}
-                        <span className="text-xs text-[var(--cor-bg-3)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block" aria-hidden="true">
+                        <span className="text-xs text-[var(--cor-bg-1)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block" aria-hidden="true">
                           {expandedId === item.id ? "Ver menos" : "Saiba mais"}
                         </span>
                       </div>
@@ -133,7 +133,7 @@ export default function HistoryTimeline() {
                     </div>
                     <div className="w-5/12 pl-8">
                       <div
-                        className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 hover:border-[var(--cor-bg-3)] focus:ring-4 focus:ring-blue-200 outline-none transition-all cursor-pointer hover:shadow-xl group"
+                        className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 hover:border-[var(--cor-bg-1)] focus:ring-4 focus:ring-blue-200 outline-none transition-all cursor-pointer hover:shadow-xl group"
                         tabIndex={0}
                         aria-expanded={expandedId === item.id}
                         aria-label={`${item.title}, ${item.description}`}
@@ -141,8 +141,8 @@ export default function HistoryTimeline() {
                         onKeyDown={(e) => handleKeyDown(e, item.id)}
                       >
                         <div className="flex items-center gap-3 mb-3">
-                          <Calendar className="w-5 h-5 text-[var(--cor-bg-3)]" aria-hidden="true" />
-                          <h2 className="text-xl font-bold text-[var(--cor-bg-3)]" aria-hidden="true">
+                          <Calendar className="w-5 h-5 text-[var(--cor-bg-1)]" aria-hidden="true" />
+                          <h2 className="text-xl font-bold text-[var(--cor-bg-1)]" aria-hidden="true">
                             {item.title}
                           </h2>
                         </div>
@@ -154,7 +154,7 @@ export default function HistoryTimeline() {
                             {detailedMessages[index]}
                           </p>
                         )}
-                        <span className="text-xs text-[var(--cor-bg-3)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block" aria-hidden="true">
+                        <span className="text-xs text-[var(--cor-bg-1)] font-bold mt-2 block group-hover:underline hover:scale-105 transition-transform inline-block" aria-hidden="true">
                           {expandedId === item.id ? "Ver menos" : "Saiba mais"}
                         </span>
                       </div>
