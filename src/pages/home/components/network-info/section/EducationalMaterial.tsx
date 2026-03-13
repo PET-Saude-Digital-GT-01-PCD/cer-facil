@@ -174,7 +174,10 @@ export default function MaterialEducational() {
             Material Educativo
           </h1>
           <div className="w-24 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
-          <p className="text-slate-600 mt-4 max-w-4xl text-2xl leading-relaxed focus-within:border-[var(--cor-bg-1)] focus-within:border-5" tabIndex={0}>
+          <p
+            className="text-slate-600 mt-4 max-w-4xl text-2xl leading-relaxed focus-within:border-[var(--cor-bg-1)] focus-within:border-5"
+            tabIndex={0}
+          >
             Acesse publicações, guias e cartilhas sobre direitos, saúde e
             inclusão das pessoas com deficiência.
           </p>
@@ -244,21 +247,21 @@ export default function MaterialEducational() {
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className="w-16 h-16 flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-full font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-md font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Material anterior"
             >
-              <ChevronLeft className="w-8 h-8" />
+              <ChevronLeft className="w-5 h-5" />
               Anterior
             </button>
 
             <button
               onClick={nextSlide}
               disabled={currentIndex === materials.length - 1}
-              className="w-16 h-16 flex items-center gap-2 px-6 py-3 bg-[var(--cor-bg-1)] text-white-700 rounded-full font-semibold hover:bg-[var(--cor-5)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 px-6 py-3 bg-[var(--cor-bg-1)] text-white-700 rounded-md font-semibold hover:bg-[var(--cor-5)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Próximo material"
             >
               Próximo
-              <ChevronRight className="w-8 h-8" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>

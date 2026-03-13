@@ -41,14 +41,17 @@ export default function TypesOfCers() {
                   key={cer.id}
                   className="group flex items-center p-5 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div aria-hidden="true" className="bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white transition-all duration-300">
+                  <div
+                    aria-hidden="true"
+                    className="bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] p-3 rounded-xl mr-4 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white transition-all duration-300"
+                  >
                     <Building2 size={48} />
                   </div>
                   <div>
                     <h3 className="font-bold text-black text-2xl">
                       CER {cer.id}
                     </h3>
-                    <p className="inline text-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] text-xl font-medium">
+                    <p className="inline text-black text-xl font-medium">
                       {cer.desc}
                     </p>
                   </div>
