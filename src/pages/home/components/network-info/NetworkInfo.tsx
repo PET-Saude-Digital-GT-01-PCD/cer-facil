@@ -1,5 +1,5 @@
 import WhatIsRCPD from "./section/WhatIsRCPD";
-import TypesOfDeficiencies from "./section/TypesOfDeficiencies";
+import TypesOfDeficiencies from "./section/type-of-deficiencies/TypesOfDeficiencies";
 import ProfessionalsRoles from "./section/professionals-roles/ProfessionalsRoles";
 import HistoryTimeline from "./section/history-timeline/HistoryTimeline";
 import AttentionLevel from "./section/attention-level/AttentionLevel";
