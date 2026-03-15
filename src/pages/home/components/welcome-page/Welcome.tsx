@@ -37,7 +37,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
         >
           Aproximamos você aos{" "}
           <span className="text-[var(--cor-bg-1)]">
-            Centros De Reabilitação
+            Centros Especializados em Reabilitação (CER)
           </span>
           <span> da Paraíba.</span>
           <br />
@@ -45,7 +45,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
             Profissionais da Saúde, Pessoas com Deficiência e Familiares.
           </span>
           <span className="block mt-6 text-3xl md:text-4xl font-semibold text-gray-800">
-            Boas-vindas ao Seu Cer.
+            É um prazer ter você aqui no Seu CER.
           </span>
         </h1>
         {/* Container do Grid */}
@@ -69,7 +69,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
               <Network className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
             </div>
             <h2 aria-hidden="true" className="text-3xl font-bold text-gray-900">
-              Conheça a Rede CER de Cuidado
+              Conheça a Rede CER de Cuidados
             </h2>
           </div>{" "}
           <div

@@ -127,7 +127,7 @@ export default function StepThree({
           </CardDescription>
           {selectedDeficiencies.length > 0 && (
             <CardDescription className="text-xl">
-              Deficiências: {selectedDeficiencies.join(", ")} | Idade:{" "}
+              Deficiência(s): {selectedDeficiencies.join(", ")} | Idade:{" "}
               {ageGroup}
             </CardDescription>
           )}

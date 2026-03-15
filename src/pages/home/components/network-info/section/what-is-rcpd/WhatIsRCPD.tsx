@@ -42,9 +42,26 @@ export default function WhatIsRCPD() {
 
                 {/* Coluna do Texto (Alterna a ordem no Desktop) */}
                 <div className={isEven ? "md:order-2" : "md:order-1"}>
+                {typeof feature.desc === "string" ? (
+                  /* Renderiza as features antigas que ainda são apenas texto */
                   <p className="text-2xl leading-relaxed text-blue-50 font-medium">
                     {feature.desc}
                   </p>
+                ) : (
+                  /* Renderiza a nossa nova feature estruturada */
+                  <div className="text-2xl leading-relaxed text-blue-50 font-medium">
+                    <p>{feature.desc.intro}</p>
+                    
+                    {/* Lista com Tailwind: list-decimal cria os números, ml-8 dá o recuo, space-y-2 separa os itens */}
+                    <ol className="list-decimal ml-8 my-4 space-y-2">
+                      {feature.desc.list.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ol>
+                    
+                    <p>{feature.desc.outro}</p>
+                  </div>
+                )}
                 </div>
               </article>
             );

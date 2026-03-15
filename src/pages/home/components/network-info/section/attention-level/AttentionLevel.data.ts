@@ -38,7 +38,7 @@ export const attentionLevelsData: AttentionLevel[] = [
         id: "emulti",
         title: "Equipes Multiprofissionais (eMulti)",
         content:
-          "São grupos formados por profissionais de diversas áreas (como psicólogos, fisioterapeutas e nutricionistas) que trabalham junto com os médicos do Posto de Saúde. Eles ajudam a cuidar da população de cada bairro e buscam parcerias com escolas, assistência social e centros de lazer para oferecer um cuidado completo.",
+          "São grupos formados por profissionais de diversas áreas (como psicólogos, fisioterapeutas e nutricionistas) que trabalham junto com as equipes do Posto de Saúde. Eles ajudam a cuidar da população de cada bairro e buscam parcerias com escolas, assistência social e centros de lazer para oferecer um cuidado completo!",
       },
       {
         id: "odontologica",
