@@ -8,18 +8,18 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-import lbiImg from "@/assets/images/catilhas/Lei Brasileira de Inclusão (LBI).png";
-import capacitismoImg from "@/assets/images/catilhas/Cartilha Capacitismo.png";
-import acessibilidadeImg from "@/assets/images/catilhas/Guia de Acessibilidade Comunicacional.png";
-import menstrualImg from "@/assets/images/catilhas/Cuidado Menstrual de Pessoas com e sem Deficiência.png";
-import saudeSexualImg from "@/assets/images/catilhas/Direitos e Saúde Sexual das Pessoas com Deficiência.png";
-import euMeProtejoImg from "@/assets/images/catilhas/Eu me Protejo.png";
-import planoNacionalImg from "@/assets/images/catilhas/Plano Nacional dos Direitos da Pessoa com Deficiência.png";
-import diretrizesImg from "@/assets/images/catilhas/Diretrizes de Estimulação Precoce.png";
-import diagnosticoImg from "@/assets/images/catilhas/Diagnóstico Pessoas com Deficiência no Brasil.png";
-import atencaoPrimariaImg from "@/assets/images/catilhas/Atenção Primária à Saúde das Pessoas com Deficiência.png";
-import agenteComunitarioImg from "@/assets/images/catilhas/Agente Comunitário de Saúde.png";
-import boasPraticasImg from "@/assets/images/catilhas/Guia de Boas Práticas para Acessibilidade Digital.png";
+import lbiImg from "@/assets/images/educational-material/Lei Brasileira de Inclusão (LBI).png";
+import capacitismoImg from "@/assets/images/educational-material/Cartilha Capacitismo.png";
+import acessibilidadeImg from "@/assets/images/educational-material/Guia de Acessibilidade Comunicacional.png";
+import menstrualImg from "@/assets/images/educational-material/Cuidado Menstrual de Pessoas com e sem Deficiência.png";
+import saudeSexualImg from "@/assets/images/educational-material/Direitos e Saúde Sexual das Pessoas com Deficiência.png";
+import euMeProtejoImg from "@/assets/images/educational-material/Eu me Protejo.png";
+import planoNacionalImg from "@/assets/images/educational-material/Plano Nacional dos Direitos da Pessoa com Deficiência.png";
+import diretrizesImg from "@/assets/images/educational-material/Diretrizes de Estimulação Precoce.png";
+import diagnosticoImg from "@/assets/images/educational-material/Diagnóstico Pessoas com Deficiência no Brasil.png";
+import atencaoPrimariaImg from "@/assets/images/educational-material/Atenção Primária à Saúde das Pessoas com Deficiência.png";
+import agenteComunitarioImg from "@/assets/images/educational-material/Agente Comunitário de Saúde.png";
+import boasPraticasImg from "@/assets/images/educational-material/Guia de Boas Práticas para Acessibilidade Digital.png";
 
 export default function MaterialEducational() {
   const [currentIndex, setCurrentIndex] = useState(0);
