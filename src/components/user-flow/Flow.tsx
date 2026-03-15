@@ -1,4 +1,7 @@
 import { Button } from "@/components/ui/button";
+import FLUXOS from "@/data/fluxo.json";
+import CERS from "@/data/cers.json";
+
 import {
   Landmark,
   Building2,
@@ -8,8 +11,6 @@ import {
   Mail,
   Clock,
 } from "lucide-react";
-import FLUXOS from "../../../../data/fluxo.json";
-import CERS from "@/data/cers.json";
 
 interface FlowProps {
   setShowFlow: (show: [boolean, number | null]) => void;
@@ -17,7 +18,6 @@ interface FlowProps {
 }
 
 export default function Flow({ setShowFlow, cerId }: FlowProps) {
-
   const fluxoInfo = FLUXOS[cerId - 1];
   const cerInfo = CERS[cerId - 1];
 
@@ -26,7 +26,8 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
     default: Landmark,
   };
 
-  const Icone = especialidadeIconMap["Administrativo"] || especialidadeIconMap["default"];
+  const Icone =
+    especialidadeIconMap["Administrativo"] || especialidadeIconMap["default"];
 
   if (!fluxoInfo) {
     return (
@@ -35,13 +36,15 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
           <Landmark className="w-12 h-12 text-orange-400" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-slate-800">Fluxo não encontrado</h3>
+          <h3 className="text-xl font-bold text-slate-800">
+            Fluxo não encontrado
+          </h3>
           <p className="text-slate-500 max-w-xs mx-auto mt-2">
-            Não conseguimos carregar as etapas de atendimento para o ID {cerId}. 
+            Não conseguimos carregar as etapas de atendimento para o ID {cerId}.
             Verifique se o ID no fluxo.json corresponde ao ID no cers.json.
           </p>
         </div>
-        <Button 
+        <Button
           className="bg-[var(--cor-3)] hover:bg-orange-600 text-white px-8"
           onClick={() => setShowFlow([false, null])}
         >
@@ -92,7 +95,8 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
                   <MapPin className="w-6 h-6" /> Endereço
                 </p>
                 <p className="text-xl text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5">
-                  {cerInfo.endereco.rua}, {cerInfo.endereco.numero} - {cerInfo.endereco.bairro}
+                  {cerInfo.endereco.rua}, {cerInfo.endereco.numero} -{" "}
+                  {cerInfo.endereco.bairro}
                 </p>
               </div>
             )}
@@ -114,7 +118,10 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
                   <p className="text-xl font-bold text-[var(--cor-bg-1)] uppercase tracking-widest mb-1 flex items-center gap-2">
                     <Mail className="w-6 h-6" /> Email
                   </p>
-                  <p className="text-xl text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5 truncate" title={cerInfo.email}>
+                  <p
+                    className="text-xl text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5 truncate"
+                    title={cerInfo.email}
+                  >
                     {cerInfo.email}
                   </p>
                 </div>
@@ -126,7 +133,8 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
                 <Clock className="w-6 h-6" /> Horário
               </p>
               <p className="text-xl text-gray-700 leading-snug pl-5 border-l-2 border-gray-100 ml-1.5">
-                {cerInfo?.horario?.texto || "Segunda a Sexta, das 08:00 às 17:00"}
+                {cerInfo?.horario?.texto ||
+                  "Segunda a Sexta, das 08:00 às 17:00"}
               </p>
             </div>
           </div>
@@ -136,7 +144,6 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             <div className="relative border-l-2 border-blue-100 ml-3 space-y-4">
               {fluxoInfo.steps?.map((step: any, index: number) => (
                 <div key={index} className="relative pl-8">
-
                   <div className="absolute -left-[12px] top-1 w-6 h-6 rounded-full bg-white border-[3px] border-[var(--cor-bg-1)] shadow-sm" />
 
                   <div className="bg-gray-50/50 p-3 rounded-lg border border-gray-100 transition-all hover:shadow-sm hover:border-blue-100">
@@ -146,7 +153,9 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
                         {step.title}
                       </h4>
                     </div>
-                    <p className="text-xl text-gray-600 leading-snug">{step.description}</p>
+                    <p className="text-xl text-gray-600 leading-snug">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
               ))}

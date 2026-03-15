@@ -1,6 +1,5 @@
-import attentionLevels from "@/data/attention-levels.json";
-import { useState } from "react";
-import { Activity, Building2, Hospital, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { attentionLevelsData } from "./AttentionLevel.data.ts";
 
 import {
   Card,
@@ -17,59 +16,36 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const levelIcons = [Activity, Building2, Hospital];
-
-const levelColors = [
-  "bg-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
-  "bg-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
-  "bg-[color-mix(in_srgb,var(--cor-bg-1),black_0%)]",
-];
-
-const levelBorders = [
-  "border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
-  "border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
-  "border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
-];
-
-const levelHovers = [
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),white_0%)]",
-  "hover:border-[color-mix(in_srgb,var(--cor-bg-1),black_0%)]",
-];
-
 export default function AttentionLevel() {
-  const levels = attentionLevels as AttentionLevel[];
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-
   return (
     <section id="attention-level" className="px-6 py-20 relative">
       <div className="mx-auto max-w-6xl">
-        <div className="text-left mb-16">
+        <header className="text-left mb-16">
           <h2 className="text-4xl font-bold mb-4">Níveis de Atenção</h2>
-            <div className="w-20 h-1.5 bg-[var(--cor-bg-1)] rounded-full mb-6"></div>
-          <p className="text-50 mt-4 max-w-2xl text-2xl opacity-90">
+          <div className="w-20 h-1.5 bg-[var(--cor-bg-1)] rounded-full mb-6"></div>
+          <p className="text-slate-600 mt-4 max-w-2xl text-2xl opacity-90">
             Estrutura integrada de cuidado em diferentes níveis de complexidade
           </p>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {levels.map((level, idx) => {
-            const Icon = levelIcons[idx];
+          {attentionLevelsData.map((level) => {
+            const Icon = level.icon;
+
             return (
               <Card
                 key={level.id}
-                className={`flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 border-2 bg-white ${levelBorders[idx]} ${levelHovers[idx]} relative overflow-hidden group rounded-2xl`}
-                onMouseEnter={() => setHoveredCard(level.id)}
-                onMouseLeave={() => setHoveredCard(null)}
+                // Adicionamos 'group' aqui para que os filhos saibam quando o Card está em hover
+                className={`flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 border-2 bg-white ${level.borderClass} ${level.hoverClass} relative overflow-hidden group rounded-2xl`}
               >
                 <div
-                  className={`absolute top-0 left-0 right-0 h-2 ${levelColors[idx]} transition-all duration-300`}
+                  className={`absolute top-0 left-0 right-0 h-2 ${level.colorClass} transition-all duration-300`}
                 ></div>
 
                 <CardHeader className="text-center pb-6 pt-12">
                   <div className="flex justify-center mb-6">
                     <div
-                      className={`${levelColors[idx]} p-5 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300`}
+                      className={`${level.colorClass} p-5 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300`}
                     >
                       <Icon className="w-10 h-10 text-white" />
                     </div>
@@ -78,7 +54,7 @@ export default function AttentionLevel() {
                     {level.title}
                   </CardTitle>
                   <CardDescription
-                    className="text-gray-500 text-xl leading-relaxed px-4  "
+                    className="text-gray-500 text-xl leading-relaxed px-4"
                     tabIndex={0}
                   >
                     {level.description}
@@ -95,10 +71,12 @@ export default function AttentionLevel() {
                         className="border-gray-100"
                       >
                         <AccordionTrigger className="text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4 no-underline hover:no-underline">
-                          <span aria-hidden="true" className="flex items-center gap-3">
-                            <ChevronDown
-                              className={`w-4 h-4 transition-colors ${hoveredCard === level.id ? "text-[var(--cor-bg-1)]" : "text-gray-400"}`}
-                            />
+                          <span
+                            aria-hidden="true"
+                            className="flex items-center gap-3 text-left"
+                          >
+                            {/* O uso de group-hover:text-[var(--cor-bg-1)] elimina a necessidade do useState! */}
+                            <ChevronDown className="w-4 h-4 transition-colors text-gray-400 group-hover:text-[var(--cor-bg-1)] flex-shrink-0" />
                             {component.title}
                           </span>
                         </AccordionTrigger>

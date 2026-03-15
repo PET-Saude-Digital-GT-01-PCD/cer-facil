@@ -1,12 +1,12 @@
-import WhatIsRCPD from "./section/WhatIsRCPD";
-import TypesOfDeficiencies from "./section/TypesOfDeficiencies";
-import ProfessionalsRoles from "./section/ProfessionalsRoles";
-import HistoryTimeline from "./section/HistoryTimeline";
-import AttentionLevel from "./section/AttentionLevel";
-import CersCards from "./section/CersCards";
+import WhatIsRCPD from "./section/what-is-rcpd/WhatIsRCPD";
+import TypesOfDeficiencies from "./section/type-of-deficiencies/TypesOfDeficiencies";
+import ProfessionalsRoles from "./section/professionals-roles/ProfessionalsRoles";
+import HistoryTimeline from "./section/history-timeline/HistoryTimeline";
+import AttentionLevel from "./section/attention-level/AttentionLevel";
+import CersCards from "./section/cers-cards/CersCards";
 import { WaveBottom, WaveTop } from "@/components/wave-divider";
-import TypesOfCers from "./section/TypesOfCers";
-import EducationalMaterial from "./section/EducationalMaterial";
+import TypesOfCers from "./section/types-of-cers/TypesOfCers";
+import EducationalMaterial from "./section/educational-material/EducationalMaterial";
 
 interface NetworkInfoProps {
   showFlow: [boolean, number | null];

@@ -10,7 +10,7 @@ import {
 import cersData from "@/data/cers.json";
 import macrosData from "@/data/macro.json";
 import microsData from "@/data/micro.json";
-import Flow from "../../user-flow/Flow";
+import Flow from "@/components/user-flow/Flow";
 import { ArrowRight } from "lucide-react";
 
 interface StepFourProps {
@@ -19,7 +19,7 @@ interface StepFourProps {
   location?: string;
   userCoordinates?: { lat: number; lng: number } | null;
   onBack: () => void;
-  onFinish: () => void; 
+  onFinish: () => void;
 }
 
 interface MatchingResult {
@@ -36,11 +36,14 @@ export default function StepFour({
   location = "",
   userCoordinates,
   onBack,
-  onFinish, 
+  onFinish,
 }: StepFourProps) {
   const [results, setResults] = useState<MatchingResult[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showFlow, setShowFlow] = useState<[boolean, number | null]>([false, null]);
+  const [showFlow, setShowFlow] = useState<[boolean, number | null]>([
+    false,
+    null,
+  ]);
 
   function calcularDistanciaReal(
     lat1: number,
@@ -63,37 +66,37 @@ export default function StepFour({
 
   function determinarMacroRegiao(userLocation: string): number | null {
     const locationLower = userLocation.toLowerCase().trim();
-    
+
     const microRegiao = microsData.find((micro: any) =>
-      micro.municipios.some((municipio: string) =>
-        municipio.toLowerCase() === locationLower
-      )
+      micro.municipios.some(
+        (municipio: string) => municipio.toLowerCase() === locationLower,
+      ),
     );
-    
+
     if (!microRegiao) return null;
-    
+
     const macroRegiao = macrosData.find((macro: any) =>
-      macro.regiao.includes(microRegiao.regiao)
+      macro.regiao.includes(microRegiao.regiao),
     );
-    
+
     return macroRegiao ? macroRegiao.id : null;
   }
 
   function getMacroRegiaoFromCidade(cidade: string): number | null {
     const cidadeLower = cidade.toLowerCase().trim();
-    
+
     const microRegiao = microsData.find((micro: any) =>
-      micro.municipios.some((municipio: string) =>
-        municipio.toLowerCase() === cidadeLower
-      )
+      micro.municipios.some(
+        (municipio: string) => municipio.toLowerCase() === cidadeLower,
+      ),
     );
-    
+
     if (!microRegiao) return null;
-    
+
     const macroRegiao = macrosData.find((macro: any) =>
-      macro.regiao.includes(microRegiao.regiao)
+      macro.regiao.includes(microRegiao.regiao),
     );
-    
+
     return macroRegiao ? macroRegiao.id : null;
   }
 
@@ -108,7 +111,7 @@ export default function StepFour({
     const matchedCERs = cersData
       .map((cer) => {
         let compatibilidade = 0;
-        
+
         if (deficiencies.length === 0) {
           compatibilidade = 1;
         } else {
@@ -116,23 +119,30 @@ export default function StepFour({
             const defLower = def.toLowerCase();
             const hasMatch = cer.especialidades.some((esp) => {
               const espLower = esp.toLowerCase();
-              const match = (
+              const match =
                 espLower.includes(defLower) ||
                 defLower.includes(espLower) ||
-                (defLower.includes('fisica') && espLower.includes('física')) ||
-                (defLower.includes('física') && espLower.includes('física')) ||
-                (defLower.includes('visual') && espLower.includes('visual')) ||
-                (defLower.includes('auditiva') && espLower.includes('auditiva')) ||
-                (defLower.includes('intelectual') && espLower.includes('intelectual')) ||
-                (defLower.includes('ortopedica') && espLower.includes('ortopédica')) ||
-                (defLower.includes('ortopédica') && espLower.includes('ortopédica')) ||
-                ((defLower.includes('autista') || defLower.includes('autismo') || defLower.includes('espectro') || defLower.includes('tea')) && espLower.includes('intelectual'))
-              );
+                (defLower.includes("fisica") && espLower.includes("física")) ||
+                (defLower.includes("física") && espLower.includes("física")) ||
+                (defLower.includes("visual") && espLower.includes("visual")) ||
+                (defLower.includes("auditiva") &&
+                  espLower.includes("auditiva")) ||
+                (defLower.includes("intelectual") &&
+                  espLower.includes("intelectual")) ||
+                (defLower.includes("ortopedica") &&
+                  espLower.includes("ortopédica")) ||
+                (defLower.includes("ortopédica") &&
+                  espLower.includes("ortopédica")) ||
+                ((defLower.includes("autista") ||
+                  defLower.includes("autismo") ||
+                  defLower.includes("espectro") ||
+                  defLower.includes("tea")) &&
+                  espLower.includes("intelectual"));
               return match;
             });
             return hasMatch;
           });
-          
+
           compatibilidade = matchingDeficiencies.length / deficiencies.length;
         }
 
@@ -144,12 +154,14 @@ export default function StepFour({
         );
 
         const cerMacroRegiao = getMacroRegiaoFromCidade(cer.cidade);
-        
-        const bonusMacroRegiao = userMacroRegiao && cerMacroRegiao === userMacroRegiao ? 0.2 : 0;
-        
+
+        const bonusMacroRegiao =
+          userMacroRegiao && cerMacroRegiao === userMacroRegiao ? 0.2 : 0;
+
         const scoreDistancia = Math.max(0, 1 - distancia / 200);
-        const score = compatibilidade * 0.6 + scoreDistancia * 0.25 + bonusMacroRegiao;
-        
+        const score =
+          compatibilidade * 0.6 + scoreDistancia * 0.25 + bonusMacroRegiao;
+
         return {
           cer,
           score,
@@ -159,7 +171,8 @@ export default function StepFour({
         };
       })
       .filter((result) => {
-        const shouldShow = result.compatibilidade > 0 || deficiencies.length === 0;
+        const shouldShow =
+          result.compatibilidade > 0 || deficiencies.length === 0;
         return shouldShow;
       })
       .sort((a, b) => {
@@ -204,7 +217,10 @@ export default function StepFour({
 
           <div className="mt-3 p-3 bg-[var(--cor-bg-1)]/10 rounded-lg border border-[var(--cor-bg-1)]/30">
             <p className="text-xl text-muted-foreground">
-              <span className="font-semibold text-[var(--cor-bg-1)]">Busca:</span> {deficiencies.join(", ")} | {ageGroup}
+              <span className="font-semibold text-[var(--cor-bg-1)]">
+                Busca:
+              </span>{" "}
+              {deficiencies.join(", ")} | {ageGroup}
             </p>
           </div>
         </CardHeader>
@@ -212,7 +228,8 @@ export default function StepFour({
         <CardContent className="space-y-4">
           <div>
             <h3 className="font-semibold text-2xl mb-3 text-[var(--cor-bg-1)]">
-              CER{results.length !== 1 ? "s" : ""} Recomendado{results.length !== 1 ? "s:" : ":"}
+              CER{results.length !== 1 ? "s" : ""} Recomendado
+              {results.length !== 1 ? "s:" : ":"}
             </h3>
 
             {results.length === 0 ? (
@@ -245,7 +262,8 @@ export default function StepFour({
                       </div>
 
                       <p className="text-xl text-muted-foreground mb-3 pl-11">
-                        {result.cer.endereco.rua}, {result.cer.endereco.numero} – {result.cer.endereco.bairro}, {result.cer.cidade}
+                        {result.cer.endereco.rua}, {result.cer.endereco.numero}{" "}
+                        – {result.cer.endereco.bairro}, {result.cer.cidade}
                       </p>
 
                       <div className="pl-11 flex items-center justify-between">
