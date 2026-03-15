@@ -35,7 +35,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
           <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
-            Qual deficiência(s) deseja buscar atendimento?
+            Para qual deficiência deseja buscar atendimento?
           </CardTitle>
           <CardDescription className="text-2xl">
             Você pode selecionar mais de uma opção
@@ -68,7 +68,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
                     }`}
                   />
                 </div>
-                <CardTitle className="text-2xl">Deficiência física</CardTitle>
+                <CardTitle className="text-2xl">Deficiência Física</CardTitle>
               </CardHeader>
             </Card>
 
@@ -185,7 +185,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
                   />
                 </div>
                 <CardTitle className="text-2xl">
-                  Transtorno espectro autista (TEA)
+                  Transtorno do Espectro Autista (TEA)
                 </CardTitle>
               </CardHeader>
             </Card>

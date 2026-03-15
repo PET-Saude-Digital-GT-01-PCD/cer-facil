@@ -30,11 +30,11 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
           <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
-            Qual é a idade da pessoa que receberá o atendimento?
+            Qual a faixa etária da pessoa que precisa de atendimento?
           </CardTitle>
           {selectedDeficiencies.length > 0 && (
             <CardDescription className="text-2xl">
-              Deficiências selecionadas: {selectedDeficiencies.join(", ")}
+              Deficiência(s) selecionada(s): {selectedDeficiencies.join(", ")}
             </CardDescription>
           )}
         </CardHeader>
@@ -159,7 +159,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
               </div>
               <div>
                 <CardTitle className="text-2xl">Idoso</CardTitle>
-                <CardDescription className="text-xl">60 ou mais anos</CardDescription>
+                <CardDescription className="text-xl">60 anos ou mais</CardDescription>
               </div>
             </CardHeader>
           </Card>
