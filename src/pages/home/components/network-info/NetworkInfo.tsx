@@ -1,4 +1,4 @@
-import WhatIsRCPD from "./section/WhatIsRCPD";
+import WhatIsRCPD from "./section/what-is-rcpd/WhatIsRCPD";
 import TypesOfDeficiencies from "./section/type-of-deficiencies/TypesOfDeficiencies";
 import ProfessionalsRoles from "./section/professionals-roles/ProfessionalsRoles";
 import HistoryTimeline from "./section/history-timeline/HistoryTimeline";

@@ -72,7 +72,6 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
               Conheça a Rede CER de Cuidado
             </h2>
           </div>{" "}
-          {/* Corrigido: era </button> */}
           <div
             onClick={handleScrollToEducationalMaterial}
             className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
@@ -84,9 +83,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
               Tenha Acesso a Materiais Educativos
             </h2>
           </div>{" "}
-          {/* Corrigido: era </button> */}
         </div>{" "}
-        {/* Corrigido: Faltava fechar a div do grid principal */}
       </section>
     </main>
   );
