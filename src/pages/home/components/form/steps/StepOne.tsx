@@ -45,8 +45,11 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
             <Card
+              role="checkbox"
+              aria-checked={selected.includes("fisica")}
+              tabIndex={0}
               onClick={() => toggleSelection("fisica")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
                 selected.includes("fisica")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -73,8 +76,11 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             </Card>
 
             <Card
+              role="checkbox"
+              aria-checked={selected.includes("auditiva")}
+              tabIndex={0}
               onClick={() => toggleSelection("auditiva")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
                 selected.includes("auditiva")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -101,8 +107,11 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             </Card>
 
             <Card
+              role="checkbox"
+              aria-checked={selected.includes("visual")}
+              tabIndex={0}
               onClick={() => toggleSelection("visual")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
                 selected.includes("visual")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -129,8 +138,11 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             </Card>
 
             <Card
+              role="checkbox"
+              aria-checked={selected.includes("intelectual")}
+              tabIndex={0}
               onClick={() => toggleSelection("intelectual")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
                 selected.includes("intelectual")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -161,8 +173,11 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
 
           <div className="flex justify-center">
             <Card
+              role="checkbox"
+              aria-checked={selected.includes("tea")}
+              tabIndex={0}
               onClick={() => toggleSelection("tea")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 w-full md:w-1/2 ${
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 w-full md:w-1/2 ${
                 selected.includes("tea")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"

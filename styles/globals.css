@@ -49,9 +49,10 @@
   --cor-3: #e64f22; /* Laranja */
   --cor-4: #dbddde; /*cinza*/
   --cor-5: #022d77; /* Azul Profundo */
-  --cor-bg-1: #3B82F6;
+  --cor-bg-1: #0000ff;
   --cor-bg-2: #379fb9;
   --cor-bg-3: #10B981;
+  --cor-destaque: aqua;
 }
 
 :root {

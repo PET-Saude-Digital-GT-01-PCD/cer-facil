@@ -65,22 +65,16 @@ export default function AttentionLevel() {
                   <Accordion type="single" collapsible className="w-full">
                     {level.components.map((component) => (
                       <AccordionItem
-                        aria-label={component.title}
+                        
                         key={component.id}
                         value={component.id}
                         className="border-gray-100"
                       >
-                        <AccordionTrigger className="text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4 no-underline hover:no-underline">
-                          <span
-                            aria-hidden="true"
-                            className="flex items-center gap-3 text-left"
-                          >
-                            <ChevronDown className="w-4 h-4 transition-colors text-gray-400 group-hover:text-[var(--cor-bg-1)] flex-shrink-0" />
-                            {component.title}
-                          </span>
+                        <AccordionTrigger className="focus-within:border-10 focus-within:border-[var(--cor-bg-1)] text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4">
+                          {component.title}
                         </AccordionTrigger>
                         <AccordionContent
-                          className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30 text-justify"
+                          className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30"
                         >
                           <span>{component.content}</span>
                         </AccordionContent>

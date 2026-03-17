@@ -20,9 +20,9 @@ export default function TypesOfCers() {
               </p>
             </header>
 
-            <div aria-label="lista de tipos de cer" className="space-y-4">
+            <ul aria-label="lista dos tipos de cer" className="space-y-4">
               {cerTypesData.map((cer) => (
-                <div
+                <li
                   aria-label={`cer ${cer.id}, ${cer.desc}`}
                   key={cer.id}
                   className="group flex items-center p-5 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
@@ -34,16 +34,16 @@ export default function TypesOfCers() {
                     <Building2 size={48} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-black text-2xl">
+                    <h3 id="cer-id" aria-hidden="true" className="font-bold text-black text-2xl">
                       CER {cer.id}
                     </h3>
-                    <p className="inline text-black text-xl font-medium">
+                    <p id="cer-descricao" aria-hidden="true" className="inline text-black text-xl font-medium">
                       {cer.desc}
                     </p>
                   </div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
           {/* Coluna da Imagem */}

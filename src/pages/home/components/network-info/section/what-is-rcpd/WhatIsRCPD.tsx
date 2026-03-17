@@ -50,7 +50,7 @@ export default function WhatIsRCPD() {
                   ) : (
                     /* Renderiza a nossa nova feature estruturada */
                     <div className="text-2xl leading-relaxed text-blue-50 font-medium">
-                      <p>{feature.desc.intro}</p>
+                      <h4>{feature.desc.intro}</h4>
 
                       {/* Lista com Tailwind: list-decimal cria os números, ml-8 dá o recuo, space-y-2 separa os itens */}
                       <ol className="list-decimal ml-8 my-4 space-y-2">

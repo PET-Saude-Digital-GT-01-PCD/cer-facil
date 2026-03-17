@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Info, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -11,6 +11,7 @@ import {
 export default function Rodape() {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const currentYear = new Date().getFullYear(); // Ano dinâmico
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   return (
     <>
@@ -117,6 +118,7 @@ export default function Rodape() {
 // SUB-COMPONENTE: Modal "Sobre o Projeto"
 // ==========================================
 function AboutModal({ onClose }: { onClose: () => void }) {
+  const titleRef = useRef<HTMLHeadingElement>(null);
   // Fecha no "ESC" e trava o scroll da página de fundo
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -126,6 +128,10 @@ function AboutModal({ onClose }: { onClose: () => void }) {
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleKeyDown);
+
+    const timeoutId = setTimeout(() => {
+      titleRef.current?.focus();
+    }, 0);
 
     return () => {
       document.body.style.overflow = originalOverflow;
@@ -139,6 +145,8 @@ function AboutModal({ onClose }: { onClose: () => void }) {
       onClick={onClose}
     >
       <div
+        tabIndex={-1}
+        ref={titleRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="sobre-nos-title"
@@ -149,7 +157,7 @@ function AboutModal({ onClose }: { onClose: () => void }) {
         <header className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100 shrink-0">
           <h2
             id="sobre-nos-title"
-            className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2"
+            className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2 outline-none"
           >
             <Info
               className="text-[var(--cor-bg-1)] w-6 h-6"

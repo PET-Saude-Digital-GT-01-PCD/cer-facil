@@ -126,7 +126,7 @@ export default function StepThree({
             para você.
           </CardDescription>
           {selectedDeficiencies.length > 0 && (
-            <CardDescription className="text-xl">
+            <CardDescription aria-hidden="true" className="text-xl">
               Deficiência(s): {selectedDeficiencies.join(", ")} | Idade:{" "}
               {ageGroup}
             </CardDescription>
@@ -180,12 +180,12 @@ export default function StepThree({
           </div>
 
           {showMap && (
-            <div className="w-full space-y-2">
+            <div aria-hidden="true" className="w-full space-y-2">
               <div className="text-xl text-green-600 text-center font-semibold">
                 ✓ Localização definida
               </div>
 
-              <div className="w-full h-[250px] rounded-lg overflow-hidden border">
+              <div aria-hidden="true" className="w-full h-[250px] rounded-lg overflow-hidden border">
                 <MapContainer
                   center={
                     location ? [location.lat, location.lng] : [51.505, -0.09]

@@ -82,7 +82,9 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
 
         {/* Filtros */}
         <div className="bg-white p-6 rounded-2xl shadow-sm mb-10">
-          <div className="flex items-center gap-2 mb-4 text-slate-900 font-semibold uppercase text-sm tracking-wider">
+          <div
+          aria-label="filtro por especialidade"
+          className="flex items-center gap-2 mb-4 text-slate-900 font-semibold uppercase text-sm tracking-wider">
             <Filter size={24} />
             <span className="text-xl">Filtrar por deficiência:</span>
           </div>
@@ -94,12 +96,14 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
 
               return (
                 <button
+                  role="checkbox"
+                  aria-checked={isActive}
                   key={option.id}
                   onClick={() => toggleFilter(option.id)}
                   className={`
                     px-6 py-2.5 rounded-full font-bold text-xl transition-all duration-200 
-                    border-2 focus:ring-4 focus:ring-[var(--cor-bg-1)]/30
-                    flex items-center justify-center gap-2 
+                    border-2 focus:ring-4 focus:ring-[var(--cor-destaque)]
+                    flex items-center justify-center gap-2
                     ${
                       isActive
                         ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)] text-white shadow-md shadow-blue-100"
@@ -119,7 +123,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
             {activeFilters.length > 0 && (
               <button
                 onClick={clearFilters}
-                className="ml-2 text-slate-500 hover:text-red-500 text-lg font-medium transition-colors"
+                className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] ml-2 text-slate-500 hover:text-red-500 text-lg font-medium transition-colors"
               >
                 Limpar tudo
               </button>
@@ -161,7 +165,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
               </AccordionContent>
 
               <div className="flex justify-center mt-12">
-                <AccordionTrigger className="text-xl flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-2 border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
+                <AccordionTrigger className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-xl flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
                   Ver todas as unidades
                 </AccordionTrigger>
               </div>
@@ -176,15 +180,15 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
 // Sub-componente extraído para renderizar os cards individualmente
 function CerCard({ cer, onClick }: { cer: DadosCers; onClick: () => void }) {
   return (
-    <div
+    <button
       aria-label={`CER ${cer.nome}, localizado em ${cer.cidade}, especializado em reabilitação ${cer.especialidades.join(", ")}, clique para ver como conseguir atendimento`}
       tabIndex={0}
       onClick={onClick}
       onKeyDown={(e) => e.key === "Enter" && onClick()}
-      className="p-6 rounded-2xl shadow-xl bg-white flex flex-col transition-all hover:shadow-2xl hover:-translate-y-2 h-full min-h-[220px] cursor-pointer group focus:outline-none focus:ring-4 focus:ring-[var(--cor-bg-1)]/50"
+      className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] p-6 rounded-2xl shadow-xl bg-white flex flex-col transition-all hover:shadow-2xl hover:-translate-y-2 h-full min-h-[220px] cursor-pointer group focus:outline-none focus:ring-4 focus:ring-[var(--cor-bg-1)]/50"
     >
       <div className="flex-grow flex flex-col">
-        <h2 className="font-bold text-2xl text-slate-900 mb-4 leading-tight group-hover:text-[var(--cor-bg-1)] transition-colors">
+        <h2 className="font-bold text-2xl text-slate-900 mb-4 leading-tight group-hover:text-[var(--cor-bg-1)] transition-colors text-start">
           {toTitleCase(cer.nome)}
         </h2>
 
@@ -205,16 +209,7 @@ function CerCard({ cer, onClick }: { cer: DadosCers; onClick: () => void }) {
             </span>
           ))}
         </div>
-
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-[var(--cor-bg-1)] hover:text-white hover:bg-[var(--cor-bg-1)] rounded-full transition-all duration-300 flex-shrink-0 bg-slate-50 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white"
-          tabIndex={-1} // Evita double-tab já que o card inteiro já é focado
-        >
-          <ArrowRight className="w-10 h-10" />
-        </Button>
       </div>
-    </div>
+    </button>
   );
 }

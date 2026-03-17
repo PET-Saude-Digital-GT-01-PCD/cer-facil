@@ -215,7 +215,7 @@ export default function StepFour({
             CERs ordenados por compatibilidade e proximidade
           </CardDescription>
 
-          <div className="mt-3 p-3 bg-[var(--cor-bg-1)]/10 rounded-lg border border-[var(--cor-bg-1)]/30">
+          <div aria-hidden="true" className="mt-3 p-3 bg-[var(--cor-bg-1)]/10 rounded-lg border border-[var(--cor-bg-1)]/30">
             <p className="text-xl text-muted-foreground">
               <span className="font-semibold text-[var(--cor-bg-1)]">
                 Busca:
@@ -243,8 +243,9 @@ export default function StepFour({
               <div className="space-y-3">
                 {results.slice(0, 5).map((result, index) => (
                   <Card
+                    aria-label={`resultado ${index + 1}, ${result.cer.nome}, localizado a ${result.distancia} quilômetros de distância, na ${result.cer.endereco.rua}, número ${result.cer.endereco.numero =="S/N" ? "sem número" : result.cer.endereco.numero }, bairro ${result.cer.endereco.bairro}, ${result.cer.cidade}`}
                     key={result.cer.id}
-                    className="border-2 border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)] hover:shadow-lg transition-all"
+                    className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] border-2 border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)] hover:shadow-lg transition-all"
                   >
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between mb-3">
