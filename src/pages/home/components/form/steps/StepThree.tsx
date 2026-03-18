@@ -214,7 +214,7 @@ export default function StepThree({
 
               <div className="w-full h-[250px] rounded-lg overflow-hidden border">
                 <MapContainer
-                  center={[location.lat, location.lng]}
+                  center={[location.lat, location.lng] as [number, number]}
                   zoom={16}
                   scrollWheelZoom={true}
                   style={{ height: "100%", width: "100%" }}
@@ -223,10 +223,9 @@ export default function StepThree({
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
-                
-                  <MapUpdater center={[location.lat, location.lng]} />
-                  
-                  <Marker position={[location.lat, location.lng]}>
+                  <MapUpdater center={[location.lat, location.lng] as [number, number]} />
+
+                  <Marker position={[location.lat, location.lng] as [number, number]}>
                     <Popup>Localização encontrada</Popup>
                   </Marker>
                 </MapContainer>
