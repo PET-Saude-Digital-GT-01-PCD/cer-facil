@@ -10,31 +10,28 @@ import {
 import cersData from "@/data/cers.json";
 import macrosData from "@/data/macro.json";
 import microsData from "@/data/micro.json";
+import servicosData from "@/data/servicos.json";
 import Flow from "@/components/user-flow/Flow";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 
 interface StepFourProps {
   deficiencies?: string[];
   ageGroup?: string;
   location?: string;
-  userCoordinates?: { lat: number; lng: number } | null;
   onBack: () => void;
   onFinish: () => void;
 }
 
 interface MatchingResult {
   cer: (typeof cersData)[0];
-  score: number;
-  distancia: number;
   compatibilidade: number;
-  macroRegiao?: number | null;
+  nivelPrioridade: number;
 }
 
 export default function StepFour({
   deficiencies = [],
   ageGroup = "",
   location = "",
-  userCoordinates,
   onBack,
   onFinish,
 }: StepFourProps) {
@@ -45,149 +42,110 @@ export default function StepFour({
     null,
   ]);
 
-  function calcularDistanciaReal(
-    lat1: number,
-    lng1: number,
-    lat2: number,
-    lng2: number,
-  ): number {
-    const R = 6371;
-    const dLat = ((lat2 - lat1) * Math.PI) / 180;
-    const dLng = ((lng2 - lng1) * Math.PI) / 180;
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos((lat1 * Math.PI) / 180) *
-        Math.cos((lat2 * Math.PI) / 180) *
-        Math.sin(dLng / 2) *
-        Math.sin(dLng / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c;
-  }
+  const normalizeString = (str: string) => {
+    if (!str) return "";
+    return str
+      .split(",")[0]?.split("-")[0]
+      ?.normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+  };
 
-  function determinarMacroRegiao(userLocation: string): number | null {
-    const locationLower = userLocation.toLowerCase().trim();
+  function obterRegioesDaCidade(nomeCidade: string) {
+    const cidadeNormal = normalizeString(nomeCidade);
 
-    const microRegiao = microsData.find((micro: any) =>
-      micro.municipios.some(
-        (municipio: string) => municipio.toLowerCase() === locationLower,
-      ),
+    const micro = microsData.find((m: any) =>
+      m.municipios.some((mun: string) => normalizeString(mun) === cidadeNormal)
     );
 
-    if (!microRegiao) return null;
+    if (!micro) return { micro: null, macro: null };
 
-    const macroRegiao = macrosData.find((macro: any) =>
-      macro.regiao.includes(microRegiao.regiao),
+    const macro = macrosData.find((m: any) =>
+      m.regiao?.includes(micro.regiao)
     );
 
-    return macroRegiao ? macroRegiao.id : null;
-  }
-
-  function getMacroRegiaoFromCidade(cidade: string): number | null {
-    const cidadeLower = cidade.toLowerCase().trim();
-
-    const microRegiao = microsData.find((micro: any) =>
-      micro.municipios.some(
-        (municipio: string) => municipio.toLowerCase() === cidadeLower,
-      ),
-    );
-
-    if (!microRegiao) return null;
-
-    const macroRegiao = macrosData.find((macro: any) =>
-      macro.regiao.includes(microRegiao.regiao),
-    );
-
-    return macroRegiao ? macroRegiao.id : null;
+    return { micro, macro };
   }
 
   useEffect(() => {
-    if (!userCoordinates || !userCoordinates.lat || !userCoordinates.lng) {
+    if (!location) {
       setLoading(false);
       return;
     }
 
-    const userMacroRegiao = determinarMacroRegiao(location);
+    const userLocationNormal = normalizeString(location ?? "");
+    const { micro: userMicro, macro: userMacro } = obterRegioesDaCidade(location ?? "");
 
     const matchedCERs = cersData
       .map((cer) => {
         let compatibilidade = 0;
-
         if (deficiencies.length === 0) {
           compatibilidade = 1;
         } else {
           const matchingDeficiencies = deficiencies.filter((def) => {
-            const defLower = def.toLowerCase();
-            const hasMatch = cer.especialidades.some((esp) => {
-              const espLower = esp.toLowerCase();
-              const match =
-                espLower.includes(defLower) ||
-                defLower.includes(espLower) ||
-                (defLower.includes("fisica") && espLower.includes("física")) ||
-                (defLower.includes("física") && espLower.includes("física")) ||
-                (defLower.includes("visual") && espLower.includes("visual")) ||
-                (defLower.includes("auditiva") &&
-                  espLower.includes("auditiva")) ||
-                (defLower.includes("intelectual") &&
-                  espLower.includes("intelectual")) ||
-                (defLower.includes("ortopedica") &&
-                  espLower.includes("ortopédica")) ||
-                (defLower.includes("ortopédica") &&
-                  espLower.includes("ortopédica")) ||
-                ((defLower.includes("autista") ||
-                  defLower.includes("autismo") ||
-                  defLower.includes("espectro") ||
-                  defLower.includes("tea")) &&
-                  espLower.includes("intelectual"));
-              return match;
+            const defLower = normalizeString(def);
+            return cer.especialidades.some((esp) => {
+              const espLower = normalizeString(esp);
+              return (
+                (espLower && defLower && espLower.includes(defLower)) ||
+                (defLower && espLower && defLower.includes(espLower)) ||
+                (
+                  defLower &&
+                  (
+                    defLower.includes("autista") ||
+                    defLower.includes("autismo") ||
+                    defLower.includes("espectro") ||
+                    defLower.includes("tea")
+                  ) &&
+                  espLower &&
+                  espLower.includes("intelectual")
+                )
+              );
             });
-            return hasMatch;
           });
-
           compatibilidade = matchingDeficiencies.length / deficiencies.length;
         }
 
-        const distancia = calcularDistanciaReal(
-          userCoordinates.lat,
-          userCoordinates.lng,
-          cer.localizacao.latitude,
-          cer.localizacao.longitude,
+        let nivelPrioridade = 4;
+
+        const cerServico = servicosData.find(
+          (s: any) => Number(s.id) === Number(cer.id)
+        );
+        const atendeMunicipio = cerServico?.municipios?.some(
+          (m: string) => normalizeString(m) === userLocationNormal
         );
 
-        const cerMacroRegiao = getMacroRegiaoFromCidade(cer.cidade);
+        if (atendeMunicipio) {
+          nivelPrioridade = 1;
+        } else {
+          const cerCityNormal = normalizeString(cer.cidade ?? "");
+          const { micro: cerMicro, macro: cerMacro } = obterRegioesDaCidade(cer.cidade ?? "");
 
-        const bonusMacroRegiao =
-          userMacroRegiao && cerMacroRegiao === userMacroRegiao ? 0.2 : 0;
+          if (cerMicro && userMicro && cerMicro.regiao === userMicro.regiao) {
+            nivelPrioridade = 2;
+          } else if (cerMacro && userMacro && cerMacro.id === userMacro.id) {
+            nivelPrioridade = 3;
+          }
+        }
 
-        const scoreDistancia = Math.max(0, 1 - distancia / 200);
-        const score =
-          compatibilidade * 0.6 + scoreDistancia * 0.25 + bonusMacroRegiao;
-
-        return {
-          cer,
-          score,
-          distancia: Math.round(distancia * 10) / 10,
-          compatibilidade,
-          macroRegiao: cerMacroRegiao ?? undefined,
-        };
+        return { cer, compatibilidade, nivelPrioridade };
       })
       .filter((result) => {
-        const shouldShow =
-          result.compatibilidade > 0 || deficiencies.length === 0;
-        return shouldShow;
-      })
-      .sort((a, b) => {
-        if (userMacroRegiao) {
-          const aSameMacro = a.macroRegiao === userMacroRegiao;
-          const bSameMacro = b.macroRegiao === userMacroRegiao;
-          if (aSameMacro && !bSameMacro) return -1;
-          if (!aSameMacro && bSameMacro) return 1;
-        }
-        return b.score - a.score;
+        const atendeDeficiencia = result.compatibilidade > 0 || deficiencies.length === 0;
+        const dentroDaMacro = result.nivelPrioridade !== 4;
+        return atendeDeficiencia && dentroDaMacro;
       });
 
-    setResults(matchedCERs);
+    if (matchedCERs.length > 0) {
+      const melhorNivel = Math.min(...matchedCERs.map(c => c.nivelPrioridade));
+      setResults(matchedCERs.filter(c => c.nivelPrioridade === melhorNivel));
+    } else {
+      setResults([]);
+    }
+
     setLoading(false);
-  }, [deficiencies, userCoordinates, location]);
+  }, [deficiencies, location]);
 
   if (showFlow[0] && showFlow[1]) {
     return <Flow setShowFlow={setShowFlow} cerId={showFlow[1]} />;
@@ -198,119 +156,88 @@ export default function StepFour({
       <Card>
         <CardContent className="p-8 text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p>Calculando distâncias e compatibilidade...</p>
+          <p>Localizando os melhores CERs para sua região...</p>
         </CardContent>
       </Card>
     );
   }
 
+  const getBadgeCobertura = (nivel: number) => {
+    switch (nivel) {
+      case 1: return { text: "Atendimento Direto", color: "bg-green-100 text-green-800" };
+      case 2: return { text: "Pertence a Micro-região", color: "bg-blue-100 text-blue-800" };
+      case 3: return { text: "Pertence a Macro-região", color: "bg-blue-100 text-blue-800" };
+      default: return { text: "", color: "" };
+    }
+  };
+
   return (
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
-            Resultados da Busca
-          </CardTitle>
+          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">Resultados</CardTitle>
           <CardDescription className="text-2xl">
-            CERs ordenados por compatibilidade e proximidade
+            Exibindo CERs na sua área de abrangência geográfica
           </CardDescription>
-
-          <div className="mt-3 p-3 bg-[var(--cor-bg-1)]/10 rounded-lg border border-[var(--cor-bg-1)]/30">
-            <p className="text-xl text-muted-foreground">
-              <span className="font-semibold text-[var(--cor-bg-1)]">
-                Busca:
-              </span>{" "}
-              {deficiencies.join(", ")} | {ageGroup}
+          <div className="mt-2 p-2 bg-[var(--cor-bg-1)]/5 rounded border border-[var(--cor-bg-1)]/20">
+            <p className="text-lg text-muted-foreground italic">
+              Localidade detectada: <span className="font-bold text-[var(--cor-bg-1)]">{location}</span>
             </p>
           </div>
         </CardHeader>
 
         <CardContent className="space-y-4">
-          <div>
-            <h3 className="font-semibold text-2xl mb-3 text-[var(--cor-bg-1)]">
-              CER{results.length !== 1 ? "s" : ""} Recomendado
-              {results.length !== 1 ? "s:" : ":"}
-            </h3>
-
-            {results.length === 0 ? (
-              <div className="text-center p-6 text-muted-foreground border-2 border-dashed border-[var(--cor-bg-1)]/50 rounded-lg">
-                <p>Nenhum CER encontrado para as deficiências selecionadas.</p>
-                <p className="text-sm mt-2">
-                  Tente ajustar os filtros ou entre em contato conosco.
-                </p>
-              </div>
-            ) : (
-              <div className="space-y-3">
-                {results.slice(0, 5).map((result, index) => (
-                  <Card
-                    key={result.cer.id}
-                    className="border-2 border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)] hover:shadow-lg transition-all"
-                  >
-                    <CardContent className="p-4">
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="flex items-center gap-3">
-                          <span className="bg-[var(--cor-bg-1)] text-white px-3 py-1 rounded-full text-lg font-bold">
-                            #{index + 1}
+          {results.length === 0 ? (
+            <div className="text-center p-10 border-2 border-dashed rounded-lg">
+              <p className="text-xl">Nenhum CER encontrado para sua deficiência na sua Macro-região.</p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {results.map((result, index) => {
+                const badge = getBadgeCobertura(result.nivelPrioridade);
+                return (
+                  <Card key={result.cer.id} className="border-2 border-[var(--cor-bg-1)]/30">
+                    <CardContent className="p-5">
+                      <div className="flex justify-between items-start mb-2">
+                        <div className="flex gap-3 items-center">
+                          <span className="bg-[var(--cor-bg-1)] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">
+                            {index + 1}
                           </span>
-                          <h4 className="font-bold text-2xl text-[var(--cor-bg-1)]">
-                            {result.cer.nome}
-                          </h4>
+                          <h4 className="font-bold text-2xl text-[var(--cor-bg-1)]">{result.cer.nome}</h4>
                         </div>
-                        <span className="px-3 py-1 rounded-full text-lg bg-blue-100 text-blue-800 font-medium">
-                          {result.distancia} km
+                        <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase ${badge.color}`}>
+                          {badge.text}
                         </span>
                       </div>
-
-                      <p className="text-xl text-muted-foreground mb-3 pl-11">
-                        {result.cer.endereco.rua}, {result.cer.endereco.numero}{" "}
-                        – {result.cer.endereco.bairro}, {result.cer.cidade}
+                      <p className="pl-11 text-lg text-muted-foreground mb-4">
+                        {result.cer.endereco.rua}, {result.cer.endereco.numero} - {result.cer.cidade}
                       </p>
-
-                      <div className="pl-11 flex items-center justify-between">
+                      <div className="pl-11 flex justify-between items-center">
                         <div className="flex flex-wrap gap-2">
-                          {result.cer.especialidades.map((esp, idx) => (
-                            <span
-                              key={idx}
-                              className="px-2.5 py-1 bg-[var(--cor-bg-1)]/20 text-[var(--cor-bg-1)] rounded-lg text-lg font-bold"
-                            >
+                          {result.cer.especialidades.map((esp, i) => (
+                            <span key={i} className="bg-gray-100 px-2 py-1 rounded text-sm font-medium">
                               {esp}
                             </span>
                           ))}
                         </div>
                         <Button
-                          variant="ghost"
-                          size="sm"
-                          className="text-[var(--cor-bg-1)] hover:text-white hover:bg-[var(--cor-bg-1)] transition-all text-xl"
                           onClick={() => setShowFlow([true, result.cer.id])}
+                          className="bg-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]/90 text-white"
                         >
-                          Saiba mais
-                          <ArrowRight className="w-8 h-8 ml-1" />
+                          Ver Fluxo <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </div>
                     </CardContent>
                   </Card>
-                ))}
-              </div>
-            )}
-          </div>
+                );
+              })}
+            </div>
+          )}
         </CardContent>
 
-        <CardContent className="flex justify-between border-t pt-4 p-4">
-          <Button
-            variant="outline"
-            onClick={onBack}
-            size="lg"
-            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white"
-          >
-            Voltar
-          </Button>
-          <Button
-            onClick={onFinish}
-            size="lg"
-            className="px-8 py-5 text-2xl min-w-[160px] border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]"
-          >
-            Finalizar
-          </Button>
+        <CardContent className="flex justify-between border-t p-4">
+          <Button variant="outline" onClick={onBack} size="lg" className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white">Voltar</Button>
+          <Button onClick={onFinish} size="lg" className="px-8 py-5 text-2xl min-w-[160px] border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]">Finalizar</Button>
         </CardContent>
       </Card>
     </div>

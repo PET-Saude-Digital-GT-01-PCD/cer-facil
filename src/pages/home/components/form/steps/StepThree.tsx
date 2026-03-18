@@ -26,7 +26,7 @@ interface StepThreeProps {
   selectedDeficiencies?: string[];
   ageGroup?: string;
   onBack: () => void;
-  onNext: (location: string) => void;
+  onNext: (location: string, coordinates: { lat: number; lng: number }) => void;
 }
 
 interface LocationState {
@@ -43,6 +43,7 @@ export default function StepThree({
   const [cep, setCep] = useState("");
   const [showMap, setShowMap] = useState(false);
   const [location, setLocation] = useState<LocationState | null>(null);
+  const [cityName, setCityName] = useState("");
   const [loading, setLoading] = useState(false);
 
   const formatCep = useCallback((value: string) => {
@@ -67,11 +68,18 @@ export default function StepThree({
             );
             const data = await response.json();
 
+            const city =
+              data.address.city ||
+              data.address.town ||
+              data.address.village ||
+              data.address.municipality;
+            if (city) setCityName(city);
+
             if (data.address && data.address.postcode) {
               setCep(data.address.postcode.replace(/\D/g, ""));
             }
           } catch (error) {
-            console.error("Erro ao buscar CEP:", error);
+            console.error("Erro ao buscar detalhes da localização:", error);
           }
           setLoading(false);
         },
@@ -95,7 +103,9 @@ export default function StepThree({
 
     setLoading(true);
     try {
-      const viaCepResponse = await fetch(`https://viacep.com.br/ws/${cleanCep}/json/`);
+      const viaCepResponse = await fetch(
+        `https://viacep.com.br/ws/${cleanCep}/json/`
+      );
       const viaCepData = await viaCepResponse.json();
 
       if (viaCepData.erro) {
@@ -104,23 +114,14 @@ export default function StepThree({
         return;
       }
 
-      const { logradouro, bairro, localidade, uf } = viaCepData;
+      const { localidade, uf } = viaCepData;
+      setCityName(localidade);
 
-      const structuredQuery = `street=${encodeURIComponent(logradouro)}&city=${encodeURIComponent(localidade)}&state=${encodeURIComponent(uf)}&country=Brazil&format=json`;
-      let nominatimResponse = await fetch(`https://nominatim.openstreetmap.org/search?${structuredQuery}`);
-      let data = await nominatimResponse.json();
-
-      if (!data || data.length === 0) {
-        const freeQuery = encodeURIComponent(`${logradouro}, ${bairro}, ${localidade}, ${uf}, Brazil`);
-        nominatimResponse = await fetch(`https://nominatim.openstreetmap.org/search?q=${freeQuery}&format=json`);
-        data = await nominatimResponse.json();
-      }
-
-      if (!data || data.length === 0) {
-        const cityQuery = `city=${encodeURIComponent(localidade)}&state=${encodeURIComponent(uf)}&country=Brazil&format=json`;
-        nominatimResponse = await fetch(`https://nominatim.openstreetmap.org/search?${cityQuery}`);
-        data = await nominatimResponse.json();
-      }
+      const cityQuery = `city=${encodeURIComponent(localidade)}&state=${encodeURIComponent(uf)}&country=Brazil&format=json`;
+      const nominatimResponse = await fetch(
+        `https://nominatim.openstreetmap.org/search?${cityQuery}`
+      );
+      const data = await nominatimResponse.json();
 
       if (data && data.length > 0) {
         const lat = parseFloat(data[0].lat);
@@ -128,7 +129,9 @@ export default function StepThree({
         setLocation({ lat, lng });
         setShowMap(true);
       } else {
-        alert("Não foi possível encontrar as coordenadas para este CEP no mapa.");
+        alert(
+          "Não foi possível encontrar as coordenadas para este CEP no mapa."
+        );
       }
     } catch (error) {
       console.error("Erro ao buscar CEP:", error);
@@ -147,7 +150,9 @@ export default function StepThree({
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">Localização</CardTitle>
+          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
+            Localização
+          </CardTitle>
           <CardDescription className="text-2xl">
             Precisamos da sua localização para encontrar o CER mais apropriado
             para você.
@@ -178,7 +183,9 @@ export default function StepThree({
             <div className="text-muted-foreground text-2xl">Ou</div>
 
             <div className="w-full max-w-sm space-y-2">
-              <Label htmlFor="cep" className="text-2xl font-semibold">Digite seu CEP:</Label>
+              <Label htmlFor="cep" className="text-2xl font-semibold">
+                Digite seu CEP:
+              </Label>
               <div className="flex gap-2">
                 <Input
                   id="cep"
@@ -186,7 +193,10 @@ export default function StepThree({
                   placeholder="00000-000"
                   maxLength={9}
                   value={formatCep(cep)}
-                  onChange={(e) => setCep(e.target.value.replace(/\D/g, ""))}
+                  onChange={(e) => {
+                    setCep(e.target.value.replace(/\D/g, ""));
+                    setCityName("");
+                  }}
                   onKeyPress={handleKeyPress}
                   className="text-2xl h-16 placeholder:text-xl"
                 />
@@ -209,7 +219,7 @@ export default function StepThree({
           {showMap && location && (
             <div className="w-full space-y-2">
               <div className="text-xl text-green-600 text-center font-semibold">
-                ✓ Localização definida
+                ✓ Localização definida: {cityName}
               </div>
 
               <div className="w-full h-[250px] rounded-lg overflow-hidden border">
@@ -223,9 +233,12 @@ export default function StepThree({
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
-                  <MapUpdater center={[location.lat, location.lng] as [number, number]} />
-
-                  <Marker position={[location.lat, location.lng] as [number, number]}>
+                  <MapUpdater
+                    center={[location.lat, location.lng] as [number, number]}
+                  />
+                  <Marker
+                    position={[location.lat, location.lng] as [number, number]}
+                  >
                     <Popup>Localização encontrada</Popup>
                   </Marker>
                 </MapContainer>
@@ -245,8 +258,12 @@ export default function StepThree({
           </Button>
           <Button
             onClick={() => {
-              if (location && !isNaN(location.lat) && !isNaN(location.lng)) {
-                onNext(`${location.lat},${location.lng}`);
+              if (location) {
+                onNext(cityName || "Localização definida", location);
+              } else {
+                alert(
+                  "Por favor, valide sua localização antes de prosseguir."
+                );
               }
             }}
             disabled={!location}

@@ -36,47 +36,21 @@ export default function CerForm({ setShowForm }: CerFormProps) {
     setCurrentStep(3);
   };
 
-  const handleStepThreeNext = (location: string) => {
-    try {
-      const parts = location.split(',');
-      if (parts.length !== 2 || !parts[0] || !parts[1]) {
-        console.error('Formato de coordenadas inválido:', location);
-        return;
-      }
-
-      const lat = parseFloat(parts[0].trim());
-      const lng = parseFloat(parts[1].trim());
-      
-      if (isNaN(lat) || isNaN(lng)) {
-        console.error('Coordenadas inválidas:', location);
-        return;
-      }
-
-      const coordinates = { lat, lng };
-      
-      setFormData(prev => ({ 
-        ...prev, 
-        location: `${lat.toFixed(4)}, ${lng.toFixed(4)}`,
-        coordinates 
-      }));
-      setCurrentStep(4);
-    } catch (error) {
-      console.error('Erro ao processar coordenadas:', error);
-    }
+  const handleStepThreeNext = (location: string, coordinates: { lat: number; lng: number }) => {
+    setFormData(prev => ({ ...prev, location, coordinates }));
+    setCurrentStep(4);
   };
-  
+
   const handleFinish = () => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: "instant" });
     setShowForm(false);
   };
 
   const handleStepClick = (step: number) => {
-    // Não permite avançar para steps futuros sem completar os anteriores
     if (step === 2 && formData.deficiencies.length === 0) return;
     if (step === 3 && (formData.deficiencies.length === 0 || !formData.ageGroup)) return;
     if (step === 4 && (formData.deficiencies.length === 0 || !formData.ageGroup || !formData.coordinates)) return;
-    
-    // Permite voltar para steps anteriores
+
     if (step < currentStep) {
       setCurrentStep(step);
     }
