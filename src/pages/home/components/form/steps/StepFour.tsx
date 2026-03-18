@@ -12,7 +12,7 @@ import macrosData from "@/data/macro.json";
 import microsData from "@/data/micro.json";
 import servicosData from "@/data/servicos.json";
 import Flow from "@/components/user-flow/Flow";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface StepFourProps {
   deficiencies?: string[];
@@ -119,7 +119,6 @@ export default function StepFour({
         if (atendeMunicipio) {
           nivelPrioridade = 1;
         } else {
-          const cerCityNormal = normalizeString(cer.cidade ?? "");
           const { micro: cerMicro, macro: cerMacro } = obterRegioesDaCidade(cer.cidade ?? "");
 
           if (cerMicro && userMicro && cerMicro.regiao === userMicro.regiao) {
@@ -139,7 +138,21 @@ export default function StepFour({
 
     if (matchedCERs.length > 0) {
       const melhorNivel = Math.min(...matchedCERs.map(c => c.nivelPrioridade));
-      setResults(matchedCERs.filter(c => c.nivelPrioridade === melhorNivel));
+
+      if (melhorNivel === 3 && userMacro) {
+        const nomeReferencia = (userMacro as any)["referência"];
+        const cerReferencia = cersData.find(
+          (c) => normalizeString(c.nome) === normalizeString(nomeReferencia)
+        );
+
+        if (cerReferencia) {
+          setResults([{ cer: cerReferencia, compatibilidade: 1, nivelPrioridade: 3 }]);
+        } else {
+          setResults([]);
+        }
+      } else {
+        setResults(matchedCERs.filter(c => c.nivelPrioridade === melhorNivel));
+      }
     } else {
       setResults([]);
     }
@@ -166,7 +179,7 @@ export default function StepFour({
     switch (nivel) {
       case 1: return { text: "Atendimento Direto", color: "bg-green-100 text-green-800" };
       case 2: return { text: "Pertence a Micro-região", color: "bg-blue-100 text-blue-800" };
-      case 3: return { text: "Pertence a Macro-região", color: "bg-blue-100 text-blue-800" };
+      case 3: return { text: "CER de Referência", color: "bg-blue-100 text-blue-800" };
       default: return { text: "", color: "" };
     }
   };
@@ -236,8 +249,21 @@ export default function StepFour({
         </CardContent>
 
         <CardContent className="flex justify-between border-t p-4">
-          <Button variant="outline" onClick={onBack} size="lg" className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white">Voltar</Button>
-          <Button onClick={onFinish} size="lg" className="px-8 py-5 text-2xl min-w-[160px] border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]">Finalizar</Button>
+          <Button
+            variant="outline"
+            onClick={onBack}
+            size="lg"
+            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white"
+          >
+            Voltar
+          </Button>
+          <Button
+            onClick={onFinish}
+            size="lg"
+            className="px-8 py-5 text-2xl min-w-[160px] border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]"
+          >
+            Finalizar
+          </Button>
         </CardContent>
       </Card>
     </div>
