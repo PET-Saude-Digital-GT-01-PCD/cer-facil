@@ -6,11 +6,11 @@ export interface CerType {
 export const cerTypesData: CerType[] = [
   {
     id: "II",
-    desc: "Atendimento a duas modalidades de reabilitação.",
+    desc: "Atende dois tipos de deficiências.",
   },
   {
     id: "III",
-    desc: "Organizado para oferecer três modalidades de reabilitação.",
+    desc: "Atende três tipos de deficiências.",
   },
   {
     id: "IV",
@@ -18,6 +18,5 @@ export const cerTypesData: CerType[] = [
   },
 ];
 
-// Deixar a imagem aqui facilita a troca no futuro sem precisar mexer no componente
 export const cerImageCover =
   "https://conclinica.com.br/wp-content/uploads/2025/09/atendimento-humanizado-na-saude.png";
