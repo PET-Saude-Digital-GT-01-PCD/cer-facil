@@ -5,6 +5,7 @@
     "": {
       "name": "bun-react-template",
       "dependencies": {
+        "@djpfs/react-vlibras": "^2.0.2",
         "@radix-ui/react-accordion": "^1.2.12",
         "@radix-ui/react-label": "^2.1.7",
         "@radix-ui/react-select": "^2.2.6",
@@ -30,6 +31,8 @@
     },
   },
   "packages": {
+    "@djpfs/react-vlibras": ["@djpfs/react-vlibras@2.0.2", "", {}, "sha512-mhfxr1cg8tLdcXBUT5hictbcityoAXFKJz4/boiMGbpsZRCVkqC5EoJVRF+6brrB1GBAoVLCtn1OuzipEopewA=="],
+
     "@floating-ui/core": ["@floating-ui/core@1.7.5", "", { "dependencies": { "@floating-ui/utils": "^0.2.11" } }, "sha512-1Ih4WTWyw0+lKyFMcBHGbb5U5FtuHJuujoyyr5zTaWS5EYMeT6Jb2AuDeftsCsEuchO+mM2ij5+q9crhydzLhQ=="],
 
     "@floating-ui/dom": ["@floating-ui/dom@1.7.6", "", { "dependencies": { "@floating-ui/core": "^1.7.5", "@floating-ui/utils": "^0.2.11" } }, "sha512-9gZSAI5XM36880PPMm//9dfiEngYoC6Am2izES1FF406YFsjvyBMmeJ2g4SAju3xWwtuynNRFL2s9hgxpLI5SQ=="],
