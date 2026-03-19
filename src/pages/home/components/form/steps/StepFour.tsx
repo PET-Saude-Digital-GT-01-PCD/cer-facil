@@ -177,7 +177,7 @@ export default function StepFour({
 
   const getBadgeCobertura = (nivel: number) => {
     switch (nivel) {
-      case 1: return { text: "Atendimento Direto", color: "bg-green-100 text-green-800" };
+      case 1: return { text: "Pertence a sua região", color: "bg-blue-100 text-blue-800" };
       case 2: return { text: "Pertence a Micro-região", color: "bg-blue-100 text-blue-800" };
       case 3: return { text: "CER de Referência", color: "bg-blue-100 text-blue-800" };
       default: return { text: "", color: "" };
