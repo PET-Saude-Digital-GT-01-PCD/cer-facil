@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 import Home from "./pages/home/components/Home";
+import VLibras from "@djpfs/react-vlibras";
 
 export function App() {
   const [showForm, setShowForm] = useState(false);
@@ -11,6 +12,7 @@ export function App() {
 
   return (
     <>
+      <VLibras forceOnload={true} />
       <Home
         showForm={showForm}
         setShowForm={setShowForm}

@@ -50,12 +50,17 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
   const filteredCers = useMemo(() => {
     if (activeFilters.length === 0) return cersData;
 
-    return cersData.filter((cer) =>
-      cer.especialidades.some((especialidade) => {
+    return cersData.filter((cer) => {
+      const cerFilters = new Set<string>();
+
+      for (const especialidade of cer.especialidades) {
         const mappedFilter = getFilterFromSpecialty(especialidade);
-        return mappedFilter ? activeFilters.includes(mappedFilter) : false;
-      }),
-    );
+        if (mappedFilter) cerFilters.add(mappedFilter);
+      }
+
+      // AND: precisa conter todas as deficiencias selecionadas
+      return activeFilters.every((filter) => cerFilters.has(filter));
+    });
   }, [activeFilters]);
 
   const fixos = filteredCers.slice(0, 6);
