@@ -41,9 +41,9 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           )}
         </CardHeader>
 
-        <CardContent className="space-y-2">
+        <CardContent role="radiogroup" className="space-y-2">
           <Card
-            role="checkbox"
+            role="radio"
             aria-checked={selected.includes("crianca")}
             tabIndex={0}
             onClick={() => setSelected("crianca")}
@@ -77,7 +77,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           </Card>
 
           <Card
-            role="checkbox"
+            role="radio"
             aria-checked={selected.includes("adolescente")}
             tabIndex={0}
             onClick={() => setSelected("adolescente")}
@@ -111,7 +111,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           </Card>
 
           <Card
-            role="checkbox"
+            role="radio"
             aria-checked={selected.includes("adulto")}
             tabIndex={0}
             onClick={() => setSelected("adulto")}
@@ -145,7 +145,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           </Card>
 
           <Card
-            role="checkbox"
+            role="radio"
             aria-checked={selected.includes("idoso")}
             tabIndex={0}
             onClick={() => setSelected("idoso")}

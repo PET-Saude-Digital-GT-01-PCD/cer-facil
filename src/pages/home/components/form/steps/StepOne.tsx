@@ -42,14 +42,14 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
           </CardDescription>
         </CardHeader>
 
-        <CardContent>
+        <CardContent role="radiogroup">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
             <Card
-              role="checkbox"
-              aria-checked={selected.includes("fisica")}
+              role="radio"
+              aria-checked={selected == ("fisica")}
               tabIndex={0}
               onClick={() => toggleSelection("fisica")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("fisica")
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("fisica")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
                 }`}
@@ -73,11 +73,11 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             </Card>
 
             <Card
-              role="checkbox"
-              aria-checked={selected.includes("auditiva")}
+              role="radio"
+              aria-checked={selected == ("auditiva")}
               tabIndex={0}
               onClick={() => toggleSelection("auditiva")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("auditiva")
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("auditiva")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
                 }`}
@@ -101,11 +101,11 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             </Card>
 
             <Card
-              role="checkbox"
-              aria-checked={selected.includes("visual")}
+              role="radio"
+              aria-checked={selected == ("visual")}
               tabIndex={0}
               onClick={() => toggleSelection("visual")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("visual")
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("visual")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
                 }`}
@@ -129,11 +129,11 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             </Card>
 
             <Card
-              role="checkbox"
-              aria-checked={selected.includes("intelectual")}
+              role="radio"
+              aria-checked={selected == ("intelectual")}
               tabIndex={0}
               onClick={() => toggleSelection("intelectual")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("intelectual")
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("intelectual")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
                 }`}
@@ -161,11 +161,11 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
 
           <div className="flex justify-center">
             <Card
-              role="checkbox"
-              aria-checked={selected.includes("tea")}
+              role="radio"
+              aria-checked={selected == ("tea")}
               tabIndex={0}
               onClick={() => toggleSelection("tea")}
-              className={`cursor-pointer transition-all hover:shadow-2xl border-2 w-full md:w-1/2 ${selected == ("tea")
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 w-full md:w-1/2 ${selected == ("tea")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
                 }`}
