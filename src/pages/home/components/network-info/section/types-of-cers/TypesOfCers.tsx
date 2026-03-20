@@ -1,5 +1,27 @@
 import { Building2 } from "lucide-react";
-import { cerTypesData, cerImageCover } from "./TypesOfCers.data";
+
+interface CerType {
+  id: string;
+  desc: string;
+}
+
+const cerTypesData: CerType[] = [
+  {
+    id: "II",
+    desc: "Atende dois tipos de deficiências.",
+  },
+  {
+    id: "III",
+    desc: "Atende três tipos de deficiências.",
+  },
+  {
+    id: "IV",
+    desc: "Maior complexidade: Auditiva, Física, Intelectual e Visual.",
+  },
+];
+
+const cerImageCover =
+  "https://conclinica.com.br/wp-content/uploads/2025/09/atendimento-humanizado-na-saude.png";
 
 export default function TypesOfCers() {
   return (
@@ -9,7 +31,6 @@ export default function TypesOfCers() {
       className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
-          {/* Coluna de Texto e Cards */}
           <div>
             <header className="text-left mb-16">
               <h2 id="cer-types" className="text-4xl font-bold mb-4 text-white">
@@ -49,7 +70,6 @@ export default function TypesOfCers() {
             </ul>
           </div>
 
-          {/* Coluna da Imagem */}
           <div className="relative">
             <div className="absolute -inset-4 bg-white/10 rounded-full blur-3xl opacity-20 -z-10"></div>
             <img
