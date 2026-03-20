@@ -202,20 +202,15 @@ export default function MaterialEducational() {
     <section
       aria-labelledby="edu-mat"
       id="educational-material"
-      className="px-6 py-24">
+      className="px-6 py-24"
+    >
       <div className="mx-auto max-w-6xl">
         <header className="text-left mb-8">
-          <h2
-            id="edu-mat"
-            tabIndex={-1}
-            className="text-4xl font-bold mb-4 text-slate-900 outline-none focus:ring-0"
-          >
+          <h2 id="edu-mat" className="text-4xl font-bold mb-4 text-slate-900">
             Material Educativo
           </h2>
           <div className="w-24 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
-          <p
-            className="text-slate-600 mt-4 max-w-4xl text-2xl leading-relaxed focus-within:border-[var(--cor-bg-1)] focus-within:border-5 cursor-pointer"
-          >
+          <p className="text-slate-600 mt-4 max-w-4xl text-2xl leading-relaxed focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
             Acesse publicações, guias e cartilhas sobre direitos, saúde e
             inclusão das pessoas com deficiência.
           </p>
@@ -230,10 +225,11 @@ export default function MaterialEducational() {
           <button
             aria-label="clique para filtrar por materiais voltados a usuários da rede de cuidado à pessoas com deficiência"
             onClick={() => handleTabChange("user")}
-            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === "user"
-              ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
-              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-              }`}
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+              activeTab === "user"
+                ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
+                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+            }`}
           >
             <Users className="w-8 h-8" />
             Usuário
@@ -241,10 +237,11 @@ export default function MaterialEducational() {
           <button
             aria-label="clique para filtrar por materiais voltados a profissionais da rede de cuidado à pessoas com deficiência"
             onClick={() => handleTabChange("professional")}
-            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === "professional"
-              ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
-              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-              }`}
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+              activeTab === "professional"
+                ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
+                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+            }`}
           >
             <Briefcase className="w-8 h-8" />
             Profissional
@@ -308,7 +305,7 @@ export default function MaterialEducational() {
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-md font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-md font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Material anterior"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -318,7 +315,7 @@ export default function MaterialEducational() {
             <button
               onClick={nextSlide}
               disabled={currentIndex === materials.length - 1}
-              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-3 bg-[var(--cor-bg-1)] text-white-700 rounded-md font-semibold hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex items-center gap-2 px-6 py-3 bg-[var(--cor-bg-1)] text-white-700 rounded-md font-semibold hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Próximo material"
             >
               Próximo
@@ -333,10 +330,11 @@ export default function MaterialEducational() {
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer w-5 h-5 rounded-full transition-all duration-300 ${idx === currentIndex
-                ? "bg-[var(--cor-bg-1)] w-8"
-                : "bg-slate-300 hover:bg-slate-400"
-                }`}
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] w-5 h-5 rounded-full transition-all duration-300 ${
+                idx === currentIndex
+                  ? "bg-[var(--cor-bg-1)] w-8"
+                  : "bg-slate-300 hover:bg-slate-400"
+              }`}
               aria-label={`Ir para material ${idx + 1}`}
             />
           ))}

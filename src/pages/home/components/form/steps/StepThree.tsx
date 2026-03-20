@@ -152,9 +152,7 @@ export default function StepThree({
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
           <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
-            <h2>
-              Localização
-            </h2>
+            Localização
           </CardTitle>
           <CardDescription className="text-2xl">
             Precisamos da sua localização para encontrar o CER mais apropriado

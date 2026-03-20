@@ -1,11 +1,5 @@
 import { useState, useMemo } from "react";
-import { ChevronDown, Filter, X } from "lucide-react";
-
-import {
-  professionalsData,
-  filterOptionsData,
-  Professional,
-} from "./ProfessionalsRoles.data.ts";
+import { ChevronDown, Filter, X, Accessibility, Ear, Eye, Brain, Puzzle, LucideIcon } from "lucide-react";
 
 import {
   Accordion,
@@ -14,11 +8,147 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+interface FilterOption {
+  id: number;
+  label: string;
+  icon: LucideIcon;
+}
+
+const filterOptionsData: FilterOption[] = [
+  { id: 1, label: "Física", icon: Accessibility },
+  { id: 2, label: "Auditiva", icon: Ear },
+  { id: 3, label: "Visual", icon: Eye },
+  { id: 4, label: "Intelectual", icon: Brain },
+  { id: 5, label: "TEA", icon: Puzzle },
+];
+
+interface Professional {
+  professional: string;
+  description: string;
+  service: number[];
+}
+
+const professionalsData: Professional[] = [
+  {
+    professional: "Fisioterapeuta",
+    description:
+      "Profissional responsável por avaliar e tratar alterações de movimento e postura...",
+    service: [1, 4, 5],
+  },
+  {
+    professional: "Terapeuta Ocupacional",
+    description:
+      "Ajuda a pessoa a ter mais independência para realizar atividades do cotidiano, como se vestir, comer ou trabalhar. Ele cria oficinas, adapta o ambiente e treina o uso de aparelhos que facilitam a rotina do paciente.",
+    service: [1, 3, 4, 5],
+  },
+  {
+    professional: "Enfermeiro",
+    description:
+      "Faz consultas, curativos e administra remédios, cuidando de perto da evolução do paciente. Ele organiza os cuidados diários, orienta a família e lidera a equipe de enfermagem para garantir um atendimento seguro.",
+    service: [1, 2, 3, 4, 5],
+  },
+  {
+    professional: "Técnico de Enfermagem",
+    description:
+      "Oferece cuidado direto no dia a dia, ajudando o paciente a se recuperar e ter mais qualidade de vida, sempre com um olhar humano e apoiando os outros profissionais de saúde.",
+    service: [1, 2, 3, 4, 5],
+  },
+  {
+    professional: "Psicólogo",
+    description:
+      "Realiza avaliações e sessões de terapia para cuidar da saúde mental e emocional. Ele conversa com o paciente e a família, ajuda a entender os sentimentos e orienta sobre como lidar com os desafios.",
+    service: [1, 2, 3, 4, 5],
+  },
+  {
+    professional: "Assistente Social",
+    description:
+      "Identifica as necessidades sociais do paciente e ajuda a garantir seus direitos, ligando-o a serviços como escola e auxílios do governo. Ele trabalha para que a pessoa seja incluída na sociedade e incentiva a participação no tratamento.",
+    service: [1, 2, 3, 4, 5],
+  },
+  {
+    professional: "Fonoaudiólogo",
+    description:
+      "Cuida de tudo que envolve a comunicação (fala, audição e voz) e também de problemas para mastigar ou engolir alimentos. Ele faz testes, emite laudos e realiza terapias para melhorar a forma como o paciente se comunica e se alimenta.",
+    service: [1, 2, 4, 5],
+  },
+  {
+    professional: "Nutricionista",
+    description:
+      "Acompanha o peso e a saúde alimentar, criando dietas personalizadas para as necessidades de cada um. Ele ensina sobre alimentação saudável e ajuda no treinamento de como comer melhor no dia a dia.",
+    service: [1, 2, 3, 4, 5],
+  },
+  {
+    professional: "Ortoptista",
+    description:
+      'Funciona como um "fisioterapeuta para os olhos", tratando problemas como o estrabismo (olhos desalinhados) ou a visão dupla para melhorar o conforto visual.',
+    service: [3],
+  },
+  {
+    professional: "Pedagogo",
+    description:
+      "Especialista em ensino que cria formas diferentes de ajudar crianças e adultos a aprenderem melhor, superando dificuldades com materiais e aulas adaptadas.",
+    service: [4, 5],
+  },
+  {
+    professional: "Psicopedagogo",
+    description:
+      "Une a psicologia e a educação para entender por que alguém tem dificuldade de aprender. Ele cria estratégias personalizadas para ajudar pessoas com deficiência a ganharem novos conhecimentos na escola ou no dia a dia.",
+    service: [4, 5],
+  },
+  {
+    professional: "Musicoterapeuta",
+    description:
+      "Usa a música, como o ritmo e o canto, para ajudar no bem-estar emocional e na recuperação física, sendo muito útil no cuidado do autismo e da coordenação motora.",
+    service: [1, 4, 5],
+  },
+  {
+    professional: "Arteterapeuta",
+    description:
+      "Usa a arte (desenho, pintura, criação) para ajudar o paciente a se expressar e se recuperar. O importante aqui não é a beleza do desenho, mas como a arte ajuda a pessoa a se sentir melhor.",
+    service: [1, 4, 5],
+  },
+  {
+    professional: "Massoterapeuta",
+    description:
+      "Especialista em massagens que ajudam a aliviar dores, reduzir o estresse e melhorar a circulação do corpo, trazendo relaxamento e bem-estar.",
+    service: [1],
+  },
+  {
+    professional: "Profissional de Educação Física",
+    description:
+      "Ajuda na recuperação do corpo através de exercícios físicos planejados, complementando o trabalho da fisioterapia para que a pessoa ganhe mais fôlego e disposição.",
+    service: [1, 4, 5],
+  },
+  {
+    professional: "Psicomotricista",
+    description:
+      "Estuda como o movimento do corpo está ligado às emoções e ao pensamento. Ele usa atividades motoras para ajudar a pessoa a ter mais autoconhecimento e autonomia.",
+    service: [1, 4, 5],
+  },
+  {
+    professional: "Protético Ocular",
+    description:
+      'Cria próteses personalizadas (como o "olho de vidro") para quem perdeu o globo ocular, devolvendo a estética do rosto e ajudando na autoestima e na proteção do olho.',
+    service: [3],
+  },
+  {
+    professional: "Técnico de Orientação e Mobilidade",
+    description:
+      "Ensina pessoas cegas ou com baixa visão a andar sozinhas com segurança, usando a bengala e treinando os outros sentidos, como o tato e a audição.",
+    service: [3],
+  },
+  {
+    professional: "Técnico Oftálmico",
+    description:
+      "Dá suporte técnico no cuidado dos olhos, ajudando o paciente a entender como usar lentes e aparelhos visuais indicados pelo médico.",
+    service: [3],
+  },
+];
+
 export default function ProfessionalsRoles() {
   const [activeFilters, setActiveFilters] = useState<number[]>([]);
   const [openProf, setOpenProf] = useState<string | null>(null);
 
-  // useMemo evita que o filtro seja refeito a cada renderização (ex: ao abrir/fechar um card)
   const filteredProfessionals = useMemo(() => {
     if (activeFilters.length === 0) return professionalsData;
 
@@ -31,7 +161,7 @@ export default function ProfessionalsRoles() {
   const restantes = filteredProfessionals.slice(6);
 
   const toggleFilter = (id: number) => {
-    setOpenProf(null); // Fecha cards abertos ao filtrar
+    setOpenProf(null);
     setActiveFilters((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
@@ -47,7 +177,6 @@ export default function ProfessionalsRoles() {
       aria-labelledby="prof-roles"
       className="px-6 py-24 pt-0 font-sans bg-[--var(bg-color-1)]">
       <div className="mx-auto max-w-6xl">
-        {/* Cabeçalho e Filtros */}
         <header className="text-left mb-12">
           <h2 id="prof-roles" className="text-4xl font-bold mb-4 text-white leading-tight">
             Equipe Multiprofissional
@@ -74,7 +203,7 @@ export default function ProfessionalsRoles() {
                     aria-checked={isActive}
                     key={option.id}
                     onClick={() => toggleFilter(option.id)}
-                    className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-xl transition-all duration-200 border-2 ${
+                    className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-xl transition-all duration-200 border-2 ${
                       isActive
                         ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)] text-white shadow-md"
                         : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)]"
@@ -99,7 +228,6 @@ export default function ProfessionalsRoles() {
           </div>
         </header>
 
-        {/* Listagem de Profissionais */}
         {filteredProfessionals.length > 0 ? (
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
@@ -140,7 +268,7 @@ export default function ProfessionalsRoles() {
                   </AccordionContent>
 
                   <div className="flex justify-center mt-12">
-                    <AccordionTrigger className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
+                    <AccordionTrigger className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-2 border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg">
                       Ver mais
                     </AccordionTrigger>
                   </div>
@@ -158,7 +286,6 @@ export default function ProfessionalsRoles() {
   );
 }
 
-// Sub-componente para isolar a lógica visual de cada card
 function ProfessionalCard({
   prof,
   isOpen,
@@ -170,7 +297,7 @@ function ProfessionalCard({
 }) {
   return (
     <div
-      className={`cursor-pointer border rounded-xl transition-all duration-300 h-fit bg-white ${
+      className={`border rounded-xl transition-all duration-300 h-fit bg-white ${
         isOpen
           ? "border-[var(--cor-bg-1)] shadow-xl ring-1 ring-emerald-50 scale-[1.01]"
           : "border-slate-100 shadow-sm hover:border-emerald-200 hover:shadow-md"

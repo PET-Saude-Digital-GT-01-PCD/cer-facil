@@ -1,14 +1,8 @@
 import { useMemo, useState } from "react";
-import { MapPin, ArrowRight, Filter, X } from "lucide-react";
+import { MapPin, ArrowRight, Filter, X, Accessibility, Ear, Eye, Brain, LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Flow from "@/components/user-flow/Flow.tsx";
-import {
-  cersData,
-  filterOptionsData,
-  toTitleCase,
-  getFilterFromSpecialty,
-  DadosCers,
-} from "./CersCards.data.ts";
+import cersJson from "@/data/cers.json";
 
 import {
   Accordion,
@@ -16,6 +10,64 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+interface DadosCers {
+  id: number;
+  nome: string;
+  especialidades: string[];
+  cidade: string;
+}
+
+interface FilterOption {
+  id: string;
+  label: string;
+  icon: LucideIcon;
+}
+
+const filterOptionsData: FilterOption[] = [
+  { id: "Física", label: "Física", icon: Accessibility },
+  { id: "Auditiva", label: "Auditiva", icon: Ear },
+  { id: "Visual", label: "Visual", icon: Eye },
+  { id: "Intelectual", label: "Intelectual", icon: Brain },
+];
+
+const cersData: DadosCers[] = cersJson as DadosCers[];
+
+function toTitleCase(text: string): string {
+  if (!text) return "";
+
+  const romanNumerals = ["II", "III", "IV"];
+
+  return text
+    .toLowerCase()
+    .split(" ")
+    .map((word) => {
+      if (romanNumerals.includes(word.toUpperCase())) {
+        return word.toUpperCase();
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
+const normalizeText = (text: string): string =>
+  text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+
+const getFilterFromSpecialty = (specialty: string): string | null => {
+  const normalized = normalizeText(specialty);
+
+  if (normalized.includes("audit")) return "Auditiva";
+  if (normalized.includes("visual")) return "Visual";
+  if (normalized.includes("intelect")) return "Intelectual";
+  if (/f.*sica/.test(normalized) || normalized.includes("fisica")) {
+    return "Física";
+  }
+
+  return null;
+};
 
 interface CersCardsProps {
   showFlow: [boolean, number | null];
@@ -89,7 +141,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
         {/* Filtros */}
         <div className="bg-white p-6 rounded-2xl shadow-sm mb-10">
           <div
-          aria-label="filtro por tipo de deficiência"
+          aria-label="filtro por especialidade"
           className="flex items-center gap-2 mb-4 text-slate-900 font-semibold uppercase text-sm tracking-wider">
             <Filter size={24} />
             <span className="text-xl">Filtrar por deficiência:</span>
@@ -106,7 +158,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
                   aria-checked={isActive}
                   key={option.id}
                   onClick={() => toggleFilter(option.id)}
-                  className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-xl transition-all duration-200 border-2 
+                  className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-xl transition-all duration-200 border-2 
                     ${
                       isActive
                         ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)] text-white shadow-md"
@@ -167,7 +219,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
               </AccordionContent>
 
               <div className="flex justify-center mt-12">
-                <AccordionTrigger className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
+                <AccordionTrigger className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-xl flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
                   Ver todas as unidades
                 </AccordionTrigger>
               </div>
@@ -190,9 +242,9 @@ function CerCard({ cer, onClick }: { cer: DadosCers; onClick: () => void }) {
       className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] p-6 rounded-2xl shadow-xl bg-white flex flex-col transition-all hover:shadow-2xl hover:-translate-y-2 h-full min-h-[220px] cursor-pointer group focus:outline-none focus:ring-4 focus:ring-[var(--cor-bg-1)]/50"
     >
       <div className="flex-grow flex flex-col">
-        <h3 aria-hidden="true" className="font-bold text-2xl text-slate-900 mb-4 leading-tight group-hover:text-[var(--cor-bg-1)] transition-colors text-start">
+        <h2 className="font-bold text-2xl text-slate-900 mb-4 leading-tight group-hover:text-[var(--cor-bg-1)] transition-colors text-start">
           {toTitleCase(cer.nome)}
-        </h3>
+        </h2>
 
         <div className="flex items-center text-slate-500 mb-6 mt-auto font-semibold">
           <MapPin className="w-6 h-6 mr-1.5 flex-shrink-0 text-[var(--cor-bg-1)]" />
