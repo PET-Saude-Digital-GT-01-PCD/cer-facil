@@ -25,15 +25,16 @@ export default function BackToTopButtom() {
 
     return (
         <>
-            {backToTopButtom &&
             <Button
                 variant="default"
                 size="icon"
-                className="fixed bottom-8 right-8 size-14 border-4 border-white"
+                className={`fixed bottom-8 right-8 size-14 border-4 border-white transition-opacity duration-300 ${
+                    backToTopButtom ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                }`}
                 onClick={scrollUp}
             >
                 <ArrowUp className="size-12"/>
-            </Button>}
+            </Button>
         </>
     )
 }
