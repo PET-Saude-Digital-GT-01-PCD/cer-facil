@@ -1,5 +1,15 @@
 import { useMemo, useState } from "react";
-import { MapPin, ArrowRight, Filter, X, Accessibility, Ear, Eye, Brain, LucideIcon } from "lucide-react";
+import {
+  MapPin,
+  ArrowRight,
+  Filter,
+  X,
+  Accessibility,
+  Ear,
+  Eye,
+  Brain,
+  LucideIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Flow from "@/components/user-flow/Flow.tsx";
 import cersJson from "@/data/cers.json";
@@ -141,8 +151,9 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
         {/* Filtros */}
         <div className="bg-white p-6 rounded-2xl shadow-sm mb-10">
           <div
-          aria-label="filtro por especialidade"
-          className="flex items-center gap-2 mb-4 text-slate-900 font-semibold uppercase text-sm tracking-wider">
+            aria-label="filtro por especialidade"
+            className="flex items-center gap-2 mb-4 text-slate-900 font-semibold uppercase text-sm tracking-wider"
+          >
             <Filter size={24} />
             <span className="text-xl">Filtrar por deficiência:</span>
           </div>
@@ -219,7 +230,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
               </AccordionContent>
 
               <div className="flex justify-center mt-12">
-                <AccordionTrigger className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-xl flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
+                <AccordionTrigger className="text-xl flex gap-3 items-center bg-white text-[var(--cor-bg-1)] px-8 py-4 font-bold transition-all duration-200 border-2 border-[var(--cor-bg-1)]/30 rounded-full hover:border-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
                   Ver todas as unidades
                 </AccordionTrigger>
               </div>
