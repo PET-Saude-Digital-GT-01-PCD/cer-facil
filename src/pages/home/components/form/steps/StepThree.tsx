@@ -45,6 +45,7 @@ export default function StepThree({
   const [location, setLocation] = useState<LocationState | null>(null);
   const [cityName, setCityName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [locationPermission, setLocationPermission] = useState(false);
 
   const formatCep = useCallback((value: string) => {
     const numbers = value.replace(/\D/g, "");
@@ -158,7 +159,7 @@ export default function StepThree({
             para você.
           </CardDescription>
           {selectedDeficiencies.length > 0 && (
-            <CardDescription className="text-xl">
+            <CardDescription aria-hidden="true" className="text-xl">
               Deficiência(s): {selectedDeficiencies.join(", ")} | Idade:{" "}
               {ageGroup}
             </CardDescription>
@@ -168,7 +169,10 @@ export default function StepThree({
         <CardContent className="space-y-4">
           <div className="flex flex-col items-center gap-3">
             <Button
-              onClick={handleGeolocation}
+              onClick={() => {
+                handleGeolocation();
+                setLocationPermission(true);
+              }}
               className="w-full max-w-sm bg-[var(--cor-bg-1)] hover:brightness-110 transition-all text-2xl py-8"
               disabled={loading}
             >
@@ -179,7 +183,7 @@ export default function StepThree({
               )}
               Permitir Localização
             </Button>
-
+            
             <div className="text-muted-foreground text-2xl">Ou</div>
 
             <div className="w-full max-w-sm space-y-2">
@@ -222,7 +226,7 @@ export default function StepThree({
                 ✓ Localização definida: {cityName}
               </div>
 
-              <div className="w-full h-[250px] rounded-lg overflow-hidden border">
+              <div aria-hidden="true" className="w-full h-[250px] rounded-lg overflow-hidden border">
                 <MapContainer
                   center={[location.lat, location.lng] as [number, number]}
                   zoom={16}

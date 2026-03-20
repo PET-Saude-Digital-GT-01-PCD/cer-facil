@@ -36,11 +36,6 @@ export const professionalsData: Professional[] = [
     service: [1, 4, 5],
   },
   {
-    professional: "Fonoaudiólogo",
-    description: "Trabalha com os diferentes aspectos da comunicação humana...",
-    service: [2, 4, 5],
-  },
-  {
     professional: "Terapeuta Ocupacional",
     description:
       "Ajuda a pessoa a ter mais independência para realizar atividades do cotidiano, como se vestir, comer ou trabalhar. Ele cria oficinas, adapta o ambiente e treina o uso de aparelhos que facilitam a rotina do paciente.",

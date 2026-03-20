@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import {
   BookOpen,
@@ -17,6 +17,7 @@ import {
 export default function MaterialEducational() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<"user" | "professional">("user");
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   const materials =
     activeTab === "user" ? userMaterials : professionalMaterials;
@@ -24,11 +25,17 @@ export default function MaterialEducational() {
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % materials.length);
+    setTimeout(() => {
+      titleRef.current?.focus();
+    }, 0);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + materials.length) % materials.length);
-  };
+  setCurrentIndex((prev) => (prev - 1 + materials.length) % materials.length);
+  setTimeout(() => {
+    titleRef.current?.focus();
+  }, 0);
+};
 
   const handleTabChange = (tab: "user" | "professional") => {
     setActiveTab(tab);
@@ -36,16 +43,18 @@ export default function MaterialEducational() {
   };
 
   return (
-    <section id="educational-material" className="px-6 py-24">
+    <section
+      aria-labelledby="edu-mat"
+      id="educational-material" 
+      className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <header className="text-left mb-8">
-          <h1 className="text-4xl font-bold mb-4 text-slate-900">
+          <h2 id="edu-mat" className="text-4xl font-bold mb-4 text-slate-900">
             Material Educativo
-          </h1>
+          </h2>
           <div className="w-24 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
           <p
             className="text-slate-600 mt-4 max-w-4xl text-2xl leading-relaxed focus-within:border-[var(--cor-bg-1)] focus-within:border-5"
-            tabIndex={0}
           >
             Acesse publicações, guias e cartilhas sobre direitos, saúde e
             inclusão das pessoas com deficiência.
@@ -53,25 +62,25 @@ export default function MaterialEducational() {
         </header>
 
         {/* Abas */}
-        <div className="flex gap-4 mb-4">
+        <div role="tablist" aria-label="tipo de material" className="flex gap-4 mb-4">
           <button
+            aria-label="clique para filtrar por materiais voltados a usuários da rede de cuidado à pessoas com deficiência"
             onClick={() => handleTabChange("user")}
-            className={`text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-              activeTab === "user"
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === "user"
                 ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
                 : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
+              }`}
           >
             <Users className="w-8 h-8" />
             Usuário
           </button>
           <button
+            aria-label="clique para filtrar por materiais voltados a profissionais da rede de cuidado à pessoas com deficiência"
             onClick={() => handleTabChange("professional")}
-            className={`text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-              activeTab === "professional"
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === "professional"
                 ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
                 : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
+              }`}
           >
             <Briefcase className="w-8 h-8" />
             Profissional
@@ -86,11 +95,15 @@ export default function MaterialEducational() {
                 <div>
                   <div className="flex items-start gap-3 mb-4">
                     <BookOpen className="w-10 h-10 text-[var(--cor-bg-1)] flex-shrink-0 mt-1" />
-                    <h3 className="my-auto font-bold text-gray-900 text-2xl">
+                    <h3
+                      ref={titleRef}
+                      tabIndex={-1} // Permite foco via script, mas não via Tab
+                      className="my-auto font-bold text-gray-900 text-2xl outline-none"
+                    >
                       {currentMaterial.title}
                     </h3>
                   </div>
-                  <p className="text-xl text-gray-600 leading-relaxed mb-6 text-justify">
+                  <p className="text-xl text-gray-600 leading-relaxed mb-6">
                     {currentMaterial.description}
                   </p>
                 </div>
@@ -98,7 +111,7 @@ export default function MaterialEducational() {
                   href={currentMaterial.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xl inline-flex items-center gap-2 bg-[var(--cor-bg-1)] text-white px-6 py-3 rounded-full font-semibold hover:bg-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] transition-colors duration-300 w-fit"
+                  className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-xl inline-flex items-center gap-2 bg-[var(--cor-bg-1)] text-white px-6 py-3 rounded-full font-semibold hover:bg-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] transition-colors duration-300 w-fit"
                 >
                   Acessar Material
                   <ExternalLink className="w-6 h-6" />
@@ -119,7 +132,7 @@ export default function MaterialEducational() {
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className="flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-md font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-md font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Material anterior"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -129,7 +142,7 @@ export default function MaterialEducational() {
             <button
               onClick={nextSlide}
               disabled={currentIndex === materials.length - 1}
-              className="flex items-center gap-2 px-6 py-3 bg-[var(--cor-bg-1)] text-white-700 rounded-md font-semibold hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex items-center gap-2 px-6 py-3 bg-[var(--cor-bg-1)] text-white-700 rounded-md font-semibold hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Próximo material"
             >
               Próximo
@@ -139,20 +152,19 @@ export default function MaterialEducational() {
         </div>
 
         {/* Indicadores (Dots) */}
-        <div className="flex justify-center gap-2 mt-8 flex-wrap">
+        <nav className="flex justify-center gap-2 mt-8 flex-wrap">
           {materials.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                idx === currentIndex
+              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] w-5 h-5 rounded-full transition-all duration-300 ${idx === currentIndex
                   ? "bg-[var(--cor-bg-1)] w-8"
                   : "bg-slate-300 hover:bg-slate-400"
-              }`}
+                }`}
               aria-label={`Ir para material ${idx + 1}`}
             />
           ))}
-        </div>
+        </nav>
       </div>
     </section>
   );

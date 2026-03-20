@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 import Home from "./pages/home/components/Home";
+import BackToTopButton from "./components/back-to-top-buttom/BackToTopButtom";
 import VLibras from "@djpfs/react-vlibras";
 
 export function App() {
@@ -19,6 +20,7 @@ export function App() {
         showFlow={showFlow}
         setShowFlow={setShowFlow}
       />
+      <BackToTopButton />
     </>
   );
 }

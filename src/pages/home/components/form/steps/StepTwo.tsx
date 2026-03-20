@@ -29,11 +29,13 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
-            Qual a faixa etária da pessoa que precisa de atendimento?
+          <CardTitle asChild className="text-3xl text-[var(--cor-bg-1)] font-bold">
+            <h2>
+              Qual a faixa etária da pessoa que precisa de atendimento?
+            </h2>
           </CardTitle>
           {selectedDeficiencies.length > 0 && (
-            <CardDescription className="text-2xl">
+            <CardDescription aria-hidden="true" className="text-2xl">
               Deficiência(s) selecionada(s): {selectedDeficiencies.join(", ")}
             </CardDescription>
           )}
@@ -41,8 +43,11 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
 
         <CardContent className="space-y-2">
           <Card
+            role="checkbox"
+            aria-checked={selected.includes("crianca")}
+            tabIndex={0}
             onClick={() => setSelected("crianca")}
-            className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "crianca"
                 ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                 : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -72,8 +77,11 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           </Card>
 
           <Card
+            role="checkbox"
+            aria-checked={selected.includes("adolescente")}
+            tabIndex={0}
             onClick={() => setSelected("adolescente")}
-            className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "adolescente"
                 ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                 : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -103,8 +111,11 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           </Card>
 
           <Card
+            role="checkbox"
+            aria-checked={selected.includes("adulto")}
+            tabIndex={0}
             onClick={() => setSelected("adulto")}
-            className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "adulto"
                 ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                 : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -134,8 +145,11 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
           </Card>
 
           <Card
+            role="checkbox"
+            aria-checked={selected.includes("idoso")}
+            tabIndex={0}
             onClick={() => setSelected("idoso")}
-            className={`cursor-pointer transition-all hover:shadow-2xl border-2 ${
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "idoso"
                 ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                 : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"

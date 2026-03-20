@@ -13,9 +13,9 @@ export default function StepIndicator({
 }: StepIndicatorProps) {
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between">
+      <div aria-hidden="true" className="flex items-center justify-between">
         {Array.from({ length: totalSteps }, (_, i) => i + 1).map((step) => (
-          <div key={step} className="flex flex-col items-center flex-1">
+          <div aria-hidden="true" key={step} className="flex flex-col items-center flex-1">
             <div className="flex items-center w-full">
               {step > 1 && (
                 <div

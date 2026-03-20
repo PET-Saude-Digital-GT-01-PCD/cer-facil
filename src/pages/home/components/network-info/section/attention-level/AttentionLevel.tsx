@@ -18,10 +18,13 @@ import {
 
 export default function AttentionLevel() {
   return (
-    <section id="attention-level" className="px-6 py-20 relative">
+    <section 
+      aria-labelledby="att-level" 
+      id="attention-level" 
+      className="px-6 py-20 relative">
       <div className="mx-auto max-w-6xl">
         <header className="text-left mb-16">
-          <h2 className="text-4xl font-bold mb-4">Níveis de Atenção</h2>
+          <h2 id="att-level" className="text-4xl font-bold mb-4">Níveis de Atenção</h2>
           <div className="w-20 h-1.5 bg-[var(--cor-bg-1)] rounded-full mb-6"></div>
           <p className="text-slate-600 mt-4 max-w-2xl text-2xl opacity-90">
             Estrutura integrada de cuidado em diferentes níveis de complexidade
@@ -35,7 +38,6 @@ export default function AttentionLevel() {
             return (
               <Card
                 key={level.id}
-                // Adicionamos 'group' aqui para que os filhos saibam quando o Card está em hover
                 className={`flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 border-2 bg-white ${level.borderClass} ${level.hoverClass} relative overflow-hidden group rounded-2xl`}
               >
                 <div
@@ -51,11 +53,12 @@ export default function AttentionLevel() {
                     </div>
                   </div>
                   <CardTitle className="text-2xl font-bold text-gray-900 mb-2">
-                    {level.title}
+                    <h3>
+                      {level.title}
+                    </h3>
                   </CardTitle>
                   <CardDescription
                     className="text-gray-500 text-xl leading-relaxed px-4"
-                    tabIndex={0}
                   >
                     {level.description}
                   </CardDescription>
@@ -65,24 +68,15 @@ export default function AttentionLevel() {
                   <Accordion type="single" collapsible className="w-full">
                     {level.components.map((component) => (
                       <AccordionItem
-                        aria-label={component.title}
                         key={component.id}
                         value={component.id}
-                        className="border-gray-100"
+                        className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] border-gray-100"
                       >
-                        <AccordionTrigger className="text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4 no-underline hover:no-underline">
-                          <span
-                            aria-hidden="true"
-                            className="flex items-center gap-3 text-left"
-                          >
-                            {/* O uso de group-hover:text-[var(--cor-bg-1)] elimina a necessidade do useState! */}
-                            <ChevronDown className="w-4 h-4 transition-colors text-gray-400 group-hover:text-[var(--cor-bg-1)] flex-shrink-0" />
-                            {component.title}
-                          </span>
+                        <AccordionTrigger className="text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4">
+                          {component.title}
                         </AccordionTrigger>
                         <AccordionContent
-                          role="none"
-                          className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30 text-justify"
+                          className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30"
                         >
                           <span>{component.content}</span>
                         </AccordionContent>

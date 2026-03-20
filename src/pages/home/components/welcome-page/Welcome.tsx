@@ -28,12 +28,10 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center pt-16 pb-32 relative bg-white">
       <section
-        aria-label="cabeçalho"
         className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16"
       >
         <h1
           className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight"
-          tabIndex={0}
         >
           Aproximamos você aos{" "}
           <span className="text-[var(--cor-bg-1)]">
@@ -48,42 +46,41 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
             É um prazer ter você aqui no Seu CER.
           </span>
         </h1>
-        {/* Container do Grid */}
-        <div className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-          <div
+        <nav aria-label="menu principal de ações" className="w-full max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+          <button
             onClick={() => setShowForm(true)}
-            className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
+            className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
           >
             <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
               <MapPin className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
             </div>
-            <h3 className="text-3xl font-bold text-gray-900">
+            <span className="text-3xl font-bold text-gray-900">
               Busque o CER Mais Próximo
-            </h3>
-          </div>
-          <div
+            </span>
+          </button>
+          <button
             onClick={handleScrollToSection}
-            className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
+            className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
           >
             <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
               <Network className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
             </div>
-            <h2 aria-hidden="true" className="text-3xl font-bold text-gray-900">
+            <span className="text-3xl font-bold text-gray-900">
               Conheça a Rede CER de Cuidados
-            </h2>
-          </div>{" "}
-          <div
+            </span>
+          </button>{" "}
+          <button
             onClick={handleScrollToEducationalMaterial}
-            className="flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
+            className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
           >
             <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
               <BookOpen className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
             </div>
-            <h2 aria-hidden="true" className="text-3xl font-bold text-gray-900">
+            <span className="text-3xl font-bold text-gray-900">
               Tenha Acesso a Materiais Educativos
-            </h2>
-          </div>{" "}
-        </div>{" "}
+            </span>
+          </button>{" "}
+        </nav>{" "}
       </section>
     </main>
   );
