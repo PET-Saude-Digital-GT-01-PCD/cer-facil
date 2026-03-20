@@ -1,4 +1,44 @@
-import { deficienciesData } from "./TypesOfDeficiencies.data.ts";
+import { Accessibility, Ear, Eye, Brain, Puzzle, LucideIcon } from "lucide-react";
+
+interface DeficiencyType {
+  id: string;
+  title: string;
+  text: string;
+  icon: LucideIcon;
+}
+
+const deficienciesData: DeficiencyType[] = [
+  {
+    id: "fisica",
+    title: "Deficiência Física",
+    icon: Accessibility,
+    text: "Alterações no corpo que podem comprometer a mobilidade ou a coordenação.",
+  },
+  {
+    id: "auditiva",
+    title: "Deficiência Auditiva",
+    icon: Ear,
+    text: "Perda parcial ou total da audição, podendo exigir aparelhos auditivos.",
+  },
+  {
+    id: "visual",
+    title: "Deficiência Visual",
+    icon: Eye,
+    text: "Desde a baixa visão até a cegueira total, envolvendo apoios como Braille.",
+  },
+  {
+    id: "intelectual",
+    title: "Deficiência Intelectual",
+    icon: Brain,
+    text: "Dificuldades no aprendizado e na compreensão de tarefas do dia a dia.",
+  },
+  {
+    id: "tea",
+    title: "TEA (Autismo)",
+    icon: Puzzle,
+    text: "Forma diferente de o cérebro lidar com informações, afetando interação e percepção.",
+  },
+];
 
 export default function TypesOfDeficiencies() {
   return (
@@ -8,7 +48,6 @@ export default function TypesOfDeficiencies() {
       className="px-6 py-24"
     >
       <div className="mx-auto max-w-6xl">
-        {/* Cabeçalho */}
         <header className="text-left mb-16">
           <h2 id="deficiencies" className="text-4xl font-bold mb-4 text-slate-900">
             Tipos de Deficiência
@@ -20,7 +59,6 @@ export default function TypesOfDeficiencies() {
           </p>
         </header>
 
-        {/* Lista de Cards */}
         <div className="flex flex-wrap justify-center gap-6">
           {deficienciesData.map((item) => {
             const Icon = item.icon;
@@ -31,7 +69,7 @@ export default function TypesOfDeficiencies() {
                 className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 w-full sm:w-[350px] flex flex-col items-center focus:outline-none focus:ring-4 focus:ring-[var(--cor-bg-1)]/50"
               >
                 <div
-                  aria-hidden="true" // O ícone é decorativo, o título já diz qual é a deficiência
+                  aria-hidden="true"
                   className="text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] mb-6 flex justify-center bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] w-20 h-20 items-center rounded-full transition-all duration-300 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white group-focus:bg-[var(--cor-bg-1)] group-focus:text-white"
                 >
                   <Icon className="w-10 h-10" />

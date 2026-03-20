@@ -177,9 +177,9 @@ export default function StepFour({
 
   const getBadgeCobertura = (nivel: number) => {
     switch (nivel) {
-      case 1: return { text: "Pertence a sua região", color: "bg-blue-100 text-blue-800" };
-      case 2: return { text: "Pertence a Micro-região", color: "bg-blue-100 text-blue-800" };
-      case 3: return { text: "CER de Referência", color: "bg-blue-100 text-blue-800" };
+      case 1: return { text: "Pertence a sua região", color: "bg-[var(--cor-bg-1)]/10 text-[var(--cor-bg-1)] border border-[var(--cor-bg-1)]/30" };
+      case 2: return { text: "Pertence a Micro-região", color: "bg-[var(--cor-bg-1)]/10 text-[var(--cor-bg-1)] border border-[var(--cor-bg-1)]/30" };
+      case 3: return { text: "CER de Referência", color: "bg-[var(--cor-bg-1)]/10 text-[var(--cor-bg-1)] border border-[var(--cor-bg-1)]/30" };
       default: return { text: "", color: "" };
     }
   };
@@ -232,9 +232,6 @@ export default function StepFour({
                           {badge.text}
                         </span>
                       </div>
-                      <p className="pl-11 text-lg text-muted-foreground mb-4">
-                        {result.cer.endereco.rua}, {result.cer.endereco.numero} - {result.cer.cidade}
-                      </p>
                       <div className="pl-11 flex justify-between items-center">
                         <div className="flex flex-wrap gap-2">
                           {result.cer.especialidades.map((esp, i) => (
@@ -246,9 +243,9 @@ export default function StepFour({
                         <Button
                           aria-hidden="true"
                           onClick={() => setShowFlow([true, result.cer.id])}
-                          className="bg-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]/90 text-white"
+                          className="bg-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]/90 text-white flex items-center justify-center gap-2"
                         >
-                          Ver Fluxo <ArrowRight className="ml-2 h-4 w-4" />
+                          Ver Fluxo <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
                     </CardContent>

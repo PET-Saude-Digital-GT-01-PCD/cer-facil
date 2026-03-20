@@ -15,3 +15,9 @@ declare module "*.module.css" {
   const classes: { readonly [key: string]: string };
   export = classes;
 }
+
+interface Window {
+  VLibras: {
+    Widget: new (path: string) => void;
+  };
+}

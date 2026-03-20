@@ -157,7 +157,7 @@ function AboutModal({ onClose }: { onClose: () => void }) {
         <header className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100 shrink-0">
           <h2
             id="sobre-nos-title"
-            className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2 outline-none"
+            className="text-4xl sm:text-3xl font-bold text-slate-900 flex items-center gap-2 outline-none"
           >
             <Info
               className="text-[var(--cor-bg-1)] w-6 h-6"
@@ -171,26 +171,26 @@ function AboutModal({ onClose }: { onClose: () => void }) {
             className="rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-[var(--cor-bg-1)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--cor-bg-1)]"
             onClick={onClose}
           >
-            <X className="w-5 h-5" aria-hidden="true" />
+            <X className="w-8 h-8" aria-hidden="true" />
           </button>
         </header>
 
         {/* Modal Body */}
         <div className="overflow-y-auto pr-2 space-y-6 flex-1 text-justify custom-scrollbar">
-          <p className="text-sm leading-relaxed text-slate-600">
+          <p className="text-xl leading-relaxed text-slate-600">
             {aboutProjectData.intro}
           </p>
 
           {aboutProjectData.sections.map((section) => (
             <section key={section.id}>
-              <h3 className="text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">
+              <h3 className="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                 <span
-                  className="w-2 h-2 rounded-full bg-[var(--cor-bg-3)]"
+                  className="w-3 h-3 rounded-full bg-[var(--cor-bg-3)]"
                   aria-hidden="true"
                 />
                 {section.subtitle}
               </h3>
-              <p className="text-sm leading-relaxed text-slate-600">
+              <p className="text-xl leading-relaxed text-slate-600">
                 {section.content}
               </p>
             </section>
@@ -200,7 +200,7 @@ function AboutModal({ onClose }: { onClose: () => void }) {
         {/* Modal Footer */}
         <footer className="mt-8 pt-4 border-t border-slate-100 flex justify-end shrink-0">
           <Button
-            className="bg-[var(--cor-bg-3)] text-white hover:bg-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] rounded-full font-bold transition-all px-8 focus:ring-2 focus:ring-offset-2 focus:ring-[var(--cor-bg-3)]"
+            className="text-xl bg-[var(--cor-bg-3)] text-white hover:bg-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] rounded-full font-bold transition-all px-8 focus:ring-2 focus:ring-offset-2 focus:ring-[var(--cor-bg-3)]"
             onClick={onClose}
           >
             Entendi

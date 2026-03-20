@@ -2,8 +2,7 @@ import { useState } from "react";
 import "./index.css";
 import Home from "./pages/home/components/Home";
 import BackToTopButton from "./components/back-to-top-buttom/BackToTopButtom";
-import VLibras from "@djpfs/react-vlibras";
-
+import VLibras from "./components/vlibras/Vlibras";
 export function App() {
   const [showForm, setShowForm] = useState(false);
   const [showFlow, setShowFlow] = useState<[boolean, number | null]>([
@@ -13,7 +12,7 @@ export function App() {
 
   return (
     <>
-      <VLibras aria-hidden="true" forceOnload={true} />
+      <VLibras />
       <Home
         showForm={showForm}
         setShowForm={setShowForm}
