@@ -188,11 +188,15 @@ export default function StepFour({
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">Resultados</CardTitle>
+          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
+            <h2>
+              Resultados
+            </h2>
+          </CardTitle>
           <CardDescription className="text-2xl">
             Exibindo CERs na sua área de abrangência geográfica
           </CardDescription>
-          <div className="mt-2 p-2 bg-[var(--cor-bg-1)]/5 rounded border border-[var(--cor-bg-1)]/20">
+          <div aria-hidden="true" className="mt-2 p-2 bg-[var(--cor-bg-1)]/5 rounded border border-[var(--cor-bg-1)]/20">
             <p className="text-lg text-muted-foreground italic">
               Localidade detectada: <span className="font-bold text-[var(--cor-bg-1)]">{location}</span>
             </p>
@@ -209,13 +213,19 @@ export default function StepFour({
               {results.map((result, index) => {
                 const badge = getBadgeCobertura(result.nivelPrioridade);
                 return (
-                  <Card key={result.cer.id} className="border-2 border-[var(--cor-bg-1)]/30">
-                    <CardContent className="p-5">
+                  <Card
+                    aria-label={`Resultado ${index + 1}: ${result.cer.nome}, localizado na ${result.cer.endereco.rua}, número ${result.cer.endereco.numero}, cidade ${result.cer.cidade}. especializado em reabilitação ${result.cer.especialidades.join(", ")}. Clique para ver como conseguir atendimento.`}
+                    tabIndex={0}
+                    role="button"
+                    onClick={() => setShowFlow([true, result.cer.id])}
+                    key={result.cer.id}
+                    className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] border-2 border-[var(--cor-bg-1)]/30">
+                    <CardContent aria-hidden="true" className="p-5">
                       <div className="flex gap-3 items-center mb-2">
-                        <span className="bg-[var(--cor-bg-1)] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold flex-shrink-0">
+                        <span aria-label={`Resultado ${index + 1}`} className="bg-[var(--cor-bg-1)] text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">
                           {index + 1}
                         </span>
-                        <h4 className="font-bold text-2xl text-[var(--cor-bg-1)]">{result.cer.nome}</h4>
+                        <h3 className="font-bold text-2xl text-[var(--cor-bg-1)]">{result.cer.nome}</h3>
                       </div>
                       <div className="pl-11 flex items-center gap-3 text-lg text-muted-foreground mb-4">
                         <p>{result.cer.endereco.rua}, {result.cer.endereco.numero} - {result.cer.cidade}</p>
@@ -232,6 +242,7 @@ export default function StepFour({
                           ))}
                         </div>
                         <Button
+                          aria-hidden="true"
                           onClick={() => setShowFlow([true, result.cer.id])}
                           className="bg-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]/90 text-white flex items-center justify-center gap-2"
                         >
