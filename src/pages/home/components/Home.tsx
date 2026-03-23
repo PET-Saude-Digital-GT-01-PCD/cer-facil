@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import NetworkInfo from "./network-info/NetworkInfo";
 import Welcome from "./welcome-page/Welcome";
 import Footnote from "./footnote/Footnote";
@@ -17,6 +18,17 @@ export default function Home({
   showFlow,
   setShowFlow,
 }: HomeProps) {
+  const prevShowFlow = useRef(showFlow[0]);
+
+  useEffect(() => {
+    if (prevShowFlow.current && !showFlow[0]) {
+      setTimeout(() => {
+        document.getElementById("cers-card")?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+    }
+    prevShowFlow.current = showFlow[0];
+  }, [showFlow[0]]);
+
   if (showFlow[0]) {
     return (
       <div>

@@ -48,7 +48,11 @@ export default function WhatIsRCPD() {
       className="px-6 py-20 relative bg-[var(--cor-bg-1)]">
       <div className="mx-auto max-w-6xl">
         <header className="text-left mb-16">
-          <h2 id="rcpd" className="font-bold text-4xl mb-4 text-white">
+          <h2
+            id="rcpd"
+            tabIndex={-1}
+            className="font-bold text-4xl mb-4 text-white outline-none focus:ring-0"
+          >
             O que é a Rede de Cuidado à Pessoa com Deficiência (RCPD)?
           </h2>
           <div className="w-24 h-1.5 bg-white rounded-full"></div>

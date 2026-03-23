@@ -115,9 +115,9 @@ const attentionLevelsData: AttentionLevel[] = [
 
 export default function AttentionLevel() {
   return (
-    <section 
-      aria-labelledby="att-level" 
-      id="attention-level" 
+    <section
+      aria-labelledby="att-level"
+      id="attention-level"
       className="px-6 py-20 relative">
       <div className="mx-auto max-w-6xl">
         <header className="text-left mb-16">
@@ -162,30 +162,37 @@ export default function AttentionLevel() {
                 </CardHeader>
 
                 <CardContent className="flex-1 px-6 pb-10">
-                  <Accordion type="single" collapsible className="w-full">
+                  <div className="w-full space-y-4">
                     {level.components.map((component) => (
-                      <AccordionItem
+                      <details
+                        role="none"
                         key={component.id}
-                        value={component.id}
-                        className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] border-gray-100"
+                        className="group border-b border-gray-100 last:border-0 pb-4"
                       >
-                        <AccordionTrigger className="text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4">
-                          {component.title}
-                        </AccordionTrigger>
-                        <AccordionContent
-                          className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30"
+                        <summary
+                          role="none"
+                          className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] list-none cursor-pointer flex items-center justify-between text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4 outline-none focus:ring-2 focus:ring-[var(--cor-destaque)] rounded-lg"
                         >
-                          <span>{component.content}</span>
-                        </AccordionContent>
-                      </AccordionItem>
+                          <span className="flex-1">{component.title}</span>
+
+                          <ChevronDown
+                            aria-hidden="true"
+                            className="w-6 h-6 transition-transform duration-300 group-open:rotate-180"
+                          />
+                        </summary>
+
+                        <div className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30">
+                          {component.content}
+                        </div>
+                      </details>
                     ))}
-                  </Accordion>
+                  </div>
                 </CardContent>
               </Card>
             );
           })}
         </div>
       </div>
-    </section>
+    </section >
   );
 }
