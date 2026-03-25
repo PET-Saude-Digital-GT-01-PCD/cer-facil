@@ -9,7 +9,17 @@ import {
   Briefcase,
 } from "lucide-react";
 
+import portariaFile from "@/assets/materials/gestores/PORTARIA GM_MS Nº 1.526, DE 11 DE OUTUBRO DE 2023.pdf";
+import notaInformativa1File from "@/assets/materials/gestores/Nota Informativa nº 1.pdf";
+import notaTecnica2File from "@/assets/materials/gestores/Nota Técnica nº 2-2025 CGSPD-DAET-SAES-MS.pdf";
+import notaTecnica3File from "@/assets/materials/gestores/Nota Técnica nº 3-2025 CGSPD-DAET-SAES-MS.pdf";
+import notaTecnica4File from "@/assets/materials/gestores/Nota Técnica nº 4-2025 CGSPD-DAET-SAES-MS.pdf";
 import lbiImg from "@/assets/images/educational-material/Lei Brasileira de Inclusão (LBI).png";
+import portariaImg from "@/assets/images/educational-material/PORTARIA GM_MS Nº 1.526, DE 11 DE OUTUBRO DE 2023.jpg";
+import notaInformativa1Img from "@/assets/images/educational-material/nota_informativa.jpg";
+import notaTecnica2Img from "@/assets/images/educational-material/Nota Técnica nº 2-2025 CGSPD-DAET-SAES-MS.jpg";
+import notaTecnica3Img from "@/assets/images/educational-material/Nota Técnica nº 3-2025 CGSPD-DAET-SAES-MS.jpg";
+import notaTecnica4Img from "@/assets/images/educational-material/Nota Técnica nº 4-2025 CGSPD-DAET-SAES-MS.jpg";
 import capacitismoImg from "@/assets/images/educational-material/Cartilha Capacitismo.png";
 import acessibilidadeImg from "@/assets/images/educational-material/Guia de Acessibilidade Comunicacional.png";
 import menstrualImg from "@/assets/images/educational-material/Cuidado Menstrual de Pessoas com e sem Deficiência.png";
@@ -156,10 +166,39 @@ const professionalMaterials: EducationalMaterial[] = [
 
 const managerMaterial: EducationalMaterial[] = [
   {
-    title: "Teste",
-    description: "blablabla",
-    url: "url do material",
-    image: planoNacionalImg,
+    title: "Portaria GM/MS nº 1.526/2023",
+    description:
+      "Institui a Política Nacional de Atenção Integral à Saúde da Pessoa com Deficiência (PNAISPD) e reorganiza a Rede de Cuidados à Pessoa com Deficiência (RCPD) no SUS, baseada no modelo biopsicossocial e organizada em Atenção Primária, Especializada Ambulatorial e Hospitalar.",
+    url: portariaFile,
+    image: portariaImg,
+  },
+  {
+    title: "Nota Informativa nº 1/2025",
+    description:
+      "Orienta gestores sobre atualizações normativas recentes, com foco na adequação do registro no CNES e na Tabela de Procedimentos do SUS para CERs, Oficinas Ortopédicas e demais serviços credenciados de reabilitação.",
+    url: notaInformativa1File,
+    image: notaInformativa1Img,
+  },
+  {
+    title: "Nota Técnica nº 2/2025",
+    description:
+      "Estabelece critérios para obtenção de incentivo financeiro de custeio para a Atenção Especializada Ambulatorial da RCPD, incluindo habilitação de CERs e Oficinas Ortopédicas, com adicional de 20% para unidades que atendem pessoas com TEA.",
+    url: notaTecnica2File,
+    image: notaTecnica2Img,
+  },
+  {
+    title: "Nota Técnica nº 3/2025",
+    description:
+      "Fornece orientações técnicas para o registro de procedimentos no SIA/SUS, recomendando o uso do BPA-I para detalhar atendimentos e garantir o monitoramento correto da execução dos recursos e serviços ofertados.",
+    url: notaTecnica3File,
+    image: notaTecnica3Img,
+  },
+  {
+    title: "Nota Técnica nº 4/2025",
+    description:
+      "Define critérios de elegibilidade para incentivo financeiro de investimento federal em 2025, destinado à aquisição de equipamentos, obras e veículos adaptados para implantação e ampliação do acesso à reabilitação no SUS.",
+    url: notaTecnica4File,
+    image: notaTecnica4Img,
   },
 ];
 
