@@ -45,19 +45,19 @@ export const realizationLogosData: RealizationLogo[] = [
 export const aboutProjectData = {
   title: "O que é o PET-Saúde Digital",
   intro:
-    "O PET-Saúde: Informação e Saúde Digital é um projeto da Universidade Federal da Paraíba (UFPB) que une o ensino, os serviços de saúde e a comunidade. O nosso objetivo é usar a tecnologia para modernizar o Sistema Único de Saúde (SUS). A equipe do projeto é formada por: Professores da universidade (tutores); Profissionais de saúde (preceptores); Estudantes de graduação (monitores). O trabalho é dividido em 12 grupos, chamados de Grupos de Aprendizagem Tutorial (GTs). Cada grupo trabalha com um tema diferente nas áreas de ensino, pesquisa e ações para a comunidade. O aprendizado acontece na prática: os grupos buscam resolver problemas reais que a saúde digital enfrenta no estado da Paraíba.",
+    "O PET-Saúde Digital é um projeto que teve início em 2025 na Universidade Federal da Paraíba (UFPB) e que tem o objetivo é modernizar o Sistema Único de Saúde (SUS). O projeto como um todo é formado por 12 Grupos Tutoriais (GTs), onde cada grupo está relacionado a uma área diferente da Saúde Digital no SUS e é composto por professores, profissionais da saúde e estudantes de graduação. Trabalhamos com o desenvolvimento de pesquisas e atividades que vão para além da universidade, tudo isso para envolver a população e criar soluções digitais para problemas reais.",
   sections: [
     {
       id: "gt01",
       subtitle: "GT-01 PCD",
       content:
-        "Um desses grupos é o GT-01 PCD, focado em melhorar o atendimento digital para as Pessoas com Deficiência. Para nós, garantir que os sistemas do SUS sejam acessíveis para todos não é apenas uma meta de tecnologia. É um direito humano e um dever ético, garantido pela Lei Brasileira de Inclusão (LBI). O grupo trabalha em parceria com a Secretaria de Estado da Saúde da Paraíba e com a FUNAD (Fundação Centro Integrado de Apoio à Pessoa com Deficiência). A equipe é liderada pelos professores Eduardo e Robson, da Fisioterapia, e conta com estudantes de Fisioterapia, Terapia Ocupacional, Ciência da Computação, Ciência de Dados e Engenharia da Computação.",
+        "O presente projeto foi desenvolvido pelo GT-01 Atenção Especializada à Pessoa com Deficiência. Dentro do PET-Saúde Digital, nosso papel é tornar o SUS mais acessível às pessoas com deficiência por meio por meio das ferramentas digitais para garantir à elas acesso a saúde de qualidade. As atividades do GT-01 são desenvolvidas em conjunto com a Secretaria de Estado de Saúde da Paraíba (SES-PB) e a Fundação Centro Integrado de Apoio à Pessoa com Deficiência (FUNAD), que foram fundamentais para o desenvolvimento desse site.",
     },
     {
       id: "motivo",
-      subtitle: "Por que fizemos essa aplicação?",
+      subtitle: "Por que fizemos esse site?",
       content:
-        "O aplicativo foi criado para resolver um problema muito comum das pessoas com deficiência e suas famílias: a dificuldade de achar informações claras, organizadas e fáceis de entender sobre como começar o atendimento nos Centros Especializados em Reabilitação (CERs) e nas Oficinas Ortopédicas (OPMs) da Paraíba. Muitas vezes, essas informações ficam espalhadas, usam palavras difíceis e não explicam o que fazer na prática. Por isso, o sistema junta tudo em um só lugar. Ele traz explicações diretas sobre como conseguir o primeiro atendimento, além de oferecer um mapa interativo, opções fáceis de busca e os detalhes sobre os locais de saúde. Com isso, o aplicativo dá mais independência aos usuários, facilita a busca por tratamento e ajuda mais pessoas a usarem os serviços da Rede de Cuidados da Pessoa com Deficiência.",
+        "O site foi criado para resolver um problema muito comum das pessoas com deficiência e suas famílias: a dificuldade de encontrar informações claras, organizadas e fáceis de entender sobre como conseguir atendimento nos Centros Especializados em Reabilitação (CERs) e Oficinas Ortopédicas (OPMs) da Paraíba. Por isso, ele conta com explicações de como conseguir o primeiro atendimento e detalhes sobre as localizações de cada CER. Antes, as informações encontravam-se dispersas, ou até mesmo indisponíveis na internet, mas agora as pessoas com deficiência e suas famílias possuem um espaço acessível onde podem buscar orientação.",
     },
   ],
 };

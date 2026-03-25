@@ -1,4 +1,5 @@
 import { Building2 } from "lucide-react";
+import cerImageCover from "@/assets/images/types-of-cers/reabilitação.jpg";
 
 interface CerType {
   id: string;
@@ -19,9 +20,6 @@ const cerTypesData: CerType[] = [
     desc: "Maior complexidade: Auditiva, Física, Intelectual e Visual.",
   },
 ];
-
-const cerImageCover =
-  "https://conclinica.com.br/wp-content/uploads/2025/09/atendimento-humanizado-na-saude.png";
 
 export default function TypesOfCers() {
   return (
@@ -75,7 +73,7 @@ export default function TypesOfCers() {
             <img
               className="rounded-3xl shadow-2xl border-[12px] border-white/30 backdrop-blur-md object-cover w-full h-auto"
               src={cerImageCover}
-              alt="Equipe médica oferecendo atendimento humanizado em uma clínica"
+              alt="Ilustração de pessoas em reabilitação"
             />
           </div>
         </div>

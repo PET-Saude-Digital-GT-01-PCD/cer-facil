@@ -10,6 +10,8 @@ import {
   Phone,
   Mail,
   Clock,
+  Globe,
+  Instagram,
 } from "lucide-react";
 
 interface FlowProps {
@@ -63,10 +65,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
       <div className="mx-auto max-w-3xl w-full">
         <div className="text-left mb-6 flex justify-between items-end">
           <div>
-            <h2
-              id="user-flow"
-              className="font-bold text-3xl mb-2 text-black leading-tight"
-            >
+            <h2 id="user-flow" className="font-bold text-3xl mb-2 text-black leading-tight">
               Como conseguir seu atendimento
             </h2>
             <div className="w-16 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
@@ -74,10 +73,10 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
           <Button
             variant="outline"
             size="sm"
-            className="hidden md:flex text-xl text-[var(--cor-bg-1)] border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white transition-all focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
+            className="hidden md:flex text-xl text-[var(--cor-bg-1)] border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white transition-all"
             onClick={() => setShowFlow([false, cerId])}
           >
-            Voltar
+            Voltar para a busca
           </Button>
         </div>
 
@@ -129,6 +128,40 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
                   </p>
                 </div>
               )}
+
+              {cerInfo?.site && (
+                <div>
+                  <h5 className="text-xl font-bold text-[var(--cor-bg-1)] uppercase tracking-widest mb-1 flex items-center gap-2">
+                    <Globe className="w-6 h-6" /> Site
+                  </h5>
+                  <a
+                    href={cerInfo.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl text-[var(--cor-bg-1)] leading-snug pl-5 border-l-2 border-gray-100 ml-1.5 truncate block hover:underline"
+                    title={cerInfo.site}
+                  >
+                    {cerInfo.site.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                  </a>
+                </div>
+              )}
+
+              {cerInfo?.instagram && (
+                <div>
+                  <h5 className="text-xl font-bold text-[var(--cor-bg-1)] uppercase tracking-widest mb-1 flex items-center gap-2">
+                    <Instagram className="w-6 h-6" /> Instagram
+                  </h5>
+                  <a
+                    href={cerInfo.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl text-[var(--cor-bg-1)] leading-snug pl-5 border-l-2 border-gray-100 ml-1.5 truncate block hover:underline"
+                    title={cerInfo.instagram}
+                  >
+                    @{cerInfo.instagram.replace(/^https?:\/\/www\.instagram\.com\//, "").replace(/\/$/, "")}
+                  </a>
+                </div>
+              )}
             </div>
 
             <div>
@@ -146,11 +179,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             <h4 className="font-bold text-2xl mb-4">Passo a Passo</h4>
             <ul className="relative border-l-2 border-blue-100 ml-3 space-y-4">
               {fluxoInfo.steps?.map((step: any, index: number) => (
-                <li
-                  aria-label={`Passo ${index + 1}: ${step.title}`}
-                  key={index}
-                  className="relative pl-8"
-                >
+                <li aria-label={`Passo ${index + 1}: ${step.title}`} key={index} className="relative pl-8">
                   <div className="absolute -left-[12px] top-1 w-6 h-6 rounded-full bg-white border-[3px] border-[var(--cor-bg-1)] shadow-sm" />
 
                   <div className="bg-gray-50/50 p-3 rounded-lg border border-gray-100 transition-all hover:shadow-sm hover:border-blue-100">
