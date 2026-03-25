@@ -1,6 +1,6 @@
 import CerForm from "../form/CerForm";
 import { ChevronDown, MapPin, Network, BookOpen } from "lucide-react";
-import logoSeuCer from "../../../../assets/welcome-images/seu_cer_logo.png";
+import logoSeuCer from "@/assets/logos/seu_cer_vetor.svg";
 
 interface WelcomeProps {
   showForm: boolean;
@@ -8,10 +8,9 @@ interface WelcomeProps {
 }
 
 export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
-
   const handleScrollToSection = () => {
     const section = document.getElementById("network-info");
-    const targetTitle = document.getElementById("rcpd"); 
+    const targetTitle = document.getElementById("rcpd");
 
     if (section && targetTitle) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -23,17 +22,17 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
   };
 
   const handleScrollToEducationalMaterial = () => {
-  const section = document.getElementById("educational-material");
-  const targetTitle = document.getElementById("edu-mat"); 
+    const section = document.getElementById("educational-material");
+    const targetTitle = document.getElementById("edu-mat");
 
-  if (section && targetTitle) {
-    section.scrollIntoView({ behavior: "smooth" });
-    
-    setTimeout(() => {
-      targetTitle.focus();
-    }, 600);
-  }
-};
+    if (section && targetTitle) {
+      section.scrollIntoView({ behavior: "smooth" });
+
+      setTimeout(() => {
+        targetTitle.focus();
+      }, 600);
+    }
+  };
 
   if (showForm) {
     return <CerForm setShowForm={setShowForm} />;
@@ -42,7 +41,6 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center pt-10 pb-20 relative bg-white">
       <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
         <div className="flex justify-center mb-6">
           <img
             src={logoSeuCer.src || logoSeuCer}
@@ -51,21 +49,22 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           />
         </div>
 
-        
-          <h1 className="text-lg md:text-xl lg:text-2xl font-extrabold text-black leading-tight">
-            Aproximamos você aos{" "}
-            <span className="text-[var(--cor-bg-1)]">
-              Centros Especializados em Reabilitação (CER)
-            </span>
-            <span> da Paraíba.</span>
-          </h1>
+        <h1 className="text-lg md:text-xl lg:text-2xl font-extrabold text-black leading-tight">
+          Aproximamos você aos{" "}
+          <span className="text-[var(--cor-bg-1)]">
+            Centros Especializados em Reabilitação (CER)
+          </span>
+          <span> da Paraíba.</span>
+        </h1>
 
+        <p className="mt-4 text-xl md:text-2xl font-semibold text-gray-700 mb-16">
+          Profissionais da Saúde, Pessoas com Deficiência e Familiares.
+        </p>
 
-          <p className="mt-4 text-xl md:text-2xl font-semibold text-gray-700 mb-16">
-            Profissionais da Saúde, Pessoas com Deficiência e Familiares.
-          </p>
-
-        <nav aria-label="menu principal de ações" className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <nav
+          aria-label="menu principal de ações"
+          className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           <button
             onClick={() => setShowForm(true)}
             className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
