@@ -19,6 +19,8 @@
     "cidade": "João Pessoa",
     "email": "funad@funad.pb.gov.br",
     "telefone": "(83) 3244-2451",
+    "site": "https://funad.pb.gov.br/",
+    "instagram": "https://www.instagram.com/funadparaiba/",
     "localizacao": {
       "latitude": -7.115885053215442,
       "longitude": -34.84567292230965,
@@ -46,6 +48,8 @@
     "cidade": "João Pessoa",
     "email": "contato@icpac.com.br",
     "telefone": "(83) 3244-6220",
+    "site": "https://www.icpac.com.br/",
+    "instagram": "https://www.instagram.com/icpacpb/",
     "localizacao": {
       "latitude": -7.1164654561785925,
       "longitude": -34.86104710313134,
@@ -73,6 +77,8 @@
     "cidade": "Conde",
     "email": "cer2conde.pb@gmail.com",
     "telefone": "(83) 3298-1130",
+    "site": null,
+    "instagram": null,
     "localizacao": {
       "latitude": -7.260855669128239,
       "longitude": -34.910269040774466,
@@ -100,6 +106,8 @@
     "cidade": "Guarabira",
     "email": "mmcer@gmail.com",
     "telefone": "(83) 99967-8987",
+    "site": null,
+    "instagram": null,
     "localizacao": {
       "latitude": -6.856553668322056,
       "longitude": -35.48676177667847,
@@ -127,6 +135,8 @@
     "cidade": "Araruna",
     "email": "cer2ararunapb@gmail.com",
     "telefone": "(83) 99987-2744",
+    "site": null,
+    "instagram": "https://www.instagram.com/cer.araruna/",
     "localizacao": {
       "latitude": -6.538714358271043,
       "longitude": -35.74511436508894,
@@ -154,6 +164,8 @@
     "cidade": "Campina Grande",
     "email": "centrodereabilitacaocg@gmail.com",
     "telefone": "(83) 3077-1060",
+    "site": null,
+    "instagram": "https://www.instagram.com/ceriv_cg/",
     "localizacao": {
       "latitude": -7.220769214036645,
       "longitude": -35.923900619771736,
@@ -181,6 +193,8 @@
     "cidade": "Campina Grande",
     "email": null,
     "telefone": "(83) 3337-2454",
+    "site": "https://www.apaecampinagrande.org.br/",
+    "instagram": "https://www.instagram.com/apaecampinagrande/",
     "localizacao": {
       "latitude": -7.237977146540875,
       "longitude": -35.87361327550724,
@@ -208,6 +222,8 @@
     "cidade": "Patos",
     "email": null,
     "telefone": "(83) 99345-7829",
+    "site": null,
+    "instagram": "https://www.instagram.com/cerpatos/",
     "localizacao": {
       "latitude": -7.022436928149719,
       "longitude": -37.271482944488525,
@@ -235,6 +251,8 @@
     "cidade": "Monteiro",
     "email": null,
     "telefone": "(83) 3351-1513",
+    "site": null,
+    "instagram": "https://www.instagram.com/cer2monteiropb/",
     "localizacao": {
       "latitude": -7.893351551410474,
       "longitude": -37.12127923965454,
@@ -262,6 +280,8 @@
     "cidade": "Princesa Isabel",
     "email": "cerprincesa@gmail.com",
     "telefone": "(83) 3457-2481",
+    "site": null,
+    "instagram": null,
     "localizacao": {
       "latitude": -7.734210913311654,
       "longitude": -38.00321102142334,
@@ -289,6 +309,8 @@
     "cidade": "Sousa",
     "email": null,
     "telefone": "(83) 99144-8094",
+    "site": null,
+    "instagram": "https://www.instagram.com/ceriv.sousa/",
     "localizacao": {
       "latitude": -6.780643,
       "longitude": -38.24783,
@@ -316,6 +338,8 @@
     "cidade": "Piancó",
     "email": "cerpianco@gmail.com",
     "telefone": "(83) 99144-8094",
+    "site": null,
+    "instagram": null,
     "localizacao": {
       "latitude": -7.1992828,
       "longitude": -37.9199047,
@@ -343,6 +367,8 @@
     "cidade": "Catolé do Rocha",
     "email": null,
     "telefone": null,
+    "site": null,
+    "instagram": "https://www.instagram.com/cer2catole/",
     "localizacao": {
       "latitude": -6.346776908919655,
       "longitude": -37.74850308895111,
@@ -369,6 +395,8 @@
     "cidade": "João Pessoa",
     "email": "funad@funad.pb.gov.br",
     "telefone": "(83) 3243-7368",
+    "site": "https://funad.pb.gov.br/",
+    "instagram": null,
     "localizacao": {
       "latitude": -7.115885053215442,
       "longitude": -34.84567292230965,
@@ -396,6 +424,8 @@
     "cidade": "João Pessoa",
     "email": "funad@funad.pb.gov.br",
     "telefone": null,
+    "site": null,
+    "instagram": null,
     "localizacao": {
       "latitude": -7.114701031390794,
       "longitude": -34.86303895711899,
