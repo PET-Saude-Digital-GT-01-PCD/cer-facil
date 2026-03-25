@@ -79,11 +79,11 @@ export default function Rodape() {
             {/* ESQUERDA: Informações e Redes */}
             <div className="md:col-span-5 flex flex-col items-start gap-4">
               <div>
-                <h2 className="font-bold text-2xl text-slate-900 mb-1">
+                <h2 className="font-bold text-2xl text-black mb-1">
                   PET-Saúde Digital
                 </h2>
                 <div className="w-12 h-1 bg-[var(--cor-bg-1)] rounded-full mb-3"></div>
-                <p className="text-lg text-slate-600 leading-relaxed">
+                <p className="text-lg text-black leading-relaxed">
                   Acompanhe nossas ações e saiba mais sobre as iniciativas de
                   inclusão digital voltadas para Pessoas com Deficiência.
                 </p>
@@ -137,7 +137,7 @@ export default function Rodape() {
 
             {/* DIREITA: Logos dos Colaboradores */}
             <div className="md:col-span-7 flex flex-col md:items-end w-full">
-              <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">
+              <h3 className="text-sm font-bold text-black uppercase tracking-widest mb-4">
                 Realização & Colaboradores
               </h3>
 
@@ -156,7 +156,7 @@ export default function Rodape() {
 
           {/* Copyright */}
           <div className="pt-6 border-t border-slate-200">
-            <p className="text-center text-sm font-medium text-slate-500">
+            <p className="text-center text-sm font-medium text-black">
               &copy; {currentYear} Copyright - PET-Saúde/Informação e Saúde
               Digital no SUS/PB.
             </p>
@@ -215,7 +215,7 @@ function AboutModal({ onClose }: { onClose: () => void }) {
         <header className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100 shrink-0">
           <h2
             id="sobre-nos-title"
-            className="text-4xl sm:text-3xl font-bold text-slate-900 flex items-center gap-2 outline-none"
+            className="text-4xl sm:text-3xl font-bold text-black flex items-center gap-2 outline-none"
           >
             <Info
               className="text-[var(--cor-bg-1)] w-6 h-6"
@@ -235,20 +235,20 @@ function AboutModal({ onClose }: { onClose: () => void }) {
 
         {/* Modal Body */}
         <div className="overflow-y-auto pr-2 space-y-6 flex-1 text-justify custom-scrollbar">
-          <p className="text-xl leading-relaxed text-slate-600">
+          <p className="text-xl leading-relaxed text-black">
             {aboutProjectData.intro}
           </p>
 
           {aboutProjectData.sections.map((section) => (
             <section key={section.id}>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+              <h3 className="text-2xl font-bold text-black mb-2 flex items-center gap-2">
                 <span
                   className="w-3 h-3 rounded-full bg-[var(--cor-bg-3)]"
                   aria-hidden="true"
                 />
                 {section.subtitle}
               </h3>
-              <p className="text-xl leading-relaxed text-slate-600">
+              <p className="text-xl leading-relaxed text-black">
                 {section.content}
               </p>
             </section>

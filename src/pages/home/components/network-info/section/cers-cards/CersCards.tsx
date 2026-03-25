@@ -10,7 +10,7 @@ import {
   Brain,
   LucideIcon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
 import Flow from "@/components/user-flow/Flow.tsx";
 import cersJson from "@/data/cers.json";
 
@@ -152,7 +152,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
         <div className="bg-white p-6 rounded-2xl shadow-sm mb-10">
           <div
             aria-label="filtro por especialidade"
-            className="flex items-center gap-2 mb-4 text-slate-900 font-semibold uppercase text-sm tracking-wider"
+            className="flex items-center gap-2 mb-4 text-black font-semibold uppercase text-sm tracking-wider"
           >
             <Filter size={24} />
             <span className="text-xl">Filtrar por deficiência:</span>
@@ -253,11 +253,14 @@ function CerCard({ cer, onClick }: { cer: DadosCers; onClick: () => void }) {
       className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] p-6 rounded-2xl shadow-xl bg-white flex flex-col transition-all hover:shadow-2xl hover:-translate-y-2 h-full min-h-[220px] cursor-pointer group focus:outline-none focus:ring-4 focus:ring-[var(--cor-bg-1)]/50"
     >
       <div className="flex-grow flex flex-col">
-         <h3 aria-hidden="true" className="font-bold text-2xl text-slate-900 mb-4 leading-tight group-hover:text-[var(--cor-bg-1)] transition-colors text-start">
-          {toTitleCase(cer.nome)}
+        <h3
+          aria-hidden="true"
+          className="font-bold text-2xl text-black mb-4 leading-tight group-hover:text-[var(--cor-bg-1)] transition-colors text-start"
+        >
+          {cer.nome}
         </h3>
 
-        <div className="flex items-center text-slate-500 mb-6 mt-auto font-semibold">
+        <div className="flex items-center text-black mb-6 mt-auto font-semibold">
           <MapPin className="w-6 h-6 mr-1.5 flex-shrink-0 text-[var(--cor-bg-1)]" />
           <span className="text-xl">{cer.cidade}</span>
         </div>

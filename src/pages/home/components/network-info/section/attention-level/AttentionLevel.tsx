@@ -121,9 +121,9 @@ export default function AttentionLevel() {
       className="px-6 py-20 relative">
       <div className="mx-auto max-w-6xl">
         <header className="text-left mb-16">
-          <h2 id="att-level" className="text-4xl font-bold mb-4">Níveis de Atenção</h2>
+          <h2 id="att-level" className="text-4xl font-bold mb-4 text-black">Níveis de Atenção</h2>
           <div className="w-20 h-1.5 bg-[var(--cor-bg-1)] rounded-full mb-6"></div>
-          <p className="text-slate-600 mt-4 max-w-2xl text-2xl opacity-90">
+          <p className="text-black mt-4 max-w-2xl text-2xl opacity-90">
             Estrutura integrada de cuidado em diferentes níveis de complexidade
           </p>
         </header>
@@ -149,14 +149,12 @@ export default function AttentionLevel() {
                       <Icon className="w-10 h-10 text-white" />
                     </div>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-gray-900 mb-2">
+                  <CardTitle className="text-2xl font-bold text-black mb-2">
                     <h3>
                       {level.title}
                     </h3>
                   </CardTitle>
-                  <CardDescription
-                    className="text-gray-500 text-xl leading-relaxed px-4"
-                  >
+                  <CardDescription className="text-black text-xl leading-relaxed px-4">
                     {level.description}
                   </CardDescription>
                 </CardHeader>
@@ -171,7 +169,7 @@ export default function AttentionLevel() {
                       >
                         <summary
                           role="none"
-                          className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] list-none cursor-pointer flex items-center justify-between text-xl font-bold text-gray-700 hover:text-[var(--cor-bg-1)] transition-colors py-4 outline-none focus:ring-2 focus:ring-[var(--cor-destaque)] rounded-lg"
+                          className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] list-none cursor-pointer flex items-center justify-between text-xl font-bold text-black hover:text-[var(--cor-bg-1)] transition-colors py-4 outline-none focus:ring-2 focus:ring-[var(--cor-destaque)] rounded-lg"
                         >
                           <span className="flex-1">{component.title}</span>
 
@@ -181,7 +179,7 @@ export default function AttentionLevel() {
                           />
                         </summary>
 
-                        <div className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30">
+                        <div className="text-xl text-black leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-1 border border-orange-100/30">
                           {component.content}
                         </div>
                       </details>

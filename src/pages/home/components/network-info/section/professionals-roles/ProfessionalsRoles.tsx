@@ -268,7 +268,7 @@ export default function ProfessionalsRoles() {
                   </AccordionContent>
 
                   <div className="flex justify-center mt-12">
-                    <AccordionTrigger className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex gap-3 items-center text-white px-8 py-4 font-bold transition-all border-white/40 rounded-full hover:bg-white hover:text-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
+                    <AccordionTrigger className="text-xl flex gap-3 items-center bg-white text-[var(--cor-bg-1)] px-8 py-4 font-bold transition-all duration-200 border-2 border-[var(--cor-bg-1)]/30 rounded-full hover:border-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
                       Ver mais
                     </AccordionTrigger>
                   </div>
@@ -310,7 +310,7 @@ function ProfessionalCard({
       >
         <span
           className={`font-bold text-xl transition-colors flex items-center ${
-            isOpen ? "text-[var(--cor-bg-1)]" : "text-slate-800"
+            isOpen ? "text-[var(--cor-bg-1)]" : "text-black"
           }`}
         >
           <span
@@ -334,7 +334,7 @@ function ProfessionalCard({
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-6 pb-6 pt-2 text-slate-600 text-xl leading-relaxed border-t border-slate-50">
+          <p className="px-6 pb-6 pt-2 text-black text-xl leading-relaxed border-t border-slate-50">
             {prof.description}
           </p>
         </div>

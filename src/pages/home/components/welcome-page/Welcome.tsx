@@ -9,8 +9,8 @@ interface WelcomeProps {
 
 export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
   const handleScrollToSection = () => {
-    const section = document.getElementById("network-info");
-    const targetTitle = document.getElementById("rcpd");
+    const section = document.getElementById("cers-card");
+    const targetTitle = document.getElementById("cards");
 
     if (section && targetTitle) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -57,7 +57,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           <span> da Paraíba.</span>
         </h1>
 
-        <p className="mt-4 text-xl md:text-2xl font-semibold text-gray-700 mb-16">
+        <p className="mt-4 text-xl md:text-2xl font-semibold text-black mb-16">
           Profissionais da Saúde, Pessoas com Deficiência e Familiares.
         </p>
 
@@ -72,7 +72,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
             <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
               <MapPin className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
             </div>
-            <span className="text-2xl font-bold text-gray-900 leading-snug">
+            <span className="text-2xl font-bold text-black leading-snug">
               Busque o CER Mais Próximo
             </span>
           </button>
@@ -84,8 +84,8 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
             <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
               <Network className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
             </div>
-            <span className="text-2xl font-bold text-gray-900 leading-snug">
-              Conheça a Rede CER de Cuidados
+            <span className="text-2xl font-bold text-black leading-snug">
+              Conheça a rede estadual de Cuidados
             </span>
           </button>
 
@@ -96,7 +96,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
             <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
               <BookOpen className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
             </div>
-            <span className="text-2xl font-bold text-gray-900 leading-snug">
+            <span className="text-2xl font-bold text-black leading-snug">
               Tenha Acesso a Materiais Educativos
             </span>
           </button>

@@ -248,12 +248,12 @@ export default function MaterialEducational() {
           <h2
             id="edu-mat"
             tabIndex={-1}
-            className="text-4xl font-bold mb-4 text-slate-900 outline-none focus:ring-0"
+            className="text-4xl font-bold mb-4 text-black outline-none focus:ring-0"
           >
             Material Educativo
           </h2>
           <div className="w-24 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
-          <p className="text-slate-600 mt-4 max-w-4xl text-2xl leading-relaxed focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
+          <p className="text-black mt-4 max-w-4xl text-2xl leading-relaxed focus-within:border-[var(--cor-bg-1)] focus-within:border-5">
             Acesse publicações, guias e cartilhas sobre direitos, saúde e
             inclusão das pessoas com deficiência.
           </p>
@@ -270,7 +270,7 @@ export default function MaterialEducational() {
             onClick={() => handleTabChange("user")}
             className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === "user"
               ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
-              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+              : "bg-slate-100 text-black hover:bg-slate-200"
             }`}
           >
             <Users className="w-8 h-8" />
@@ -282,7 +282,7 @@ export default function MaterialEducational() {
             className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
               activeTab === "professional"
                 ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                : "bg-slate-100 text-black hover:bg-slate-200"
             }`}
           >
             <Briefcase className="w-8 h-8" />
@@ -294,7 +294,7 @@ export default function MaterialEducational() {
             className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
               activeTab === "manager"
                 ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                : "bg-slate-100 text-black hover:bg-slate-200"
             }`}
           >
             <Briefcase className="w-8 h-8" />
@@ -313,12 +313,12 @@ export default function MaterialEducational() {
                     <h3
                       ref={titleRef}
                       tabIndex={-1} // Permite foco via script, mas não via Tab
-                      className="my-auto font-bold text-gray-900 text-2xl outline-none"
+                      className="my-auto font-bold text-black text-2xl outline-none"
                     >
                       {currentMaterial.title}
                     </h3>
                   </div>
-                  <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                  <p className="text-xl text-black leading-relaxed mb-6">
                     {currentMaterial.description}
                   </p>
                 </div>
@@ -347,7 +347,7 @@ export default function MaterialEducational() {
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-md font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-3 bg-slate-100 text-black rounded-md font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Material anterior"
             >
               <ChevronLeft className="w-5 h-5" />

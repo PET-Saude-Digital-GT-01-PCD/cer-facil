@@ -3,11 +3,13 @@ import { Heart, Users, Shield, LucideIcon } from "lucide-react";
 interface RcpdFeature {
   id: string;
   title: string;
-  desc: string | { 
-    intro: string; 
-    list: string[]; 
-    outro: string; 
-  };
+  desc:
+    | string
+    | {
+        intro: string;
+        list: string[];
+        outro: string;
+      };
   icon: LucideIcon;
 }
 
@@ -27,9 +29,10 @@ const featuresData: RcpdFeature[] = [
       list: [
         "evitar doenças (prevenção)",
         "diagnosticar deficiências o quanto antes para iniciar o tratamento (identificação precoce)",
-        "contribuir na recuperação da autonomia (reabilitação)."
+        "contribuir na recuperação da autonomia (reabilitação).",
       ],
-      outro: "Tudo isso é pensado respeitando as necessidades específicas de cada tipo de deficiência."
+      outro:
+        "Tudo isso é pensado respeitando as necessidades específicas de cada tipo de deficiência.",
     },
   },
   {
@@ -43,9 +46,10 @@ const featuresData: RcpdFeature[] = [
 export default function WhatIsRCPD() {
   return (
     <section
-      aria-labelledby="rcpd" 
-      id="what-is-rcpd" 
-      className="px-6 py-20 relative bg-[var(--cor-bg-1)]">
+      aria-labelledby="rcpd"
+      id="what-is-rcpd"
+      className="px-6 py-20 relative bg-[var(--cor-bg-1)]"
+    >
       <div className="mx-auto max-w-6xl">
         <header className="text-left mb-16">
           <h2
@@ -74,7 +78,7 @@ export default function WhatIsRCPD() {
                       aria-hidden="true"
                       className="w-20 h-20 text-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] mb-4"
                     />
-                    <h3 className="font-bold text-slate-900 text-3xl">
+                    <h3 className="font-bold text-[var(--cor-bg-1)] text-3xl">
                       {feature.title}
                     </h3>
                   </div>
@@ -82,11 +86,11 @@ export default function WhatIsRCPD() {
 
                 <div className={isEven ? "md:order-2" : "md:order-1"}>
                   {typeof feature.desc === "string" ? (
-                    <p className="text-2xl leading-relaxed text-blue-50 font-medium">
+                    <p className="text-2xl leading-relaxed text-white font-medium">
                       {feature.desc}
                     </p>
                   ) : (
-                    <div className="text-2xl leading-relaxed text-blue-50 font-medium">
+                    <div className="text-2xl leading-relaxed text-white font-medium">
                       <h4>{feature.desc.intro}</h4>
                       <ol className="list-decimal ml-8 my-4 space-y-2">
                         {feature.desc.list.map((item, index) => (
