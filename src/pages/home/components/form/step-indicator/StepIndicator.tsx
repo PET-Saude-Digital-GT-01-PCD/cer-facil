@@ -19,6 +19,7 @@ export default function StepIndicator({
             <div className="relative flex flex-col items-center w-full">
               <div className="relative z-10 flex flex-col items-center">
                 <button
+                  tabIndex={-1}
                   onClick={() => onStepClick(step)}
                   className={`w-16 h-16 rounded-full flex items-center justify-center font-bold text-lg transition-all ${
                     currentStep === step

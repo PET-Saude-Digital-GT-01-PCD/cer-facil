@@ -12,7 +12,6 @@ import macrosData from "@/data/macro.json";
 import microsData from "@/data/micro.json";
 import servicosData from "@/data/servicos.json";
 import Flow from "@/components/user-flow/Flow";
-import { ArrowRight } from "lucide-react";
 
 interface StepFourProps {
   deficiencies?: string[];
@@ -50,6 +49,13 @@ export default function StepFour({
       .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase()
       .trim();
+  };
+
+  const handleKeyDown = (event, id) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setShowFlow([true, id]);
+    }
   };
 
   function obterRegioesDaCidade(nomeCidade: string) {
@@ -218,6 +224,7 @@ export default function StepFour({
                     tabIndex={0}
                     role="button"
                     onClick={() => setShowFlow([true, result.cer.id])}
+                    onKeyDown={(e) => handleKeyDown(e, result.cer.id)}
                     key={result.cer.id}
                     className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] border-2 border-[var(--cor-bg-1)]/30">
                     <CardContent aria-hidden="true" className="p-5">
@@ -241,13 +248,6 @@ export default function StepFour({
                             </span>
                           ))}
                         </div>
-                        <Button
-                          aria-hidden="true"
-                          onClick={() => setShowFlow([true, result.cer.id])}
-                          className="bg-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]/90 text-white flex items-center justify-center gap-2"
-                        >
-                          Ver Fluxo <ArrowRight className="h-4 w-4" />
-                        </Button>
                       </div>
                     </CardContent>
                   </Card>

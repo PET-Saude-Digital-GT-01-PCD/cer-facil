@@ -25,6 +25,13 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
     }
   };
 
+  const handleKeyDown = (event, value) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setSelected(value);
+    }
+  };
+
   return (
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
@@ -47,6 +54,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
             aria-checked={selected.includes("crianca")}
             tabIndex={0}
             onClick={() => setSelected("crianca")}
+            onKeyDown={(e) => handleKeyDown(e, "crianca")}
             className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "crianca"
                 ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
@@ -81,6 +89,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
             aria-checked={selected.includes("adolescente")}
             tabIndex={0}
             onClick={() => setSelected("adolescente")}
+            onKeyDown={(e) => handleKeyDown(e, "adolescente")}
             className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "adolescente"
                 ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
@@ -115,6 +124,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
             aria-checked={selected.includes("adulto")}
             tabIndex={0}
             onClick={() => setSelected("adulto")}
+            onKeyDown={(e) => handleKeyDown(e, "adulto")}
             className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "adulto"
                 ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
@@ -149,6 +159,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
             aria-checked={selected.includes("idoso")}
             tabIndex={0}
             onClick={() => setSelected("idoso")}
+            onKeyDown={(e) => handleKeyDown(e, "idoso")}
             className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
               selected === "idoso"
                 ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"

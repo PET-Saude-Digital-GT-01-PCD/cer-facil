@@ -28,6 +28,13 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
     }
   };
 
+  const handleKeyDown = (event, value) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggleSelection(value);
+    }
+  };
+
   return (
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
@@ -49,6 +56,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
               aria-checked={selected == ("fisica")}
               tabIndex={0}
               onClick={() => toggleSelection("fisica")}
+              onKeyDown={(e) => handleKeyDown(e, "fisica")}
               className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("fisica")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -77,6 +85,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
               aria-checked={selected == ("auditiva")}
               tabIndex={0}
               onClick={() => toggleSelection("auditiva")}
+              onKeyDown={(e) => handleKeyDown(e, "auditiva")}
               className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("auditiva")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -105,6 +114,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
               aria-checked={selected == ("visual")}
               tabIndex={0}
               onClick={() => toggleSelection("visual")}
+              onKeyDown={(e) => handleKeyDown(e, "visual")}
               className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("visual")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -133,6 +143,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
               aria-checked={selected == ("intelectual")}
               tabIndex={0}
               onClick={() => toggleSelection("intelectual")}
+              onKeyDown={(e) => handleKeyDown(e, "intelectual")}
               className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("intelectual")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
@@ -165,6 +176,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
               aria-checked={selected == ("tea")}
               tabIndex={0}
               onClick={() => toggleSelection("tea")}
+              onKeyDown={(e) => handleKeyDown(e, "tea")}
               className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 w-full md:w-1/2 ${selected == ("tea")
                   ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
                   : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
