@@ -68,7 +68,7 @@ const aboutProjectData = {
 
 export default function Rodape() {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
-  const currentYear = new Date().getFullYear(); // Ano dinâmico
+  const currentYear = new Date().getFullYear();
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   return (
@@ -76,7 +76,7 @@ export default function Rodape() {
       <footer className="px-6 py-12 relative bg-white pt-16 border-t border-slate-200">
         <div className="max-w-6xl mx-auto flex flex-col">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
-            {/* ESQUERDA: Informações e Redes */}
+
             <div className="md:col-span-5 flex flex-col items-start gap-4">
               <div>
                 <h2 className="font-bold text-2xl text-black mb-1">
@@ -135,26 +135,25 @@ export default function Rodape() {
               </div>
             </div>
 
-            {/* DIREITA: Logos dos Colaboradores */}
             <div className="md:col-span-7 flex flex-col md:items-end w-full">
               <h3 className="text-sm font-bold text-black uppercase tracking-widest mb-4">
                 Realização & Colaboradores
               </h3>
 
-              <div className="flex flex-wrap items-center justify-start md:justify-end gap-4">
+              <div className="flex flex-nowrap items-center justify-start md:justify-end gap-2 w-full overflow-x-auto pb-2 max-w-max">
                 {realizationLogosData.map((logo) => (
                   <img
                     key={logo.alt}
                     src={logo.src}
                     alt={logo.alt}
-                    className="h-14 sm:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+
+                    className="shrink-0 h-10 sm:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
                   />
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Copyright */}
           <div className="pt-6 border-t border-slate-200">
             <p className="text-center text-sm font-medium text-black">
               &copy; {currentYear} Copyright - PET-Saúde/Informação e Saúde
@@ -164,7 +163,6 @@ export default function Rodape() {
         </div>
       </footer>
 
-      {/* Renderização Condicional do Modal */}
       {isAboutModalOpen && (
         <AboutModal onClose={() => setIsAboutModalOpen(false)} />
       )}
@@ -172,12 +170,9 @@ export default function Rodape() {
   );
 }
 
-// ==========================================
-// SUB-COMPONENTE: Modal "Sobre o Projeto"
-// ==========================================
 function AboutModal({ onClose }: { onClose: () => void }) {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  // Fecha no "ESC" e trava o scroll da página de fundo
+  
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
@@ -209,9 +204,9 @@ function AboutModal({ onClose }: { onClose: () => void }) {
         aria-modal="true"
         aria-labelledby="sobre-nos-title"
         className="w-full max-w-2xl rounded-2xl bg-white p-6 sm:p-8 shadow-2xl border-t-4 border-t-[var(--cor-bg-1)] flex flex-col max-h-[90vh] animate-in zoom-in-95 duration-200"
-        onClick={(e) => e.stopPropagation()} // Evita fechar ao clicar dentro do modal
+        onClick={(e) => e.stopPropagation()} 
       >
-        {/* Modal Header */}
+   
         <header className="flex justify-between items-center mb-6 pb-4 border-b border-gray-100 shrink-0">
           <h2
             id="sobre-nos-title"
@@ -233,7 +228,6 @@ function AboutModal({ onClose }: { onClose: () => void }) {
           </button>
         </header>
 
-        {/* Modal Body */}
         <div className="overflow-y-auto pr-2 space-y-6 flex-1 text-justify custom-scrollbar">
           <p className="text-xl leading-relaxed text-black">
             {aboutProjectData.intro}
@@ -255,7 +249,6 @@ function AboutModal({ onClose }: { onClose: () => void }) {
           ))}
         </div>
 
-        {/* Modal Footer */}
         <footer className="mt-8 pt-4 border-t border-slate-100 flex justify-end shrink-0">
           <Button
             className="text-xl bg-[var(--cor-bg-3)] text-white hover:bg-[color-mix(in_srgb,var(--cor-bg-3),black_20%)] rounded-full font-bold transition-all px-8 focus:ring-2 focus:ring-offset-2 focus:ring-[var(--cor-bg-3)]"
