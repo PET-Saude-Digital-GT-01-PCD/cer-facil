@@ -85,7 +85,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
               <Network className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
             </div>
             <span className="text-2xl font-bold text-black leading-snug">
-              Conheça a rede estadual de Cuidados
+              Conheça a Rede Estadual de Reabilitação
             </span>
           </button>
 
@@ -97,7 +97,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
               <BookOpen className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
             </div>
             <span className="text-2xl font-bold text-black leading-snug">
-              Tenha Acesso a Materiais Educativos
+              Tenha Acesso aos Materiais Educativos
             </span>
           </button>
         </nav>
