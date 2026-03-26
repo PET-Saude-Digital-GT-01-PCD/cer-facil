@@ -32,7 +32,7 @@ const professionalsData: Professional[] = [
   {
     professional: "Fisioterapeuta",
     description:
-      "Profissional responsável por avaliar e tratar alterações de movimento e postura...",
+      " Avalia funcionalmente, realiza tratamentos e estimulação precoce; aplica escalas e testes; prescreve e adapta OPM e tecnologias assistivas; conduz atendimentos individuais ou em grupo; determina alta; registra evolução; orienta famílias e planeja adaptações de acessibilidade",
     service: [1, 4, 5],
   },
   {
