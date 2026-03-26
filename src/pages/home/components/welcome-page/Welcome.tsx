@@ -68,7 +68,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
         <nav aria-label="menu principal de ações" className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           <button
             onClick={() => setShowForm(true)}
-            className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
+            className="focus-within:ring-[10px] focus-within:ring-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
           >
             <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
               <MapPin className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
@@ -80,7 +80,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
 
           <button
             onClick={handleScrollToSection}
-            className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
+            className="focus-within:ring-[10px] focus-within:ring-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
           >
             <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
               <Network className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />
@@ -92,7 +92,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
 
           <button
             onClick={handleScrollToEducationalMaterial}
-            className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
+            className="focus-within:ring-[10px] focus-within:ring-[var(--cor-destaque)] flex flex-col items-center p-8 bg-white border-2 border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[var(--cor-bg-1)] transition-all cursor-pointer group text-center"
           >
             <div className="p-4 bg-[var(--cor-bg-1)]/10 rounded-full mb-4 group-hover:bg-[var(--cor-bg-1)] transition-colors">
               <BookOpen className="w-12 h-12 text-[var(--cor-bg-1)] group-hover:text-white" />

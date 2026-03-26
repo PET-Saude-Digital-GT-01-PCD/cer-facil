@@ -175,7 +175,8 @@ export default function StepThree({
                 handleGeolocation();
                 setLocationPermission(true);
               }}
-              className="w-full max-w-sm bg-[var(--cor-bg-1)] hover:brightness-110 transition-all text-2xl py-8"
+              className="w-full max-w-sm bg-[var(--cor-bg-1)] hover:brightness-110 transition-all text-2xl py-8
+                        focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
               disabled={loading}
             >
               {loading ? (
@@ -258,7 +259,8 @@ export default function StepThree({
             variant="outline"
             onClick={onBack}
             size="lg"
-            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white"
+            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+             focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Voltar
           </Button>
@@ -274,7 +276,8 @@ export default function StepThree({
             }}
             disabled={!location}
             size="lg"
-            className="px-8 py-5 text-2xl min-w-[160px] border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)]"
+            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+             focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Próximo
           </Button>

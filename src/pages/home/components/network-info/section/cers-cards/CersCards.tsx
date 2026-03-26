@@ -170,10 +170,9 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
                   key={option.id}
                   onClick={() => toggleFilter(option.id)}
                   className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-xl transition-all duration-200 border-2 
-                    ${
-                      isActive
-                        ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)] text-white shadow-md"
-                        : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)]"
+                    ${isActive
+                      ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)] text-white shadow-md"
+                      : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)]"
                     }`}
                 >
                   <Icon className="w-5 h-5" aria-hidden="true" />
@@ -230,7 +229,10 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
               </AccordionContent>
 
               <div className="flex justify-center mt-12">
-                <AccordionTrigger className="text-xl flex gap-3 items-center bg-white text-[var(--cor-bg-1)] px-8 py-4 font-bold transition-all duration-200 border-2 border-[var(--cor-bg-1)]/30 rounded-full hover:border-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6">
+                <AccordionTrigger
+                  className="text-xl flex gap-3 items-center bg-white text-[var(--cor-bg-1)] px-8 py-4 font-bold transition-all duration-200 border-2 border-[var(--cor-bg-1)]/30 rounded-full hover:border-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6 
+             focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
+                >
                   Ver todas as unidades
                 </AccordionTrigger>
               </div>
@@ -253,7 +255,7 @@ function CerCard({ cer, onClick }: { cer: DadosCers; onClick: () => void }) {
       className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] p-6 rounded-2xl shadow-xl bg-white flex flex-col transition-all hover:shadow-2xl hover:-translate-y-2 h-full min-h-[220px] cursor-pointer group focus:outline-none focus:ring-4 focus:ring-[var(--cor-bg-1)]/50"
     >
       <div className="flex-grow flex flex-col">
-         <h3 aria-hidden="true" className="font-bold text-2xl text-slate-900 mb-4 leading-tight group-hover:text-[var(--cor-bg-1)] transition-colors text-start">
+        <h3 aria-hidden="true" className="font-bold text-2xl text-slate-900 mb-4 leading-tight group-hover:text-[var(--cor-bg-1)] transition-colors text-start">
           {toTitleCase(cer.nome)}
         </h3>
 
