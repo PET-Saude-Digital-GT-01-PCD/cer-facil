@@ -64,14 +64,14 @@ export default function HistoryTimeline() {
       className="px-6 py-20 relative bg-white">
       <div className="max-w-6xl mx-auto">
         <header className="text-left mb-16">
-          <h2 id="hist-timeline" className="text-4xl font-bold mb-4 text-slate-900">
+          <h2 id="hist-timeline" className="text-4xl font-bold mb-4 text-black">
             História da Rede de Cuidado à Pessoa com Deficiência
           </h2>
           <div
             className="w-24 h-2 bg-[var(--cor-bg-1)] rounded-full"
             aria-hidden="true"
           />
-          <p className="text-slate-600 mt-4 max-w-2xl text-2xl">
+          <p className="text-black mt-4 max-w-2xl text-2xl">
             Uma jornada de evolução e compromisso com os direitos das pessoas
             com deficiência
           </p>
@@ -124,7 +124,7 @@ function TimelineEntry({
               </h3>
             </div>
 
-            <p className="text-slate-700 font-medium text-lg md:text-xl mb-2">
+            <p className="text-black font-medium text-lg md:text-xl mb-2">
               {item.description}
             </p>
 
@@ -146,7 +146,7 @@ function TimelineEntry({
 
             {/* Conteúdo Detalhado (Similar aos Níveis de Atenção) */}
             {isExpanded && (
-              <div className="text-xl text-gray-600 leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-4 border border-slate-100 animate-in fade-in slide-in-from-top-2 duration-300">
+              <div className="text-xl text-black leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-4 border border-slate-100 animate-in fade-in slide-in-from-top-2 duration-300">
                 {item.detailedMessage}
               </div>
             )}

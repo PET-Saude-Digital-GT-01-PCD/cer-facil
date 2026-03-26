@@ -49,11 +49,11 @@ export default function TypesOfDeficiencies() {
     >
       <div className="mx-auto max-w-6xl">
         <header className="text-left mb-16">
-          <h2 id="deficiencies" className="text-4xl font-bold mb-4 text-slate-900">
+          <h2 id="deficiencies" className="text-4xl font-bold mb-4 text-black">
             Tipos de Deficiência
           </h2>
           <div className="w-24 h-1.5 bg-[var(--cor-bg-1)] rounded-full mb-6"></div>
-          <p className="mt-4 max-w-2xl text-2xl text-slate-600 leading-relaxed">
+          <p className="mt-4 max-w-2xl text-2xl text-black leading-relaxed">
             Entenda as particularidades de cada modalidade atendida pela rede de
             cuidados.
           </p>
@@ -70,16 +70,16 @@ export default function TypesOfDeficiencies() {
               >
                 <div
                   aria-hidden="true"
-                  className="text-[color-mix(in_srgb,var(--cor-bg-1),black_30%)] mb-6 flex justify-center bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] w-20 h-20 items-center rounded-full transition-all duration-300 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white group-focus:bg-[var(--cor-bg-1)] group-focus:text-white"
+                  className="text-[var(--cor-bg-1)] mb-6 flex justify-center bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] w-20 h-20 items-center rounded-full transition-all duration-300 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white group-focus:bg-[var(--cor-bg-1)] group-focus:text-white"
                 >
                   <Icon className="w-10 h-10" />
                 </div>
 
                 <div className="text-center flex-1 flex flex-col">
-                  <h3 className="font-bold text-2xl text-slate-900 mb-3 group-hover:text-[var(--cor-bg-1)] group-focus:text-[var(--cor-bg-1)] transition-colors">
+                  <h3 className="font-bold text-2xl text-black mb-3 group-hover:text-[var(--cor-bg-1)] group-focus:text-[var(--cor-bg-1)] transition-colors">
                     {item.title}
                   </h3>
-                  <span className="text-slate-600 text-sm leading-relaxed font-medium">
+                  <span className="text-black text-lg leading-relaxed font-medium">
                     {item.text}
                   </span>
                 </div>

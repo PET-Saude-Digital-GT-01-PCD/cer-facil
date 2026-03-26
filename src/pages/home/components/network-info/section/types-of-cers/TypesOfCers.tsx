@@ -23,10 +23,11 @@ const cerTypesData: CerType[] = [
 
 export default function TypesOfCers() {
   return (
-    <section 
+    <section
       aria-labelledby="cer-types"
-      id="types-of-cer-deficiencies" 
-      className="px-6 py-24">
+      id="types-of-cer-deficiencies"
+      className="px-6 py-24"
+    >
       <div className="mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
           <div>
@@ -56,10 +57,18 @@ export default function TypesOfCers() {
                     <Building2 size={48} />
                   </div>
                   <div>
-                    <h3 id="cer-id" aria-hidden="true" className="font-bold text-black text-2xl">
+                    <h3
+                      id="cer-id"
+                      aria-hidden="true"
+                      className="font-bold text-black text-2xl"
+                    >
                       CER {cer.id}
                     </h3>
-                    <p id="cer-descricao" aria-hidden="true" className="inline text-black text-xl font-medium">
+                    <p
+                      id="cer-descricao"
+                      aria-hidden="true"
+                      className="inline text-black text-xl font-medium"
+                    >
                       {cer.desc}
                     </p>
                   </div>
