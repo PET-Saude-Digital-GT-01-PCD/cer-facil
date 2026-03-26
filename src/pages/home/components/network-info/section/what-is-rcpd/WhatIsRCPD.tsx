@@ -1,4 +1,4 @@
-import { Heart, Users, Shield, LucideIcon } from "lucide-react";
+import { Heart, Users, Shield, type LucideIcon } from "lucide-react";
 
 interface RcpdFeature {
   id: string;

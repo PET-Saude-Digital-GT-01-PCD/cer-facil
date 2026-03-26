@@ -88,23 +88,23 @@
         "steps": [
             {
                 "id": 1,
-                "title": "Visite o Centro de Reabilitação",
-                "description": "Dirija-se ao CER II localizado na Rua Maria Auxiliadora, s/n - Centro, Conde - PB, para iniciar o processo de inscrição."
+                "title": "Acesso via Demanda Espontânea (SISREG)",
+                "description": "O acesso ao serviço ocorre por demanda espontânea por meio do SISREG. Dirija-se ao CER II localizado na Rua Maria Auxiliadora, s/n - Centro, Conde - PB."
             },
             {
                 "id": 2,
-                "title": "Leve os Documentos Necessários",
-                "description": "Traga todos os documentos exigidos para a inscrição, incluindo RG, CPF, comprovante de residência, cartão do SUS e laudo médico."
+                "title": "Apresentação da Documentação",
+                "description": "Tenha em mãos todos os documentos exigidos para a inscrição."
             },
             {
                 "id": 3,
-                "title": "Realize a Inscrição",
-                "description": "No local, preencha o formulário de inscrição fornecido pela equipe do CER II. Eles irão auxiliá-lo durante o processo."
+                "title": "Inscrição e Regulação",
+                "description": "No local, a equipa do CER II irá auxiliá-lo com o registo dos dados e com a devida inserção da solicitação no SISREG."
             },
             {
                 "id": 4,
                 "title": "Aguarde a Avaliação",
-                "description": "Após a inscrição, aguarde a avaliação da equipe do CER II para determinar a elegibilidade para os serviços de reabilitação."
+                "description": "Após a regulação no sistema, aguarde a avaliação da equipa técnica do CER II para determinar a elegibilidade para os serviços de reabilitação."
             }
         ],
         "documents": [
@@ -113,7 +113,7 @@
             "Comprovante de Residência atualizado (do município de Conde)",
             "Encaminhamento Médico da UBS (Solicitação de Reabilitação)",
             "Laudo Médico com CID (contendo a descrição clínica)",
-            "Registro de Nascimento (para menores)"
+            "Registo de Nascimento (para menores)"
         ]
     },
     {
@@ -259,28 +259,18 @@
             {
                 "id": 1,
                 "title": "Meios de Acesso",
-                "description": "O acesso pode ser feito via Regulação pelo Sistema (SISREG ou e-SUS Regulação), por demanda espontânea ou mediante encaminhamento da Atenção Básica (AB)."
+                "description": "Regulação via Sistema (SISREG ou e-SUS regulação), Demanda Espontânea ou Encaminhamento da AB."
             },
             {
                 "id": 2,
-                "title": "Preparação da Documentação",
-                "description": "Reúna seus documentos pessoais, relatórios clínicos e exames (caso possua ou sejam necessários para o caso)."
-            },
-            {
-                "id": 3,
-                "title": "Triagem e Avaliação",
-                "description": "O usuário passará por uma triagem inicial e avaliação técnica para identificação da necessidade terapêutica."
-            },
-            {
-                "id": 4,
-                "title": "Enquadramento no Serviço",
-                "description": "Após a avaliação, ocorre o enquadramento no programa de reabilitação específico, conforme o perfil clínico apresentado."
+                "title": "Triagem, Avaliação e Enquadramento",
+                "description": "O paciente passa pela etapa de triagem, seguida pela avaliação e o devido enquadramento no serviço."
             }
         ],
         "documents": [
-            "Documentos pessoais (RG/CPF)",
-            "Relatório clínico",
-            "Exames (caso necessite)"
+            "Relatório",
+            "Exames (caso necessite)",
+            "Documentos pessoais"
         ]
     },
     {

@@ -43,7 +43,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
       <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center mb-6">
           <img
-            src={logoSeuCer.src || logoSeuCer}
+            src={logoSeuCer}
             alt="Logo Seu CER"
             className="h-60 md:h-70 object-contain"
           />

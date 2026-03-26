@@ -8,7 +8,7 @@ import {
   Ear,
   Eye,
   Brain,
-  LucideIcon,
+  type LucideIcon,
 } from "lucide-react";
 
 import Flow from "@/components/user-flow/Flow.tsx";
@@ -120,7 +120,6 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
         if (mappedFilter) cerFilters.add(mappedFilter);
       }
 
-      // AND: precisa conter todas as deficiencias selecionadas
       return activeFilters.every((filter) => cerFilters.has(filter));
     });
   }, [activeFilters]);
@@ -128,19 +127,17 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
   const fixos = filteredCers.slice(0, 6);
   const restantes = filteredCers.slice(6);
 
-  // Se o fluxo estiver ativo, renderiza o componente Flow
-  if (showFlow[0]) {
-    return <Flow setShowFlow={setShowFlow} cerId={showFlow[1]} />;
+  if (showFlow[0] && showFlow[1] !== null) {
+    return <Flow setShowFlow={setShowFlow} cerId={showFlow[1] as number} />;
   }
 
   return (
     <section
       aria-labelledby="cards"
       id="cers-card"
-      className="min-h-screen py-24 px-8 relative flex align-items-center bg-[--var(bg-cor-1)]" // Adicionado bg provisório baseado no "text-white" do seu título
-    >
+      className="min-h-screen py-24 px-8 relative flex align-items-center bg-[--var(bg-cor-1)]" >
       <div className="mx-auto max-w-6xl w-full">
-        {/* Cabeçalho */}
+
         <header className="text-left mb-8">
           <h2 id="cards" className="font-bold text-4xl mb-4 text-white">
             Rede Estadual de Reabilitação
@@ -148,7 +145,6 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
           <div className="w-24 h-1.5 bg-white rounded-full"></div>
         </header>
 
-        {/* Filtros */}
         <div className="bg-white p-6 rounded-2xl shadow-sm mb-10">
           <div
             aria-label="filtro por especialidade"
@@ -195,7 +191,6 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
           </div>
         </div>
 
-        {/* Lista de Unidades */}
         {filteredCers.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {fixos.map((cer) => (
@@ -212,7 +207,6 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
           </div>
         )}
 
-        {/* Acordeão: Ver mais */}
         {restantes.length > 0 && (
           <Accordion type="single" collapsible className="w-full mt-8">
             <AccordionItem value="grid-restante" className="border-none">
@@ -244,7 +238,6 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
   );
 }
 
-// Sub-componente extraído para renderizar os cards individualmente
 function CerCard({ cer, onClick }: { cer: DadosCers; onClick: () => void }) {
   return (
     <button

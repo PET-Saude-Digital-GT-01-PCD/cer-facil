@@ -1,4 +1,4 @@
-import { Accessibility, Ear, Eye, Brain, Puzzle, LucideIcon } from "lucide-react";
+import { Accessibility, Ear, Eye, Brain, Puzzle, type LucideIcon } from "lucide-react";
 
 interface DeficiencyType {
   id: string;
