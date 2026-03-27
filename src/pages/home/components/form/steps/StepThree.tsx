@@ -205,13 +205,14 @@ export default function StepThree({
                     setCityName("");
                   }}
                   onKeyPress={handleKeyPress}
-                  className="text-2xl h-16 placeholder:text-xl"
+                  className="text-2xl h-16 placeholder:text-xl focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
                 />
                 <Button
+                  aria-label="realizar busca por cep"
                   onClick={handleCepSearch}
                   variant="outline"
                   disabled={cep.replace(/\D/g, "").length < 8 || loading}
-                  className="h-16 px-4"
+                  className="h-16 px-4 focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
                 >
                   {loading ? (
                     <Loader2 className="h-12 w-12 animate-spin" />
@@ -229,7 +230,7 @@ export default function StepThree({
                 ✓ Localização definida: {cityName}
               </div>
 
-              <div aria-hidden="true" className="w-full h-[250px] rounded-lg overflow-hidden border">
+              <div aria-hidden="true" inert className="w-full h-[250px] rounded-lg overflow-hidden border">
                 <MapContainer
                   center={[location.lat, location.lng] as [number, number]}
                   zoom={16}
