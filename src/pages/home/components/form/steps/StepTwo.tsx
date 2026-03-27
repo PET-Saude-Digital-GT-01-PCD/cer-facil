@@ -36,10 +36,8 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle asChild className="text-3xl text-[var(--cor-bg-1)] font-bold">
-            <h2>
-              Qual a faixa etária da pessoa que precisa de atendimento?
-            </h2>
+          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
+            Qual a idade da pessoa que precisa de atendimento?
           </CardTitle>
           {selectedDeficiencies.length > 0 && (
             <CardDescription aria-hidden="true" className="text-2xl">

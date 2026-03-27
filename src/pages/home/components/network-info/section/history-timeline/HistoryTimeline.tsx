@@ -78,7 +78,6 @@ export default function HistoryTimeline() {
         </header>
 
         <div className="relative">
-          {/* Linha Central Vertical */}
           <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-slate-200" />
 
           {timelineData.map((item, index) => (
@@ -109,11 +108,9 @@ function TimelineEntry({
       <div
         className={`flex w-full items-center ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
       >
-        {/* Card de Conteúdo */}
         <div className="w-full md:w-5/12 px-4 md:px-8 ml-12 md:ml-0">
           <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 transition-all">
             
-            {/* Conteúdo Informativo (Não Clicável) */}
             <div className="flex items-center gap-3 mb-3">
               <Calendar
                 className="w-8 h-8 md:w-10 md:h-10 text-[var(--cor-bg-1)]"
@@ -127,11 +124,8 @@ function TimelineEntry({
             <p className="text-black font-medium text-lg md:text-xl mb-2">
               {item.description}
             </p>
-
-            {/* Único Elemento Clicável: Saiba Mais */}
             <button
               onClick={toggleExpand}
-              // Força o leitor de tela a falar apenas o que está no label
               aria-label={`saiba mais ${isExpanded ? "expandido" : "retraído"}`}
               className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 text-lg text-[var(--cor-bg-1)] font-bold mt-4 group hover:underline outline-none focus:ring-4 focus:ring-blue-200 rounded-lg p-1"
             >
@@ -144,7 +138,6 @@ function TimelineEntry({
               />
             </button>
 
-            {/* Conteúdo Detalhado (Similar aos Níveis de Atenção) */}
             {isExpanded && (
               <div className="text-xl text-black leading-relaxed bg-[color-mix(in_srgb,var(--cor-bg-2),white_95%)] p-4 rounded-xl mt-4 border border-slate-100 animate-in fade-in slide-in-from-top-2 duration-300">
                 {item.detailedMessage}

@@ -39,10 +39,8 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle asChild className="text-3xl text-[var(--cor-bg-1)] font-bold">
-            <h2>
-              Para qual deficiência deseja buscar atendimento?
-            </h2>
+          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
+            Para qual deficiência deseja buscar atendimento?
           </CardTitle>
           <CardDescription className="text-2xl">
             Escolha uma opção

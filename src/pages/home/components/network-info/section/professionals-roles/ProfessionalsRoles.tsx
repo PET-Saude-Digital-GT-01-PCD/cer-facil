@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { ChevronDown, Filter, X, Accessibility, Ear, Eye, Brain, Puzzle, LucideIcon } from "lucide-react";
+import { ChevronDown, Filter, X, Accessibility, Ear, Eye, Brain, Puzzle, type LucideIcon } from "lucide-react";
 
 import {
   Accordion,
