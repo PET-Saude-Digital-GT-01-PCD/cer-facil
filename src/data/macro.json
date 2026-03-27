@@ -2,6 +2,7 @@
     {
         "id": 1,
         "nome": "1ª MACRO - Sede: João Pessoa",
+        "cerReferenciaId": 1,
         "referência": "CER IV - FUNAD - Fundação Centro Integrado de Apoio ao Portador de Deficiência",
         "regiao": [
             "1ª Região - Mata Atlântica",
@@ -13,6 +14,7 @@
     {
         "id": 2,
         "nome": "2ª MACRO - Sede: Campina Grande",
+        "cerReferenciaId": 6,
         "referência": "CER IV - Centro Especializado em Reabilitação de Campina Grande",
         "regiao": [
             "3ª Região - Borborema",
@@ -25,6 +27,7 @@
     {
         "id": 3,
         "nome": "3ª MACRO - Sede: Patos",
+        "cerReferenciaId": 11,
         "referência": "CER IV - Reabilita Centro Especializado em Reabilitação de Sousa",
         "regiao": [
             "6ª Região - Sertão Patos",

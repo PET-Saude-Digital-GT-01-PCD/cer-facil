@@ -146,10 +146,8 @@ export default function StepFour({
       const melhorNivel = Math.min(...matchedCERs.map(c => c.nivelPrioridade));
 
       if (melhorNivel === 3 && userMacro) {
-        const nomeReferencia = (userMacro as any)["referência"];
-        const cerReferencia = cersData.find(
-          (c) => normalizeString(c.nome) === normalizeString(nomeReferencia)
-        );
+        const cerReferenciaId = (userMacro as any)["cerReferenciaId"];
+        const cerReferencia = cersData.find((c) => c.id === cerReferenciaId);
 
         if (cerReferencia) {
           setResults([{ cer: cerReferencia, compatibilidade: 1, nivelPrioridade: 3 }]);
