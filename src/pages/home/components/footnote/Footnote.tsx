@@ -23,7 +23,7 @@ interface SocialButton {
 const socialButtonsData: SocialButton[] = [
   {
     Icon: Instagram,
-    alt: "Acessar Instagram do PET Saúde PCD",
+    alt: "Acessar Instagram do PET Saúde Pessoa com Deficiência",
     href: "https://www.instagram.com/petsaude_pcd?igsh=N2d6czAyam0zNjRt",
   },
   {
@@ -53,7 +53,7 @@ const aboutProjectData = {
   sections: [
     {
       id: "gt01",
-      subtitle: "GT-01 PCD",
+      subtitle: "GT-01 Pessoa com Deficiência",
       content:
         "O presente projeto foi desenvolvido pelo GT-01 Atenção Especializada à Pessoa com Deficiência. Dentro do PET-Saúde Digital, nosso papel é tornar o SUS mais acessível às pessoas com deficiência por meio por meio das ferramentas digitais para garantir à elas acesso a saúde de qualidade. As atividades do GT-01 são desenvolvidas em conjunto com a Secretaria de Estado de Saúde da Paraíba (SES-PB) e a Fundação Centro Integrado de Apoio à Pessoa com Deficiência (FUNAD), que foram fundamentais para o desenvolvimento desse site.",
     },
