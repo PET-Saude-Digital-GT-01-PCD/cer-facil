@@ -1,285 +1,280 @@
 [
-    {
-        "id": 1,
-        "nome": "CER IV - FUNAD - Fundação Centro Integrado de Apoio ao Portador de Deficiência",
-        "municipios": [
-            "Bayeux",
-            "Cabedelo",
-            "Cruz do Espírito Santo",
-            "João Pessoa",
-            "Lucena",
-            "Mari",
-            "Riachão do Poço",
-            "Santa Rita",
-            "Sapé",
-            "Sobrado"
-        ]
-    },
-    {
-        "id": 2,
-        "nome": "CER II - Instituto dos Cegos da Paraíba Adalgisa Cunha",
-        "municipios": [
-            "Bayeux",
-            "Cabedelo",
-            "Cruz do Espírito Santo",
-            "João Pessoa",
-            "Lucena",
-            "Mari",
-            "Riachão do Poço",
-            "Santa Rita",
-            "Sapé",
-            "Sobrado"
-        ]
-    },
-    {
-        "id": 3,
-        "nome": "CER II - Centro de Reabilitação Antônio de Souza Maranhão",
-        "municipios": [
-            "Alhandra",
-            "Caaporã",
-            "Conde",
-            "Pitimbu"
-        ]
-    },
-    {
-        "id": 4,
-        "nome": "CER III - Complexo Neurofuncional Maria Moura de Aquino",
-        "municipios": [
-            "Alagoinha",
-            "Araçagi",
-            "Araruna",
-            "Bananeiras",
-            "Belém",
-            "Borborema",
-            "Campo de Santana",
-            "Cacimba de Dentro",
-            "Caiçara",
-            "Casserengue",
-            "Cuitegi",
-            "Dona Inês",
-            "Duas Estradas",
-            "Guarabira",
-            "Lagoa de Dentro",
-            "Logradouro",
-            "Mulungu",
-            "Pilões",
-            "Pilõezinhos",
-            "Pirpirituba",
-            "Riachão",
-            "Serra da Raiz",
-            "Serraria",
-            "Sertãozinho",
-            "Solânea",
-            "Tacima"
-        ]
-    },
-    {
-        "id": 5,
-        "nome": "CER II - Centro de Reabilitação Dr. José Dácio",
-        "municipios": [
-            "Alagoinha",
-            "Araçagi",
-            "Araruna",
-            "Bananeiras",
-            "Belém",
-            "Borborema",
-            "Campo de Santana",
-            "Cacimba de Dentro",
-            "Caiçara",
-            "Casserengue",
-            "Cuitegi",
-            "Dona Inês",
-            "Duas Estradas",
-            "Guarabira",
-            "Lagoa de Dentro",
-            "Logradouro",
-            "Mulungu",
-            "Pilões",
-            "Pilõezinhos",
-            "Pirpirituba",
-            "Riachão",
-            "Serra da Raiz",
-            "Serraria",
-            "Sertãozinho",
-            "Solânea",
-            "Tacima"
-        ]
-    },
-    {
-        "id": 6,
-        "nome": "CER IV - Centro Especializado em Reabilitação de Campina Grande",
-        "municipios": [
-            "Alagoa Grande",
-            "Alagoa Nova",
-            "Algodão de Jandaíra",
-            "Arara",
-            "Areia",
-            "Areial",
-            "Esperança",
-            "Lagoa Seca",
-            "Matinhas",
-            "Montadas",
-            "Remígio",
-            "São Sebastião de Lagoa de Roça"
-        ]
-    },
-    {
-        "id": 7,
-        "nome": "CER II - APAE - Associação de Pais e Amigos dos Excepcionais",
-        "municipios": [
-            "Alagoa Grande",
-            "Alagoa Nova",
-            "Algodão de Jandaíra",
-            "Arara",
-            "Areia",
-            "Areial",
-            "Esperança",
-            "Lagoa Seca",
-            "Matinhas",
-            "Montadas",
-            "Remígio",
-            "São Sebastião de Lagoa de Roça"
-        ]
-    },
-    {
-        "id": 8,
-        "nome": "CER II - CER/CERPPOD",
-        "municipios": [
-            "Areia de Baraúnas",
-            "Cacimba de Areia",
-            "Cacimbas",
-            "Catingueira",
-            "Condado",
-            "Desterro",
-            "Emas",
-            "Junco do Seridó",
-            "Mãe d'Água",
-            "Malta",
-            "Maturéia",
-            "Passagem",
-            "Patos",
-            "Quixabá",
-            "Salgadinho",
-            "Santa Luzia",
-            "Santa Teresinha",
-            "São José de Espinharas",
-            "São José do Bonfim",
-            "São José do Sabugi",
-            "São Mamede",
-            "Teixeira",
-            "Várzea",
-            "Vista Serrana"
-        ]
-    },
-    {
-        "id": 9,
-        "nome": "CER II - Centro de Reabilitação Motora",
-        "municipios": [
-            "Amparo",
-            "Camalaú",
-            "Caraúbas",
-            "Congo",
-            "Coxixola",
-            "Gurjão",
-            "Monteiro",
-            "Ouro Velho",
-            "Parari",
-            "Prata",
-            "São João do Cariri",
-            "São João do Tigre",
-            "São José dos Cordeiros",
-            "São Sebastião do Umbuzeiro",
-            "Serra Branca",
-            "Sumé",
-            "Zabelê"
-        ]
-    },
-    {
-        "id": 10,
-        "nome": "CER III - Centro Especializado em Reabilitação Doutor Aloysio Pereira Lima",
-        "municipios": [
-            "Água Branca",
-            "Imaculada",
-            "Juru",
-            "Manaíra",
-            "Princesa Isabel",
-            "São José de Princesa",
-            "Tavares"
-        ]
-    },
-    {
-        "id": 11,
-        "nome": "CER IV - Reabilita Centro Especializado em Reabilitação de Sousa",
-        "municipios": [
-            "Aparecida",
-            "Lastro",
-            "Marizópolis",
-            "Nazarezinho",
-            "Santa Cruz",
-            "São Francisco",
-            "São José da Lagoa Tapada",
-            "Sousa",
-            "Vieirópolis"
-        ]
-    },
-    {
-        "id": 12,
-        "nome": "CER II - Policlínica Dr. Antônio Quinho",
-        "municipios": [
-            "Aguiar",
-            "Boa Ventura",
-            "Conceição",
-            "Coremas",
-            "Curral Velho",
-            "Diamante",
-            "Ibiara",
-            "Igaracy",
-            "Itaporanga",
-            "Nova Olinda",
-            "Olho d'Água",
-            "Pedra Branca",
-            "Piancó",
-            "Santa Inês",
-            "Santana de Mangueira",
-            "Santana dos Garrotes",
-            "São José de Caiana",
-            "Serra Grande"
-        ]
-    },
-    {
-        "id": 13,
-        "nome": "CER II - Vitória Pereira de Oliveira",
-        "municipios": [
-            "Belém do Brejo do Cruz",
-            "Bom Sucesso",
-            "Brejo do Cruz",
-            "Brejo dos Santos",
-            "Catolé do Rocha",
-            "Jericó",
-            "Mato Grosso",
-            "Riacho dos Cavalos",
-            "São Bento",
-            "São José do Brejo do Cruz"
-        ]
-    },
-    {
-        "id": 15,
-        "nome": "CER II - Centro de Reabilitação e Cuidado da Pessoa com Deficiência",
-        "municipios": [
-            "Alhandra",
-            "Bayeux",
-            "Caaporã",
-            "Cabedelo",
-            "Conde",
-            "Cruz do Espírito Santo",
-            "João Pessoa",
-            "Lucena",
-            "Mari",
-            "Pitimbu",
-            "Riachão do Poço",
-            "Santa Rita",
-            "Sapé",
-            "Sobrado"
-        ]
-    }
+  {
+    "id": 1,
+    "nome": "CER IV - FUNAD - Fundação Centro Integrado de Apoio ao Portador de Deficiência",
+    "municipios": [
+      "Bayeux",
+      "Cabedelo",
+      "Cruz do Espírito Santo",
+      "João Pessoa",
+      "Lucena",
+      "Mari",
+      "Riachão do Poço",
+      "Santa Rita",
+      "Sapé",
+      "Sobrado"
+    ]
+  },
+  {
+    "id": 2,
+    "nome": "CER II - Instituto dos Cegos da Paraíba Adalgisa Cunha",
+    "municipios": [
+      "Bayeux",
+      "Cabedelo",
+      "Cruz do Espírito Santo",
+      "João Pessoa",
+      "Lucena",
+      "Mari",
+      "Riachão do Poço",
+      "Santa Rita",
+      "Sapé",
+      "Sobrado"
+    ]
+  },
+  {
+    "id": 3,
+    "nome": "CER II - Centro de Reabilitação Antônio de Souza Maranhão",
+    "municipios": ["Alhandra", "Caaporã", "Conde", "Pitimbu"]
+  },
+  {
+    "id": 4,
+    "nome": "CER III - Complexo Neurofuncional Maria Moura de Aquino",
+    "municipios": [
+      "Alagoinha",
+      "Araçagi",
+      "Araruna",
+      "Bananeiras",
+      "Belém",
+      "Borborema",
+      "Campo de Santana",
+      "Cacimba de Dentro",
+      "Caiçara",
+      "Casserengue",
+      "Cuitegi",
+      "Dona Inês",
+      "Duas Estradas",
+      "Guarabira",
+      "Lagoa de Dentro",
+      "Logradouro",
+      "Mulungu",
+      "Pilões",
+      "Pilõezinhos",
+      "Pirpirituba",
+      "Riachão",
+      "Serra da Raiz",
+      "Serraria",
+      "Sertãozinho",
+      "Solânea",
+      "Tacima"
+    ]
+  },
+  {
+    "id": 5,
+    "nome": "CER II - Centro de Reabilitação Dr. José Dácio",
+    "municipios": [
+      "Alagoinha",
+      "Araçagi",
+      "Araruna",
+      "Bananeiras",
+      "Belém",
+      "Borborema",
+      "Campo de Santana",
+      "Cacimba de Dentro",
+      "Caiçara",
+      "Casserengue",
+      "Cuitegi",
+      "Dona Inês",
+      "Duas Estradas",
+      "Guarabira",
+      "Lagoa de Dentro",
+      "Logradouro",
+      "Mulungu",
+      "Pilões",
+      "Pilõezinhos",
+      "Pirpirituba",
+      "Riachão",
+      "Serra da Raiz",
+      "Serraria",
+      "Sertãozinho",
+      "Solânea",
+      "Tacima"
+    ]
+  },
+  {
+    "id": 6,
+    "nome": "CER IV - Centro Especializado em Reabilitação de Campina Grande",
+    "municipios": [
+      "Alagoa Grande",
+      "Alagoa Nova",
+      "Algodão de Jandaíra",
+      "Arara",
+      "Areia",
+      "Areial",
+      "Esperança",
+      "Lagoa Seca",
+      "Matinhas",
+      "Montadas",
+      "Remígio",
+      "São Sebastião de Lagoa de Roça"
+    ]
+  },
+  {
+    "id": 7,
+    "nome": "CER II - APAE - Associação de Pais e Amigos dos Excepcionais",
+    "municipios": [
+      "Alagoa Grande",
+      "Alagoa Nova",
+      "Algodão de Jandaíra",
+      "Arara",
+      "Areia",
+      "Areial",
+      "Esperança",
+      "Lagoa Seca",
+      "Matinhas",
+      "Montadas",
+      "Remígio",
+      "São Sebastião de Lagoa de Roça"
+    ]
+  },
+  {
+    "id": 8,
+    "nome": "CER II - CER/CERPPOD",
+    "municipios": [
+      "Areia de Baraúnas",
+      "Cacimba de Areia",
+      "Cacimbas",
+      "Catingueira",
+      "Condado",
+      "Desterro",
+      "Emas",
+      "Junco do Seridó",
+      "Mãe d'Água",
+      "Malta",
+      "Maturéia",
+      "Passagem",
+      "Patos",
+      "Quixabá",
+      "Salgadinho",
+      "Santa Luzia",
+      "Santa Teresinha",
+      "São José de Espinharas",
+      "São José do Bonfim",
+      "São José do Sabugi",
+      "São Mamede",
+      "Teixeira",
+      "Várzea",
+      "Vista Serrana"
+    ]
+  },
+  {
+    "id": 9,
+    "nome": "CER II - Centro de Reabilitação Motora",
+    "municipios": [
+      "Amparo",
+      "Camalaú",
+      "Caraúbas",
+      "Congo",
+      "Coxixola",
+      "Gurjão",
+      "Monteiro",
+      "Ouro Velho",
+      "Parari",
+      "Prata",
+      "São João do Cariri",
+      "São João do Tigre",
+      "São José dos Cordeiros",
+      "São Sebastião do Umbuzeiro",
+      "Serra Branca",
+      "Sumé",
+      "Zabelê"
+    ]
+  },
+  {
+    "id": 10,
+    "nome": "CER III - Centro Especializado em Reabilitação Doutor Aloysio Pereira Lima",
+    "municipios": [
+      "Água Branca",
+      "Imaculada",
+      "Juru",
+      "Manaíra",
+      "Princesa Isabel",
+      "São José de Princesa",
+      "Tavares"
+    ]
+  },
+  {
+    "id": 11,
+    "nome": "CER IV - Reabilita Centro Especializado em Reabilitação de Sousa",
+    "municipios": [
+      "Aparecida",
+      "Lastro",
+      "Marizópolis",
+      "Nazarezinho",
+      "Santa Cruz",
+      "São Francisco",
+      "São José da Lagoa Tapada",
+      "Sousa",
+      "Vieirópolis"
+    ]
+  },
+  {
+    "id": 12,
+    "nome": "CER II - Policlínica Dr. Antônio Quinho",
+    "municipios": [
+      "Aguiar",
+      "Boa Ventura",
+      "Conceição",
+      "Coremas",
+      "Curral Velho",
+      "Diamante",
+      "Ibiara",
+      "Igaracy",
+      "Itaporanga",
+      "Nova Olinda",
+      "Olho d'Água",
+      "Pedra Branca",
+      "Piancó",
+      "Santa Inês",
+      "Santana de Mangueira",
+      "Santana dos Garrotes",
+      "São José de Caiana",
+      "Serra Grande"
+    ]
+  },
+  {
+    "id": 13,
+    "nome": "CER II - Vitória Pereira de Oliveira",
+    "municipios": [
+      "Belém do Brejo do Cruz",
+      "Bom Sucesso",
+      "Brejo do Cruz",
+      "Brejo dos Santos",
+      "Catolé do Rocha",
+      "Jericó",
+      "Mato Grosso",
+      "Riacho dos Cavalos",
+      "São Bento",
+      "São José do Brejo do Cruz"
+    ]
+  },
+  {
+    "id": 15,
+    "nome": "CER II - Centro de Reabilitação e Cuidado da Pessoa com Deficiência",
+    "municipios": [
+      "Alhandra",
+      "Bayeux",
+      "Caaporã",
+      "Cabedelo",
+      "Conde",
+      "Cruz do Espírito Santo",
+      "cer",
+      "Lucena",
+      "Mari",
+      "Pitimbu",
+      "Riachão do Poço",
+      "Santa Rita",
+      "Sapé",
+      "Sobrado"
+    ]
+  }
 ]
