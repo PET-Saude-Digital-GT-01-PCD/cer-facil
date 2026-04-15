@@ -19,7 +19,7 @@ export function App() {
         showFlow={showFlow}
         setShowFlow={setShowFlow}
       />
-      <BackToTopButton />
+      {!showForm && !showFlow[0] && <BackToTopButton />}
     </>
   );
 }
