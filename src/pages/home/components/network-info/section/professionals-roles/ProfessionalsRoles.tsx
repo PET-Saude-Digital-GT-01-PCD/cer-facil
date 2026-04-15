@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { ChevronDown, Filter, X, type LucideIcon } from "lucide-react";
+import { ChevronDown, Filter, X, Download } from "lucide-react";
 
 import defAuditiva from "@/assets/images/disabillity-images/deficiencia_auditiva.png";
 import defFisica from "@/assets/images/disabillity-images/deficiencia_fisica.png";
@@ -151,6 +151,39 @@ const professionalsData: Professional[] = [
   },
 ];
 
+const serviceLabels: Record<number, string> = {
+  1: "Física",
+  2: "Auditiva",
+  3: "Visual",
+  4: "Intelectual",
+  5: "TEA",
+};
+
+const escapeCSV = (value: string | null | undefined): string => {
+  if (value == null) return "";
+  const str = String(value);
+  return str.includes(",") || str.includes('"') || str.includes("\n")
+    ? `"${str.replace(/"/g, '""')}"`
+    : str;
+};
+
+function exportProfessionalsToCSV(): void {
+  const headers = ["Profissional", "Especialidades Atendidas", "Descrição"];
+  const rows = professionalsData.map((prof) => [
+    escapeCSV(prof.professional),
+    escapeCSV(prof.service.map((id) => serviceLabels[id]).join("; ")),
+    escapeCSV(prof.description),
+  ]);
+  const csv = "\uFEFF" + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "equipe-multiprofissional-cer.csv";
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
 export default function ProfessionalsRoles() {
   const [activeFilters, setActiveFilters] = useState<number[]>([]);
   const [openProf, setOpenProf] = useState<string | null>(null);
@@ -191,7 +224,17 @@ export default function ProfessionalsRoles() {
           >
             Equipe Multiprofissional
           </h2>
-          <div className="w-20 h-1.5 bg-white rounded-full mb-6"></div>
+          <div className="flex items-center justify-between mb-6">
+            <div className="w-20 h-1.5 bg-white rounded-full"></div>
+            <button
+              onClick={exportProfessionalsToCSV}
+              aria-label="Exportar planilha da equipe multiprofissional"
+              className="flex items-center gap-2 bg-white text-[var(--cor-bg-1)] px-5 py-2.5 rounded-xl font-bold text-base hover:bg-white/90 transition-opacity focus-visible:ring-4 focus-visible:ring-[var(--cor-destaque)] focus-visible:outline-none"
+            >
+              <Download className="w-5 h-5" />
+              Exportar planilha
+            </button>
+          </div>
 
           <div className="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
             <div
