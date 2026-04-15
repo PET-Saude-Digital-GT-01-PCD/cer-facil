@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useState, useRef } from "react";
-import { Accessibility, Ear, Eye, Brain, Puzzle } from "lucide-react";
-
+import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -9,6 +7,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import defFisica from "@/assets/images/disabillity-images/deficiencia_fisica.png";
+import defAuditiva from "@/assets/images/disabillity-images/deficiencia_auditiva.png";
+import defVisual from "@/assets/images/disabillity-images/deficiencia_visual.png";
+import defIntelectual from "@/assets/images/disabillity-images/deficiencia_intelectual.png";
+import simAutismo from "@/assets/images/disabillity-images/simbolo_autismo.png";
+
+const deficiencias = [
+  { id: "fisica", label: "Deficiência Física", img: defFisica },
+  { id: "auditiva", label: "Deficiência Auditiva", img: defAuditiva },
+  { id: "visual", label: "Deficiência Visual", img: defVisual },
+  { id: "intelectual", label: "Deficiência Intelectual", img: defIntelectual },
+  { id: "tea", label: "Transtorno do Espectro Autista (TEA)", img: simAutismo },
+];
 
 interface StepOneProps {
   setShowForm: (show: boolean) => void;
@@ -49,156 +60,82 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
 
         <CardContent role="radiogroup">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
-            <Card
-              role="radio"
-              aria-checked={selected == ("fisica")}
-              tabIndex={0}
-              onClick={() => toggleSelection("fisica")}
-              onKeyDown={(e) => handleKeyDown(e, "fisica")}
-              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("fisica")
-                  ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl"
-                  : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
+            {deficiencias.slice(0, 4).map(({ id, label, img }) => (
+              <Card
+                key={id}
+                role="radio"
+                aria-checked={selected === id}
+                tabIndex={0}
+                onClick={() => toggleSelection(id)}
+                onKeyDown={(e) => handleKeyDown(e, id)}
+                className={`group focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${
+                  selected === id
+                    ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
+                    : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
                 }`}
-            >
-              <CardHeader className="flex flex-row items-center gap-3 p-4">
-                <div
-                  className={`p-3 rounded-full border-2 ${selected == ("fisica")
-                      ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
-                      : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)]"
+              >
+                <CardHeader className="flex flex-row items-center gap-3 p-4">
+                  <div
+                    className={`p-3 rounded-full border-2 transition-all duration-300 ${
+                      selected === id
+                        ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
+                        : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)] group-hover:bg-[var(--cor-bg-1)]"
                     }`}
-                >
-                  <Accessibility
-                    className={`h-12 w-12 ${selected == ("fisica")
-                        ? "text-white"
-                        : "text-[var(--cor-bg-1)]"
+                  >
+                    <img
+                      src={img}
+                      alt=""
+                      aria-hidden="true"
+                      className={`h-12 w-12 object-contain transition-all duration-300 ${
+                        selected === id
+                          ? "brightness-0 invert"
+                          : "group-hover:brightness-0 group-hover:invert"
                       }`}
-                  />
-                </div>
-                <CardTitle className="text-2xl">Deficiência Física</CardTitle>
-              </CardHeader>
-            </Card>
-
-            <Card
-              role="radio"
-              aria-checked={selected == ("auditiva")}
-              tabIndex={0}
-              onClick={() => toggleSelection("auditiva")}
-              onKeyDown={(e) => handleKeyDown(e, "auditiva")}
-              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("auditiva")
-                  ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
-                  : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
-                }`}
-            >
-              <CardHeader className="flex flex-row items-center gap-3 p-4">
-                <div
-                  className={`p-3 rounded-full border-2 ${selected == ("auditiva")
-                      ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
-                      : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)]"
-                    }`}
-                >
-                  <Ear
-                    className={`h-12 w-12 ${selected == ("auditiva")
-                        ? "text-white"
-                        : "text-[var(--cor-bg-1)]"
-                      }`}
-                  />
-                </div>
-                <CardTitle className="text-2xl">Deficiência Auditiva</CardTitle>
-              </CardHeader>
-            </Card>
-
-            <Card
-              role="radio"
-              aria-checked={selected == ("visual")}
-              tabIndex={0}
-              onClick={() => toggleSelection("visual")}
-              onKeyDown={(e) => handleKeyDown(e, "visual")}
-              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("visual")
-                  ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
-                  : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
-                }`}
-            >
-              <CardHeader className="flex flex-row items-center gap-3 p-4">
-                <div
-                  className={`p-3 rounded-full border-2 ${selected == ("visual")
-                      ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
-                      : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)]"
-                    }`}
-                >
-                  <Eye
-                    className={`h-12 w-12 ${selected == ("visual")
-                        ? "text-white"
-                        : "text-[var(--cor-bg-1)]"
-                      }`}
-                  />
-                </div>
-                <CardTitle className="text-2xl">Deficiência Visual</CardTitle>
-              </CardHeader>
-            </Card>
-
-            <Card
-              role="radio"
-              aria-checked={selected == ("intelectual")}
-              tabIndex={0}
-              onClick={() => toggleSelection("intelectual")}
-              onKeyDown={(e) => handleKeyDown(e, "intelectual")}
-              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 ${selected == ("intelectual")
-                  ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
-                  : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
-                }`}
-            >
-              <CardHeader className="flex flex-row items-center gap-3 p-4">
-                <div
-                  className={`p-3 rounded-full border-2 ${selected == ("intelectual")
-                      ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
-                      : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)]"
-                    }`}
-                >
-                  <Brain
-                    className={`h-12 w-12 ${selected == ("intelectual")
-                        ? "text-white"
-                        : "text-[var(--cor-bg-1)]"
-                      }`}
-                  />
-                </div>
-                <CardTitle className="text-2xl">
-                  Deficiência Intelectual
-                </CardTitle>
-              </CardHeader>
-            </Card>
+                    />
+                  </div>
+                  <CardTitle className="text-2xl">{label}</CardTitle>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
 
           <div className="flex justify-center">
-            <Card
-              role="radio"
-              aria-checked={selected == ("tea")}
-              tabIndex={0}
-              onClick={() => toggleSelection("tea")}
-              onKeyDown={(e) => handleKeyDown(e, "tea")}
-              className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 w-full md:w-1/2 ${selected == ("tea")
-                  ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
-                  : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
+            {deficiencias.slice(4).map(({ id, label, img }) => (
+              <Card
+                key={id}
+                role="radio"
+                aria-checked={selected === id}
+                tabIndex={0}
+                onClick={() => toggleSelection(id)}
+                onKeyDown={(e) => handleKeyDown(e, id)}
+                className={`group focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer transition-all hover:shadow-2xl border-2 w-full md:w-1/2 ${
+                  selected === id
+                    ? "border-[var(--cor-bg-1)] border-4 bg-[var(--cor-bg-1)]/15 shadow-xl scale-[1.02]"
+                    : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
                 }`}
-            >
-              <CardHeader className="flex flex-row items-center gap-3 p-4">
-                <div
-                  className={`p-3 rounded-full border-2 ${selected == ("tea")
-                      ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
-                      : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)]"
+              >
+                <CardHeader className="flex flex-row items-center gap-3 p-4">
+                  <div
+                    className={`p-3 rounded-full border-2 transition-all duration-300 ${
+                      selected === id
+                        ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
+                        : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)] group-hover:bg-[var(--cor-bg-1)]"
                     }`}
-                >
-                  <Puzzle
-                    className={`h-12 w-12 ${selected == ("tea")
-                        ? "text-white"
-                        : "text-[var(--cor-bg-1)]"
+                  >
+                    <div
+                      aria-hidden="true"
+                      className={`h-12 w-12 rounded-full bg-center bg-cover transition-all duration-300 ${
+                        selected === id
+                          ? "brightness-0 invert"
+                          : "group-hover:brightness-0 group-hover:invert"
                       }`}
-                  />
-                </div>
-                <CardTitle className="text-2xl">
-                  Transtorno do Espectro Autista (TEA)
-                </CardTitle>
-              </CardHeader>
-            </Card>
+                      style={{ backgroundImage: `url(${img})` }}
+                    />
+                  </div>
+                  <CardTitle className="text-2xl">{label}</CardTitle>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </CardContent>
 

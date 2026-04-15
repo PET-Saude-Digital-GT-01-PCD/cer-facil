@@ -218,6 +218,7 @@ export default function StepThree({
                   ) : (
                     <Search className="!w-8 !h-8" />
                   )}
+                  <span className="text-xl">Buscar</span>
                 </Button>
               </div>
             </div>

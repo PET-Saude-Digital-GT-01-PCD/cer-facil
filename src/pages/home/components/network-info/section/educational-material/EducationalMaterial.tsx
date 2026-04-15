@@ -31,6 +31,7 @@ import diagnosticoImg from "@/assets/images/educational-material/Diagnóstico Pe
 import atencaoPrimariaImg from "@/assets/images/educational-material/Atenção Primária à Saúde das Pessoas com Deficiência.png";
 import agenteComunitarioImg from "@/assets/images/educational-material/Agente Comunitário de Saúde.png";
 import boasPraticasImg from "@/assets/images/educational-material/Guia de Boas Práticas para Acessibilidade Digital.png";
+import censoDeficienciaImg from "@/assets/images/educational-material/Censo Deficiencia.jpg";
 
 interface EducationalMaterial {
   title: string;
@@ -81,6 +82,13 @@ const userMaterials: EducationalMaterial[] = [
       "Cartilha educativa sobre proteção e direitos das pessoas com deficiência, promovendo autonomia e segurança.",
     url: "https://www.eumeprotejo.com/_files/ugd/f04b3c_64c1d9d4a38f48a69ee10e12750e3505.pdf",
     image: euMeProtejoImg,
+  },
+  {
+    title: "Censo 2022: Pessoas com Deficiência no Brasil",
+    description:
+      "O Censo 2022 revelou que 14,4 milhões de brasileiros têm alguma deficiência, representando 6,7% da população. Acesse os dados completos do IBGE.",
+    url: "https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/43463-censo-2022-brasil-tem-14-4-milhoes-de-pessoas-com-deficiencia",
+    image: censoDeficienciaImg,
   },
 ];
 
@@ -162,6 +170,13 @@ const professionalMaterials: EducationalMaterial[] = [
     url: "https://www.nic.br/media/docs/publicacoes/13/20230920121455/guia_boas_praticas_acessibilidade_digital.pdf",
     image: boasPraticasImg,
   },
+  {
+    title: "Censo 2022: Pessoas com Deficiência no Brasil",
+    description:
+      "O Censo 2022 revelou que 14,4 milhões de brasileiros têm alguma deficiência, representando 6,7% da população. Acesse os dados completos do IBGE.",
+    url: "https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/43463-censo-2022-brasil-tem-14-4-milhoes-de-pessoas-com-deficiencia",
+    image: censoDeficienciaImg,
+  },
 ];
 
 const managerMaterial: EducationalMaterial[] = [
@@ -199,6 +214,13 @@ const managerMaterial: EducationalMaterial[] = [
       "Define critérios de elegibilidade para incentivo financeiro de investimento federal em 2025, destinado à aquisição de equipamentos, obras e veículos adaptados para implantação e ampliação do acesso à reabilitação no SUS.",
     url: notaTecnica4File,
     image: notaTecnica4Img,
+  },
+  {
+    title: "Censo 2022: Pessoas com Deficiência no Brasil",
+    description:
+      "O Censo 2022 revelou que 14,4 milhões de brasileiros têm alguma deficiência, representando 6,7% da população. Acesse os dados completos do IBGE.",
+    url: "https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/43463-censo-2022-brasil-tem-14-4-milhoes-de-pessoas-com-deficiencia",
+    image: censoDeficienciaImg,
   },
 ];
 
