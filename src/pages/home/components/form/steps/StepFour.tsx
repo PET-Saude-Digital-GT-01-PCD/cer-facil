@@ -241,7 +241,7 @@ export default function StepFour({
                       <div className="pl-11 flex justify-between items-center">
                         <div className="flex flex-wrap gap-2">
                           {result.cer.especialidades.map((esp, i) => (
-                            <span key={i} className="bg-gray-100 px-2 py-1 rounded text-sm font-medium">
+                            <span key={i} className="bg-gray-100 px-2 py-1 rounded text-xl font-medium">
                               {esp}
                             </span>
                           ))}

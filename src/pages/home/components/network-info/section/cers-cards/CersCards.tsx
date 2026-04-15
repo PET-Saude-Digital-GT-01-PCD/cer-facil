@@ -152,7 +152,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
             className="flex items-center gap-2 mb-4 text-black font-semibold uppercase text-sm tracking-wider"
           >
             <Filter size={24} />
-            <span className="text-xl">Filtrar por deficiência:</span>
+            <span className="text-2xl">Filtrar por deficiência:</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -225,7 +225,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
 
               <div className="flex justify-center mt-12">
                 <AccordionTrigger
-                  className="text-xl flex gap-3 items-center bg-white text-[var(--cor-bg-1)] px-8 py-4 font-bold transition-all duration-200 border-2 border-[var(--cor-bg-1)]/30 rounded-full hover:border-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6 
+                  className="text-2xl flex gap-3 items-center bg-white text-[var(--cor-bg-1)] px-8 py-4 font-bold transition-all duration-200 border-2 border-[var(--cor-bg-1)]/30 rounded-full hover:border-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6 
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
                 >
                   Ver todas as unidades
@@ -249,16 +249,16 @@ function CerCard({ cer, onClick }: { cer: DadosCers; onClick: () => void }) {
       className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] p-6 rounded-2xl shadow-xl bg-white flex flex-col transition-all hover:shadow-2xl hover:-translate-y-2 h-full min-h-[220px] cursor-pointer group focus:outline-none focus:ring-4 focus:ring-[var(--cor-bg-1)]/50"
     >
       <div className="flex-grow flex flex-col">
-        <h3
+        <span
           aria-hidden="true"
           className="font-bold text-2xl text-black mb-4 leading-tight group-hover:text-[var(--cor-bg-1)] transition-colors text-start"
         >
           {cer.nome}
-        </h3>
+        </span>
 
         <div className="flex items-center text-black mb-6 mt-auto font-semibold">
           <MapPin className="w-6 h-6 mr-1.5 flex-shrink-0 text-[var(--cor-bg-1)]" />
-          <span className="text-xl">{cer.cidade}</span>
+          <span className="text-2xl">{cer.cidade}</span>
         </div>
       </div>
 
@@ -267,7 +267,7 @@ function CerCard({ cer, onClick }: { cer: DadosCers; onClick: () => void }) {
           {cer.especialidades.map((especialidade, index) => (
             <span
               key={`${cer.id}-esp-${index}`}
-              className="px-3 py-1 border-2 border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] rounded-full font-bold text-[16px] inline-block"
+              className="px-3 py-1 border-2 border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] rounded-full font-bold text-2xl inline-block"
             >
               {especialidade}
             </span>

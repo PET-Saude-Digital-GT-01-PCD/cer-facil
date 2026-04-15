@@ -73,7 +73,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
           <Button
             variant="outline"
             size="sm"
-            className="px-8 py-5 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
             onClick={() => setShowFlow([false, cerId])}
           >
@@ -186,11 +186,11 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
                   <div className="bg-gray-50/50 p-3 rounded-lg border border-gray-100 transition-all hover:shadow-sm hover:border-blue-100">
                     <div className="flex items-center gap-2 mb-1">
                       <Calendar className="w-6 h-6 text-[var(--cor-bg-1)]" />
-                      <span className="font-bold text-xl text-gray-800 leading-tight">
+                      <span className="font-bold text-2xl text-gray-800 leading-tight">
                         {step.title}
                       </span>
                     </div>
-                    <p className="text-xl text-gray-600 leading-snug">
+                    <p className="text-2xl text-gray-600 leading-snug">
                       {step.description}
                     </p>
                   </div>
@@ -205,7 +205,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
               {fluxoInfo?.documents.map((doc: string, i: number) => (
                 <li
                   key={i}
-                  className="flex items-start text-xl text-gray-700 leading-snug"
+                  className="flex items-start text-2xl text-gray-700 leading-snug"
                 >
                   <span className="mr-2 text-[var(--cor-bg-1)] font-black text-2xl leading-none">
                     •
@@ -217,10 +217,10 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
           </div>
         </div>
 
-        <div className="mt-6 flex justify-center md:hidden">
+        <div className="mt-6 flex justify-center">
           <Button
             size="sm"
-            className="w-full text-white bg-[var(--cor-bg-1)] hover:bg-orange-600 transition-all text-xl py-5 rounded-xl"
+            className="w-full text-white bg-[var(--cor-bg-1)] hover:bg-orange-600 transition-all text-2xl py-5 rounded-md"
             onClick={() => setShowFlow([false, cerId])}
           >
             Voltar para a busca

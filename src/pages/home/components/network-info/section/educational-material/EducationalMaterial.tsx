@@ -268,7 +268,7 @@ export default function MaterialEducational() {
           <button
             aria-label="clique para filtrar por materiais voltados a usuários da rede de cuidado à pessoas com deficiência"
             onClick={() => handleTabChange("user")}
-            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === "user"
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-2xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === "user"
               ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
               : "bg-slate-100 text-black hover:bg-slate-200"
             }`}
@@ -279,7 +279,7 @@ export default function MaterialEducational() {
           <button
             aria-label="clique para filtrar por materiais voltados a profissionais da rede de cuidado à pessoas com deficiência"
             onClick={() => handleTabChange("professional")}
-            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-2xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
               activeTab === "professional"
                 ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
                 : "bg-slate-100 text-black hover:bg-slate-200"
@@ -291,7 +291,7 @@ export default function MaterialEducational() {
           <button
             aria-label="clique para filtrar por materiais voltados a gestores da rede de cuidado à pessoas com deficiência"
             onClick={() => handleTabChange("manager")}
-            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+            className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer text-2xl flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
               activeTab === "manager"
                 ? "bg-[var(--cor-bg-1)] text-white shadow-lg"
                 : "bg-slate-100 text-black hover:bg-slate-200"
@@ -313,12 +313,12 @@ export default function MaterialEducational() {
                     <h3
                       ref={titleRef}
                       tabIndex={-1} // Permite foco via script, mas não via Tab
-                      className="my-auto font-bold text-black text-2xl outline-none"
+                      className="my-auto font-bold text-black text-3xl outline-none"
                     >
                       {currentMaterial.title}
                     </h3>
                   </div>
-                  <p className="text-xl text-black leading-relaxed mb-6">
+                  <p className="text-2xl text-black leading-relaxed mb-6">
                     {currentMaterial.description}
                   </p>
                 </div>
@@ -326,7 +326,7 @@ export default function MaterialEducational() {
                   href={currentMaterial.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-xl inline-flex items-center gap-2 bg-[var(--cor-bg-1)] text-white px-6 py-3 rounded-full font-semibold hover:bg-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] transition-colors duration-300 w-fit"
+                  className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] text-2xl inline-flex items-center gap-2 bg-[var(--cor-bg-1)] text-white px-6 py-3 rounded-full font-semibold hover:bg-[color-mix(in_srgb,var(--cor-bg-1),black_20%)] transition-colors duration-300 w-fit"
                 >
                   Acessar Material
                   <ExternalLink className="w-6 h-6" />
@@ -347,7 +347,7 @@ export default function MaterialEducational() {
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-3 bg-slate-100 text-black rounded-md font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-3 bg-slate-100 text-black text-2xl rounded-md font-semibold hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Material anterior"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -357,7 +357,7 @@ export default function MaterialEducational() {
             <button
               onClick={nextSlide}
               disabled={currentIndex === materials.length - 1}
-              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-3 bg-[var(--cor-bg-1)] text-white-700 rounded-md font-semibold hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-3 bg-[var(--cor-bg-1)] text-white-700 text-2xl rounded-md font-semibold hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               aria-label="Próximo material"
             >
               Próximo

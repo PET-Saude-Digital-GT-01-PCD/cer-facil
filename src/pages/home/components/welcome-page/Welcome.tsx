@@ -49,7 +49,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           />
         </div>
 
-        <h1 className="text-lg md:text-xl lg:text-2xl font-extrabold text-black leading-tight">
+        <h1 className="text-5xl font-extrabold text-black leading-tight">
           Aproximamos você aos{" "}
           <span className="text-[var(--cor-bg-1)]">
             Centros Especializados em Reabilitação (CER)

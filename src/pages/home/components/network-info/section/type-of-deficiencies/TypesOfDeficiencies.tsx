@@ -72,10 +72,10 @@ export default function TypesOfDeficiencies() {
                 </div>
 
                 <div className="text-center flex-1 flex flex-col">
-                  <h3 className="font-bold text-2xl text-black mb-3 group-hover:text-[var(--cor-bg-1)] group-focus:text-[var(--cor-bg-1)] transition-colors">
+                  <h3 className="font-bold text-3xl text-black mb-3 group-hover:text-[var(--cor-bg-1)] group-focus:text-[var(--cor-bg-1)] transition-colors">
                     {item.title}
                   </h3>
-                  <span className="text-black text-lg leading-relaxed font-medium">
+                  <span className="text-black text-2xl leading-relaxed font-medium">
                     {item.text}
                   </span>
                 </div>

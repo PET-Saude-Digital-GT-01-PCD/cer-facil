@@ -108,7 +108,7 @@ function TimelineEntry({
       <div
         className={`flex w-full items-center ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
       >
-        <div className="w-full md:w-5/12 px-4 md:px-8 ml-12 md:ml-0">
+        <div className="w-full md:w-6/12 px-4 md:px-8 ml-12 md:ml-0">
           <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-slate-100 transition-all">
             
             <div className="flex items-center gap-3 mb-3">
@@ -116,12 +116,12 @@ function TimelineEntry({
                 className="w-8 h-8 md:w-10 md:h-10 text-[var(--cor-bg-1)]"
                 aria-hidden="true"
               />
-              <h3 className="text-xl md:text-2xl font-bold text-[var(--cor-bg-1)]">
+              <h3 className="text-3xl font-bold text-[var(--cor-bg-1)]">
                 {item.title}
               </h3>
             </div>
 
-            <p className="text-black font-medium text-lg md:text-xl mb-2">
+            <p className="text-black font-medium text-lg md:text-2xl mb-2">
               {item.description}
             </p>
             <button
@@ -129,7 +129,7 @@ function TimelineEntry({
               aria-label={`saiba mais ${isExpanded ? "expandido" : "retraído"}`}
               className="focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 text-lg text-[var(--cor-bg-1)] font-bold mt-4 group hover:underline outline-none focus:ring-4 focus:ring-blue-200 rounded-lg p-1"
             >
-              <span aria-hidden="true">
+              <span className="text-2xl" aria-hidden="true">
                 {isExpanded ? "Ver menos" : "Saiba mais"}
               </span>
               <ChevronDown 

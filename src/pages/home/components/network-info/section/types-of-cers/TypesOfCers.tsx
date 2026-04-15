@@ -60,14 +60,14 @@ export default function TypesOfCers() {
                     <h3
                       id="cer-id"
                       aria-hidden="true"
-                      className="font-bold text-black text-2xl"
+                      className="font-bold text-black text-3xl"
                     >
                       CER {cer.id}
                     </h3>
                     <p
                       id="cer-descricao"
                       aria-hidden="true"
-                      className="inline text-black text-xl font-medium"
+                      className="inline text-black text-2xl font-medium"
                     >
                       {cer.desc}
                     </p>
