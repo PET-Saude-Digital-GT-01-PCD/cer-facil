@@ -95,10 +95,9 @@ export default function StepThree({
     }
   };
 
-  const handleCepSearch = async () => {
-    const cleanCep = cep.replace(/\D/g, "");
+  const handleCepSearch = useCallback(async (cepValue: string) => {
+    const cleanCep = cepValue.replace(/\D/g, "");
     if (cleanCep.length < 8) {
-      alert("Digite um CEP válido");
       return;
     }
 
@@ -120,8 +119,7 @@ export default function StepThree({
 
       const cityQuery = `city=${encodeURIComponent(localidade)}&state=${encodeURIComponent(uf)}&country=Brazil&format=json`;
       const nominatimResponse = await fetch(
-        `https://nominatim.openstreetmap.org/search?${cityQuery}`
-      );
+        `https://nominatim.openstreetmap.org/search?${cityQuery}`);
       const data = await nominatimResponse.json();
 
       if (data && data.length > 0) {
@@ -139,13 +137,14 @@ export default function StepThree({
       alert("Erro de conexão ao buscar o mapa.");
     }
     setLoading(false);
-  };
+  }, []);
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && cep.replace(/\D/g, "").length >= 8) {
-      handleCepSearch();
+  useEffect(() => {
+    const cleanCep = cep.replace(/\D/g, "");
+    if (cleanCep.length === 8) {
+      handleCepSearch(cep);
     }
-  };
+  }, [cep, handleCepSearch]);
 
   return (
     <div className="w-full">
@@ -180,9 +179,9 @@ export default function StepThree({
               disabled={loading}
             >
               {loading ? (
-                <Loader2 className="mr-2 h-12 w-12 animate-spin" />
+                <Loader2 className="mr-2 !h-8 !w-8 animate-spin" />
               ) : (
-                <MapPin className="mr-2 h-16 w-16" />
+                <MapPin className="mr-2 !h-8 !w-8" />
               )}
               Permitir Localização
             </Button>
@@ -204,20 +203,20 @@ export default function StepThree({
                     setCep(e.target.value.replace(/\D/g, ""));
                     setCityName("");
                   }}
-                  onKeyPress={handleKeyPress}
-                  className="text-2xl h-16 placeholder:text-xl focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
+
+                  className="!text-2xl h-16 placeholder:text-xl focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
                 />
                 <Button
                   aria-label="realizar busca por cep"
-                  onClick={handleCepSearch}
+                  onClick={() => handleCepSearch(cep)}
                   variant="outline"
                   disabled={cep.replace(/\D/g, "").length < 8 || loading}
                   className="h-16 px-4 focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
                 >
                   {loading ? (
-                    <Loader2 className="h-12 w-12 animate-spin" />
+                    <Loader2 className="!w-8 !h-8 animate-spin" />
                   ) : (
-                    <Search className="h-12 w-12" />
+                    <Search className="!w-8 !h-8" />
                   )}
                 </Button>
               </div>
