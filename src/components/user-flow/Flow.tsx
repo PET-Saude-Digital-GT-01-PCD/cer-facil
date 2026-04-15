@@ -77,7 +77,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
             onClick={() => setShowFlow([false, cerId])}
           >
-            Voltar para a busca
+            Voltar
           </Button>
         </div>
 
@@ -223,7 +223,7 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             className="w-full text-white bg-[var(--cor-bg-1)] hover:bg-orange-600 transition-all text-2xl py-5 rounded-md"
             onClick={() => setShowFlow([false, cerId])}
           >
-            Voltar para a busca
+            Voltar
           </Button>
         </div>
       </div>
