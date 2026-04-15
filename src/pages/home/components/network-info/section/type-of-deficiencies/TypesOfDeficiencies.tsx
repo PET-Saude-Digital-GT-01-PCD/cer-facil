@@ -1,41 +1,45 @@
-import { Accessibility, Ear, Eye, Brain, Puzzle, type LucideIcon } from "lucide-react";
+import defAuditiva from "@/assets/images/disabillity-images/deficiencia_auditiva.png";
+import defFisica from "@/assets/images/disabillity-images/deficiencia_fisica.png";
+import defIntelectual from "@/assets/images/disabillity-images/deficiencia_intelectual.png";
+import defVisual from "@/assets/images/disabillity-images/deficiencia_visual.png";
+import simAutismo from "@/assets/images/disabillity-images/simbolo_autismo.png";
 
 interface DeficiencyType {
   id: string;
   title: string;
   text: string;
-  icon: LucideIcon;
+  icon: string;
 }
 
 const deficienciesData: DeficiencyType[] = [
   {
     id: "fisica",
     title: "Deficiência Física",
-    icon: Accessibility,
+    icon: defFisica,
     text: "Alterações no corpo que podem comprometer a mobilidade ou a coordenação.",
   },
   {
     id: "auditiva",
     title: "Deficiência Auditiva",
-    icon: Ear,
+    icon: defAuditiva,
     text: "Perda parcial ou total da audição, podendo exigir aparelhos auditivos.",
   },
   {
     id: "visual",
     title: "Deficiência Visual",
-    icon: Eye,
+    icon: defVisual,
     text: "Desde a baixa visão até a cegueira total, envolvendo apoios como Braille.",
   },
   {
     id: "intelectual",
     title: "Deficiência Intelectual",
-    icon: Brain,
+    icon: defIntelectual,
     text: "Dificuldades no aprendizado e na compreensão de tarefas do dia a dia.",
   },
   {
     id: "tea",
     title: "TEA (Autismo)",
-    icon: Puzzle,
+    icon: simAutismo,
     text: "Forma diferente de o cérebro lidar com informações, afetando interação e percepção.",
   },
 ];
@@ -57,7 +61,6 @@ export default function TypesOfDeficiencies() {
 
         <div className="flex flex-wrap justify-center gap-6">
           {deficienciesData.map((item) => {
-            const Icon = item.icon;
 
             return (
               <div
@@ -66,9 +69,13 @@ export default function TypesOfDeficiencies() {
               >
                 <div
                   aria-hidden="true"
-                  className="text-[var(--cor-bg-1)] mb-6 flex justify-center bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] w-20 h-20 items-center rounded-full transition-all duration-300 group-hover:bg-[var(--cor-bg-1)] group-hover:text-white group-focus:bg-[var(--cor-bg-1)] group-focus:text-white"
+                  className="mb-6 flex justify-center bg-[color-mix(in_srgb,var(--cor-bg-1),white_90%)] w-20 h-20 items-center rounded-full transition-all duration-300 group-hover:bg-[var(--cor-bg-1)]"
                 >
-                  <Icon className="w-10 h-10" />
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="w-12 h-12 object-contain rounded-md transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                  />
                 </div>
 
                 <div className="text-center flex-1 flex flex-col">

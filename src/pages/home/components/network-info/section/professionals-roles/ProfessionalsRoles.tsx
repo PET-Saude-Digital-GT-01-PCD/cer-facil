@@ -1,5 +1,11 @@
 import { useState, useMemo } from "react";
-import { ChevronDown, Filter, X, Accessibility, Ear, Eye, Brain, Puzzle, type LucideIcon } from "lucide-react";
+import { ChevronDown, Filter, X, type LucideIcon } from "lucide-react";
+
+import defAuditiva from "@/assets/images/disabillity-images/deficiencia_auditiva.png";
+import defFisica from "@/assets/images/disabillity-images/deficiencia_fisica.png";
+import defIntelectual from "@/assets/images/disabillity-images/deficiencia_intelectual.png";
+import defVisual from "@/assets/images/disabillity-images/deficiencia_visual.png";
+import simAutismo from "@/assets/images/disabillity-images/simbolo_autismo.png";
 
 import {
   Accordion,
@@ -15,11 +21,11 @@ interface FilterOption {
 }
 
 const filterOptionsData: FilterOption[] = [
-  { id: 1, label: "Física", icon: Accessibility },
-  { id: 2, label: "Auditiva", icon: Ear },
-  { id: 3, label: "Visual", icon: Eye },
-  { id: 4, label: "Intelectual", icon: Brain },
-  { id: 5, label: "TEA", icon: Puzzle },
+  { id: 1, label: "Física", icon: defFisica },
+  { id: 2, label: "Auditiva", icon: defAuditiva },
+  { id: 3, label: "Visual", icon: defVisual },
+  { id: 4, label: "Intelectual", icon: defIntelectual },
+  { id: 5, label: "TEA", icon: simAutismo },
 ];
 
 interface Professional {
@@ -208,7 +214,12 @@ export default function ProfessionalsRoles() {
                         : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)]"
                       }`}
                   >
-                    <Icon className="w-5 h-5" aria-hidden="true" />
+                    <img 
+                    src={option.icon} 
+                    alt="" 
+                    aria-hidden="true"
+                    className={`w-10 h-10 object-contain rounded-md transition-all duration-300 ${isActive ? 'invert brightness-0' : ''}`} 
+                  />
                     <span>{option.label}</span>
                     {isActive && <X size={14} className="ml-1" />}
                   </button>

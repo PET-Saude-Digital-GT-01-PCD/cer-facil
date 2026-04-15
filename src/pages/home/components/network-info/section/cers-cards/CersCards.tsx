@@ -14,6 +14,11 @@ import {
 import Flow from "@/components/user-flow/Flow.tsx";
 import cersJson from "@/data/cers.json";
 
+import defAuditiva from "@/assets/images/disabillity-images/deficiencia_auditiva.png";
+import defFisica from "@/assets/images/disabillity-images/deficiencia_fisica.png";
+import defIntelectual from "@/assets/images/disabillity-images/deficiencia_intelectual.png";
+import defVisual from "@/assets/images/disabillity-images/deficiencia_visual.png";
+
 import {
   Accordion,
   AccordionContent,
@@ -35,10 +40,10 @@ interface FilterOption {
 }
 
 const filterOptionsData: FilterOption[] = [
-  { id: "Física", label: "Física", icon: Accessibility },
-  { id: "Auditiva", label: "Auditiva", icon: Ear },
-  { id: "Visual", label: "Visual", icon: Eye },
-  { id: "Intelectual", label: "Intelectual", icon: Brain },
+  { id: "Física", label: "Física", icon: defFisica },
+  { id: "Auditiva", label: "Auditiva", icon: defAuditiva },
+  { id: "Visual", label: "Visual", icon: defVisual },
+  { id: "Intelectual", label: "Intelectual", icon: defIntelectual },
 ];
 
 const cersData: DadosCers[] = cersJson as DadosCers[];
@@ -157,7 +162,6 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
 
           <div className="flex flex-wrap items-center gap-3">
             {filterOptionsData.map((option) => {
-              const Icon = option.icon;
               const isActive = activeFilters.includes(option.id);
 
               return (
@@ -172,7 +176,12 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
                       : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)]"
                     }`}
                 >
-                  <Icon className="w-5 h-5" aria-hidden="true" />
+                  <img 
+                    src={option.icon} 
+                    alt="" 
+                    aria-hidden="true"
+                    className={`w-10 h-10 object-contain rounded-md transition-all duration-300 ${isActive ? 'invert brightness-0' : ''}`} 
+                  />
                   {option.label}
                   {isActive && (
                     <X size={14} className="ml-1" aria-hidden="true" />
