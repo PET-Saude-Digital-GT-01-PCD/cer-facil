@@ -39,7 +39,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center pt-10 pb-20 relative bg-white">
+    <main id="welcome" className="min-h-screen flex flex-col items-center justify-center pt-10 pb-20 relative bg-white">
       <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center mb-6">
           <img

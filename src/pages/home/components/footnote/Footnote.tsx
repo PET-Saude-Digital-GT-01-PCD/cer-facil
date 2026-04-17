@@ -73,7 +73,7 @@ export default function Rodape() {
 
   return (
     <>
-      <footer className="px-6 py-12 relative bg-white pt-16 border-t border-slate-200">
+      <footer id="footnote" className="px-6 py-12 relative bg-white pt-16 border-t border-slate-200">
         <div className="max-w-6xl mx-auto flex flex-col">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
 
