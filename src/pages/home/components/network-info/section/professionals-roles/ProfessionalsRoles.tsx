@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { ChevronDown, Filter, X, type LucideIcon } from "lucide-react";
+import { ChevronDown, Filter, X, Download } from "lucide-react";
 
 import defAuditiva from "@/assets/images/disabillity-images/deficiencia_auditiva.png";
 import defFisica from "@/assets/images/disabillity-images/deficiencia_fisica.png";
@@ -151,6 +151,39 @@ const professionalsData: Professional[] = [
   },
 ];
 
+const serviceLabels: Record<number, string> = {
+  1: "Física",
+  2: "Auditiva",
+  3: "Visual",
+  4: "Intelectual",
+  5: "TEA",
+};
+
+const escapeCSV = (value: string | null | undefined): string => {
+  if (value == null) return "";
+  const str = String(value);
+  return str.includes(",") || str.includes('"') || str.includes("\n")
+    ? `"${str.replace(/"/g, '""')}"`
+    : str;
+};
+
+function exportProfessionalsToCSV(): void {
+  const headers = ["Profissional", "Especialidades Atendidas", "Descrição"];
+  const rows = professionalsData.map((prof) => [
+    escapeCSV(prof.professional),
+    escapeCSV(prof.service.map((id) => serviceLabels[id]).join("; ")),
+    escapeCSV(prof.description),
+  ]);
+  const csv = "\uFEFF" + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "equipe-multiprofissional-cer.csv";
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
 export default function ProfessionalsRoles() {
   const [activeFilters, setActiveFilters] = useState<number[]>([]);
   const [openProf, setOpenProf] = useState<string | null>(null);
@@ -181,18 +214,32 @@ export default function ProfessionalsRoles() {
   return (
     <section
       aria-labelledby="prof-roles"
-      className="px-6 py-24 pt-0 font-sans bg-[--var(bg-color-1)]">
+      className="px-6 py-24 pt-0 font-sans bg-[--var(bg-color-1)]"
+    >
       <div className="mx-auto max-w-6xl">
         <header className="text-left mb-12">
-          <h2 id="prof-roles" className="text-4xl font-bold mb-4 text-white leading-tight">
+          <h2
+            id="prof-roles"
+            className="text-4xl font-bold mb-4 text-white leading-tight"
+          >
             Equipe Multiprofissional
           </h2>
-          <div className="w-20 h-1.5 bg-white rounded-full mb-6"></div>
+          <div className="flex items-center justify-between mb-6">
+            <div className="w-20 h-1.5 bg-white rounded-full"></div>
+            <button
+              onClick={exportProfessionalsToCSV}
+              aria-label="Exportar planilha da equipe multiprofissional"
+              className="flex items-center gap-2 bg-white text-[var(--cor-bg-1)] px-5 py-2.5 rounded-xl font-bold text-base hover:bg-white/90 transition-opacity focus-visible:ring-4 focus-visible:ring-[var(--cor-destaque)] focus-visible:outline-none"
+            >
+              <Download className="w-5 h-5" />
+              Exportar planilha
+            </button>
+          </div>
 
           <div className="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
             <div
               aria-label="filtro por especialidade"
-              className="flex items-center gap-2 mb-4 text-black font-semibold uppercase text-2xl tracking-wider"
+              className="flex items-center gap-2 mb-4 text-black font-semibold text-2xl tracking-wider"
             >
               <Filter size={18} />
               <span>Filtrar por Especialidade:</span>
@@ -209,17 +256,18 @@ export default function ProfessionalsRoles() {
                     aria-checked={isActive}
                     key={option.id}
                     onClick={() => toggleFilter(option.id)}
-                    className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-xl transition-all duration-200 border-2 ${isActive
+                    className={`focus-within:border-10 focus-within:border-[var(--cor-destaque)] cursor-pointer flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-xl transition-all duration-200 border-2 ${
+                      isActive
                         ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)] text-white shadow-md"
                         : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)]"
-                      }`}
+                    }`}
                   >
-                    <img 
-                    src={option.icon} 
-                    alt="" 
-                    aria-hidden="true"
-                    className={`w-10 h-10 object-contain rounded-md transition-all duration-300 ${isActive ? 'invert brightness-0' : ''}`} 
-                  />
+                    <img
+                      src={option.icon}
+                      alt=""
+                      aria-hidden="true"
+                      className={`w-10 h-10 object-contain rounded-md transition-all duration-300 ${isActive ? "invert brightness-0" : ""}`}
+                    />
                     <span>{option.label}</span>
                     {isActive && <X size={14} className="ml-1" />}
                   </button>
@@ -278,8 +326,10 @@ export default function ProfessionalsRoles() {
                   </AccordionContent>
 
                   <div className="flex justify-center mt-12">
-                    <AccordionTrigger className="text-2xl flex gap-3 items-center bg-white text-[var(--cor-bg-1)] px-8 py-4 font-bold transition-all duration-200 border-2 border-[var(--cor-bg-1)]/30 rounded-full hover:border-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6 
-             focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none">
+                    <AccordionTrigger
+                      className="text-2xl flex gap-3 items-center bg-white text-[var(--cor-bg-1)] px-8 py-4 font-bold transition-all duration-200 border-2 border-[var(--cor-bg-1)]/30 rounded-full hover:border-[var(--cor-bg-1)] data-[state=open]:hidden shadow-lg [&>svg]:w-6 [&>svg]:h-6 
+             focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
+                    >
                       Ver mais
                     </AccordionTrigger>
                   </div>
@@ -308,10 +358,11 @@ function ProfessionalCard({
 }) {
   return (
     <div
-      className={`border rounded-xl transition-all duration-300 h-fit bg-white ${isOpen
+      className={`border rounded-xl transition-all duration-300 h-fit bg-white ${
+        isOpen
           ? "border-[var(--cor-bg-1)] shadow-xl ring-1 ring-emerald-50 scale-[1.01]"
           : "border-slate-100 shadow-sm hover:border-emerald-200 hover:shadow-md"
-        }`}
+      }`}
     >
       <button
         onClick={onToggle}
@@ -330,16 +381,18 @@ function ProfessionalCard({
           {prof.professional}
         </span>
         <ChevronDown
-          className={`transition-transform duration-300 flex-shrink-0 ml-2 ${isOpen ? "rotate-180 text-[var(--cor-bg-1)]" : "text-slate-400"
-            }`}
+          className={`transition-transform duration-300 flex-shrink-0 ml-2 ${
+            isOpen ? "rotate-180 text-[var(--cor-bg-1)]" : "text-slate-400"
+          }`}
           size={18}
           aria-hidden="true"
         />
       </button>
 
       <div
-        className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-          }`}
+        className={`grid transition-all duration-300 ${
+          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
       >
         <div className="overflow-hidden">
           <p className="px-6 pb-6 pt-2 text-black text-2xl leading-relaxed border-t border-slate-50">

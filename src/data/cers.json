@@ -3,7 +3,13 @@
     "id": 1,
     "nome": "CER IV - FUNAD - Fundação Centro Integrado de Apoio ao Portador de Deficiência",
     "info": "A FUNAD é referência em reabilitação integral, atendendo de forma especializada as deficiências auditiva, física, intelectual e visual, promovendo a inclusão social e a autonomia dos usuários.",
-    "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
+    "especialidades": [
+      "Auditiva",
+      "Física",
+      "Intelectual",
+      "Visual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -32,7 +38,11 @@
     "id": 2,
     "nome": "CER II - Instituto dos Cegos da Paraíba Adalgisa Cunha",
     "info": "O Instituto dos Cegos da Paraíba Adalgisa Cunha é uma instituição filantrópica pioneira, dedicada exclusivamente à habilitação e reabilitação de pessoas com cegueira ou baixa visão. Seu trabalho é focado no desenvolvimento da autonomia plena por meio do ensino do sistema Braille, treinamentos de orientação e mobilidade com uso de bengala, atividades da vida diária e inclusão tecnológica através de ferramentas de acessibilidade, promovendo a dignidade e a integração social do cidadão com deficiência visual.",
-    "especialidades": ["Intelectual", "Visual"],
+    "especialidades": [
+      "Intelectual",
+      "Visual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -61,7 +71,11 @@
     "id": 3,
     "nome": "CER II - Centro de Reabilitação Antônio de Souza Maranhão",
     "info": "Informação do Cer",
-    "especialidades": ["Física", "Intelectual"],
+    "especialidades": [
+      "Física",
+      "Intelectual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -90,7 +104,12 @@
     "id": 4,
     "nome": "CER III - Complexo Neurofuncional Maria Moura de Aquino",
     "info": "Informação do Cer",
-    "especialidades": ["Física", "Visual", "Intelectual"],
+    "especialidades": [
+      "Física",
+      "Visual",
+      "Intelectual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -119,7 +138,10 @@
     "id": 5,
     "nome": "CER II - Centro de Reabilitação Dr. José Dácio",
     "info": "Informação do Cer",
-    "especialidades": ["Auditiva", "Física"],
+    "especialidades": [
+      "Auditiva",
+      "Física"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -148,7 +170,13 @@
     "id": 6,
     "nome": "CER IV - Centro Especializado em Reabilitação de Campina Grande",
     "info": "Informação do Cer",
-    "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
+    "especialidades": [
+      "Auditiva",
+      "Física",
+      "Intelectual",
+      "Visual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -177,7 +205,11 @@
     "id": 7,
     "nome": "CER II - APAE - Associação de Pais e Amigos dos Excepcionais",
     "info": "Informação do Cer",
-    "especialidades": ["Física", "Intelectual"],
+    "especialidades": [
+      "Física",
+      "Intelectual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -206,7 +238,11 @@
     "id": 8,
     "nome": "CER II - CER/CERPPOD",
     "info": "Informação do Cer",
-    "especialidades": ["Física", "Intelectual"],
+    "especialidades": [
+      "Física",
+      "Intelectual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -235,7 +271,11 @@
     "id": 9,
     "nome": "CER II - Centro de Reabilitação Motora",
     "info": "Informação do Cer",
-    "especialidades": ["Física", "Intelectual"],
+    "especialidades": [
+      "Física",
+      "Intelectual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -264,7 +304,12 @@
     "id": 10,
     "nome": "CER III - Centro Especializado em Reabilitação Doutor Aloysio Pereira Lima",
     "info": "Informação do Cer",
-    "especialidades": ["Física", "Intelectual", "Visual"],
+    "especialidades": [
+      "Física",
+      "Intelectual",
+      "Visual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -293,7 +338,13 @@
     "id": 11,
     "nome": "CER IV - Reabilita Centro Especializado em Reabilitação de Sousa",
     "info": "Informação do Cer",
-    "especialidades": ["Auditiva", "Física", "Intelectual", "Visual"],
+    "especialidades": [
+      "Auditiva",
+      "Física",
+      "Intelectual",
+      "Visual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -322,7 +373,11 @@
     "id": 12,
     "nome": "CER II - Policlínica Dr. Antônio Quinho",
     "info": "Informação do Cer",
-    "especialidades": ["Física", "Intelectual"],
+    "especialidades": [
+      "Física",
+      "Intelectual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -351,7 +406,11 @@
     "id": 13,
     "nome": "CER II - Vitória Pereira de Oliveira",
     "info": "Informação do Cer",
-    "especialidades": ["Física", "Intelectual"],
+    "especialidades": [
+      "Física",
+      "Intelectual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -379,7 +438,9 @@
     "id": 14,
     "nome": "FUNAD - Oficina Ortopédica",
     "info": "Informação do Cer",
-    "especialidades": ["Ortopédica"],
+    "especialidades": [
+      "Ortopédica"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
@@ -408,7 +469,11 @@
     "id": 15,
     "nome": "CER II - Centro de Reabilitação e Cuidado da Pessoa com Deficiência",
     "info": "Informação do Cer",
-    "especialidades": ["Física", "Intelectual"],
+    "especialidades": [
+      "Física",
+      "Intelectual",
+      "TEA"
+    ],
     "horario": {
       "dias": "Segunda a Sexta",
       "abertura": "08:00",
