@@ -200,10 +200,25 @@ export default function StepFour({
           <CardDescription className="text-2xl">
             Exibindo CERs na sua área de abrangência geográfica
           </CardDescription>
-          <div aria-hidden="true" className="mt-2 p-2 bg-[var(--cor-bg-1)]/5 rounded border border-[var(--cor-bg-1)]/20">
-            <p className="text-lg text-muted-foreground italic">
-              Localidade detectada: <span className="font-bold text-[var(--cor-bg-1)]">{location}</span>
-            </p>
+          <div aria-hidden="true" className="mt-3 flex flex-wrap gap-2">
+            {deficiencies.length > 0 && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[var(--cor-bg-1)]/10 border border-[var(--cor-bg-1)]/30 text-sm font-medium text-[var(--cor-bg-1)]">
+                <span className="text-xs text-muted-foreground font-normal">Deficiência:</span>
+                {deficiencies.join(", ")}
+              </span>
+            )}
+            {ageGroup && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[var(--cor-bg-1)]/10 border border-[var(--cor-bg-1)]/30 text-sm font-medium text-[var(--cor-bg-1)]">
+                <span className="text-xs text-muted-foreground font-normal">Faixa etária:</span>
+                {ageGroup.charAt(0).toUpperCase() + ageGroup.slice(1)}
+              </span>
+            )}
+            {location && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[var(--cor-bg-1)]/10 border border-[var(--cor-bg-1)]/30 text-sm font-medium text-[var(--cor-bg-1)]">
+                <span className="text-xs text-muted-foreground font-normal">Localidade:</span>
+                {location}
+              </span>
+            )}
           </div>
         </CardHeader>
 

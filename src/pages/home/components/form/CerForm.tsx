@@ -28,17 +28,20 @@ export default function CerForm({ setShowForm }: CerFormProps) {
   });
 
   const handleStepOneNext = (selectedDeficiencies: string[]) => {
-    setFormData(prev => ({ ...prev, deficiencies: selectedDeficiencies }));
+    setFormData((prev) => ({ ...prev, deficiencies: selectedDeficiencies }));
     setCurrentStep(2);
   };
 
   const handleStepTwoNext = (ageGroup: string) => {
-    setFormData(prev => ({ ...prev, ageGroup }));
+    setFormData((prev) => ({ ...prev, ageGroup }));
     setCurrentStep(3);
   };
 
-  const handleStepThreeNext = (location: string, coordinates: { lat: number; lng: number }) => {
-    setFormData(prev => ({ ...prev, location, coordinates }));
+  const handleStepThreeNext = (
+    location: string,
+    coordinates: { lat: number; lng: number },
+  ) => {
+    setFormData((prev) => ({ ...prev, location, coordinates }));
     setCurrentStep(4);
   };
 
@@ -49,8 +52,18 @@ export default function CerForm({ setShowForm }: CerFormProps) {
 
   const handleStepClick = (step: number) => {
     if (step === 2 && formData.deficiencies.length === 0) return;
-    if (step === 3 && (formData.deficiencies.length === 0 || !formData.ageGroup)) return;
-    if (step === 4 && (formData.deficiencies.length === 0 || !formData.ageGroup || !formData.coordinates)) return;
+    if (
+      step === 3 &&
+      (formData.deficiencies.length === 0 || !formData.ageGroup)
+    )
+      return;
+    if (
+      step === 4 &&
+      (formData.deficiencies.length === 0 ||
+        !formData.ageGroup ||
+        !formData.coordinates)
+    )
+      return;
 
     if (step < currentStep) {
       setCurrentStep(step);
@@ -59,58 +72,49 @@ export default function CerForm({ setShowForm }: CerFormProps) {
 
   return (
     <>
-    <BackToHomeButtom onGoHome={() => setShowForm(false)} />
-    <div id="cer-form" className="w-full py-8">
-      <div className="max-w-4xl mx-auto px-4 mb-4 flex justify-end">
-        <button
-          onClick={() => setShowForm(false)}
-          className="text-lg font-semibold text-[var(--cor-bg-1)] hover:underline focus:outline-none"
-        >
-          ← Voltar para a página inicial
-        </button>
+      <BackToHomeButtom onGoHome={() => setShowForm(false)} />
+      <div id="cer-form" className="w-full py-8">
+        <div aria-hidden="true" className="max-w-4xl mx-auto px-4 mb-8">
+          <StepIndicator
+            aria-hidden="true"
+            currentStep={currentStep}
+            totalSteps={4}
+            onStepClick={handleStepClick}
+          />
+        </div>
+
+        {currentStep === 1 && (
+          <StepOne setShowForm={setShowForm} onNext={handleStepOneNext} />
+        )}
+
+        {currentStep === 2 && (
+          <StepTwo
+            selectedDeficiencies={formData.deficiencies}
+            onBack={() => setCurrentStep(1)}
+            onNext={handleStepTwoNext}
+          />
+        )}
+
+        {currentStep === 3 && (
+          <StepThree
+            selectedDeficiencies={formData.deficiencies}
+            ageGroup={formData.ageGroup}
+            onBack={() => setCurrentStep(2)}
+            onNext={handleStepThreeNext}
+          />
+        )}
+
+        {currentStep === 4 && (
+          <StepFour
+            deficiencies={formData.deficiencies}
+            ageGroup={formData.ageGroup}
+            location={formData.location}
+            userCoordinates={formData.coordinates}
+            onBack={() => setCurrentStep(3)}
+            onFinish={handleFinish}
+          />
+        )}
       </div>
-
-      <div aria-hidden="true" className="max-w-4xl mx-auto px-4 mb-8">
-        <StepIndicator
-          aria-hidden="true"
-          currentStep={currentStep}
-          totalSteps={4}
-          onStepClick={handleStepClick}
-        />
-      </div>
-
-      {currentStep === 1 && (
-        <StepOne setShowForm={setShowForm} onNext={handleStepOneNext} />
-      )}
-
-      {currentStep === 2 && (
-        <StepTwo
-          selectedDeficiencies={formData.deficiencies}
-          onBack={() => setCurrentStep(1)}
-          onNext={handleStepTwoNext}
-        />
-      )}
-
-      {currentStep === 3 && (
-        <StepThree
-          selectedDeficiencies={formData.deficiencies}
-          ageGroup={formData.ageGroup}
-          onBack={() => setCurrentStep(2)}
-          onNext={handleStepThreeNext}
-        />
-      )}
-
-      {currentStep === 4 && (
-        <StepFour
-          deficiencies={formData.deficiencies}
-          ageGroup={formData.ageGroup}
-          location={formData.location}
-          userCoordinates={formData.coordinates}
-          onBack={() => setCurrentStep(3)}
-          onFinish={handleFinish}
-        />
-      )}
-    </div>
     </>
   );
 }

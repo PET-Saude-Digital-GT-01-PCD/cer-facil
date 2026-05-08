@@ -73,7 +73,7 @@ export default function Rodape() {
 
   return (
     <>
-      <footer className="px-6 py-12 relative bg-white pt-16 border-t border-slate-200">
+      <footer className="px-6 py-12 relative bg-white pt-16">
         <div className="max-w-6xl mx-auto flex flex-col">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-8">
 
@@ -82,7 +82,6 @@ export default function Rodape() {
                 <h2 className="font-bold text-2xl text-black mb-1">
                   PET-Saúde Digital
                 </h2>
-                <div className="w-12 h-1 bg-[var(--cor-bg-1)] rounded-full mb-3"></div>
                 <p className="text-lg text-black leading-relaxed">
                   Acompanhe nossas ações e saiba mais sobre as iniciativas de
                   inclusão digital voltadas para Pessoas com Deficiência.
