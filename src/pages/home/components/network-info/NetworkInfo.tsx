@@ -7,6 +7,7 @@ import CersCards from "./section/cers-cards/CersCards";
 import { WaveBottom, WaveTop } from "@/components/wave-divider";
 import TypesOfCers from "./section/types-of-cers/TypesOfCers";
 import EducationalMaterial from "./section/educational-material/EducationalMaterial";
+import ExternalLinks from "./section/external-links/ExternalLinks";
 
 interface NetworkInfoProps {
   showFlow: [boolean, number | null];
@@ -63,6 +64,13 @@ export default function NetworkInfo({
 
       <div className="bg-white text-white pt-16">
         <EducationalMaterial />
+        <WaveBottom color="var(--cor-bg-1)" />
+      </div>
+
+      {/* Azul Petróleo */}
+      <div className="bg-[var(--cor-bg-1)] text-white pt-16">
+        <ExternalLinks />
+        <WaveBottom color="white" />
       </div>
     </div>
   );

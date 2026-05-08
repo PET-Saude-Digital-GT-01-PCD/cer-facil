@@ -50,10 +50,10 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
+          <CardTitle className="text-xl text-[var(--cor-bg-1)] font-bold">
             Para qual deficiência deseja buscar atendimento?
           </CardTitle>
-          <CardDescription className="text-2xl">
+          <CardDescription className="text-base">
             Escolha uma opção
           </CardDescription>
         </CardHeader>
@@ -74,9 +74,9 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
                     : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
                 }`}
               >
-                <CardHeader className="flex flex-row items-center gap-3 p-4">
+                <CardHeader className="flex flex-row items-center gap-2 p-3">
                   <div
-                    className={`p-3 rounded-full border-2 transition-all duration-300 ${
+                    className={`p-2 rounded-full border-2 transition-all duration-300 ${
                       selected === id
                         ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
                         : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)] group-hover:bg-[var(--cor-bg-1)]"
@@ -86,14 +86,14 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
                       src={img}
                       alt=""
                       aria-hidden="true"
-                      className={`h-12 w-12 object-contain transition-all duration-300 ${
+                      className={`h-8 w-8 object-contain transition-all duration-300 ${
                         selected === id
                           ? "brightness-0 invert"
                           : "group-hover:brightness-0 group-hover:invert"
                       }`}
                     />
                   </div>
-                  <CardTitle className="text-2xl">{label}</CardTitle>
+                  <CardTitle className="text-lg">{label}</CardTitle>
                 </CardHeader>
               </Card>
             ))}
@@ -114,9 +114,9 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
                     : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
                 }`}
               >
-                <CardHeader className="flex flex-row items-center gap-3 p-4">
+                <CardHeader className="flex flex-row items-center gap-2 p-3">
                   <div
-                    className={`p-3 rounded-full border-2 transition-all duration-300 ${
+                    className={`p-2 rounded-full border-2 transition-all duration-300 ${
                       selected === id
                         ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
                         : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)] group-hover:bg-[var(--cor-bg-1)]"
@@ -124,7 +124,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
                   >
                     <div
                       aria-hidden="true"
-                      className={`h-12 w-12 rounded-full bg-center bg-cover transition-all duration-300 ${
+                      className={`h-8 w-8 rounded-full bg-center bg-cover transition-all duration-300 ${
                         selected === id
                           ? "brightness-0 invert"
                           : "group-hover:brightness-0 group-hover:invert"
@@ -132,7 +132,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
                       style={{ backgroundImage: `url(${img})` }}
                     />
                   </div>
-                  <CardTitle className="text-2xl">{label}</CardTitle>
+                  <CardTitle className="text-lg">{label}</CardTitle>
                 </CardHeader>
               </Card>
             ))}
@@ -144,7 +144,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             variant="outline"
             onClick={() => setShowForm(false)}
             size="lg"
-            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Voltar
@@ -153,7 +153,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             onClick={handleNext}
             disabled={!selected}
             size="lg"
-            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Próximo

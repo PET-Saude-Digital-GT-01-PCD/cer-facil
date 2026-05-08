@@ -150,17 +150,17 @@ export default function StepThree({
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
+          <CardTitle className="text-xl text-[var(--cor-bg-1)] font-bold">
             <h2>
               Localização
             </h2>
           </CardTitle>
-          <CardDescription className="text-2xl">
+          <CardDescription className="text-base">
             Precisamos da sua localização para encontrar o CER mais apropriado
             para você.
           </CardDescription>
           {selectedDeficiencies.length > 0 && (
-            <CardDescription aria-hidden="true" className="text-xl">
+            <CardDescription aria-hidden="true" className="text-sm">
               Deficiência(s): {selectedDeficiencies.join(", ")} | Idade:{" "}
               {ageGroup}
             </CardDescription>
@@ -174,22 +174,22 @@ export default function StepThree({
                 handleGeolocation();
                 setLocationPermission(true);
               }}
-              className="w-full max-w-sm bg-[var(--cor-bg-1)] hover:brightness-110 transition-all text-2xl py-8
+              className="w-full max-w-sm bg-[var(--cor-bg-1)] hover:brightness-110 transition-all text-lg py-5
                         focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
               disabled={loading}
             >
               {loading ? (
-                <Loader2 className="mr-2 !h-8 !w-8 animate-spin" />
+                <Loader2 className="mr-2 !h-6 !w-6 animate-spin" />
               ) : (
-                <MapPin className="mr-2 !h-8 !w-8" />
+                <MapPin className="mr-2 !h-6 !w-6" />
               )}
               Permitir Localização
             </Button>
             
-            <div className="text-muted-foreground text-2xl">Ou</div>
+            <div className="text-muted-foreground text-lg">Ou</div>
 
             <div className="w-full max-w-sm space-y-2">
-              <Label htmlFor="cep" className="text-2xl font-semibold">
+              <Label htmlFor="cep" className="text-lg font-semibold">
                 Digite seu CEP:
               </Label>
               <div className="flex gap-2">
@@ -204,21 +204,21 @@ export default function StepThree({
                     setCityName("");
                   }}
 
-                  className="!text-2xl h-16 placeholder:text-xl focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
+                  className="!text-lg h-12 placeholder:text-base focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
                 />
                 <Button
                   aria-label="realizar busca por cep"
                   onClick={() => handleCepSearch(cep)}
                   variant="outline"
                   disabled={cep.replace(/\D/g, "").length < 8 || loading}
-                  className="h-16 px-4 focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
+                  className="h-12 px-4 focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
                 >
                   {loading ? (
-                    <Loader2 className="!w-8 !h-8 animate-spin" />
+                    <Loader2 className="!w-6 !h-6 animate-spin" />
                   ) : (
-                    <Search className="!w-8 !h-8" />
+                    <Search className="!w-6 !h-6" />
                   )}
-                  <span className="text-xl">Buscar</span>
+                  <span className="text-base">Buscar</span>
                 </Button>
               </div>
             </div>
@@ -226,11 +226,11 @@ export default function StepThree({
 
           {showMap && location && (
             <div className="w-full space-y-2">
-              <div className="text-xl text-green-600 text-center font-semibold">
+              <div className="text-base text-green-600 text-center font-semibold">
                 ✓ Localização definida: {cityName}
               </div>
 
-              <div aria-hidden="true" inert className="w-full h-[250px] rounded-lg overflow-hidden border">
+              <div aria-hidden="true" inert className="w-full h-[200px] rounded-lg overflow-hidden border">
                 <MapContainer
                   center={[location.lat, location.lng] as [number, number]}
                   zoom={16}
@@ -260,7 +260,7 @@ export default function StepThree({
             variant="outline"
             onClick={onBack}
             size="lg"
-            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Voltar
@@ -277,7 +277,7 @@ export default function StepThree({
             }}
             disabled={!location}
             size="lg"
-            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Próximo

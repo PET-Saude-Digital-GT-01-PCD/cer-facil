@@ -36,11 +36,11 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
     <div className="w-full">
       <Card className="border-2 border-[var(--cor-bg-1)] shadow-2xl max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-3xl text-[var(--cor-bg-1)] font-bold">
+          <CardTitle className="text-xl text-[var(--cor-bg-1)] font-bold">
             Qual a idade da pessoa que precisa de atendimento?
           </CardTitle>
           {selectedDeficiencies.length > 0 && (
-            <CardDescription aria-hidden="true" className="text-2xl">
+            <CardDescription aria-hidden="true" className="text-base">
               Deficiência(s) selecionada(s): {selectedDeficiencies.join(", ")}
             </CardDescription>
           )}
@@ -59,16 +59,16 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
                 : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
             }`}
           >
-            <CardHeader className="flex flex-row items-center gap-3 p-4">
+            <CardHeader className="flex flex-row items-center gap-2 p-3">
               <div
-                className={`p-3 rounded-full border-2 ${
+                className={`p-2 rounded-full border-2 ${
                   selected === "crianca"
                     ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
                     : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)]"
                 }`}
               >
                 <Baby
-                  className={`h-12 w-12 ${
+                  className={`h-8 w-8 ${
                     selected === "crianca"
                       ? "text-white"
                       : "text-[var(--cor-bg-1)]"
@@ -76,8 +76,8 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
                 />
               </div>
               <div>
-                <CardTitle className="text-2xl">Criança</CardTitle>
-                <CardDescription className="text-xl">0 a 12 anos</CardDescription>
+                <CardTitle className="text-lg">Criança</CardTitle>
+                <CardDescription className="text-base">0 a 12 anos</CardDescription>
               </div>
             </CardHeader>
           </Card>
@@ -94,16 +94,16 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
                 : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
             }`}
           >
-            <CardHeader className="flex flex-row items-center gap-3 p-4">
+            <CardHeader className="flex flex-row items-center gap-2 p-3">
               <div
-                className={`p-3 rounded-full border-2 ${
+                className={`p-2 rounded-full border-2 ${
                   selected === "adolescente"
                     ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
                     : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)]"
                 }`}
               >
                 <User
-                  className={`h-12 w-12 ${
+                  className={`h-8 w-8 ${
                     selected === "adolescente"
                       ? "text-white"
                       : "text-[var(--cor-bg-1)]"
@@ -111,8 +111,8 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
                 />
               </div>
               <div>
-                <CardTitle className="text-2xl">Adolescente</CardTitle>
-                <CardDescription className="text-xl">13 a 17 anos</CardDescription>
+                <CardTitle className="text-lg">Adolescente</CardTitle>
+                <CardDescription className="text-base">13 a 17 anos</CardDescription>
               </div>
             </CardHeader>
           </Card>
@@ -129,16 +129,16 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
                 : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
             }`}
           >
-            <CardHeader className="flex flex-row items-center gap-3 p-4">
+            <CardHeader className="flex flex-row items-center gap-2 p-3">
               <div
-                className={`p-3 rounded-full border-2 ${
+                className={`p-2 rounded-full border-2 ${
                   selected === "adulto"
                     ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
                     : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)]"
                 }`}
               >
                 <Users
-                  className={`h-12 w-12 ${
+                  className={`h-8 w-8 ${
                     selected === "adulto"
                       ? "text-white"
                       : "text-[var(--cor-bg-1)]"
@@ -146,8 +146,8 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
                 />
               </div>
               <div>
-                <CardTitle className="text-2xl">Adulto</CardTitle>
-                <CardDescription className="text-xl">18 a 59 anos</CardDescription>
+                <CardTitle className="text-lg">Adulto</CardTitle>
+                <CardDescription className="text-base">18 a 59 anos</CardDescription>
               </div>
             </CardHeader>
           </Card>
@@ -164,16 +164,16 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
                 : "border-[var(--cor-bg-1)]/40 hover:border-[var(--cor-bg-1)]"
             }`}
           >
-            <CardHeader className="flex flex-row items-center gap-3 p-4">
+            <CardHeader className="flex flex-row items-center gap-2 p-3">
               <div
-                className={`p-3 rounded-full border-2 ${
+                className={`p-2 rounded-full border-2 ${
                   selected === "idoso"
                     ? "bg-[var(--cor-bg-1)] border-[var(--cor-bg-1)]"
                     : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)]"
                 }`}
               >
                 <UserCog
-                  className={`h-12 w-12 ${
+                  className={`h-8 w-8 ${
                     selected === "idoso"
                       ? "text-white"
                       : "text-[var(--cor-bg-1)]"
@@ -181,8 +181,8 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
                 />
               </div>
               <div>
-                <CardTitle className="text-2xl">Idoso</CardTitle>
-                <CardDescription className="text-xl">60 anos ou mais</CardDescription>
+                <CardTitle className="text-lg">Idoso</CardTitle>
+                <CardDescription className="text-base">60 anos ou mais</CardDescription>
               </div>
             </CardHeader>
           </Card>
@@ -193,7 +193,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
             variant="outline"
             onClick={onBack}
             size="lg"
-            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Voltar
@@ -202,7 +202,7 @@ export default function StepTwo({ selectedDeficiencies = [], onBack, onNext }: S
             onClick={handleNext}
             disabled={!selected}
             size="lg"
-            className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Próximo

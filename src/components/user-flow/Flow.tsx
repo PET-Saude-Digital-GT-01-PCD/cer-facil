@@ -22,18 +22,25 @@ interface FlowProps {
 
 function exportFlowToPrint(fluxoInfo: any, cerInfo: any): void {
   const steps = fluxoInfo.steps
-    .map((s: any, i: number) => `<li style="margin-bottom:12px"><strong>Passo ${i + 1}: ${s.title}</strong><br/>${s.description}</li>`)
+    .map(
+      (s: any, i: number) =>
+        `<li style="margin-bottom:12px"><strong>Passo ${i + 1}: ${s.title}</strong><br/>${s.description}</li>`,
+    )
     .join("");
 
-  const docs = fluxoInfo.documents
-    .map((d: string) => `<li>${d}</li>`)
-    .join("");
+  const docs = fluxoInfo.documents.map((d: string) => `<li>${d}</li>`).join("");
 
   const contato = [
-    cerInfo?.endereco ? `<p><strong>Endereço:</strong> ${cerInfo.endereco.rua}, ${cerInfo.endereco.numero} - ${cerInfo.endereco.bairro}, ${cerInfo.cidade} - CEP ${cerInfo.endereco.cep}</p>` : "",
-    cerInfo?.telefone ? `<p><strong>Telefone:</strong> ${cerInfo.telefone}</p>` : "",
+    cerInfo?.endereco
+      ? `<p><strong>Endereço:</strong> ${cerInfo.endereco.rua}, ${cerInfo.endereco.numero} - ${cerInfo.endereco.bairro}, ${cerInfo.cidade} - CEP ${cerInfo.endereco.cep}</p>`
+      : "",
+    cerInfo?.telefone
+      ? `<p><strong>Telefone:</strong> ${cerInfo.telefone}</p>`
+      : "",
     cerInfo?.email ? `<p><strong>E-mail:</strong> ${cerInfo.email}</p>` : "",
-    cerInfo?.horario?.texto ? `<p><strong>Horário:</strong> ${cerInfo.horario.texto}</p>` : "",
+    cerInfo?.horario?.texto
+      ? `<p><strong>Horário:</strong> ${cerInfo.horario.texto}</p>`
+      : "",
     cerInfo?.site ? `<p><strong>Site:</strong> ${cerInfo.site}</p>` : "",
   ].join("");
 
@@ -105,12 +112,6 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             Verifique se o ID no fluxo.json corresponde ao ID no cers.json.
           </p>
         </div>
-        <Button
-          className="bg-[var(--cor-3)] hover:bg-orange-600 text-white px-8"
-          onClick={() => setShowFlow([false, null])}
-        >
-          Voltar para a lista
-        </Button>
       </div>
     );
   }
@@ -125,32 +126,16 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
         <div className="text-left mb-6">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4">
             <div>
-              <h2 id="user-flow" className="font-bold text-3xl mb-2 text-black leading-tight">
+              <h2
+                id="user-flow"
+                className="font-bold text-3xl mb-2 text-black leading-tight"
+              >
                 Como conseguir seu atendimento
               </h2>
               <div className="w-16 h-1 bg-[var(--cor-bg-1)] rounded-full"></div>
             </div>
-            <Button
-              variant="outline"
-              size="sm"
-              className="px-8 py-5 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white
-               focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none w-full sm:w-auto"
-              onClick={() => setShowFlow([false, cerId])}
-            >
-              Voltar para a busca
-            </Button>
           </div>
-          <div className="flex gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              className="px-8 py-5 text-2xl border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
-               focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
-              onClick={() => setShowFlow([false, cerId])}
-            >
-              Voltar
-            </Button>
-          </div>
+          <div className="flex gap-2"></div>
         </div>
 
         <div className="flex flex-col gap-5">
@@ -214,7 +199,9 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
                     className="text-xl text-[var(--cor-bg-1)] leading-snug pl-5 border-l-2 border-gray-100 ml-1.5 truncate block hover:underline"
                     title={cerInfo.site}
                   >
-                    {cerInfo.site.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                    {cerInfo.site
+                      .replace(/^https?:\/\//, "")
+                      .replace(/\/$/, "")}
                   </a>
                 </div>
               )}
@@ -231,7 +218,10 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
                     className="text-xl text-[var(--cor-bg-1)] leading-snug pl-5 border-l-2 border-gray-100 ml-1.5 truncate block hover:underline"
                     title={cerInfo.instagram}
                   >
-                    @{cerInfo.instagram.replace(/^https?:\/\/www\.instagram\.com\//, "").replace(/\/$/, "")}
+                    @
+                    {cerInfo.instagram
+                      .replace(/^https?:\/\/www\.instagram\.com\//, "")
+                      .replace(/\/$/, "")}
                   </a>
                 </div>
               )}
@@ -252,7 +242,11 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             <h4 className="font-bold text-2xl mb-4">Passo a Passo</h4>
             <ul className="relative border-l-2 border-blue-100 ml-3 space-y-4">
               {fluxoInfo.steps?.map((step: any, index: number) => (
-                <li aria-label={`Passo ${index + 1}: ${step.title}`} key={index} className="relative pl-8">
+                <li
+                  aria-label={`Passo ${index + 1}: ${step.title}`}
+                  key={index}
+                  className="relative pl-8"
+                >
                   <div className="absolute -left-[12px] top-1 w-6 h-6 rounded-full bg-white border-[3px] border-[var(--cor-bg-1)] shadow-sm" />
 
                   <div className="bg-gray-50/50 p-3 rounded-lg border border-gray-100 transition-all hover:shadow-sm hover:border-blue-100">
@@ -307,7 +301,6 @@ export default function Flow({ setShowFlow, cerId }: FlowProps) {
             Baixar informações
           </Button>
         </div>
-
       </div>
     </section>
   );
