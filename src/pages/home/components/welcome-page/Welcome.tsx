@@ -61,7 +61,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
           Profissionais da Saúde, Pessoas com Deficiência e Familiares.
         </p>
 
-        <nav
+        <div
           aria-label="menu principal de ações"
           className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6"
         >
@@ -100,7 +100,7 @@ export default function Welcome({ showForm, setShowForm }: WelcomeProps) {
               Tenha Acesso aos Materiais Educativos
             </span>
           </button>
-        </nav>
+        </div>
       </section>
     </main>
   );
