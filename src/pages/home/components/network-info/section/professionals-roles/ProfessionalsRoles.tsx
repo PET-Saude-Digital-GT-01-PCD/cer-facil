@@ -1,11 +1,5 @@
 import { useState, useMemo } from "react";
-import { ChevronDown, Filter, X, Download } from "lucide-react";
-
-import defAuditiva from "@/assets/images/disabillity-images/deficiencia_auditiva.png";
-import defFisica from "@/assets/images/disabillity-images/deficiencia_fisica.png";
-import defIntelectual from "@/assets/images/disabillity-images/deficiencia_intelectual.png";
-import defVisual from "@/assets/images/disabillity-images/deficiencia_visual.png";
-import simAutismo from "@/assets/images/disabillity-images/simbolo_autismo.png";
+import { ChevronDown, Filter, X, Download, Accessibility, Ear, Eye, Brain, Puzzle, type LucideIcon } from "lucide-react";
 
 import {
   Accordion,
@@ -17,15 +11,15 @@ import {
 interface FilterOption {
   id: number;
   label: string;
-  icon: LucideIcon;
+  Icon: LucideIcon;
 }
 
 const filterOptionsData: FilterOption[] = [
-  { id: 1, label: "Física", icon: defFisica },
-  { id: 2, label: "Auditiva", icon: defAuditiva },
-  { id: 3, label: "Visual", icon: defVisual },
-  { id: 4, label: "Intelectual", icon: defIntelectual },
-  { id: 5, label: "TEA", icon: simAutismo },
+  { id: 1, label: "Física",      Icon: Accessibility },
+  { id: 2, label: "Auditiva",    Icon: Ear           },
+  { id: 3, label: "Visual",      Icon: Eye           },
+  { id: 4, label: "Intelectual", Icon: Brain         },
+  { id: 5, label: "TEA",         Icon: Puzzle        },
 ];
 
 interface Professional {
@@ -247,7 +241,7 @@ export default function ProfessionalsRoles() {
 
             <div className="flex flex-wrap items-center gap-3">
               {filterOptionsData.map((option) => {
-                const Icon = option.icon;
+                const Icon = option.Icon;
                 const isActive = activeFilters.includes(option.id);
 
                 return (
@@ -262,12 +256,7 @@ export default function ProfessionalsRoles() {
                         : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)]"
                     }`}
                   >
-                    <img
-                      src={option.icon}
-                      alt=""
-                      aria-hidden="true"
-                      className={`w-10 h-10 object-contain rounded-md transition-all duration-300 ${isActive ? "invert brightness-0" : ""}`}
-                    />
+                    <Icon aria-hidden="true" className="w-5 h-5" />
                     <span>{option.label}</span>
                     {isActive && <X size={14} className="ml-1" />}
                   </button>

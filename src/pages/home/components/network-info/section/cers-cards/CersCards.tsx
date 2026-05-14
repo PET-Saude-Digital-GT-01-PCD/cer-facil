@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { MapPin, Filter, X, LayoutGrid, List, ArrowRight, Download } from "lucide-react";
+import { MapPin, Filter, X, LayoutGrid, List, ArrowRight, Download, Accessibility, Ear, Eye, Brain, Puzzle, type LucideIcon } from "lucide-react";
 
 import Flow from "@/components/user-flow/Flow.tsx";
 import cersJson from "@/data/cers.json";
@@ -48,12 +48,6 @@ function exportCersToCSV(): void {
   URL.revokeObjectURL(url);
 }
 
-import defAuditiva from "@/assets/images/disabillity-images/deficiencia_auditiva.png";
-import defFisica from "@/assets/images/disabillity-images/deficiencia_fisica.png";
-import defIntelectual from "@/assets/images/disabillity-images/deficiencia_intelectual.png";
-import defVisual from "@/assets/images/disabillity-images/deficiencia_visual.png";
-import simAutismo from "@/assets/images/disabillity-images/simbolo_autismo.png";
-
 interface DadosCers {
   id: number;
   nome: string;
@@ -61,12 +55,12 @@ interface DadosCers {
   cidade: string;
 }
 
-const filterOptionsData = [
-  { id: "Física", label: "Física", icon: defFisica },
-  { id: "Auditiva", label: "Auditiva", icon: defAuditiva },
-  { id: "Visual", label: "Visual", icon: defVisual },
-  { id: "Intelectual", label: "Intelectual", icon: defIntelectual },
-  { id: "TEA", label: "TEA", icon: simAutismo },
+const filterOptionsData: { id: string; label: string; Icon: LucideIcon }[] = [
+  { id: "Física",      label: "Física",      Icon: Accessibility },
+  { id: "Auditiva",    label: "Auditiva",    Icon: Ear           },
+  { id: "Visual",      label: "Visual",      Icon: Eye           },
+  { id: "Intelectual", label: "Intelectual", Icon: Brain         },
+  { id: "TEA",         label: "TEA",         Icon: Puzzle        },
 ];
 
 const cersData: DadosCers[] = cersJson as DadosCers[];
@@ -178,6 +172,7 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
           <div className="flex flex-wrap items-center gap-3">
             {filterOptionsData.map((option) => {
               const isActive = activeFilters.includes(option.id);
+              const Icon = option.Icon;
               return (
                 <button
                   role="checkbox"
@@ -190,11 +185,9 @@ export default function CersCards({ showFlow, setShowFlow }: CersCardsProps) {
                       : "bg-white border-[var(--cor-bg-1)]/30 text-[var(--cor-bg-1)] hover:border-[var(--cor-bg-1)]"
                   }`}
                 >
-                  <img
-                    src={option.icon}
-                    alt=""
+                  <Icon
                     aria-hidden="true"
-                    className={`w-10 h-10 object-contain rounded-md transition-all duration-300 ${isActive ? "invert brightness-0" : ""}`}
+                    className="w-5 h-5"
                   />
                   {option.label}
                   {isActive && (
