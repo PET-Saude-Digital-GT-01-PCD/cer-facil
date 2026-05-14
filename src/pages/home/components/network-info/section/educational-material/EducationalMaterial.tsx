@@ -11,7 +11,6 @@ import {
 
 import portariaFile from "@/assets/materials/gestores/PORTARIA GM_MS Nº 1.526, DE 11 DE OUTUBRO DE 2023.pdf";
 import notaInformativa1File from "@/assets/materials/gestores/Nota Informativa nº 1.pdf";
-import notaTecnica2File from "@/assets/materials/gestores/Nota Técnica nº 2-2025 CGSPD-DAET-SAES-MS.pdf";
 import notaTecnica3File from "@/assets/materials/gestores/Nota Técnica nº 3-2025 CGSPD-DAET-SAES-MS.pdf";
 import notaTecnica4File from "@/assets/materials/gestores/Nota Técnica nº 4-2025 CGSPD-DAET-SAES-MS.pdf";
 import lbiImg from "@/assets/images/educational-material/Lei Brasileira de Inclusão (LBI).png";
@@ -195,10 +194,10 @@ const managerMaterial: EducationalMaterial[] = [
     image: notaInformativa1Img,
   },
   {
-    title: "Nota Técnica nº 2/2025",
+    title: "Nota Técnica nº 2/2026",
     description:
       "Estabelece critérios para obtenção de incentivo financeiro de custeio para a Atenção Especializada Ambulatorial da RCPD, incluindo habilitação de CERs e Oficinas Ortopédicas, com adicional de 20% para unidades que atendem pessoas com TEA.",
-    url: notaTecnica2File,
+    url: "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-pessoa-com-deficiencia/notas-tecnicas/nota-tecnica-no-2-2026-cgspd-daet-saes-ms",
     image: notaTecnica2Img,
   },
   {
