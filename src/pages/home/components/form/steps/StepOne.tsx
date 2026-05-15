@@ -7,18 +7,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import defFisica from "@/assets/images/disabillity-images/deficiencia_fisica.png";
-import defAuditiva from "@/assets/images/disabillity-images/deficiencia_auditiva.png";
-import defVisual from "@/assets/images/disabillity-images/deficiencia_visual.png";
-import defIntelectual from "@/assets/images/disabillity-images/deficiencia_intelectual.png";
-import simAutismo from "@/assets/images/disabillity-images/simbolo_autismo.png";
+import { Accessibility, Ear, Eye, Brain, Puzzle, type LucideIcon } from "lucide-react";
 
-const deficiencias = [
-  { id: "fisica", label: "Deficiência Física", img: defFisica },
-  { id: "auditiva", label: "Deficiência Auditiva", img: defAuditiva },
-  { id: "visual", label: "Deficiência Visual", img: defVisual },
-  { id: "intelectual", label: "Deficiência Intelectual", img: defIntelectual },
-  { id: "tea", label: "Transtorno do Espectro Autista (TEA)", img: simAutismo },
+const deficiencias: { id: string; label: string; Icon: LucideIcon }[] = [
+  { id: "fisica",      label: "Deficiência Física",                  Icon: Accessibility },
+  { id: "auditiva",    label: "Deficiência Auditiva",                 Icon: Ear           },
+  { id: "visual",      label: "Deficiência Visual",                   Icon: Eye           },
+  { id: "intelectual", label: "Deficiência Intelectual",              Icon: Brain         },
+  { id: "tea",         label: "Transtorno do Espectro Autista (TEA)", Icon: Puzzle        },
 ];
 
 interface StepOneProps {
@@ -34,12 +30,10 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
   };
 
   const handleNext = () => {
-    if (selected) {
-      onNext([selected]);
-    }
+    if (selected) onNext([selected]);
   };
 
-  const handleKeyDown = (event, value) => {
+  const handleKeyDown = (event: React.KeyboardEvent, value: string) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       toggleSelection(value);
@@ -60,7 +54,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
 
         <CardContent role="radiogroup">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
-            {deficiencias.slice(0, 4).map(({ id, label, img }) => (
+            {deficiencias.slice(0, 4).map(({ id, label, Icon }) => (
               <Card
                 key={id}
                 role="radio"
@@ -82,14 +76,12 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
                         : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)] group-hover:bg-[var(--cor-bg-1)]"
                     }`}
                   >
-                    <img
-                      src={img}
-                      alt=""
+                    <Icon
                       aria-hidden="true"
-                      className={`h-8 w-8 object-contain transition-all duration-300 ${
+                      className={`h-8 w-8 transition-all duration-300 ${
                         selected === id
-                          ? "brightness-0 invert"
-                          : "group-hover:brightness-0 group-hover:invert"
+                          ? "text-white"
+                          : "text-[var(--cor-bg-1)] group-hover:text-white"
                       }`}
                     />
                   </div>
@@ -100,7 +92,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
           </div>
 
           <div className="flex justify-center">
-            {deficiencias.slice(4).map(({ id, label, img }) => (
+            {deficiencias.slice(4).map(({ id, label, Icon }) => (
               <Card
                 key={id}
                 role="radio"
@@ -122,14 +114,13 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
                         : "bg-[var(--cor-bg-1)]/20 border-[var(--cor-bg-1)] group-hover:bg-[var(--cor-bg-1)]"
                     }`}
                   >
-                    <div
+                    <Icon
                       aria-hidden="true"
-                      className={`h-8 w-8 rounded-full bg-center bg-cover transition-all duration-300 ${
+                      className={`h-8 w-8 transition-all duration-300 ${
                         selected === id
-                          ? "brightness-0 invert"
-                          : "group-hover:brightness-0 group-hover:invert"
+                          ? "text-white"
+                          : "text-[var(--cor-bg-1)] group-hover:text-white"
                       }`}
-                      style={{ backgroundImage: `url(${img})` }}
                     />
                   </div>
                   <CardTitle className="text-lg">{label}</CardTitle>
@@ -144,7 +135,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             variant="outline"
             onClick={() => setShowForm(false)}
             size="lg"
-            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Voltar
@@ -153,7 +144,7 @@ export default function StepOne({ setShowForm, onNext }: StepOneProps) {
             onClick={handleNext}
             disabled={!selected}
             size="lg"
-            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white 
+            className="px-6 py-3 text-lg border-2 border-[var(--cor-bg-1)] hover:bg-[var(--cor-bg-1)] hover:text-white
              focus-visible:ring-[10px] focus-visible:ring-[var(--cor-destaque)] focus-visible:ring-offset-2 outline-none"
           >
             Próximo

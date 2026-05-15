@@ -1,8 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export default function VLibras() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (document.getElementById("vlibras-script")) return;
 
@@ -17,7 +15,7 @@ export default function VLibras() {
   }, []);
 
   return (
-    <div ref={containerRef} vw="true" className="enabled">
+    <div vw="true" className="enabled">
       <div vw-access-button="true" className="active"></div>
       <div vw-plugin-wrapper="true">
         <div className="vw-plugin-top-wrapper"></div>

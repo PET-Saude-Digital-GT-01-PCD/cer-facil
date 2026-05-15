@@ -69,7 +69,6 @@ const aboutProjectData = {
 export default function Rodape() {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const currentYear = new Date().getFullYear();
-  const titleRef = useRef<HTMLHeadingElement>(null);
 
   return (
     <>

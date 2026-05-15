@@ -4,7 +4,7 @@ import ProfessionalsRoles from "./section/professionals-roles/ProfessionalsRoles
 import HistoryTimeline from "./section/history-timeline/HistoryTimeline";
 import AttentionLevel from "./section/attention-level/AttentionLevel";
 import CersCards from "./section/cers-cards/CersCards";
-import { WaveBottom, WaveTop } from "@/components/wave-divider";
+import { WaveBottom } from "@/components/wave-divider";
 import TypesOfCers from "./section/types-of-cers/TypesOfCers";
 import EducationalMaterial from "./section/educational-material/EducationalMaterial";
 import ExternalLinks from "./section/external-links/ExternalLinks";
